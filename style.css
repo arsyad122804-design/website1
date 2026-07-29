@@ -463,8 +463,8 @@ img {
 .hero-bg-wrap {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: right center;
   background-repeat: no-repeat;
 }
 
@@ -497,8 +497,8 @@ img {
 .hero-bg-wrap {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: right center;
   background-repeat: no-repeat;
 }
 
