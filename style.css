@@ -463,12 +463,13 @@ img {
 .hero-bg-wrap {
   position: absolute;
   inset: 0;
-  background-size: contain;
+  background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 .hero-bg-color {
+  display: none;
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(13,34,68,0.7) 0%, rgba(13,34,68,0.15) 40%, transparent 100%);
@@ -497,12 +498,13 @@ img {
 .hero-bg-wrap {
   position: absolute;
   inset: 0;
-  background-size: contain;
+  background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 .hero-bg-color {
+  display: none;
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(13,34,68,0.7) 0%, rgba(13,34,68,0.15) 40%, transparent 100%);
