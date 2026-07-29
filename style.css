@@ -836,15 +836,15 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: #3a5bd9;
-  background: #eef2ff;
+  color: #f59e0b;
+  background: #0d2244;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .akses-card:hover .akses-icon-wrap {
-  background: #3a5bd9;
-  color: #ffffff;
+  background: #f59e0b;
+  color: #0d2244;
   transform: scale(1.05);
 }
 
