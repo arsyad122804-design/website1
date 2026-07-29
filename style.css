@@ -3089,6 +3089,10 @@ html, body { overflow-x: hidden !important; }
   .hero-slider-btn {
     display: none !important;
   }
+  .slider-prev,
+  .slider-next {
+    display: none !important;
+  }
 }
 
 /* FOR LANDSCAPE TABLETS (IPAD HELD HORIZONTALLY) */
@@ -3177,6 +3181,10 @@ html, body { overflow-x: hidden !important; }
     bottom: 20px !important;
   }
   .hero-slider-btn {
+    display: none !important;
+  }
+  .slider-prev,
+  .slider-next {
     display: none !important;
   }
 }
