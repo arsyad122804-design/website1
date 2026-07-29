@@ -37,6 +37,7 @@ html, body {
   background: #000;
   cursor: grab;
   z-index: 10;
+  touch-action: none;
 }
 
 .tour-immersive-viewer:active {

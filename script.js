@@ -75,6 +75,28 @@
     dot.addEventListener('click', () => { goTo(i); resetAuto(); });
   });
 
+  // Touch Swipe Support for mobile (Android & iPhone)
+  const heroSection = document.querySelector('.hero');
+  if (heroSection) {
+    let touchStartX = 0;
+    heroSection.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const swipeDistance = touchStartX - touchEndX;
+      if (Math.abs(swipeDistance) > 50) { // Swipe threshold of 50px
+        if (swipeDistance > 0) {
+          goTo(current + 1); // Swipe left -> Next slide
+        } else {
+          goTo(current - 1); // Swipe right -> Prev slide
+        }
+        resetAuto();
+      }
+    }, { passive: true });
+  }
+
   startAuto();
 })();
 
