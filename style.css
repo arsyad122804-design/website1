@@ -3133,7 +3133,7 @@ html, body { overflow-x: hidden !important; }
   }
   .hero-content {
     position: absolute !important;
-    top: 32% !important;
+    top: 28% !important;
     left: 40px !important;
     right: auto !important;
     transform: translateY(-50%) !important;
