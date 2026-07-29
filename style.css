@@ -566,7 +566,7 @@ img {
 }
 
 .hero-title {
-  font-size: 58px;
+  font-size: 46px;
   font-weight: 900;
   color: #fff;
   line-height: 1.15;
@@ -3093,7 +3093,7 @@ html, body { overflow-x: hidden !important; }
 
 /* FOR LANDSCAPE TABLETS (IPAD HELD HORIZONTALLY) */
 /* The user wants "rata kanan kiri gambarnya" (full width image left-to-right) */
-@media (max-width: 1200px) and (min-width: 901px) and (orientation: landscape) {
+@media (max-width: 1366px) and (min-width: 901px) and (orientation: landscape) {
   .hero-slide.active {
     display: block !important;
     position: relative !important;
