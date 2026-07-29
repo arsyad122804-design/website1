@@ -543,7 +543,7 @@ img {
   z-index: 10;
   width: 100%;
   max-width: 640px;
-  padding: 44px;
+  padding: 32px 40px;
   margin-left: 160px;
   margin-right: auto;
   text-align: center;
@@ -552,6 +552,7 @@ img {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
+  transform: translateY(-24px);
 }
 
 .hero-badge {
@@ -587,7 +588,7 @@ img {
   font-size: 13.5px;
   color: rgba(255,255,255,0.85);
   line-height: 1.7;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   max-width: 100%;
   text-align: center;
 }
@@ -3132,13 +3133,13 @@ html, body { overflow-x: hidden !important; }
   }
   .hero-content {
     position: absolute !important;
-    top: 50% !important;
+    top: 42% !important;
     left: 100px !important;
     right: auto !important;
     transform: translateY(-50%) !important;
     width: 90% !important;
     max-width: 500px !important;
-    padding: 30px 40px !important;
+    padding: 22px 36px !important;
     z-index: 10 !important;
     background: rgba(13, 34, 68, 0.45) !important;
     backdrop-filter: blur(16px) !important;
@@ -3157,6 +3158,7 @@ html, body { overflow-x: hidden !important; }
     font-size: 13px !important;
     max-width: 100% !important;
     text-align: center !important;
+    margin-bottom: 18px !important;
   }
   .hero-btns {
     justify-content: center !important;
