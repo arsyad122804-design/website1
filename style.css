@@ -544,7 +544,7 @@ img {
   width: 100%;
   max-width: 640px;
   padding: 32px 40px;
-  margin-left: 160px;
+  margin-left: 120px;
   margin-right: auto;
   text-align: center;
   background: rgba(13, 34, 68, 0.45);
@@ -552,7 +552,7 @@ img {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
-  transform: translateY(-24px);
+  transform: translateY(-44px);
 }
 
 .hero-badge {
@@ -3133,8 +3133,8 @@ html, body { overflow-x: hidden !important; }
   }
   .hero-content {
     position: absolute !important;
-    top: 42% !important;
-    left: 100px !important;
+    top: 38% !important;
+    left: 60px !important;
     right: auto !important;
     transform: translateY(-50%) !important;
     width: 90% !important;
