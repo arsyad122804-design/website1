@@ -544,7 +544,7 @@ img {
   width: 100%;
   max-width: 640px;
   padding: 44px;
-  margin-left: 80px;
+  margin-left: 160px;
   margin-right: auto;
   text-align: center;
   background: rgba(13, 34, 68, 0.45);
@@ -3133,7 +3133,7 @@ html, body { overflow-x: hidden !important; }
   .hero-content {
     position: absolute !important;
     top: 50% !important;
-    left: 40px !important;
+    left: 100px !important;
     right: auto !important;
     transform: translateY(-50%) !important;
     width: 90% !important;
