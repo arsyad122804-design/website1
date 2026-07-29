@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artikel - Hibatullah IIBS</title>
+  <link rel="stylesheet" href="style.css?v=1781413621745" />
+  <link rel="stylesheet" href="footer.css?v=2" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+body{background:#f0f4fb}
+.art-bc-bar{background:#1a3a6b;padding:10px 0}
+.art-bc{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,0.7)}
+.art-bc a{color:rgba(255,255,255,0.85);font-weight:500}.art-bc a:hover{color:#fff}
+.art-bc i.fa-chevron-right{font-size:9px;color:rgba(255,255,255,0.35)}
+.art-bc span{color:rgba(255,255,255,0.55)}
+.art-main{max-width:1100px;margin:0 auto;padding:40px 24px 72px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
+/* ARTICLE */
+.art-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(26,58,107,0.1);border:1px solid #e8eef8}
+.art-hero-img{width:100%;height:380px;object-fit:cover;display:block}
+.art-body{padding:32px 36px 36px}
+.art-cat{font-size:11px;font-weight:700;color:#3a5bd9;letter-spacing:2px;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.art-cat i{font-size:10px}
+.art-title{font-size:26px;font-weight:800;color:#1a1a2e;line-height:1.35;margin-bottom:16px}
+.art-meta{display:flex;align-items:center;gap:20px;padding:14px 0;border-top:1px solid #f0f4f8;border-bottom:1px solid #f0f4f8;margin-bottom:28px;flex-wrap:wrap}
+.art-meta-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#888}
+.art-meta-item i{color:#3a5bd9;font-size:12px}
+.art-meta-item strong{color:#333;font-weight:600}
+.art-content{font-size:14.5px;color:#333;line-height:1.95}
+.art-content p{margin-bottom:18px}
+.art-content p:last-child{margin-bottom:0}
+.art-content blockquote{border-left:4px solid #3a5bd9;padding:14px 20px;background:#f0f4ff;border-radius:0 8px 8px 0;margin:20px 0;color:#444;font-style:italic}
+.art-content img{width:100%;height:auto;border-radius:12px;margin:32px 0;display:block;box-shadow:0 4px 16px rgba(26,58,107,0.1)}
+.art-content a{color:#3a5bd9;text-decoration:underline}
+.art-content strong{color:#1a1a2e}
+.art-source{margin-top:28px;padding-top:20px;border-top:1px solid #f0f4f8}
+.art-source-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#1a3a6b;color:#fff;font-size:15px;font-weight:700;padding:16px 28px;border-radius:10px;transition:background .2s,transform .15s;text-decoration:none;width:100%;box-sizing:border-box}
+.art-source-btn:hover{background:#0f2548;transform:translateY(-2px)}
+.art-share{margin-top:24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.art-share span{font-size:13px;font-weight:600;color:#555}
+.art-share a{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;transition:opacity .2s}
+.art-share a:hover{opacity:.8}
+.art-share-fb{background:#1877f2}.art-share-wa{background:#25d366}.art-share-ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
+/* SIDEBAR */
+.art-sidebar{display:flex;flex-direction:column;gap:20px}
+.art-sidebar-card{background:#fff;border-radius:14px;padding:22px 20px;border:1px solid #e8eef8;box-shadow:0 2px 12px rgba(26,58,107,0.06)}
+.art-sidebar-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #e8eef8;display:flex;align-items:center;gap:8px}
+.art-sidebar-title i{color:#3a5bd9}
+.art-related-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f5f5f5;cursor:pointer;transition:background .15s;border-radius:8px}
+.art-related-item:last-child{border-bottom:none;padding-bottom:0}
+.art-related-item:hover{background:#f8f9fc}
+.art-related-img{width:72px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0}
+.art-related-info{flex:1}
+.art-related-title{font-size:12.5px;font-weight:600;color:#1a1a2e;line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.art-related-date{font-size:11px;color:#aaa}
+.art-sidebar-filter{display:flex;flex-wrap:wrap;gap:8px}
+.art-sidebar-filter a{display:inline-block;padding:8px 14px;background:#f0f4f8;color:#555;font-size:12.5px;border-radius:20px;font-weight:600;transition:all .2s;text-decoration:none}
+.art-sidebar-filter a:hover{background:#3a5bd9;color:#fff}
+/* VIEW / LIKE / COMMENT */
+.art-engage{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid #f0f4f8;border-bottom:1px solid #f0f4f8;margin:24px 0}
+.art-engage-btn{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#888;cursor:pointer;background:none;border:none;padding:8px 14px;border-radius:8px;transition:all .2s}
+.art-engage-btn:hover{background:#f0f4fb;color:#1a3a6b}
+.art-engage-btn.liked{color:#e74c3c}
+.art-engage-btn.liked i{color:#e74c3c}
+.art-engage-btn i{font-size:15px}
+.art-engage-stats{display:flex;align-items:center;margin-left:auto}
+.art-engage-views{display:flex;align-items:center;gap:7px;font-size:13px;color:#aaa}
+/* KOMENTAR */
+.art-comments{margin-top:32px;padding-top:28px;border-top:2px solid #f0f4f8}
+.art-comments-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.art-comments-title i{color:#3a5bd9}
+.art-comment-form{background:#f8faff;border-radius:12px;padding:20px;margin-bottom:24px;border:1px solid #e8eef8}
+.art-comment-form input,.art-comment-form textarea{width:100%;padding:10px 14px;border:1.5px solid #e0e8f4;border-radius:8px;font-size:13px;font-family:inherit;color:#333;background:#fff;margin-bottom:10px;box-sizing:border-box;transition:border .2s}
+.art-comment-form input:focus,.art-comment-form textarea:focus{outline:none;border-color:#3a5bd9}
+.art-comment-form textarea{height:90px;resize:vertical}
+.art-comment-submit{background:#1a3a6b;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s}
+.art-comment-submit:hover{background:#0f2548}
+.art-comment-list{display:flex;flex-direction:column;gap:14px}
+.art-comment-item{background:#fff;border:1px solid #eef2fb;border-radius:10px;padding:14px 16px}
+.art-comment-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.art-comment-avatar{width:34px;height:34px;border-radius:50%;background:#e8f0fe;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.art-comment-avatar i{color:#3a5bd9;font-size:14px}
+.art-comment-name{font-size:13px;font-weight:700;color:#1a1a2e}
+.art-comment-date{font-size:11px;color:#aaa;margin-left:auto}
+.art-comment-text{font-size:13px;color:#444;line-height:1.7}
+.art-no-comment{text-align:center;color:#bbb;font-size:13px;padding:20px 0}
+.art-loading i{font-size:32px;color:#3a5bd9;margin-bottom:16px;display:block}
+/* FOOTER */
+.ppdb-footer{background:#0d1a2e;color:#fff}
+.ppdb-footer-inner{max-width:1100px;margin:0 auto;padding:48px 24px 36px;display:grid;grid-template-columns:1.6fr 1fr 1.2fr 1.3fr;gap:40px}
+.pf-logo{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.pf-logo div{display:flex;flex-direction:column;gap:3px}
+.pf-logo strong{font-size:14px;font-weight:800;color:#fff}
+.pf-logo span{font-size:10px;color:rgba(255,255,255,0.5)}
+.pf-tagline{font-size:13px;font-weight:700;color:#7eb8f7;margin-bottom:8px}
+.pf-desc{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:16px}
+.pf-socials{display:flex;gap:8px}
+.pf-socials a{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;transition:opacity .2s}
+.pf-socials a:hover{opacity:.8}
+.pfs-fb{background:#1877f2}.pfs-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}.pfs-yt{background:#ff0000}.pfs-tt{background:#010101}
+.pf-heading{font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.pf-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.pf-list li a{font-size:12.5px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:8px;transition:color .2s}
+.pf-list li a:hover{color:#7eb8f7}
+.pf-list li a i{font-size:11px;color:#7eb8f7;width:14px}
+.pf-contact{list-style:none;display:flex;flex-direction:column;gap:12px}
+.pf-contact li{font-size:12px;color:rgba(255,255,255,0.6);display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.pf-contact li i{color:#27ae60;font-size:13px;margin-top:2px;flex-shrink:0}
+.ppdb-footer-bottom{border-top:1px solid rgba(255,255,255,0.08)}
+.ppdb-footer-bottom-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,0.35)}
+@media(max-width:900px){.art-main{grid-template-columns:1fr}.art-sidebar{display:none}.ppdb-footer-inner{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.art-body{padding:20px 18px 24px}.art-hero-img{height:220px}.ppdb-footer-inner{grid-template-columns:1fr}}
+  </style>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="icon" href="favicon.png" type="image/png" />
+</head>
+<body>
+  <!-- CARD NAV ROOT -->
+  <div id="card-nav-root"></div>
+  <!-- TOP BAR -->
+  
+  <!-- BREADCRUMB -->
+  <div class="art-bc-bar">
+    <div class="art-bc">
+      <i class="fas fa-home"></i>
+      <a href="index.html">Beranda</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="berita.html">Berita</a>
+      <i class="fas fa-chevron-right"></i>
+      <span id="artBcTitle">Artikel</span>
+    </div>
+  </div>
+  <!-- LOADING -->
+  <div class="art-loading" id="artLoading">
+    <i class="fas fa-spinner fa-spin"></i>
+    Memuat artikel...
+  </div>
+  <!-- MAIN -->
+  <div class="art-main" id="artMain" style="display:none">
+    <!-- Article -->
+    <div>
+      <div class="art-card">
+        <img src="" alt="" id="artImg" class="art-hero-img" />
+        <div class="art-body">
+          <div class="art-cat"><i class="fas fa-tag"></i><span id="artCat"></span></div>
+          <h1 class="art-title" id="artTitle"></h1>
+          <div class="art-meta">
+            <div class="art-meta-item"><i class="fas fa-user"></i><strong id="artAuthor"></strong></div>
+            <div class="art-meta-item"><i class="far fa-calendar-alt"></i><span id="artDate"></span></div>
+            <div class="art-meta-item"><i class="fas fa-tag"></i><span id="artCat2"></span></div>
+          </div>
+          <div class="art-content" id="artContent"></div>
+
+          <!-- ENGAGE: Views, Like -->
+          <div class="art-engage">
+            <div class="art-reaction-container">
+              <button class="art-engage-btn" id="artLikeBtn" onclick="toggleLike()">
+                <i class="far fa-thumbs-up" id="artLikeIcon"></i> 
+                <span id="artLikeText">Suka</span> 
+                (<span id="artLikeCount">0</span>)
+              </button>
+              <div class="art-reaction-popover">
+                <button class="reaction-emoji" onclick="setReaction('like', event)" title="Suka">👍</button>
+                <button class="reaction-emoji" onclick="setReaction('love', event)" title="Super">❤️</button>
+                <button class="reaction-emoji" onclick="setReaction('care', event)" title="Peduli">🥰</button>
+                <button class="reaction-emoji" onclick="setReaction('haha', event)" title="Haha">😂</button>
+                <button class="reaction-emoji" onclick="setReaction('wow', event)" title="Wow">😲</button>
+                <button class="reaction-emoji" onclick="setReaction('sad', event)" title="Sedih">😢</button>
+                <button class="reaction-emoji" onclick="setReaction('angry', event)" title="Marah">😡</button>
+              </div>
+            </div>
+            <div class="art-engage-stats">
+              <div class="art-engage-views">
+                <i class="far fa-eye"></i> <span id="artViewCount">0</span> dilihat
+              </div>
+              <div class="art-engage-views" style="margin-left: 16px;">
+                <i class="fas fa-share-alt"></i> <span id="artShareCount">0</span> dibagikan
+              </div>
+            </div>
+          </div>
+
+          <!-- SHARE -->
+          <div class="art-share">
+            <span>Bagikan:</span>
+            <a href="#" id="shareWa" class="art-share-wa" target="_blank" title="Bagikan ke WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" id="shareIg" class="art-share-ig" title="Bagikan ke Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" id="shareFb" class="art-share-fb" target="_blank" title="Bagikan ke Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+
+          <!-- KOMENTAR -->
+          <div class="art-comments">
+            <div class="art-comments-title"><i class="fas fa-comments"></i> Komentar (<span id="artCommentCount">0</span>)</div>
+            
+            <div class="art-comment-form">
+              <input type="text" id="commentName" placeholder="Nama kamu..." maxlength="50" style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: 'Poppins', sans-serif;" />
+              <textarea id="commentText" placeholder="Tulis komentar..."></textarea>
+              <button class="art-comment-submit" onclick="submitComment()">Kirim Komentar</button>
+            </div>
+
+            <div class="art-comment-list" id="artCommentList">
+              <div class="art-no-comment">Memuat komentar...</div>
+            </div>
+          </div>
+</div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="art-sidebar">
+      <div class="art-sidebar-card">
+        <div class="art-sidebar-title"><i class="fas fa-newspaper"></i> Berita Lainnya</div>
+        <div id="artRelated"></div>
+      </div>
+
+      <!-- FILTER SECTION -->
+      <div class="art-sidebar-card" style="margin-top: 24px;">
+        <div class="art-sidebar-title"><i class="fas fa-filter"></i> Filter Berita</div>
+        <div class="art-sidebar-filter">
+          <a href="berita.html?category=Pendidikan">Pendidikan</a>
+          <a href="berita.html?category=Prestasi">Prestasi</a>
+          <a href="berita.html?category=Kegiatan">Kegiatan</a>
+          <a href="berita.html?category=Pengumuman">Pengumuman</a>
+          <a href="berita.html?category=Artikel">Artikel</a>
+          <a href="berita.html">Semua Berita</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
+  
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="firebase-db.js"></script>
+  
+  <script src="berita.js?v=1781323373023"></script>
+  <script src="animations.js"></script>
+  <script src="script.js?v=1781320772216"></script>
+  <script>
+  (function(){
+    // Get article index from URL ?id=0
+    var params = new URLSearchParams(window.location.search);
+    var idx = parseInt(params.get('id') || '0', 10);
+
+    function months(){ return ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']; }
+    function fmtDate(d){ try{ var dt=new Date(d); return dt.getDate()+' '+months()[dt.getMonth()]+' '+dt.getFullYear(); }catch(e){return d;} }
+
+    function loadArticle(items, allItems, articleIdx) {
+      if (!allItems) allItems = items;
+      var idx2 = (articleIdx !== undefined) ? articleIdx : idx;
+      if (idx2 < 0 || idx2 >= items.length) idx2 = 0;
+      var item = items[idx2];
+      var img = item.thumbnail || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80';
+      var cat = item.categories && item.categories[0] ? item.categories[0] : 'Blog';
+
+      document.title = item.title + ' - Hibatullah IIBS';
+      document.getElementById('artBcTitle').textContent = item.title.length > 50 ? item.title.substring(0,50)+'...' : item.title;
+      document.getElementById('artImg').src = img;
+      document.getElementById('artImg').onerror = function(){ this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80'; };
+      document.getElementById('artCat').textContent = cat.toUpperCase();
+      document.getElementById('artCat2').textContent = cat;
+      document.getElementById('artTitle').textContent = item.title;
+      document.getElementById('artAuthor').textContent = (item.author && item.author.indexOf('@') === -1) ? item.author : 'Admin';
+      document.getElementById('artDate').textContent = fmtDate(item.pubDate);
+      // Ekstrak semua gambar bawaan artikel (termasuk galeri di bawah) untuk didistribusikan
+      var tempDiv = document.createElement('div');
+      tempDiv.innerHTML = item.content || '<p>'+item.description+'</p>';
+      
+      var extractedEls = [];
+      var allContentImgs = tempDiv.querySelectorAll('img');
+      allContentImgs.forEach(function(imgEl) {
+          var parent = imgEl.parentNode;
+          if (parent.tagName === 'FIGURE' || parent.classList.contains('wp-block-image')) {
+              extractedEls.push(parent.cloneNode(true));
+              parent.remove();
+          } else if (parent.tagName === 'A' && parent.parentNode.tagName === 'FIGURE') {
+              extractedEls.push(parent.parentNode.cloneNode(true));
+              parent.parentNode.remove();
+          } else if (parent.tagName === 'LI') {
+              var clonedImg = imgEl.cloneNode(true);
+              extractedEls.push(clonedImg);
+              parent.remove();
+          } else {
+              extractedEls.push(imgEl.cloneNode(true));
+              imgEl.remove();
+          }
+      });
+      
+      // Bersihkan sisa wrapper galeri kosong
+      var galleries = tempDiv.querySelectorAll('.wp-block-gallery, .gallery, .blocks-gallery-grid');
+      galleries.forEach(function(g) { g.remove(); });
+      
+      // Distribusikan gambar yang sudah diekstrak ke sela-sela paragraf
+      var paragraphs = tempDiv.querySelectorAll('p');
+      var imgIdx = 0;
+      
+      if (paragraphs.length > 0 && extractedEls.length > 0) {
+          // Hitung jarak ideal agar gambar tersebar merata (min. tiap 2 paragraf)
+          var gap = Math.ceil(paragraphs.length / (extractedEls.length + 1));
+          if (gap < 2) gap = 2; 
+          if (gap > 4) gap = 3; // Max tiap 3 paragraf agar tidak terlalu jauh
+          
+          for (var i = 1; i < paragraphs.length; i += gap) {
+              if (imgIdx < extractedEls.length) {
+                  paragraphs[i].parentNode.insertBefore(extractedEls[imgIdx], paragraphs[i].nextSibling);
+                  imgIdx++;
+              }
+          }
+          
+          // Jika masih ada sisa gambar, taruh di paling bawah
+          while(imgIdx < extractedEls.length) {
+              tempDiv.appendChild(extractedEls[imgIdx]);
+              imgIdx++;
+          }
+      }
+      
+      document.getElementById('artContent').innerHTML = tempDiv.innerHTML;
+
+      // Extract excerpt and decode HTML entities
+      var rawExcerpt = (item.description || item.content.replace(/<[^>]+>/g, '')).substring(0, 160).trim() + '...';
+      var tempTextArea = document.createElement('textarea');
+      tempTextArea.innerHTML = rawExcerpt;
+      var excerpt = tempTextArea.value.replace(/\s+/g, ' ');
+      
+      // Inject Dynamic Meta Tags (Best Effort for JS-capable crawlers like Telegram/Twitter)
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (!ogTitle) { ogTitle = document.createElement('meta'); ogTitle.setAttribute('property', 'og:title'); document.head.appendChild(ogTitle); }
+      ogTitle.content = item.title;
+      
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (!ogDesc) { ogDesc = document.createElement('meta'); ogDesc.setAttribute('property', 'og:description'); document.head.appendChild(ogDesc); }
+      ogDesc.content = excerpt;
+      
+      var ogImage = document.querySelector('meta[property="og:image"]');
+      if (!ogImage) { ogImage = document.createElement('meta'); ogImage.setAttribute('property', 'og:image'); document.head.appendChild(ogImage); }
+      ogImage.content = img;
+
+      // Gunakan share.php sebagai URL yang dibagikan ke sosial media
+      var currentUrl = new URL(window.location.href);
+      var shareUrl = currentUrl.origin + currentUrl.pathname.replace('artikel.html', 'share.php') + currentUrl.search;
+      
+      // Bypass cache WhatsApp dengan menambah parameter timestamp
+      shareUrl += (shareUrl.indexOf('?') > -1 ? '&' : '?') + '_c=' + new Date().getTime();
+      
+      // Teks WhatsApp persis seperti CNN Indonesia (Judul + URL)
+      var waRawText = item.title + "\n" + shareUrl;
+      var waText = encodeURIComponent(waRawText);
+      var encodedUrl = encodeURIComponent(shareUrl);
+      
+      var waBtn = document.getElementById('shareWa');
+      var fbBtn = document.getElementById('shareFb');
+      var igBtn = document.getElementById('shareIg');
+
+      waBtn.href = 'https://wa.me/?text=' + waText;
+      fbBtn.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
+
+      [waBtn, fbBtn].forEach(function(btn) {
+        btn.onclick = function() {
+          trackShare(postKey);
+        };
+      });
+
+      if (igBtn) {
+        igBtn.onclick = function(e) {
+          e.preventDefault();
+          navigator.clipboard.writeText(url).then(function() {
+            alert('Tautan disalin! Silakan paste/bagikan tautan ini di Instagram Anda.');
+            trackShare(postKey);
+          });
+        };
+      }
+
+      // View & Like & Comment
+      var postKey = 'art_' + (item.wp_id || item.title.substring(0,20));
+      initEngage(postKey);
+
+      // Related articles
+      var relHtml = '';
+      allItems.forEach(function(rel, i) {
+        if (rel.wp_id && item.wp_id && rel.wp_id === item.wp_id) return;
+        var relImg = rel.thumbnail || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&q=80';
+        var relLink = 'artikel.html?id=' + (rel.wp_id || i);
+        relHtml += '<div class="art-related-item" onclick="window.location.href=\'' + relLink + '\'">' +
+          '<img src="' + relImg + '" alt="' + rel.title + '" class="art-related-img" onerror="this.src=\'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&q=80\'" />' +
+          '<div class="art-related-info">' +
+            '<div class="art-related-title">' + rel.title + '</div>' +
+            '<div class="art-related-date">' + fmtDate(rel.pubDate) + '</div>' +
+          '</div>' +
+        '</div>';
+      });
+      document.getElementById('artRelated').innerHTML = relHtml;
+
+      document.getElementById('artLoading').style.display = 'none';
+      document.getElementById('artMain').style.display = 'grid';
+      window.scrollTo(0,0);
+    }
+
+    // Load artikel
+    function tryLoad() {
+      var postId = params.get('id');
+      if (!postId) { postId = '0'; }
+
+      if (typeof fetchFromWP === 'function') {
+        fetchFromWP(function(items) {
+          var foundIdx = -1;
+          for(var i=0; i<items.length; i++) {
+            if(items[i].wp_id && items[i].wp_id.toString() === postId.toString()) {
+              foundIdx = i; break;
+            }
+          }
+          if (foundIdx === -1) {
+            foundIdx = parseInt(postId) || 0;
+          }
+          loadArticle(items, items, foundIdx);
+        });
+      } else {
+        setTimeout(tryLoad, 100);
+      }
+    }
+    tryLoad();
+
+    // =============================================
+    // ENGAGE: View, Like, Comment (Firebase)
+    // =============================================
+    var currentPostKey = '';
+        var db = null;
+    var unsubComments = null;
+
+    function initFirebaseEngage() {
+      if (typeof firebase !== 'undefined' && firebase.apps.length) {
+        db = firebase.firestore();
+        
+      }
+    }
+
+    
+
+    
+
+    function initEngage(postKey) {
+      currentPostKey = postKey;
+      initFirebaseEngage();
+
+      // Set initial values from localStorage to prevent empty flickers
+      var likes = parseInt(localStorage.getItem(postKey + '_likes') || '0');
+      var currentReaction = localStorage.getItem(postKey + '_reaction');
+      document.getElementById('artLikeCount').textContent = likes;
+      updateLikeBtn(currentReaction);
+
+      if (!db) {
+        // Fallback to localStorage if Firebase not connected
+        var views = parseInt(localStorage.getItem(postKey + '_views') || '0');
+        var shares = parseInt(localStorage.getItem(postKey + '_shares') || '0');
+        
+        // increment view
+        views++;
+        localStorage.setItem(postKey + '_views', views);
+        
+        document.getElementById('artViewCount').textContent = views;
+        document.getElementById('artShareCount').textContent = shares;
+        return;
+      }
+
+      var docRef = db.collection('berita_stats').doc(postKey);
+      
+      // Realtime listener for views, likes, shares
+      docRef.onSnapshot(function(doc) {
+        if (doc.exists) {
+          var data = doc.data();
+          document.getElementById('artViewCount').textContent = data.views || 0;
+          document.getElementById('artLikeCount').textContent = data.likes || 0;
+          document.getElementById('artShareCount').textContent = data.shares || 0;
+          
+          // Sync likes to localStorage to keep button state consistent
+          localStorage.setItem(postKey + '_likes', data.likes || 0);
+        } else {
+          // Init doc if not exists
+          docRef.set({ views: 1, likes: 0, shares: 0 });
+        }
+      });
+
+      // Increment View
+      db.runTransaction(function(transaction) {
+        return transaction.get(docRef).then(function(doc) {
+          if (!doc.exists) {
+            transaction.set(docRef, { views: 1, likes: 0, shares: 0 });
+          } else {
+            var newViews = (doc.data().views || 0) + 1;
+            transaction.update(docRef, { views: newViews });
+          }
+        });
+      }).catch(function(err){ console.log("View transaction failed: ", err); });
+
+      // Load comments
+      if (unsubComments) unsubComments();
+      unsubComments = docRef.collection('comments').orderBy('date', 'desc').onSnapshot(function(snap) {
+        var comments = [];
+        snap.forEach(function(doc) {
+          comments.push(doc.data());
+        });
+        renderComments(comments);
+      });
+    }
+
+    window.trackShare = function(postKey) {
+      if (!postKey) postKey = currentPostKey;
+      if (!db) {
+         var shares = parseInt(localStorage.getItem(postKey + '_shares') || '0');
+         shares++;
+         localStorage.setItem(postKey + '_shares', shares);
+         var shareEl = document.getElementById('artShareCount');
+         if (shareEl) shareEl.textContent = shares;
+         return;
+      }
+      var docRef = db.collection('berita_stats').doc(postKey);
+      docRef.update({
+        shares: firebase.firestore.FieldValue.increment(1)
+      }).catch(function(){});
+    };
+
+    
+    const reactionDict = {
+      'like': { icon: '👍', color: '#1a3a6b', text: 'Suka' },
+      'love': { icon: '❤️', color: '#e0245e', text: 'Super' },
+      'care': { icon: '🥰', color: '#f0c040', text: 'Peduli' },
+      'haha': { icon: '😂', color: '#f0c040', text: 'Haha' },
+      'wow':  { icon: '😲', color: '#f0c040', text: 'Wow' },
+      'sad':  { icon: '😢', color: '#f0c040', text: 'Sedih' },
+      'angry':{ icon: '😡', color: '#e0245e', text: 'Marah' }
+    };
+
+    window.toggleLike = function() {
+      // If clicking the main button, just toggle 'like' or remove
+      var postKey = currentPostKey;
+      var currentReaction = localStorage.getItem(postKey + '_reaction');
+      
+      if (currentReaction) {
+        // Remove reaction
+        setReaction(null);
+      } else {
+        // Default to like
+        setReaction('like');
+      }
+    };
+
+    window.setReaction = function(type, e) {
+      if (e) e.stopPropagation();
+      var postKey = currentPostKey;
+      var oldReaction = localStorage.getItem(postKey + '_reaction');
+      
+      if (oldReaction === type) return; // No change
+
+      localStorage.setItem(postKey + '_reaction', type || '');
+      updateLikeBtn(type);
+
+      if (!db) {
+        // Fallback for likes
+        var likes = parseInt(localStorage.getItem(postKey + '_likes') || '0');
+        if (type && !oldReaction) likes++;
+        if (!type && oldReaction) likes--;
+        localStorage.setItem(postKey + '_likes', likes);
+        document.getElementById('artLikeCount').textContent = likes;
+        return;
+      }
+      var docRef = db.collection('berita_stats').doc(postKey);
+      
+      var updates = {};
+      if (oldReaction) {
+        updates['reactions.' + oldReaction] = firebase.firestore.FieldValue.increment(-1);
+      }
+      if (type) {
+        updates['reactions.' + type] = firebase.firestore.FieldValue.increment(1);
+      }
+      
+      // Update overall likes count as sum (or we just rely on reactions sum)
+      if (type && !oldReaction) updates.likes = firebase.firestore.FieldValue.increment(1);
+      if (!type && oldReaction) updates.likes = firebase.firestore.FieldValue.increment(-1);
+
+      docRef.update(updates).catch(function(err){
+         console.log(err);
+         // if update fails, we might want to revert UI, but let's keep it simple
+      });
+    };
+
+    function updateLikeBtn(type) {
+      var btn = document.getElementById('artLikeBtn');
+      var icon = document.getElementById('artLikeIcon');
+      var text = document.getElementById('artLikeText');
+      
+      if (type && reactionDict[type]) {
+        btn.classList.add('liked');
+        btn.style.color = reactionDict[type].color;
+        icon.outerHTML = '<span id="artLikeIcon" style="font-size: 18px; margin-right: 6px;">' + reactionDict[type].icon + '</span>';
+        text.textContent = reactionDict[type].text;
+      } else {
+        btn.classList.remove('liked');
+        btn.style.color = '';
+        var currentIcon = document.getElementById('artLikeIcon');
+        currentIcon.outerHTML = '<i class="far fa-thumbs-up" id="artLikeIcon"></i>';
+        text.textContent = 'Suka';
+      }
+    }
+
+
+
+    window.submitComment = function() {
+      var postKey = currentPostKey;
+      var name = document.getElementById('commentName').value.trim();
+      var text = document.getElementById('commentText').value.trim();
+      
+      if (!name) { alert('Nama tidak boleh kosong.'); return; }
+      if (!text) { alert('Komentar tidak boleh kosong.'); return; }
+
+      if (!db) return alert('Koneksi database bermasalah.');
+
+      var docRef = db.collection('berita_stats').doc(postKey).collection('comments').doc();
+      docRef.set({
+        name: name,
+        photoURL: '',
+        text: text,
+        date: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(function() {
+        document.getElementById('commentName').value = '';
+        document.getElementById('commentText').value = '';
+      }).catch(function(err) {
+        alert('Gagal mengirim komentar: ' + err.message);
+      });
+    };
+
+    function renderComments(comments) {
+      var list = document.getElementById('artCommentList');
+      var countEl = document.getElementById('artCommentCount');
+      countEl.textContent = comments.length;
+
+      if (!comments.length) {
+        list.innerHTML = '<div class="art-no-comment">Belum ada komentar. Jadilah yang pertama!</div>';
+        return;
+      }
+
+      var months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+      list.innerHTML = comments.map(function(c) {
+        var dt = c.date && c.date.toDate ? c.date.toDate() : new Date();
+        var tgl = dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear() + ' ' + ('0'+dt.getHours()).slice(-2) + ':' + ('0'+dt.getMinutes()).slice(-2);
+        var avatar = c.photoURL ? '<img src="'+escHtml(c.photoURL)+'" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />' : '<i class="fas fa-user"></i>';
+        
+        return '<div class="art-comment-item">' +
+          '<div class="art-comment-header">' +
+            '<div class="art-comment-avatar" style="padding:0; overflow:hidden;">' + avatar + '</div>' +
+            '<span class="art-comment-name">' + escHtml(c.name) + '</span>' +
+            '<span class="art-comment-date">' + tgl + '</span>' +
+          '</div>' +
+          '<div class="art-comment-text">' + escHtml(c.text).replace(/\n/g, '<br>') + '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    function escHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  })();
+  </script>
+  <script src="navbar.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

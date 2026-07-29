@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>360° WebGL Virtual Tour - Hibatullah IIBS</title>
+  
+  <!-- Pannellum 3D Viewer CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+  
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="virtual-tour.css?v=7" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <meta name="description" content="Jelajahi fasilitas modern dan lingkungan asri Hibatullah IIBS secara virtual melalui 360 Virtual Tour kami." />
+</head>
+<body class="tour-app-body">
+
+  <!-- VIRTUAL TOUR MAIN APP CONTAINER -->
+  <div class="tour-app-container" id="tourApp">
+    
+    <!-- Real WebGL 360 Viewer -->
+    <div class="tour-immersive-viewer" id="tourViewer">
+      <!-- Pannellum will inject WebGL canvas here -->
+    </div>
+
+    <!-- FLOATING TOP BAR -->
+    <header class="tour-floating-header">
+      <div class="header-left">
+        <img src="Logo only.png" alt="Logo" class="tour-app-logo" />
+        <div class="tour-app-title">
+          <h1>Hibatullah IIBS</h1>
+          <span>360° WebGL Tour</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="index.html" class="btn-exit-tour"><i class="fas fa-home"></i> Kembali ke Web</a>
+      </div>
+    </header>
+
+    <!-- FLOATING SCENE DESCRIPTION CARD (LEFT) -->
+    <section class="tour-floating-desc-card" id="descCard">
+      <h2 id="scene-title">Pesantren Hibatullah IIBS</h2>
+      <p id="scene-desc">Pemandangan panorama 360° kompleks sekolah dan asrama santri Hibatullah International Islamic Boarding School.</p>
+    </section>
+
+    <!-- FLOATING CONTROLS (RIGHT) -->
+    <div class="tour-floating-controls">
+      <button class="tour-control-btn" id="btnZoomIn" title="Zoom In"><i class="fas fa-search-plus"></i></button>
+      <button class="tour-control-btn" id="btnZoomOut" title="Zoom Out"><i class="fas fa-search-minus"></i></button>
+      <button class="tour-control-btn" id="btnAutoRotate" title="Auto Putar"><i class="fas fa-sync-alt"></i></button>
+      <button class="tour-control-btn" id="btnFullScreen" title="Layar Penuh"><i class="fas fa-expand"></i></button>
+    </div>
+
+    <!-- FLOATING SCENE SELECTOR (BOTTOM) -->
+    <nav class="tour-floating-selector">
+      <div class="selector-inner">
+        <button class="scene-item active" data-scene="scene1" title="Pemandangan 360°">
+          <div class="scene-thumb" style="background-image: url('virtual/WhatsApp Image 2026-07-28 at 11.23.38 AM.jpeg');"></div>
+          <span>360° View</span>
+        </button>
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- Pannellum 3D Viewer JS -->
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+  <!-- Custom Logic -->
+  <script src="virtual-tour.js?v=7"></script>
+</body>
+</html>
