@@ -566,12 +566,12 @@ img {
 }
 
 .hero-title {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 900;
   color: #fff;
   line-height: 1.25;
   margin-bottom: 18px;
-  max-width: 520px;
+  max-width: 480px;
 }
 
 .hero-desc {
@@ -3142,8 +3142,8 @@ html, body { overflow-x: hidden !important; }
     bottom: auto !important;
   }
   .hero-title {
-    font-size: 26px !important;
-    max-width: 450px !important;
+    font-size: 22px !important;
+    max-width: 400px !important;
   }
   .hero-desc {
     font-size: 13.5px !important;
