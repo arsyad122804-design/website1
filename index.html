@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hibatullah IIBS - International Islamic Boarding School</title>
-  <link rel="stylesheet" href="style.css?v=1785300055" />
+  <link rel="stylesheet" href="style.css?v=1785300056" />
   <link rel="stylesheet" href="footer.css?v=2" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -196,6 +196,8 @@
       justify-content: flex-start !important;
       padding: 24px 20px !important;
       text-decoration: none !important;
+      transform-style: preserve-3d !important;
+      perspective: 1000px !important;
     }
     .akses-card::before {
       content: '' !important;
@@ -206,8 +208,7 @@
       transition: opacity 0.4s ease !important;
     }
     .akses-card:hover {
-      transform: translateY(-8px) !important;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3) !important;
     }
     .akses-card:hover::before {
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.92) 100%) !important;
@@ -226,9 +227,8 @@
       text-align: left !important;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
       transition: transform 0.3s ease !important;
-    }
-    .akses-card:hover .akses-label {
-      transform: translateY(-2px) !important;
+      transform-style: preserve-3d !important;
+      display: inline-block !important;
     }
     @media (max-width: 1024px) {
       .akses-grid { grid-template-columns: repeat(3, 1fr) !important; }
@@ -779,6 +779,50 @@
   <script src="berita.js?v=1785300040"></script><script src="animations.js?v=1785300047"></script>
   <script src="script.js?v=1781328929327"></script>
   <script src="navbar.js?v=1785300048"></script>
+  <script>
+    // 3D Tilt Hover Animation for Akses Cepat Cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.akses-card');
+      
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left; // x coordinate relative to card
+          const y = e.clientY - rect.top;  // y coordinate relative to card
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          // Max rotation angles (e.g. 15 degrees)
+          const rotateX = ((centerY - y) / centerY) * 15;
+          const rotateY = ((x - centerX) / centerX) * 15;
+          
+          card.style.transition = 'transform 0.08s ease-out, box-shadow 0.08s ease-out';
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+          
+          // Parallax translation on the text label inside the card
+          const label = card.querySelector('.akses-label');
+          if (label) {
+            const transX = ((x - centerX) / centerX) * 8;
+            const transY = ((y - centerY) / centerY) * 8;
+            label.style.transition = 'transform 0.08s ease-out';
+            label.style.transform = `translate3d(${transX}px, ${transY}px, 25px)`;
+          }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease';
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          
+          const label = card.querySelector('.akses-label');
+          if (label) {
+            label.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+            label.style.transform = 'translate3d(0px, 0px, 0px)';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
 
