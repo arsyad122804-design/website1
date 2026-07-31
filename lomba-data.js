@@ -28,5 +28,11 @@ const lombaData = [
     "lomba": "Penca silat",
     "tingkat": "Kabupaten",
     "juara": 2
+  },
+  {
+    "nama": "kayla  zuhrotun nisa",
+    "lomba": "Bahasa inggris ",
+    "tingkat": "Nasional",
+    "juara": 2
   }
 ];
