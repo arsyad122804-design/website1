@@ -21,8 +21,144 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://hibatullah.sch.id/assets/images/poster-pmb-elfan.jpeg" />
+  <!-- Preloader Premium Styles -->
+  <style>
+    /* Preloader Overlay */
+    .preloader-overlay {
+      position: fixed;
+      inset: 0;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100000;
+      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s;
+      opacity: 1;
+      visibility: visible;
+    }
+    .preloader-overlay.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .preloader-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      max-width: 90%;
+    }
+    .preloader-logo-wrap {
+      width: 220px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      animation: logoPulse 2s ease-in-out infinite;
+    }
+    .preloader-logo {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 24px;
+      box-shadow: 0 15px 45px rgba(29, 78, 216, 0.25);
+    }
+    @keyframes logoPulse {
+      0% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.04); filter: brightness(1.1); }
+      100% { transform: scale(1); filter: brightness(1); }
+    }
+    .preloader-progress-container {
+      width: 260px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .preloader-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #1d4ed8 0%, #3b82f6 50%, #f59e0b 100%);
+      border-radius: 999px;
+      transition: width 0.1s linear;
+    }
+    .preloader-text {
+      color: #94a3b8;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .preloader-text span {
+      color: #fff;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+  </style>
 </head>
 <body>
+  <!-- PRELOADER SCREEN (7 SECONDS) -->
+  <div id="preloader" class="preloader-overlay">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/images/logo-loading.jpg" alt="Hibatullah IIBS Logo" class="preloader-logo">
+      </div>
+      <div class="preloader-progress-container">
+        <div class="preloader-progress-bar" id="preloaderProgressBar"></div>
+      </div>
+      <div class="preloader-text">Loading <span id="preloaderPercent">0%</span></div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      // Disable scrolling immediately on file load
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+
+      window.addEventListener('DOMContentLoaded', () => {
+        const bar = document.getElementById('preloaderProgressBar');
+        const percentText = document.getElementById('preloaderPercent');
+        const preloader = document.getElementById('preloader');
+        
+        if (!bar || !percentText || !preloader) return;
+
+        const duration = 7000; // 7 seconds
+        const startTime = Date.now();
+        
+        const interval = setInterval(() => {
+          const elapsed = Date.now() - startTime;
+          let progress = (elapsed / duration) * 100;
+          
+          if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            
+            bar.style.width = '100%';
+            percentText.textContent = '100%';
+            
+            setTimeout(() => {
+              preloader.classList.add('fade-out');
+              
+              // Enable scrolling
+              document.documentElement.style.overflow = '';
+              document.body.style.overflow = '';
+              
+              setTimeout(() => {
+                preloader.remove();
+              }, 800);
+            }, 500);
+          } else {
+            bar.style.width = progress.toFixed(1) + '%';
+            percentText.textContent = Math.floor(progress) + '%';
+          }
+        }, 30);
+      });
+    })();
+  </script>
+
   <!-- CARD NAV ROOT -->
   <div id="card-nav-root"></div>
 
