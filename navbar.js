@@ -61,10 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="galeri.html" class="card-nav-item">
           Galeri
         </a>
-
-        <a href="virtual-tour.html" class="card-nav-item">
-          Virtual Tour
-        </a>
       </div>
 
       <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="card-nav-cta">

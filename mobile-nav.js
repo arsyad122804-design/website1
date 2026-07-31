@@ -38,7 +38,6 @@
         '<p class="mobile-nav-group-title">Lainnya</p>' +
         '<a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a>' +
         '<a href="galeri.html"><i class="fas fa-images"></i> Galeri</a>' +
-        '<a href="virtual-tour.html"><i class="fas fa-vr-cardboard"></i> Virtual Tour</a>' +
         '<a href="berita.html"><i class="fas fa-newspaper"></i> Berita</a>' +
       '</nav>' +
       '<div class="mobile-nav-footer">' +
