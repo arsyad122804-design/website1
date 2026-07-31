@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hibatullah IIBS - International Islamic Boarding School</title>
-  <link rel="stylesheet" href="style.css?v=1785300050" />
+  <link rel="stylesheet" href="style.css?v=1785300051" />
   <link rel="stylesheet" href="footer.css?v=2" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -244,6 +244,9 @@
       .akses-card { padding: 16px 12px !important; border-radius: 16px !important; }
       .akses-label { font-size: 12px !important; }
     }
+    .penasehat-card-special::before {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
@@ -448,11 +451,11 @@
           </div>
           <span class="akses-label">SEJARAH</span>
         </a>
-        <a href="penasehat.html" class="akses-card" style="background-image: url('assets/images/school building.jpg.jpeg'); background-size: 115% auto; background-position: center bottom;">
+        <a href="penasehat.html" class="akses-card penasehat-card-special" style="background-image: url('assets/images/penasehat-poster.jpg'); background-size: cover; background-position: center top;">
           <div class="akses-icon-wrap">
             <i class="fas fa-user-graduate"></i>
           </div>
-          <span class="akses-label">PENASEHAT</span>
+          <span class="akses-label" style="display: none !important;">PENASEHAT</span>
         </a>
         <a href="entrepreneurship.html" class="akses-card" style="background-image: url('assets/images/04.jpg (1).jpeg');">
           <div class="akses-icon-wrap">
