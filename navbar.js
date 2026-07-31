@@ -140,6 +140,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 100);
 
+  // Dropdown Click/Tap Toggle Logic (For mobile/touch screen support and click preference)
+  const wrappers = document.querySelectorAll('.card-nav-item-wrapper');
+  wrappers.forEach(wrapper => {
+    const trigger = wrapper.querySelector('.card-nav-item');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Close all other dropdowns
+        wrappers.forEach(w => {
+          if (w !== wrapper) {
+            w.classList.remove('open');
+          }
+        });
+        
+        // Toggle the clicked dropdown
+        wrapper.classList.toggle('open');
+      });
+    }
+  });
+
+  // Close dropdowns if clicking anywhere outside the menu
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.card-nav-item-wrapper')) {
+      wrappers.forEach(w => w.classList.remove('open'));
+    }
+  });
+
   // Mobile Menu Logic
   const mobileToggle = document.getElementById('mobileNavToggle');
   if(mobileToggle) {
