@@ -31,7 +31,7 @@
 (function() {
   // Set target to roughly 1 month from now for demo
   const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 30);
+  targetDate.setDate(targetDate.getDate() + 64);
   const targetTime = targetDate.getTime();
   
   const daysEl = document.getElementById('cd-days');
