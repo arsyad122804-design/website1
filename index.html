@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hibatullah IIBS - International Islamic Boarding School</title>
-  <link rel="stylesheet" href="style.css?v=1785300056" />
+  <link rel="stylesheet" href="style.css?v=1785300057" />
   <link rel="stylesheet" href="footer.css?v=2" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -186,8 +186,8 @@
       background-position: center !important;
       background-repeat: no-repeat !important;
       border-radius: 24px !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease, border-color 0.3s ease !important;
       cursor: pointer !important;
       aspect-ratio: 3 / 4 !important;
       overflow: hidden !important;
@@ -198,6 +198,7 @@
       text-decoration: none !important;
       transform-style: preserve-3d !important;
       perspective: 1000px !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
     }
     .akses-card::before {
       content: '' !important;
@@ -208,7 +209,9 @@
       transition: opacity 0.4s ease !important;
     }
     .akses-card:hover {
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3) !important;
+      transform: translateY(-12px) scale(1.05) !important;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35), 0 0 30px rgba(255, 255, 255, 0.1) !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
     }
     .akses-card:hover::before {
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.92) 100%) !important;
@@ -793,12 +796,14 @@
           const centerX = rect.width / 2;
           const centerY = rect.height / 2;
           
-          // Max rotation angles (e.g. 15 degrees)
-          const rotateX = ((centerY - y) / centerY) * 15;
-          const rotateY = ((x - centerX) / centerX) * 15;
+          // Max rotation angles (e.g. 18 degrees for a stronger 3D feel)
+          const rotateX = ((centerY - y) / centerY) * 18;
+          const rotateY = ((x - centerX) / centerX) * 18;
           
-          card.style.transition = 'transform 0.08s ease-out, box-shadow 0.08s ease-out';
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+          card.style.transition = 'transform 0.08s ease-out, box-shadow 0.08s ease-out, border-color 0.3s ease';
+          card.style.transform = `perspective(1000px) translateY(-12px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+          card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.15)';
+          card.style.borderColor = 'rgba(255, 255, 255, 0.3)';
           
           // Parallax translation on the text label inside the card
           const label = card.querySelector('.akses-label');
@@ -811,12 +816,14 @@
         });
         
         card.addEventListener('mouseleave', () => {
-          card.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease';
+          card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease, border-color 0.5s ease';
           card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          card.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)';
+          card.style.borderColor = 'rgba(255, 255, 255, 0.08)';
           
           const label = card.querySelector('.akses-label');
           if (label) {
-            label.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+            label.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             label.style.transform = 'translate3d(0px, 0px, 0px)';
           }
         });
