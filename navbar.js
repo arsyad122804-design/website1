@@ -61,29 +61,29 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="galeri.html" class="card-nav-item">
           Galeri
         </a>
+
+        <div class="lang-switcher">
+          <button class="lang-trigger" id="langTriggerBtn" aria-haspopup="true" aria-expanded="false" type="button">
+            <img src="https://flagcdn.com/w40/id.png" id="currentLangFlag" alt="Bahasa">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="lang-dropdown" id="langDropdownMenu">
+            <button onclick="changeSiteLanguage('id')" class="lang-option" type="button">
+              <img src="https://flagcdn.com/w40/id.png" alt="ID"> Indonesia
+            </button>
+            <button onclick="changeSiteLanguage('en')" class="lang-option" type="button">
+              <img src="https://flagcdn.com/w40/gb.png" alt="EN"> English
+            </button>
+            <button onclick="changeSiteLanguage('ar')" class="lang-option" type="button">
+              <img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية
+            </button>
+          </div>
+        </div>
       </div>
 
       <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="card-nav-cta">
         DAFTAR SEKARANG
       </a>
-
-      <div class="lang-switcher">
-        <button class="lang-trigger" id="langTriggerBtn" aria-haspopup="true" aria-expanded="false" type="button">
-          <img src="https://flagcdn.com/w40/id.png" id="currentLangFlag" alt="Bahasa">
-          <i class="fas fa-chevron-down"></i>
-        </button>
-        <div class="lang-dropdown" id="langDropdownMenu">
-          <button onclick="changeSiteLanguage('id')" class="lang-option" type="button">
-            <img src="https://flagcdn.com/w40/id.png" alt="ID"> Indonesia
-          </button>
-          <button onclick="changeSiteLanguage('en')" class="lang-option" type="button">
-            <img src="https://flagcdn.com/w40/gb.png" alt="EN"> English
-          </button>
-          <button onclick="changeSiteLanguage('ar')" class="lang-option" type="button">
-            <img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية
-          </button>
-        </div>
-      </div>
 
       <button class="card-nav-mobile-btn" id="mobileNavToggle">
         <i class="fas fa-bars"></i>
