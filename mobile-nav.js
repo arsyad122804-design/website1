@@ -40,6 +40,7 @@
         '<a href="regulasi-harian.html"><i class="fas fa-clock"></i> Regulasi Harian</a>' +
         '<a href="rapot-santri.html"><i class="fas fa-file-invoice"></i> Rapot Santri</a>' +
         '<a href="prestasi-santri.html"><i class="fas fa-trophy"></i> Data Prestasi</a>' +
+        '<a href="standar-kompetensi-lulusan.html"><i class="fas fa-graduation-cap"></i> Standar Kompetensi Lulusan</a>' +
         '<p class="mobile-nav-group-title">Lainnya</p>' +
         '<a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a>' +
         '<a href="galeri.html"><i class="fas fa-images"></i> Galeri</a>' +

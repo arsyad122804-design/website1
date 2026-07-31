@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="regulasi-harian.html" class="dropdown-link">Regulasi Harian</a>
             <a href="prestasi-santri.html" class="dropdown-link">Prestasi Santri</a>
             <a href="rapot-santri.html" class="dropdown-link">Rapot Santri</a>
+            <a href="standar-kompetensi-lulusan.html" class="dropdown-link">Standar Kompetensi Lulusan</a>
           </div>
         </div>
 

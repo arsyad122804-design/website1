@@ -155,7 +155,7 @@
     s.async = false;
     document.body.appendChild(s);
   }
-  load('mobile-nav.js?v=3');
+  load('mobile-nav.js?v=4');
   load('site-footer.js?v=1781320772214');
 })();
 // ===========================
