@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Standar Kompetensi Lulusan - Hibatullah IIBS</title>
-  <link rel="stylesheet" href="style.css?v=1781413621745" />
+  <link rel="stylesheet" href="style.css?v=1785300047" />
   <link rel="stylesheet" href="footer.css?v=2" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -108,7 +108,77 @@
   .skl-hero-desc{font-size:13px !important;text-align:center !important}
   .skl-hero-pills{justify-content:center !important}
   .skl-hero-badge{margin:0 auto 16px !important}
-}</style>
+}
+
+/* SMPH STANDAR KOMPETENSI SECTION PREMIUM UI/UX */
+.skl-smph-section {
+  padding: 90px 0;
+  background: #f8fafc;
+}
+.smph-komp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.smph-komp-item {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  border-left: 5px solid #1e40af;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-left-width: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.smph-komp-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(30, 64, 175, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+.smph-komp-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  border-color: rgba(30, 64, 175, 0.25);
+  border-left-color: #f59e0b;
+}
+.smph-komp-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(30, 64, 175, 0.2);
+  transition: all 0.3s ease;
+}
+.smph-komp-item:hover .smph-komp-icon {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+  transform: scale(1.05);
+}
+.smph-komp-item p {
+  margin: 0;
+  font-size: 14.5px;
+  color: #1e293b;
+  font-weight: 600;
+  line-height: 1.6;
+}
+</style>
   <link rel="stylesheet" href="navbar.css?v=1785300044">
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
@@ -210,7 +280,7 @@
   <!-- FOOTER -->
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
-  <script src="animations.js?v=1785300046"></script><script src="script.js?v=1781320772250"></script>
+  <script src="animations.js?v=1785300047"></script><script src="script.js?v=1781320772250"></script>
   <script src="navbar.js?v=1785300044"></script>
 </body>
 </html>

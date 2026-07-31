@@ -231,6 +231,8 @@
       { sel: '.smp-badge', anim: 'fade-up', dur: '0.4s' },
       // Lokasi info items
       { sel: '.lokasi-info-item, .lokasi-info-card', anim: 'fade-right', dur: '0.5s' },
+      // SMPH SKL items
+      { sel: '.smph-komp-item', anim: 'fade-up', dur: '0.6s' },
     ];
 
     rules.forEach(rule => {
@@ -249,7 +251,7 @@
       '.ep-metode-grid', '.ep-kurikulum-grid', '.sk-cards-grid',
       '.filosofi-grid', '.tujuan-grid', '.dewan-grid',
       '.kegiatan-grid', '.stats-inner', '.ppdb-feat-strip-inner',
-      '.ppdb-smp-badges', '.kuota-info-cards'
+      '.ppdb-smp-badges', '.kuota-info-cards', '.smph-komp-grid'
     ];
 
     staggerParents.forEach(sel => {
