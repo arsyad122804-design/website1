@@ -16,6 +16,11 @@
         '<button type="button" class="mobile-nav-close" id="mobileClose" aria-label="Tutup menu"><i class="fas fa-times"></i></button>' +
       '</div>' +
       '<nav class="mobile-nav-links">' +
+        '<div class="mobile-lang-switcher-wrap">' +
+          '<button onclick="changeSiteLanguage(\'id\')" class="mobile-lang-btn id-btn active" type="button"><img src="https://flagcdn.com/w40/id.png" alt="ID"> Indo</button>' +
+          '<button onclick="changeSiteLanguage(\'en\')" class="mobile-lang-btn en-btn" type="button"><img src="https://flagcdn.com/w40/gb.png" alt="EN"> English</button>' +
+          '<button onclick="changeSiteLanguage(\'ar\')" class="mobile-lang-btn ar-btn" type="button"><img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية</button>' +
+        '</div>' +
         '<a href="index.html"><i class="fas fa-home"></i> Beranda</a>' +
         '<p class="mobile-nav-group-title">Hibatullah IIBS</p>' +
         '<a href="visi-misi-sdih.html"><i class="fas fa-eye"></i> Visi Misi</a>' +

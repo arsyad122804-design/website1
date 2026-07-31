@@ -67,6 +67,24 @@ document.addEventListener('DOMContentLoaded', () => {
         DAFTAR SEKARANG
       </a>
 
+      <div class="lang-switcher">
+        <button class="lang-trigger" id="langTriggerBtn" aria-haspopup="true" aria-expanded="false" type="button">
+          <img src="https://flagcdn.com/w40/id.png" id="currentLangFlag" alt="Bahasa">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdownMenu">
+          <button onclick="changeSiteLanguage('id')" class="lang-option" type="button">
+            <img src="https://flagcdn.com/w40/id.png" alt="ID"> Indonesia
+          </button>
+          <button onclick="changeSiteLanguage('en')" class="lang-option" type="button">
+            <img src="https://flagcdn.com/w40/gb.png" alt="EN"> English
+          </button>
+          <button onclick="changeSiteLanguage('ar')" class="lang-option" type="button">
+            <img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية
+          </button>
+        </div>
+      </div>
+
       <button class="card-nav-mobile-btn" id="mobileNavToggle">
         <i class="fas fa-bars"></i>
       </button>
@@ -186,4 +204,104 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ----------------------------------------
+  // Language Switcher Logic (Google Translate)
+  // ----------------------------------------
+  const langTrigger = document.getElementById('langTriggerBtn');
+  const langSwitcher = document.querySelector('.lang-switcher');
+  
+  if (langTrigger && langSwitcher) {
+    langTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langSwitcher.classList.toggle('open');
+    });
+    
+    // Close on click outside
+    document.addEventListener('click', () => {
+      langSwitcher.classList.remove('open');
+    });
+  }
+
+  // Load Google Translate Element
+  function loadGoogleTranslate() {
+    if (document.getElementById('google_translate_script')) {
+      initActiveFlags();
+      return;
+    }
+    
+    const div = document.createElement('div');
+    div.id = 'google_translate_element';
+    div.style.display = 'none';
+    document.body.appendChild(div);
+    
+    window.googleTranslateElementInit = function() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'id',
+        includedLanguages: 'id,en,ar',
+        autoDisplay: false
+      }, 'google_translate_element');
+      
+      // Wait for translate combobox to render, then sync states
+      const checkInterval = setInterval(() => {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          clearInterval(checkInterval);
+          initActiveFlags();
+        }
+      }, 200);
+    };
+    
+    const s = document.createElement('script');
+    s.id = 'google_translate_script';
+    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(s);
+  }
+
+  // Define translation function globally
+  window.changeSiteLanguage = function(langCode) {
+    // Set cookie for page-to-page translation continuity
+    const cookieVal = langCode === 'id' ? '' : `/id/${langCode}`;
+    document.cookie = `googtrans=${cookieVal}; path=/;`;
+    document.cookie = `googtrans=${cookieVal}; path=/; domain=${window.location.hostname};`;
+    
+    // Trigger Google Translate dropdown change
+    const select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change'));
+    }
+    
+    // Update trigger UI and active class
+    updateFlagUI(langCode);
+  };
+
+  function updateFlagUI(langCode) {
+    const flagImg = document.getElementById('currentLangFlag');
+    if (flagImg) {
+      let src = 'https://flagcdn.com/w40/id.png';
+      if (langCode === 'en') src = 'https://flagcdn.com/w40/gb.png';
+      if (langCode === 'ar') src = 'https://flagcdn.com/w40/sa.png';
+      flagImg.src = src;
+    }
+    
+    // Update mobile button active class
+    const mobileBtns = document.querySelectorAll('.mobile-lang-btn');
+    mobileBtns.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    const activeBtn = document.querySelector(`.mobile-lang-btn.${langCode}-btn`);
+    if (activeBtn) {
+      activeBtn.classList.add('active');
+    }
+  }
+
+  function initActiveFlags() {
+    // Read lang code from cookies
+    const match = document.cookie.match(/googtrans=\/id\/([a-z]{2})/);
+    const activeLang = match ? match[1] : 'id';
+    updateFlagUI(activeLang);
+  }
+
+  loadGoogleTranslate();
 });
