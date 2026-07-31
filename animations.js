@@ -11,13 +11,10 @@
   // =============================================
   const style = document.createElement('style');
   style.textContent = `
-    /* Base hidden state with hardware acceleration & smooth transitions */
+    /* Base hidden state with hardware acceleration */
     [data-anim] {
       opacity: 0;
       will-change: opacity, transform;
-      transition:
-        opacity var(--anim-dur, 0.85s) var(--anim-ease, cubic-bezier(0.25, 1, 0.3, 1)) var(--anim-delay, 0s),
-        transform var(--anim-dur, 0.85s) var(--anim-ease, cubic-bezier(0.25, 1, 0.3, 1)) var(--anim-delay, 0s);
     }
 
     /* Fade / Slide directions with more cinematic distance */
@@ -34,6 +31,9 @@
     [data-anim].anim-done {
       opacity: 1 !important;
       transform: none !important;
+      transition:
+        opacity var(--anim-dur, 0.85s) var(--anim-ease, cubic-bezier(0.25, 1, 0.3, 1)) var(--anim-delay, 0s),
+        transform var(--anim-dur, 0.85s) var(--anim-ease, cubic-bezier(0.25, 1, 0.3, 1)) var(--anim-delay, 0s);
     }
 
     /* Counter number pulse */
