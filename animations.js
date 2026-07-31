@@ -11,29 +11,29 @@
   // =============================================
   const style = document.createElement('style');
   style.textContent = `
-    /* Base hidden state */
+    /* Base hidden state with hardware acceleration & smooth transitions */
     [data-anim] {
       opacity: 0;
       will-change: opacity, transform;
+      transition:
+        opacity var(--anim-dur, 0.85s) var(--anim-ease, cubic-bezier(0.25, 1, 0.3, 1)) var(--anim-delay, 0s),
+        transform var(--anim-dur, 0.85s) var(--anim-ease, cubic-bezier(0.25, 1, 0.3, 1)) var(--anim-delay, 0s);
     }
 
-    /* Fade Up */
-    [data-anim="fade-up"]        { transform: translateY(40px); }
-    [data-anim="fade-down"]      { transform: translateY(-40px); }
-    [data-anim="fade-left"]      { transform: translateX(-50px); }
-    [data-anim="fade-right"]     { transform: translateX(50px); }
-    [data-anim="zoom-in"]        { transform: scale(0.85); }
-    [data-anim="zoom-out"]       { transform: scale(1.15); }
-    [data-anim="flip-up"]        { transform: perspective(600px) rotateX(20deg) translateY(30px); }
-    [data-anim="slide-up"]       { transform: translateY(60px); }
+    /* Fade / Slide directions with more cinematic distance */
+    [data-anim="fade-up"]        { transform: translateY(60px); }
+    [data-anim="fade-down"]      { transform: translateY(-60px); }
+    [data-anim="fade-left"]      { transform: translateX(-60px); }
+    [data-anim="fade-right"]     { transform: translateX(60px); }
+    [data-anim="zoom-in"]        { transform: scale(0.88); }
+    [data-anim="zoom-out"]       { transform: scale(1.12); }
+    [data-anim="flip-up"]        { transform: perspective(1000px) rotateX(25deg) translateY(45px); }
+    [data-anim="slide-up"]       { transform: translateY(90px); }
 
-    /* Animated state */
+    /* Animated state (enters smoothly when scrolled into viewport) */
     [data-anim].anim-done {
       opacity: 1 !important;
       transform: none !important;
-      transition:
-        opacity var(--anim-dur, 0.65s) var(--anim-ease, cubic-bezier(0.22,1,0.36,1)) var(--anim-delay, 0s),
-        transform var(--anim-dur, 0.65s) var(--anim-ease, cubic-bezier(0.22,1,0.36,1)) var(--anim-delay, 0s);
     }
 
     /* Counter number pulse */
