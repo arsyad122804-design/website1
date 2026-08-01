@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hibatullah IIBS - International Islamic Boarding School</title>
-  <link rel="stylesheet" href="style.css?v=1785300059" />
+  <link rel="stylesheet" href="style.css?v=1785300060" />
   <link rel="stylesheet" href="footer.css?v=2" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -85,6 +85,31 @@
       max-width: 90%;
     }
     
+    .preloader-logo-container {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .preloader-spinner-ring {
+      position: absolute;
+      width: 236px;
+      height: 236px;
+      border: 4px solid rgba(255, 255, 255, 0.05);
+      border-top: 4px solid #3b82f6; /* Blue theme */
+      border-right: 4px solid #ea580c; /* Orange theme */
+      border-radius: 50%;
+      animation: preloaderSpin 1.5s linear infinite;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.3), inset 0 0 15px rgba(234, 88, 12, 0.2);
+      z-index: 0;
+    }
+    @keyframes preloaderSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
     .preloader-logo-wrap {
       width: 210px;
       height: 210px;
@@ -252,8 +277,11 @@
   <!-- PRELOADER SCREEN (2 SECONDS) -->
   <div id="preloader" class="preloader-overlay">
     <div class="preloader-content">
-      <div class="preloader-logo-wrap">
-        <img src="assets/images/logo-loading.jpg" alt="Hibatullah IIBS Logo" class="preloader-logo">
+      <div class="preloader-logo-container">
+        <div class="preloader-spinner-ring"></div>
+        <div class="preloader-logo-wrap">
+          <img src="assets/images/logo-loading.jpg" alt="Hibatullah IIBS Logo" class="preloader-logo">
+        </div>
       </div>
       <div class="preloader-progress-container">
         <div class="preloader-progress-bar" id="preloaderProgressBar"></div>
