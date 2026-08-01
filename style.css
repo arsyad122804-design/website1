@@ -2474,45 +2474,45 @@ html, body { overflow-x: hidden !important; }
 
 /* --- FIX FOR VISI MISI HOME PAGE --- */
 .hvm-single-card {
-  background: #ffffff;
+  background: linear-gradient(135deg, #0a1931 0%, #15305b 100%);
   border-radius: 24px;
   padding: 48px;
-  box-shadow: 0 10px 40px rgba(58, 91, 217, 0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-align: left;
-  border: 1px solid rgba(58, 91, 217, 0.05);
+  border: 1px solid rgba(249, 115, 22, 0.15);
 }
 .hvm-single-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(58, 91, 217, 0.12);
+  box-shadow: 0 25px 60px rgba(249, 115, 22, 0.1);
 }
 .hvm-divider {
   border: 0;
   height: 1px;
-  background: #eee;
+  background: rgba(255, 255, 255, 0.08);
   margin: 32px 0;
 }
 .hvm-card-header i {
   border-radius: 50% !important;
 }
 .hvm-part-visi .hvm-card-header i {
-  color: #3b82f6;
-  background: #eff6ff;
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
   box-shadow: none;
 }
 .hvm-part-visi .hvm-card-header h3 {
-  color: #1e293b;
+  color: #f97316;
 }
 .hvm-part-misi .hvm-card-header i {
-  color: #f59e0b;
-  background: #fffbeb;
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
   box-shadow: none;
 }
 .hvm-part-misi .hvm-card-header h3 {
-  color: #1e293b;
+  color: #f97316;
 }
 .hvm-part-visi p {
-  color: #334155;
+  color: #f8fafc;
   line-height: 1.85;
   font-size: 18px;
   font-style: italic;
@@ -2525,7 +2525,7 @@ html, body { overflow-x: hidden !important; }
   margin: 0;
 }
 .hvm-part-misi ul li {
-  color: #334155;
+  color: #e2e8f0;
   line-height: 1.85;
   font-size: 16px;
   font-weight: 400;
@@ -2535,7 +2535,7 @@ html, body { overflow-x: hidden !important; }
 }
 .hvm-part-misi ul li::before {
   content: '\2022';
-  color: #f59e0b;
+  color: #f97316;
   position: absolute;
   left: 0;
   top: 0;
@@ -2544,12 +2544,12 @@ html, body { overflow-x: hidden !important; }
 }
 
 .hvm-part-motto .hvm-card-header i {
-  color: #10b981;
-  background: #ecfdf5;
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
   box-shadow: none;
 }
 .hvm-part-motto .hvm-card-header h3 {
-  color: #1e293b;
+  color: #f97316;
 }
 .hvm-part-motto ul {
   list-style: none;
@@ -2557,7 +2557,7 @@ html, body { overflow-x: hidden !important; }
   margin: 0;
 }
 .hvm-part-motto ul li {
-  color: #334155;
+  color: #e2e8f0;
   line-height: 1.85;
   font-size: 16px;
   font-weight: 400;
@@ -2565,9 +2565,12 @@ html, body { overflow-x: hidden !important; }
   padding-left: 28px;
   position: relative;
 }
+.hvm-part-motto ul li strong {
+  color: #f97316 !important;
+}
 .hvm-part-motto ul li::before {
   content: '\2022';
-  color: #10b981;
+  color: #f97316;
   position: absolute;
   left: 0;
   top: 0;
