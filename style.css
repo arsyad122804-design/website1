@@ -773,12 +773,16 @@ img {
 .akses-cepat {
   padding: 64px 0 56px;
   background: #f8f9fc;
+  position: relative;
+  overflow: hidden;
 }
 
 .section-inner {
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 24px;
+  position: relative;
+  z-index: 3;
 }
 
 .section-title-wrap {
