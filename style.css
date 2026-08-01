@@ -2201,14 +2201,36 @@ html, body { overflow-x: hidden !important; }
   z-index: 2;
 }
 
+/* Background SVGs from Mockup */
+.hp-decor-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 320px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+}
+.hp-decor-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Mosque Silhouette Background Decoration */
 .hp-mosque-bg {
   position: absolute;
-  top: 40px;
-  left: 5%;
-  width: 120px;
-  height: 120px;
-  opacity: 0.04;
+  top: 30px;
+  left: 4%;
+  width: 130px;
+  height: 130px;
+  opacity: 0.035;
   color: #2563eb;
   pointer-events: none;
   z-index: 1;
@@ -2388,44 +2410,53 @@ html, body { overflow-x: hidden !important; }
   background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0.95) 15%, rgba(255, 255, 255, 0) 100%);
   z-index: 2;
 }
+/* Arabesque Geometric Pattern Overlay on Card Image */
+.hp-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z' fill='none' stroke='rgba(37, 99, 235, 0.03)' stroke-width='1'/%3E%3C/svg%3E");
+  z-index: 3;
+  opacity: 0.85;
+}
 
 /* Wavy corner SVG decoration */
 .hp-card-wave {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   right: 0;
-  width: 100px;
-  height: 20px;
+  width: 46%;
+  height: 18px;
   z-index: 4;
 }
 
 /* Dynamic theme variables */
 .theme-blue .hp-card-num { background: #2563eb; }
-.theme-blue .hp-card-icon { background: #eff6ff; color: #2563eb; border: 1px solid rgba(37, 99, 235, 0.1); }
+.theme-blue .hp-card-icon { background: #eff6ff; color: #2563eb; border: 1.5px solid #2563eb; }
 .theme-blue .hp-card-link { color: #2563eb; }
 .theme-blue .hp-link-arrow { background: #2563eb; }
 .theme-blue .hp-card-wave { color: #2563eb; }
 
 .theme-green .hp-card-num { background: #16a34a; }
-.theme-green .hp-card-icon { background: #f0fdf4; color: #16a34a; border: 1px solid rgba(22, 163, 74, 0.1); }
+.theme-green .hp-card-icon { background: #f0fdf4; color: #16a34a; border: 1.5px solid #16a34a; }
 .theme-green .hp-card-link { color: #16a34a; }
 .theme-green .hp-link-arrow { background: #16a34a; }
 .theme-green .hp-card-wave { color: #16a34a; }
 
 .theme-purple .hp-card-num { background: #7c3aed; }
-.theme-purple .hp-card-icon { background: #f5f3ff; color: #7c3aed; border: 1px solid rgba(124, 58, 237, 0.1); }
+.theme-purple .hp-card-icon { background: #f5f3ff; color: #7c3aed; border: 1.5px solid #7c3aed; }
 .theme-purple .hp-card-link { color: #7c3aed; }
 .theme-purple .hp-link-arrow { background: #7c3aed; }
 .theme-purple .hp-card-wave { color: #7c3aed; }
 
 .theme-red .hp-card-num { background: #dc2626; }
-.theme-red .hp-card-icon { background: #fef2f2; color: #dc2626; border: 1px solid rgba(220, 38, 38, 0.1); }
+.theme-red .hp-card-icon { background: #fef2f2; color: #dc2626; border: 1.5px solid #dc2626; }
 .theme-red .hp-card-link { color: #dc2626; }
 .theme-red .hp-link-arrow { background: #dc2626; }
 .theme-red .hp-card-wave { color: #dc2626; }
 
 .theme-teal .hp-card-num { background: #0d9488; }
-.theme-teal .hp-card-icon { background: #f0fdfa; color: #0d9488; border: 1px solid rgba(13, 148, 136, 0.1); }
+.theme-teal .hp-card-icon { background: #f0fdfa; color: #0d9488; border: 1.5px solid #0d9488; }
 .theme-teal .hp-card-link { color: #0d9488; }
 .theme-teal .hp-link-arrow { background: #0d9488; }
 .theme-teal .hp-card-wave { color: #0d9488; }
@@ -2457,10 +2488,10 @@ html, body { overflow-x: hidden !important; }
   font-size: 15px;
   flex-shrink: 0;
 }
-.hp-feat-icon.bg-blue { background: #eff6ff; color: #2563eb; }
-.hp-feat-icon.bg-green { background: #f0fdf4; color: #16a34a; }
-.hp-feat-icon.bg-yellow { background: #fefce8; color: #ca8a04; }
-.hp-feat-icon.bg-purple { background: #f5f3ff; color: #7c3aed; }
+.hp-feat-icon.bg-blue { background: #2563eb; color: #ffffff; }
+.hp-feat-icon.bg-green { background: #16a34a; color: #ffffff; }
+.hp-feat-icon.bg-yellow { background: #ca8a04; color: #ffffff; }
+.hp-feat-icon.bg-purple { background: #7c3aed; color: #ffffff; }
 
 .hp-feat-text h4 {
   font-size: 13.5px;
