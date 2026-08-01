@@ -2496,20 +2496,20 @@ html, body { overflow-x: hidden !important; }
   border-radius: 50% !important;
 }
 .hvm-part-visi .hvm-card-header i {
-  color: #ff9800;
-  background: rgba(255, 152, 0, 0.15);
+  color: #ed7817;
+  background: rgba(237, 120, 23, 0.15);
   box-shadow: none;
 }
 .hvm-part-visi .hvm-card-header h3 {
-  color: #ff9800;
+  color: #ed7817;
 }
 .hvm-part-misi .hvm-card-header i {
-  color: #ff9800;
-  background: rgba(255, 152, 0, 0.15);
+  color: #ed7817;
+  background: rgba(237, 120, 23, 0.15);
   box-shadow: none;
 }
 .hvm-part-misi .hvm-card-header h3 {
-  color: #ff9800;
+  color: #ed7817;
 }
 .hvm-part-visi p {
   color: #f8fafc;
@@ -2535,7 +2535,7 @@ html, body { overflow-x: hidden !important; }
 }
 .hvm-part-misi ul li::before {
   content: '\2022';
-  color: #ff9800;
+  color: #ed7817;
   position: absolute;
   left: 0;
   top: 0;
@@ -2544,12 +2544,12 @@ html, body { overflow-x: hidden !important; }
 }
 
 .hvm-part-motto .hvm-card-header i {
-  color: #ff9800;
-  background: rgba(255, 152, 0, 0.15);
+  color: #ed7817;
+  background: rgba(237, 120, 23, 0.15);
   box-shadow: none;
 }
 .hvm-part-motto .hvm-card-header h3 {
-  color: #ff9800;
+  color: #ed7817;
 }
 .hvm-part-motto ul {
   list-style: none;
@@ -2566,11 +2566,11 @@ html, body { overflow-x: hidden !important; }
   position: relative;
 }
 .hvm-part-motto ul li strong {
-  color: #ff9800 !important;
+  color: #ed7817 !important;
 }
 .hvm-part-motto ul li::before {
   content: '\2022';
-  color: #ff9800;
+  color: #ed7817;
   position: absolute;
   left: 0;
   top: 0;
