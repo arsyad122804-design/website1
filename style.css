@@ -2187,82 +2187,328 @@ html, body { overflow-x: hidden !important; }
 
 /* HOME PROGRAM UNGGULAN */
 .home-program {
-  background: #ffffff;
-  padding: 80px 20px;
+  background: #fdfdfd;
+  padding: 100px 20px 80px 20px;
   color: #333;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 .hp-inner {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Mosque Silhouette Background Decoration */
+.hp-mosque-bg {
+  position: absolute;
+  top: 40px;
+  left: 5%;
+  width: 120px;
+  height: 120px;
+  opacity: 0.04;
+  color: #2563eb;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Pill Badge */
+.hp-badge-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.hp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Title and Laurel Wreaths */
+.hp-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+.hp-wreath {
+  width: 42px;
+  height: 42px;
+  color: #c5a880; /* Bronze/gold color */
+  opacity: 0.8;
+}
+.hp-wreath.wreath-right {
+  transform: scaleX(-1);
 }
 .hp-title {
   text-align: center;
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 800;
-  margin-bottom: 12px;
-  color: #1a3a6b;
+  color: #1e293b;
+  margin: 0;
 }
 .hp-title span {
-  color: #f0c040;
+  color: #ed7817; /* Brand Orange */
 }
+
 .hp-subtitle {
   text-align: center;
-  color: #6b7280;
-  font-size: 16px;
-  margin-bottom: 48px;
+  color: #64748b;
+  font-size: 15px;
+  max-width: 700px;
+  margin: 0 auto 56px auto;
+  line-height: 1.6;
 }
+
+/* Grid Layout */
 .hp-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+/* Modern Card Layout */
 .hp-card {
-  background: #f8fafc;
-  border-radius: 16px;
-  padding: 32px;
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s ease;
   position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
   overflow: hidden;
+  min-height: 250px;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
 }
 .hp-card:hover {
-  background: #ffffff;
-  box-shadow: 0 15px 35px rgba(26, 58, 107, 0.1);
-  transform: translateY(-5px);
-  border-color: #cbd5e1;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
 }
-.hp-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+
+/* Left side content */
+.hp-card-content {
+  width: 58%;
+  padding: 28px 20px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 3;
+  position: relative;
+  background: #ffffff;
+  flex-grow: 1;
+}
+
+/* Number badge */
+.hp-card-num {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Card Icon Circle */
+.hp-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-.hp-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 8px;
-}
-.hp-card span.hp-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  color: #3b82f6;
-  background: #eff6ff;
-  padding: 4px 10px;
-  border-radius: 6px;
+  font-size: 16px;
   margin-bottom: 16px;
 }
-.hp-card p {
-  color: #64748b;
-  line-height: 1.6;
-  font-size: 14px;
+
+.hp-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 8px 0;
 }
+.hp-card p {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+/* Card Link */
+.hp-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+.hp-card-link:hover {
+  gap: 11px;
+}
+.hp-link-arrow {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+}
+
+/* Right side Image */
+.hp-card-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 46%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+.hp-card-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0.95) 15%, rgba(255, 255, 255, 0) 100%);
+  z-index: 2;
+}
+
+/* Wavy corner SVG decoration */
+.hp-card-wave {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 20px;
+  z-index: 4;
+}
+
+/* Dynamic theme variables */
+.theme-blue .hp-card-num { background: #2563eb; }
+.theme-blue .hp-card-icon { background: #eff6ff; color: #2563eb; border: 1px solid rgba(37, 99, 235, 0.1); }
+.theme-blue .hp-card-link { color: #2563eb; }
+.theme-blue .hp-link-arrow { background: #2563eb; }
+.theme-blue .hp-card-wave { color: #2563eb; }
+
+.theme-green .hp-card-num { background: #16a34a; }
+.theme-green .hp-card-icon { background: #f0fdf4; color: #16a34a; border: 1px solid rgba(22, 163, 74, 0.1); }
+.theme-green .hp-card-link { color: #16a34a; }
+.theme-green .hp-link-arrow { background: #16a34a; }
+.theme-green .hp-card-wave { color: #16a34a; }
+
+.theme-purple .hp-card-num { background: #7c3aed; }
+.theme-purple .hp-card-icon { background: #f5f3ff; color: #7c3aed; border: 1px solid rgba(124, 58, 237, 0.1); }
+.theme-purple .hp-card-link { color: #7c3aed; }
+.theme-purple .hp-link-arrow { background: #7c3aed; }
+.theme-purple .hp-card-wave { color: #7c3aed; }
+
+.theme-red .hp-card-num { background: #dc2626; }
+.theme-red .hp-card-icon { background: #fef2f2; color: #dc2626; border: 1px solid rgba(220, 38, 38, 0.1); }
+.theme-red .hp-card-link { color: #dc2626; }
+.theme-red .hp-link-arrow { background: #dc2626; }
+.theme-red .hp-card-wave { color: #dc2626; }
+
+.theme-teal .hp-card-num { background: #0d9488; }
+.theme-teal .hp-card-icon { background: #f0fdfa; color: #0d9488; border: 1px solid rgba(13, 148, 136, 0.1); }
+.theme-teal .hp-card-link { color: #0d9488; }
+.theme-teal .hp-link-arrow { background: #0d9488; }
+.theme-teal .hp-card-wave { color: #0d9488; }
+
+/* Bottom Feature Bar */
+.hp-feature-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px 32px;
+  margin-top: 48px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+.hp-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hp-feat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.hp-feat-icon.bg-blue { background: #eff6ff; color: #2563eb; }
+.hp-feat-icon.bg-green { background: #f0fdf4; color: #16a34a; }
+.hp-feat-icon.bg-yellow { background: #fefce8; color: #ca8a04; }
+.hp-feat-icon.bg-purple { background: #f5f3ff; color: #7c3aed; }
+
+.hp-feat-text h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 3px 0;
+}
+.hp-feat-text p {
+  font-size: 11px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .hp-grid { grid-template-columns: repeat(2, 1fr); }
+  .hp-feature-bar { grid-template-columns: repeat(2, 1fr); gap: 24px 30px; }
+}
+@media (max-width: 768px) {
+  .hvm-grid { grid-template-columns: 1fr; }
+  .hp-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hp-card {
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+  .hp-card-content {
+    width: 100% !important;
+    padding: 24px 20px !important;
+  }
+  .hp-card-image {
+    position: relative !important;
+    width: 100% !important;
+    height: 160px !important;
+    min-height: 160px;
+  }
+  .hp-card-image::before {
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.4) 100%) !important;
+  }
+  .hp-feature-bar {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 24px 20px !important;
+  }
+}
+
 .hp-btn-wrap {
   text-align: center;
   margin-top: 40px;
