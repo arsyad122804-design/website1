@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hibatullah IIBS - International Islamic Boarding School</title>
-  <link rel="stylesheet" href="style.css?v=1785300061" />
+  <link rel="stylesheet" href="style.css?v=1785300062" />
   <link rel="stylesheet" href="footer.css?v=2" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -94,21 +94,24 @@
       justify-content: center;
       margin-bottom: 10px;
     }
-    .preloader-spinner-ring {
+    .preloader-svg-ring {
       position: absolute;
-      width: 236px;
-      height: 236px;
-      border: 4px solid rgba(255, 255, 255, 0.05);
-      border-top: 4px solid #3b82f6; /* Blue theme */
-      border-right: 4px solid #ea580c; /* Orange theme */
-      border-radius: 50%;
-      animation: preloaderSpin 1.5s linear infinite;
-      box-shadow: 0 0 15px rgba(59, 130, 246, 0.3), inset 0 0 15px rgba(234, 88, 12, 0.2);
+      width: 240px;
+      height: 240px;
       z-index: 0;
+      animation: preloaderRingRotate 8s linear infinite;
     }
-    @keyframes preloaderSpin {
+    @keyframes preloaderRingRotate {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
+    }
+    .ring-progress {
+      stroke-dasharray: 716.28;
+      stroke-dashoffset: 716.28;
+      transform: rotate(-90deg);
+      transform-origin: 120px 120px;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 5px rgba(234, 88, 12, 0.3));
     }
     .preloader-logo-wrap {
       width: 210px;
@@ -263,7 +266,16 @@
   <div id="preloader" class="preloader-overlay">
     <div class="preloader-content">
       <div class="preloader-logo-container">
-        <div class="preloader-spinner-ring"></div>
+        <svg class="preloader-svg-ring" width="240" height="240">
+          <defs>
+            <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3b82f6" />
+              <stop offset="100%" stop-color="#ea580c" />
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="120" cy="120" r="114" stroke="rgba(255, 255, 255, 0.05)" stroke-width="4" fill="transparent" />
+          <circle class="ring-progress" id="preloaderProgressRing" cx="120" cy="120" r="114" stroke="url(#ring-gradient)" stroke-width="4" fill="transparent" />
+        </svg>
         <div class="preloader-logo-wrap">
           <img src="assets/images/logo-loading.jpg" alt="Hibatullah IIBS Logo" class="preloader-logo">
         </div>
@@ -285,13 +297,15 @@
         const percentText = document.getElementById('preloaderPercent');
         const preloader = document.getElementById('preloader');
         const logoWrap = document.querySelector('.preloader-logo-wrap');
+        const ring = document.getElementById('preloaderProgressRing');
         
         if (!bar || !percentText || !preloader || !logoWrap) return;
-
+ 
         // Initial state
         logoWrap.style.filter = 'blur(10px)';
         logoWrap.style.transform = 'scale(0.94)';
-
+        if (ring) ring.style.strokeDashoffset = '716.28';
+ 
         const duration = 2000; // 2 seconds
         const startTime = Date.now();
         
@@ -305,6 +319,7 @@
             
             bar.style.width = '100%';
             percentText.textContent = '100%';
+            if (ring) ring.style.strokeDashoffset = '0';
             
             // Fully unblurred and slightly scaled up
             logoWrap.style.filter = 'blur(0px)';
@@ -325,6 +340,10 @@
           } else {
             bar.style.width = progress.toFixed(1) + '%';
             percentText.textContent = Math.floor(progress) + '%';
+            if (ring) {
+              const offset = 716.28 - (progress / 100) * 716.28;
+              ring.style.strokeDashoffset = offset;
+            }
             
             // Dynamic blur and scale transition based on progress
             const currentBlur = (10 - (progress / 10)).toFixed(1);
