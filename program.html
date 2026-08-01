@@ -4,260 +4,408 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Program Pesantren - Hibatullah IIBS</title>
-  <link rel="stylesheet" href="style.css?v=1781363435210" />
+  <link rel="stylesheet" href="style.css?v=1785300075" />
   <link rel="stylesheet" href="footer.css?v=2" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="navbar.css?v=1785300048">
+  <link rel="icon" href="favicon.png" type="image/png" />
   <style>
-    body { background: #f8f9fc; }
+    body {
+      background: #f8fafc;
+      color: #334155;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
     /* BREADCRUMB */
-    .prog-breadcrumb { background: #1a3a6b; padding: 10px 0; }
-    .prog-bc { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,0.7); }
-    .prog-bc a { color: rgba(255,255,255,0.85); font-weight: 500; transition: color .2s; }
-    .prog-bc a:hover { color: #fff; }
-    .prog-bc i.fa-chevron-right { font-size: 9px; color: rgba(255,255,255,0.35); }
-    .prog-bc span { color: rgba(255,255,255,0.55); }
-
-    /* HERO */
-    .prog-hero {
-      background: linear-gradient(135deg, #0a1f5c 0%, #1a3a6b 50%, #2563b0 100%);
-      padding: 56px 0 72px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .prog-breadcrumb {
+      background: #1e293b;
+      padding: 12px 0;
     }
-    .prog-hero::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -120px;
-      width: 450px; height: 450px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-    .prog-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -100px; left: -80px;
-      width: 350px; height: 350px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-    .prog-hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
-      color: #fff; font-size: 12px; font-weight: 600;
-      padding: 6px 18px; border-radius: 20px; margin-bottom: 18px;
-      position: relative; z-index: 1;
-    }
-    .prog-hero-sub { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 3px; margin-bottom: 8px; position: relative; z-index: 1; }
-    .prog-hero h1 { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 14px; position: relative; z-index: 1; }
-    .prog-hero h1 span { color: #7eb8f7; }
-    .prog-hero p { font-size: 14px; color: rgba(255,255,255,0.72); position: relative; z-index: 1; }
-
-    /* MAIN SECTION */
-    .prog-section { padding: 56px 0 72px; }
-    .prog-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-    /* Section header */
-    .prog-sec-header { text-align: center; margin-bottom: 48px; }
-    .prog-sec-label { font-size: 12px; font-weight: 700; color: #3a5bd9; letter-spacing: 2px; margin-bottom: 6px; }
-    .prog-sec-title { font-size: 28px; font-weight: 800; color: #1a1a2e; }
-    .prog-sec-title span { color: #3a5bd9; }
-    .prog-sec-line { width: 48px; height: 3px; background: #3a5bd9; border-radius: 2px; margin: 12px auto 0; }
-
-    /* MAIN CARD LAYOUT */
-    .prog-card-layout {
-      display: block;
-      gap: 28px;
-      align-items: stretch;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 32px rgba(26,58,107,0.1);
-      overflow: hidden;
-      border: 1px solid #e8eef8;
-    }
-
-    /* Left image card */
-    .prog-img-card {
-      position: relative;
-      background: linear-gradient(160deg, #3a5bd9 0%, #1a3a6b 60%, #0a1f5c 100%);
-      min-height: 520px;
+    .prog-bc {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
       display: flex;
-      align-items: flex-end;
-      overflow: hidden;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .prog-bc a {
+      color: #cbd5e1;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .prog-bc a:hover {
+      color: #ffffff;
+    }
+    .prog-bc i {
+      font-size: 10px;
+    }
+    .prog-bc span {
+      color: #64748b;
     }
 
-    .prog-img-card img {
-      position: absolute;
-      inset: 0;
+    /* HERO SECTION */
+    .program-hero-section {
+      padding: 60px 0;
+      background: #ffffff;
+      border-bottom: 1px solid #f1f5f9;
+      position: relative;
+    }
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 991px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    
+    .ph-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .hero-content h1 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #0b1f5c;
+      margin: 0 0 12px 0;
+      line-height: 1.2;
+    }
+    .hero-content h1 .highlight {
+      color: #2563eb;
+    }
+    .ph-desc {
+      font-size: 16px;
+      color: #64748b;
+      margin: 0 0 32px 0;
+      line-height: 1.6;
+    }
+
+    /* STATS GRID */
+    .ph-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 480px) {
+      .ph-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .stat-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+      transition: transform 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+    }
+    .stat-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .stat-icon.blue {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+    .stat-icon.orange {
+      background: #fff7ed;
+      color: #ea580c;
+    }
+    .stat-number {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    /* HERO IMAGE */
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      aspect-ratio: 4 / 3.4;
+    }
+    .hero-image-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center;
-      mix-blend-mode: luminosity;
-      opacity: 0.55;
     }
 
-    .prog-img-overlay {
-      position: relative;
-      z-index: 2;
-      padding: 32px 28px;
+    /* FILTER TABS */
+    .filter-section {
+      padding: 48px 0 24px 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
     }
-
-    .prog-img-overlay .prog-label-script {
-      font-size: 42px;
+    @media (max-width: 576px) {
+      .filter-section {
+        flex-wrap: wrap;
+      }
+    }
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      font-size: 13.5px;
       font-weight: 700;
-      color: #f0c040;
-      font-family: 'Dancing Script', cursive, 'Poppins', sans-serif;
-      line-height: 1;
-      margin-bottom: 4px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      padding: 10px 24px;
+      border-radius: 99px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+    .filter-btn i {
+      font-size: 14px;
+    }
+    .filter-btn:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+    .filter-btn.active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
     }
 
-    .prog-img-overlay .prog-label-bold {
-      font-size: 36px;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 2px;
-      line-height: 1;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    /* PROGRAM GRID & CARDS */
+    .programs-section {
+      padding: 24px 0 80px 0;
+    }
+    .programs-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    /* Right content */
-    .prog-content-card {
-      padding: 36px 36px 36px 32px;
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+      transition: all 0.4s ease;
+    }
+    @media (max-width: 991px) {
+      .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .prog-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03);
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      align-items: flex-start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+      position: relative;
+    }
+    .prog-card.hidden {
+      display: none;
+      opacity: 0;
+    }
+    .prog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
     }
 
-    /* Program group */
-    .prog-group h3 {
-      font-size: 18px;
-      font-weight: 800;
-      color: #1a3a6b;
+    .card-badge {
+      display: inline-block;
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
       margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #e8eef8;
       letter-spacing: 0.5px;
     }
-
-    .prog-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .card-badge.reguler {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+    .card-badge.non-reguler {
+      background: #f5f3ff;
+      color: #7c3aed;
     }
 
-    .prog-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: #333;
-      line-height: 1.5;
-    }
-
-    .prog-list li .prog-bullet {
-      width: 26px;
-      height: 26px;
+    .card-icon {
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #3a5bd9, #1a3a6b);
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    }
+    .card-icon.blue { background: #2563eb; }
+    .card-icon.orange { background: #ea580c; }
+    .card-icon.green { background: #16a34a; }
+    .card-icon.teal { background: #0d9488; }
+    .card-icon.purple { background: #7c3aed; }
+    .card-icon.yellow { background: #ca8a04; }
+    .card-icon.pink { background: #db2777; }
+
+    .prog-card h3 {
+      font-size: 19px;
+      font-weight: 800;
+      color: #0b1f5c;
+      margin: 0 0 12px 0;
+      line-height: 1.3;
+    }
+    .prog-card p {
+      font-size: 13.5px;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+      flex-grow: 1;
+    }
+    .prog-card-link {
+      font-size: 13px;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s ease;
+    }
+    .prog-card-link:hover {
+      gap: 9px;
+    }
+
+    /* BOTTOM CTA BANNER */
+    .prog-cta-banner {
+      background: #2563eb;
+      border-radius: 20px;
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.2);
+      margin-top: 24px;
+    }
+    @media (max-width: 768px) {
+      .prog-cta-banner {
+        flex-direction: column;
+        padding: 32px 24px;
+        text-align: center;
+        gap: 20px;
+      }
+    }
+    .cta-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .cta-left {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+    .cta-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #ffffff;
       flex-shrink: 0;
     }
-
-    .prog-list li .prog-bullet i {
-      font-size: 10px;
-      color: #fff;
+    .cta-text p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.6;
     }
-
-
-    /* CTA */
-    .prog-cta {
-      background: linear-gradient(135deg, #1a3a6b 0%, #3a5bd9 100%);
-      padding: 48px 0;
-      margin-top: 56px;
+    .cta-btn {
+      background: #fff7ed;
+      color: #ea580c;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 99px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
     }
-
-    .prog-cta-inner {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 24px;
-      text-align: center;
-    }
-
-    .prog-cta-inner h2 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 12px; }
-    .prog-cta-inner h2 span { color: #f0c040; }
-    .prog-cta-inner p { font-size: 14px; color: rgba(255,255,255,0.72); margin-bottom: 28px; }
-
-    .prog-cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-
-    .prog-btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #fff; color: #1a3a6b;
-      font-size: 14px; font-weight: 700;
-      padding: 13px 28px; border-radius: 8px;
-      transition: background .2s, transform .15s;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    }
-    .prog-btn-primary:hover { background: #e8f0fe; transform: translateY(-2px); }
-
-    .prog-btn-wa {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #25d366; color: #fff;
-      font-size: 14px; font-weight: 700;
-      padding: 13px 28px; border-radius: 8px;
-      transition: background .2s, transform .15s;
-    }
-    .prog-btn-wa:hover { background: #1da851; transform: translateY(-2px); }
-
-    /* FOOTER */
-    .ppdb-footer { background: #0d1a2e; color: #fff; }
-    .ppdb-footer-inner { max-width: 1100px; margin: 0 auto; padding: 48px 24px 36px; display: grid; grid-template-columns: 1.6fr 1fr 1.2fr 1.3fr; gap: 40px; }
-    .pf-logo { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
-    .pf-logo div { display: flex; flex-direction: column; gap: 3px; }
-    .pf-logo strong { font-size: 14px; font-weight: 800; color: #fff; }
-    .pf-logo span { font-size: 10px; color: rgba(255,255,255,0.5); }
-    .pf-tagline { font-size: 13px; font-weight: 700; color: #7eb8f7; margin-bottom: 8px; }
-    .pf-desc { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 16px; }
-    .pf-socials { display: flex; gap: 8px; }
-    .pf-socials a { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #fff; transition: opacity .2s; }
-    .pf-socials a:hover { opacity: .8; }
-    .pfs-fb{background:#1877f2} .pfs-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)} .pfs-yt{background:#ff0000} .pfs-tt{background:#010101}
-    .pf-heading { font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 1px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .pf-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .pf-list li a { font-size: 12.5px; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 8px; transition: color .2s; }
-    .pf-list li a:hover { color: #7eb8f7; }
-    .pf-list li a i { font-size: 11px; color: #7eb8f7; width: 14px; }
-    .pf-contact { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .pf-contact li { font-size: 12px; color: rgba(255,255,255,0.6); display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
-    .pf-contact li i { color: #27ae60; font-size: 13px; margin-top: 2px; flex-shrink: 0; }
-    .ppdb-footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); }
-    .ppdb-footer-bottom-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: rgba(255,255,255,0.35); }
-
-    @media (max-width: 900px) {
-      .prog-card-layout {  }
-      .prog-img-card { min-height: 280px; }
-      .ppdb-footer-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
-    }
-    @media (max-width: 480px) {
-      .ppdb-footer-inner {  }
-      .prog-content-card { padding: 24px 20px; }
+    .cta-btn:hover {
+      background: #ffedd5;
+      transform: translateY(-2px);
     }
   </style>
-  <link rel="stylesheet" href="navbar.css?v=1785300048">
-  <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
   <!-- CARD NAV ROOT -->
   <div id="card-nav-root"></div>
-
-  <!-- TOP BAR -->
-  
 
   <!-- BREADCRUMB -->
   <div class="prog-breadcrumb">
@@ -271,116 +419,186 @@
     </div>
   </div>
 
-  <!-- HERO -->
-  <section class="prog-hero" style="position:relative; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-    <div style="position:absolute;inset:0;z-index:0;">
-      <img src="assets/images/WhatsApp Image 2026-03-16 at 08.56.26.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0.15;" />
-    </div>
-    <div style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 800px; margin: 0 auto; padding: 0 20px;">
-      <div class="prog-hero-badge"><i class="fas fa-star"></i> Santri Hebat</div>
-      <p class="prog-hero-sub" style="width: 100%; text-align: center; margin: 0 auto 8px;">PROGRAM</p>
-      <h1 style="width: 100%; text-align: center; margin-bottom: 14px;">PESANTREN <span>HIBATULLAH</span></h1>
-      <p style="width: 100%; text-align: center; margin: 0 auto;">Program unggulan yang dirancang untuk membentuk generasi Qur'ani yang berilmu, berakhlak, dan berprestasi</p>
-    </div>
-  </section>
-
-  <!-- MAIN CONTENT -->
-  <section class="prog-section">
-    <div class="prog-inner">
-
-      <div class="prog-sec-header">
-        <p class="prog-sec-label">PROGRAM KAMI</p>
-        <h2 class="prog-sec-title">Program <span>Pesantren Hibatullah</span></h2>
-        <div class="prog-sec-line"></div>
-      </div>
-
-      <!-- Main Card -->
-      <div class="prog-card-layout">
-
-        <!-- Program List -->
-        <div class="prog-content-card">
-
-          <!-- REGULER -->
-          <div class="prog-group">
-            <h3>REGULER</h3>
-            <ul class="prog-list">
-              <li>
-                <div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>PBM Akademik Kediknasan</strong>
-                </div>
-              </li>
-              <li>
-                <div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>PBM Studi Keislaman</strong>
-                </div>
-              </li>
-              <li>
-                <div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Tahsin & Tahfizh Bersanad</strong>
-                </div>
-              </li>
-            </ul>
+  <!-- HERO SECTION -->
+  <section class="program-hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="ph-badge"><i class="fas fa-star"></i> PROGRAM KAMI</span>
+        <h1>Program Pesantren<br><span class="highlight">Hibatullah</span></h1>
+        <p class="ph-desc">Membentuk Generasi Qur'ani, Beradab, Berprestasi, dan Mendunia</p>
+        
+        <div class="ph-stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-graduation-cap"></i></div>
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Program Unggulan</span>
           </div>
-
-          <!-- NON REGULER -->
-          <div class="prog-group">
-            <h3>NON REGULER</h3>
-            <ul class="prog-list">
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Camp Al-Qur'an</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Camp Bahasa Asing</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Pelatihan Kepemimpinan</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Overseas Internasional</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Klub Bahasa</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Bimbingan Lomba</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Pembinaan Kewirausahaan</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Achievement Motivation Training</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Pembinaan Minat & Bakat</strong>
-                </div></li>
-              <li><div class="prog-bullet"><i class="fas fa-chevron-right"></i></div>
-                <div class="prog-text">
-                  <strong>Tur Edukasi & Kepemimpinan</strong>
-                </div></li>
-            </ul>
+          <div class="stat-card">
+            <div class="stat-icon orange"><i class="fas fa-users"></i></div>
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Santri Aktif</span>
           </div>
-
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-trophy"></i></div>
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Prestasi Diraih</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange"><i class="fas fa-globe"></i></div>
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Negara Mitra</span>
+          </div>
         </div>
       </div>
 
-
-
+      <div class="hero-image-wrap">
+        <img src="assets/images/program-hero-students.jpg" alt="Santri Hibatullah">
+      </div>
     </div>
   </section>
 
-  
+  <!-- FILTER SECTION -->
+  <div class="filter-section">
+    <button class="filter-btn active" data-filter="all"><i class="fas fa-th-large"></i> Semua Program</button>
+    <button class="filter-btn" data-filter="reguler"><i class="fas fa-book-open"></i> Reguler</button>
+    <button class="filter-btn" data-filter="non-reguler"><i class="fas fa-star"></i> Non Reguler</button>
+  </div>
+
+  <!-- PROGRAMS SECTION -->
+  <section class="programs-section">
+    <div class="programs-container">
+      <div class="programs-grid">
+        <!-- Card 1: PBM Akademik Kediknasan (Reguler) -->
+        <div class="prog-card" data-category="reguler">
+          <span class="card-badge reguler">REGULER</span>
+          <div class="card-icon blue"><i class="fas fa-graduation-cap"></i></div>
+          <h3>PBM Akademik Kediknasan</h3>
+          <p>Pembinaan akademik terstruktur untuk persiapan sekolah kedinasan.</p>
+          <a href="program-unggulan-sdih.html#kediknasan" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 2: PBM Studi Keislaman (Reguler) -->
+        <div class="prog-card" data-category="reguler">
+          <span class="card-badge reguler">REGULER</span>
+          <div class="card-icon orange"><i class="fas fa-book"></i></div>
+          <h3>PBM Studi Keislaman</h3>
+          <p>Pendalaman ilmu keislaman dengan kurikulum komprehensif.</p>
+          <a href="program-unggulan-sdih.html#keislaman" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 3: Tahsin & Tahfiz Bersanad (Reguler) -->
+        <div class="prog-card" data-category="reguler">
+          <span class="card-badge reguler">REGULER</span>
+          <div class="card-icon green"><i class="fas fa-book-open"></i></div>
+          <h3>Tahsin &amp; Tahfiz Bersanad</h3>
+          <p>Program tahsin dan tahfiz Al-Qur'an dengan sanad yang bersambung.</p>
+          <a href="program-unggulan-sdih.html#tahsin" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 4: Camp Al-Qur'an (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon teal"><i class="fas fa-book-quran"></i></div>
+          <h3>Camp Al-Qur'an</h3>
+          <p>Kemah Al-Qur'an untuk meningkatkan kedekatan dengan Al-Qur'an.</p>
+          <a href="program-unggulan-sdih.html#camp-quran" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 5: Camp Bahasa Asing (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon purple"><i class="fas fa-globe"></i></div>
+          <h3>Camp Bahasa Asing</h3>
+          <p>Program intensif penguasaan bahasa Arab dan Inggris.</p>
+          <a href="program-unggulan-sdih.html#camp-bahasa" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 6: Pelatihan Kepemimpinan (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon yellow"><i class="fas fa-crown"></i></div>
+          <h3>Pelatihan Kepemimpinan</h3>
+          <p>Membentuk jiwa kepemimpinan yang amanah dan visioner.</p>
+          <a href="program-unggulan-sdih.html#leadership" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 7: Overseas Internasional (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon blue"><i class="fas fa-plane"></i></div>
+          <h3>Overseas Internasional</h3>
+          <p>Program belajar dan pertukaran pelajar ke luar negeri.</p>
+          <a href="program-unggulan-sdih.html#overseas" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 8: Klub Bahasa (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon green"><i class="fas fa-comment-dots"></i></div>
+          <h3>Klub Bahasa</h3>
+          <p>Wadah pengembangan keterampilan bahasa secara aktif dan kreatif.</p>
+          <a href="program-unggulan-sdih.html#language-club" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 9: Bimbingan Lomba (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon orange"><i class="fas fa-trophy"></i></div>
+          <h3>Bimbingan Lomba</h3>
+          <p>Persiapan dan pelatihan untuk berbagai kompetisi.</p>
+          <a href="program-unggulan-sdih.html#competition" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 10: Pembinaan Kewirausahaan (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon blue"><i class="fas fa-briefcase"></i></div>
+          <h3>Pembinaan Kewirausahaan</h3>
+          <p>Membangun jiwa wirausaha dan kemandirian finansial.</p>
+          <a href="program-unggulan-sdih.html#entrepreneurship" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 11: Achievement Motivation Training (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon green"><i class="fas fa-star"></i></div>
+          <h3>Achievement Motivation Training</h3>
+          <p>Pelatihan motivasi untuk meraih prestasi maksimal.</p>
+          <a href="program-unggulan-sdih.html#motivation" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 12: Pembinaan Minat &amp; Bakat (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon pink"><i class="fas fa-music"></i></div>
+          <h3>Pembinaan Minat &amp; Bakat</h3>
+          <p>Mengembangkan potensi dan bakat sesuai minat santri.</p>
+          <a href="program-unggulan-sdih.html#creative" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 13: Tur Edukasi &amp; Kepemimpinan (Non Reguler) -->
+        <div class="prog-card" data-category="non-reguler">
+          <span class="card-badge non-reguler">NON REGULER</span>
+          <div class="card-icon purple"><i class="fas fa-bus"></i></div>
+          <h3>Tur Edukasi &amp; Kepemimpinan</h3>
+          <p>Kunjungan edukatif sekaligus pembentukan karakter.</p>
+          <a href="program-unggulan-sdih.html#education-tour" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- BOTTOM CTA BANNER -->
+      <div class="prog-cta-banner">
+        <div class="cta-left">
+          <div class="cta-badge"><i class="fas fa-award"></i></div>
+          <div class="cta-text">
+            <p>Tertarik dengan Program Kami?</p>
+            <p style="font-weight: 400; opacity: 0.85; font-size: 13px;">Daftarkan diri Anda dan bergabung menjadi bagian dari keluarga besar Hibatullah.</p>
+          </div>
+        </div>
+        <a href="ppdb.html" class="cta-btn">Daftar Sekarang <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
@@ -388,18 +606,43 @@
   <script src="animations.js?v=1785300047"></script>
   <script src="script.js?v=1781320772244"></script>
   <script src="navbar.js?v=1785300048"></script>
+  
+  <script>
+    // Filtering Logic for Program Cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.prog-card');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          buttons.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+
+          const filterValue = btn.getAttribute('data-filter');
+
+          cards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filterValue === 'all' || category === filterValue) {
+              card.classList.remove('hidden');
+              // Trigger a reflow to restart animation/opacity
+              void card.offsetWidth;
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(10px)';
+              setTimeout(() => {
+                if (btn.classList.contains('active') && btn.getAttribute('data-filter') === filterValue) {
+                  card.classList.add('hidden');
+                }
+              }, 200);
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
