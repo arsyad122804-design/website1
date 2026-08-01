@@ -2474,17 +2474,17 @@ html, body { overflow-x: hidden !important; }
 
 /* --- FIX FOR VISI MISI HOME PAGE --- */
 .hvm-single-card {
-  background: linear-gradient(135deg, #0a1931 0%, #15305b 100%);
+  background: linear-gradient(135deg, #037dff 0%, #0056b3 100%);
   border-radius: 24px;
   padding: 48px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 40px rgba(3, 125, 255, 0.15);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-align: left;
-  border: 1px solid rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 .hvm-single-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(249, 115, 22, 0.1);
+  box-shadow: 0 25px 60px rgba(3, 125, 255, 0.3);
 }
 .hvm-divider {
   border: 0;
@@ -2496,20 +2496,20 @@ html, body { overflow-x: hidden !important; }
   border-radius: 50% !important;
 }
 .hvm-part-visi .hvm-card-header i {
-  color: #f97316;
-  background: rgba(249, 115, 22, 0.1);
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.15);
   box-shadow: none;
 }
 .hvm-part-visi .hvm-card-header h3 {
-  color: #f97316;
+  color: #ff9800;
 }
 .hvm-part-misi .hvm-card-header i {
-  color: #f97316;
-  background: rgba(249, 115, 22, 0.1);
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.15);
   box-shadow: none;
 }
 .hvm-part-misi .hvm-card-header h3 {
-  color: #f97316;
+  color: #ff9800;
 }
 .hvm-part-visi p {
   color: #f8fafc;
@@ -2535,7 +2535,7 @@ html, body { overflow-x: hidden !important; }
 }
 .hvm-part-misi ul li::before {
   content: '\2022';
-  color: #f97316;
+  color: #ff9800;
   position: absolute;
   left: 0;
   top: 0;
@@ -2544,12 +2544,12 @@ html, body { overflow-x: hidden !important; }
 }
 
 .hvm-part-motto .hvm-card-header i {
-  color: #f97316;
-  background: rgba(249, 115, 22, 0.1);
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.15);
   box-shadow: none;
 }
 .hvm-part-motto .hvm-card-header h3 {
-  color: #f97316;
+  color: #ff9800;
 }
 .hvm-part-motto ul {
   list-style: none;
@@ -2566,11 +2566,11 @@ html, body { overflow-x: hidden !important; }
   position: relative;
 }
 .hvm-part-motto ul li strong {
-  color: #f97316 !important;
+  color: #ff9800 !important;
 }
 .hvm-part-motto ul li::before {
   content: '\2022';
-  color: #f97316;
+  color: #ff9800;
   position: absolute;
   left: 0;
   top: 0;
