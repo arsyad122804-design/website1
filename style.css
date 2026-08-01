@@ -2084,9 +2084,6 @@ html, body { overflow-x: hidden !important; }
 .sm-result-desc { font-size: 12px; color: #666; }
 .sm-no-result { padding: 24px; text-align: center; color: #888; font-size: 14px; }
 
-/* HOME VISI MISI */
-.home-visi-misi {
-  background: #f9fafb;
 /* HOME VISI MISI (100% MATCH TO UI/UX MOCKUP) */
 .home-visi-misi {
   background: #f8fafc;
