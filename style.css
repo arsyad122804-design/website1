@@ -574,10 +574,10 @@ img {
   opacity: 0.7;
 }
 
-.hero-title {
+.hero-title, .hero-content h1 {
   font-size: 28px;
   font-weight: 900;
-  color: #fff;
+  color: #ffffff !important;
   line-height: 1.25;
   margin-bottom: 18px;
   max-width: 100%;
@@ -593,8 +593,8 @@ img {
   text-align: center;
 }
 
-.hero-highlight {
-  color: #f59e0b;
+.hero-highlight, .hero-title span {
+  color: #ffffff !important;
 }
 
 .hero-desc-duplicate-removed {
