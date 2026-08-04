@@ -3035,14 +3035,14 @@ html, body { overflow-x: hidden !important; }
   margin-bottom: 16px;
   letter-spacing: 0.5px;
 }
-.hero-content h1 {
+.program-hero-section .hero-content h1 {
   font-size: 40px;
   font-weight: 800;
   color: #0b1f5c;
   margin: 0 0 12px 0;
   line-height: 1.2;
 }
-.hero-content h1 .highlight {
+.program-hero-section .hero-content h1 .highlight {
   color: #2563eb;
 }
 .ph-desc {
