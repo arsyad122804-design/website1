@@ -249,17 +249,17 @@
   const promoLaterBtn = document.getElementById('promoLaterBtn');
 
   if (promoModal) {
-    if (!sessionStorage.getItem('promoSeen')) {
+    if (!sessionStorage.getItem('promoSeen_hutri81')) {
       setTimeout(() => {
         promoModal.classList.add('show');
         document.body.style.overflow = 'hidden';
-      }, 1500);
+      }, 1000);
     }
 
     function closeModal() {
       promoModal.classList.remove('show');
       document.body.style.overflow = '';
-      sessionStorage.setItem('promoSeen', 'true');
+      sessionStorage.setItem('promoSeen_hutri81', 'true');
     }
 
     if (promoClose) promoClose.addEventListener('click', closeModal);
