@@ -3864,7 +3864,7 @@ html, body { overflow-x: hidden !important; }
   align-items: center;
   gap: 40px;
   white-space: nowrap;
-  animation: hutMarquee 35s linear infinite;
+  animation: hutMarquee 20s linear infinite;
   will-change: transform;
 }
 
@@ -3913,7 +3913,9 @@ html, body { overflow-x: hidden !important; }
 }
 
 @media (max-width: 768px) {
-  .hut-ticker-wrapper { height: 44px; }
-  .hut-ticker-badge { font-size: 10.5px; padding: 0 12px; }
-  .hut-ticker-item { font-size: 11.5px; gap: 10px; }
+  .hut-ticker-wrapper { height: 40px; }
+  .hut-ticker-badge { padding: 0 12px; }
+  .hut-ticker-badge span:last-child { display: none; } /* Hide "GEBYAR HUT RI 81" on mobile */
+  .hut-ticker-item { font-size: 11px; gap: 10px; }
+  .hut-ticker-track { animation-duration: 12s; } /* Faster scroll on mobile */
 }
