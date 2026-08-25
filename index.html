@@ -1008,58 +1008,7 @@
   <script src="script.js?v=1786781500"></script>
   <script src="navbar.js?v=1785300048"></script>
   
-  <!-- Floating Audio Player -->
-  <div id="audioPlayerToggle" class="floating-audio-btn" style="position: fixed; bottom: 30px; left: 30px; width: 50px; height: 50px; border-radius: 50%; background: #f0c040; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; cursor: pointer; transition: all 0.3s ease;">
-    <i class="fas fa-volume-mute" id="audioIcon" style="font-size: 20px;"></i>
-  </div>
-  <audio id="bgMusic" src="assets/audio/bg-music.mp4" loop preload="auto"></audio>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const bgMusic = document.getElementById('bgMusic');
-      const audioToggleBtn = document.getElementById('audioPlayerToggle');
-      const audioIcon = document.getElementById('audioIcon');
-      let isPlaying = false;
-      let hasInteracted = false;
 
-      const playAudio = () => {
-        bgMusic.play().then(() => {
-          isPlaying = true;
-          audioIcon.classList.remove('fa-volume-mute');
-          audioIcon.classList.add('fa-volume-up');
-          audioToggleBtn.style.background = '#4ade80';
-        }).catch(err => {
-          console.log("Autoplay prevented by browser: ", err);
-        });
-      };
-
-      audioToggleBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (isPlaying) {
-          bgMusic.pause();
-          isPlaying = false;
-          audioIcon.classList.remove('fa-volume-up');
-          audioIcon.classList.add('fa-volume-mute');
-          audioToggleBtn.style.background = '#f0c040';
-        } else {
-          playAudio();
-        }
-      });
-
-      const startAudioOnInteract = () => {
-        if (!hasInteracted) {
-          hasInteracted = true;
-          playAudio();
-          document.removeEventListener('click', startAudioOnInteract);
-          document.removeEventListener('scroll', startAudioOnInteract);
-          document.removeEventListener('touchstart', startAudioOnInteract);
-        }
-      };
-      
-      document.addEventListener('click', startAudioOnInteract);
-      document.addEventListener('scroll', startAudioOnInteract);
-      document.addEventListener('touchstart', startAudioOnInteract);
-    });
-  </script>
   <script>
     // 3D Tilt Hover Animation for Akses Cepat Cards
     document.addEventListener('DOMContentLoaded', () => {
