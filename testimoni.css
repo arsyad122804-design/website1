@@ -54,18 +54,17 @@ body {
 }
 .section-title-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   margin-bottom: 40px;
-  text-align: center;
 }
 .section-title-left {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-direction: row;
+  gap: 20px;
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 .section-icon {
   width: 65px;
@@ -92,7 +91,7 @@ body {
   font-size: 1rem;
   max-width: 600px;
   line-height: 1.6;
-  margin: 0 auto;
+  margin: 0;
 }
 .slider-nav {
   display: flex;
@@ -100,7 +99,7 @@ body {
   gap: 15px;
   color: var(--primary-navy);
   font-weight: 600;
-  margin-top: 25px;
+  margin-top: 0;
 }
 .slider-btn {
   width: 45px;
