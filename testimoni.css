@@ -459,12 +459,13 @@ body {
 }
 
 
-/* Tokoh Slider CSS (Portrait Redesign) */
+
+/* Tokoh Slider CSS (Clean Landscape Redesign) */
 .tokoh-slider-outer {
   position: relative;
   max-width: 100%;
   margin: 0 auto 30px;
-  padding: 0 40px; /* space for arrows */
+  padding: 0 50px; /* space for arrows */
 }
 .tokoh-slider-track-wrapper {
   overflow-x: auto;
@@ -487,75 +488,126 @@ body {
   justify-content: center;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 .tokoh-card {
   background: var(--primary-navy);
   border-radius: 24px;
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* Portrait layout */
-  width: 380px; /* Portrait width */
+  flex-direction: row; /* Landscape layout */
+  width: 900px; /* Exact width as mock */
   max-width: 100%;
-  box-shadow: 0 15px 35px rgba(15, 32, 64, 0.2);
+  box-shadow: 0 20px 40px rgba(15, 32, 64, 0.2);
   box-sizing: border-box;
-  text-align: center;
-  transition: transform 0.3s;
 }
-.tokoh-card:hover {
-  transform: translateY(-5px);
-}
-.tokoh-image-wrap {
-  width: 100%;
-  height: 280px; /* fixed height for portrait top */
-  position: relative;
-  background-size: cover;
-  background-position: center top;
-}
-.tokoh-content {
-  padding: 30px 25px;
-  color: white;
+.tokoh-video-area {
+  flex: 0 0 260px;
+  background: rgba(255, 255, 255, 0.03); /* slightly lighter navy background */
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  min-height: 320px;
+}
+.tokoh-play-btn {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-gold);
+  font-size: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  cursor: pointer;
+  padding-left: 5px;
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+}
+.tokoh-play-btn:hover {
+  transform: scale(1.1);
+}
+.tokoh-play-label {
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tokoh-content {
+  flex: 1;
+  padding: 50px 60px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
 }
 .tokoh-quote-icon {
   color: var(--primary-gold);
-  font-size: 30px;
-  margin-bottom: 15px;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 .tokoh-text {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 30px;
   color: #F8FAFC;
 }
 .tokoh-author {
   position: relative;
-  padding-left: 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 15px;
-  width: 100%;
+  padding-left: 20px;
 }
 .tokoh-author::before {
-  display: none; /* remove left border line */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--primary-gold);
+  border-radius: 2px;
 }
 .tokoh-name {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 5px;
-  color: var(--primary-gold);
+  margin-bottom: 4px;
+  color: white;
 }
 .tokoh-title {
   color: #94A3B8;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   line-height: 1.4;
 }
 .tokoh-slider-outer .slider-arrow-btn.prev {
-  left: -10px;
+  left: 0;
 }
 .tokoh-slider-outer .slider-arrow-btn.next {
-  right: -10px;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .tokoh-card {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .tokoh-video-area {
+    flex: 0 0 200px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    min-height: 200px !important;
+  }
+  .tokoh-content {
+    padding: 30px 20px !important;
+  }
+  .tokoh-text {
+    font-size: 1.4rem !important;
+  }
 }
