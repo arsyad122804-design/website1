@@ -611,3 +611,44 @@ body {
     font-size: 1.4rem !important;
   }
 }
+
+/* Large Author Styles for Video Testimonials */
+.tokoh-author-large {
+  position: relative;
+  padding-left: 25px;
+  text-align: left;
+}
+.tokoh-author-large::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: var(--primary-gold);
+  border-radius: 3px;
+}
+.tokoh-name-large {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: white;
+  line-height: 1.2;
+}
+.tokoh-title-large {
+  color: #94A3B8;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .tokoh-author-large {
+    padding-left: 15px;
+  }
+  .tokoh-name-large {
+    font-size: 1.6rem;
+  }
+  .tokoh-title-large {
+    font-size: 1rem;
+  }
+}
