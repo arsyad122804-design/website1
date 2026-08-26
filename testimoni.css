@@ -54,15 +54,18 @@ body {
 }
 .section-title-wrap {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  text-align: center;
 }
 .section-title-left {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
   align-items: center;
-  text-align: left;
+  text-align: center;
 }
 .section-icon {
   width: 65px;
@@ -87,9 +90,9 @@ body {
 .section-title-text p {
   color: var(--text-gray);
   font-size: 1rem;
-  max-width: 500px;
+  max-width: 600px;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 auto;
 }
 .slider-nav {
   display: flex;
@@ -97,6 +100,7 @@ body {
   gap: 15px;
   color: var(--primary-navy);
   font-weight: 600;
+  margin-top: 25px;
 }
 .slider-btn {
   width: 45px;
