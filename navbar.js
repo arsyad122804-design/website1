@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="program-unggulan-sdih.html" class="dropdown-link">Program Unggulan</a>
             <a href="karakter-siswa-sdih.html" class="dropdown-link">Karakter Siswa</a>
             <a href="standar-kompetensi-lulusan.html" class="dropdown-link">Standar Kompetensi Lulusan</a>
+            <a href="testimoni.html" class="dropdown-link">Testimoni</a>
           </div>
         </div>
 
