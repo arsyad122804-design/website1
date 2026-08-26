@@ -453,3 +453,38 @@ body {
     gap: 20px;
   }
 }
+
+/* Tokoh Slider CSS */
+.tokoh-slider-outer {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+.tokoh-slider-track-wrapper {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  border-radius: 24px;
+}
+.tokoh-slider-track {
+  display: flex;
+  width: max-content;
+}
+.tokoh-card {
+  flex: 0 0 100%;
+  width: 1160px; /* fallback width */
+  max-width: 100%;
+  background: var(--primary-navy);
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(15, 32, 64, 0.25);
+  box-sizing: border-box;
+  margin-bottom: 0; /* reset */
+}
+.tokoh-slider-outer .slider-arrow-btn.prev {
+  left: -20px;
+}
+.tokoh-slider-outer .slider-arrow-btn.next {
+  right: -20px;
+}

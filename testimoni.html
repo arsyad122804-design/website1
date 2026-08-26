@@ -16,9 +16,6 @@
   <!-- CARD NAV ROOT -->
   <div id="card-nav-root"></div>
 
-  <!-- TOP BAR -->
-  
-
   <!-- BREADCRUMB -->
   <div class="breadcrumb-bar">
     <div class="breadcrumb-inner">
@@ -30,8 +27,8 @@
     </div>
   </div>
 
-    <!-- TESTIMONI CSS -->
-  <link rel="stylesheet" href="testimoni.css?v=20260826b" />
+  <!-- TESTIMONI CSS -->
+  <link rel="stylesheet" href="testimoni.css?v=20260826d" />
 
   <header class="testimoni-header">
     <h1>APA KATA <span>MEREKA?</span></h1>
@@ -43,8 +40,8 @@
   </header>
 
   <section class="testimoni-section">
-    <!-- PARA TOKOH -->
-    <div class="section-title-wrap">
+    <!-- PARA TOKOH (Centered Header) -->
+    <div class="section-title-center">
       <div class="section-title-left">
         <div class="section-icon"><i class="fas fa-video"></i></div>
         <div class="section-title-text">
@@ -52,43 +49,82 @@
           <p>Pandangan para tokoh tentang pendidikan, adab, dan pembentukan karakter di Hibatullah IIBS.</p>
         </div>
       </div>
-      <div class="slider-nav">
-        <button class="slider-btn"><i class="fas fa-chevron-left"></i></button>
-        <span>1 / 4</span>
-        <button class="slider-btn"><i class="fas fa-chevron-right"></i></button>
-      </div>
     </div>
 
-    <div class="tokoh-card">
-      <div class="tokoh-content">
-        <i class="fas fa-quote-left tokoh-quote-icon"></i>
-        <div class="tokoh-text">
-          Pendidikan bukan hanya tentang ilmu, tetapi juga tentang adab.
-        </div>
-        <div class="tokoh-author">
-          <div class="tokoh-name">Prof. Dr. Komaruddin Hidayat</div>
-          <div class="tokoh-title">Rektor UIN Syarif Hidayatullah Jakarta<br>Cendekiawan Muslim</div>
+    <div class="tokoh-slider-outer">
+      <button class="slider-arrow-btn prev" id="tokohPrev"><i class="fas fa-chevron-left"></i></button>
+      <div class="tokoh-slider-track-wrapper" id="tokohTrack">
+        <div class="tokoh-slider-track">
+          <!-- Slide 1 -->
+          <div class="tokoh-card">
+            <div class="tokoh-content">
+              <i class="fas fa-quote-left tokoh-quote-icon"></i>
+              <div class="tokoh-text">
+                Pendidikan bukan hanya tentang ilmu, tetapi juga tentang adab.
+              </div>
+              <div class="tokoh-author">
+                <div class="tokoh-name">Prof. Dr. Komaruddin Hidayat</div>
+                <div class="tokoh-title">Rektor UIN Syarif Hidayatullah Jakarta<br>Cendekiawan Muslim</div>
+              </div>
+            </div>
+            <div class="tokoh-image-wrap" style="background-image: url('assets/images/dokumentasi-1.jpg');">
+              <div class="tokoh-play-btn">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="tokoh-play-label">
+                <i class="fas fa-caret-right"></i> PUTAR VIDEO
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="tokoh-card">
+            <div class="tokoh-content">
+              <i class="fas fa-quote-left tokoh-quote-icon"></i>
+              <div class="tokoh-text">
+                Adab mendahului ilmu. Tanpa adab, kepintaran hanya akan membawa kerusakan.
+              </div>
+              <div class="tokoh-author">
+                <div class="tokoh-name">KH. M. Cholil Nafis, Ph.D.</div>
+                <div class="tokoh-title">Ketua Bidang Dakwah & Ukhuwah MUI Pusat</div>
+              </div>
+            </div>
+            <div class="tokoh-image-wrap" style="background-image: url('assets/images/dokumentasi-2.jpg');">
+              <div class="tokoh-play-btn">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="tokoh-play-label">
+                <i class="fas fa-caret-right"></i> PUTAR VIDEO
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="tokoh-card">
+            <div class="tokoh-content">
+              <i class="fas fa-quote-left tokoh-quote-icon"></i>
+              <div class="tokoh-text">
+                Membangun generasi pemimpin masa depan harus dimulai dari pembiasaan akhlakul karimah.
+              </div>
+              <div class="tokoh-author">
+                <div class="tokoh-name">Prof. Dr. KH. Didin Hafidhuddin, MS</div>
+                <div class="tokoh-title">Guru Besar IPB & Cendekiawan Islam</div>
+              </div>
+            </div>
+            <div class="tokoh-image-wrap" style="background-image: url('assets/images/dokumentasi-3.jpg');">
+              <div class="tokoh-play-btn">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="tokoh-play-label">
+                <i class="fas fa-caret-right"></i> PUTAR VIDEO
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="tokoh-image-wrap">
-        <div class="tokoh-play-btn">
-          <i class="fas fa-play"></i>
-        </div>
-        <div class="tokoh-play-label">
-          <i class="fas fa-caret-right"></i> PUTAR VIDEO
-        </div>
-      </div>
-    </div>
-
-    <div class="slider-dots">
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
+      <button class="slider-arrow-btn next" id="tokohNext"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <!-- WALISANTRI KAMI -->
-    <div class="section-title-wrap" style="margin-top: 60px;">
+    <div class="section-title-center" style="margin-top: 60px;">
       <div class="section-title-left">
         <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
         <div class="section-title-text">
@@ -96,57 +132,59 @@
           <p>Pengalaman nyata para orang tua selama mendampingi pendidikan putra-putrinya di Hibatullah IIBS.</p>
         </div>
       </div>
-      <div class="slider-nav">
-        <button class="slider-btn"><i class="fas fa-chevron-left"></i></button>
-        <button class="slider-btn"><i class="fas fa-chevron-right"></i></button>
-      </div>
     </div>
 
-    <div class="walisantri-grid">
-      <div class="wali-card">
-        <i class="fas fa-quote-left wali-quote-mark"></i>
-        <img src="https://ui-avatars.com/api/?name=Wali+Santri&background=F1F5F9&color=94A3B8&size=100" alt="Avatar" class="wali-avatar" onerror="this.src='https://via.placeholder.com/90'" />
-        <div class="wali-stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="walisantri-slider-outer">
+      <button class="slider-arrow-btn prev" id="waliPrev"><i class="fas fa-chevron-left"></i></button>
+      <div class="walisantri-slider-track-wrapper" id="waliTrack">
+        <div class="walisantri-grid">
+          <div class="wali-card">
+            <i class="fas fa-quote-left wali-quote-mark"></i>
+            <img src="https://ui-avatars.com/api/?name=Wali+Santri&background=F1F5F9&color=94A3B8&size=100" alt="Avatar" class="wali-avatar" onerror="this.src='https://via.placeholder.com/90'" />
+            <div class="wali-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="wali-text">Alhamdulillah, kami merasa sangat terbantu dengan pendidikan di Hibatullah IIBS. Tidak hanya akademiknya, tetapi juga pembentukan adab dan karakter anak.</div>
+            <div class="wali-name">Ibu Siti Rahma</div>
+            <div class="wali-role">Walisantri</div>
+            <a href="#" class="wali-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="wali-card">
+            <i class="fas fa-quote-left wali-quote-mark"></i>
+            <img src="https://ui-avatars.com/api/?name=Wali+Santri&background=F1F5F9&color=94A3B8&size=100" alt="Avatar" class="wali-avatar" onerror="this.src='https://via.placeholder.com/90'" />
+            <div class="wali-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="wali-text">Kami bangga anak kami bersekolah di Hibatullah IIBS. Lingkungannya islami, guru dan musyrifnya luar biasa membimbing dengan penuh kesabaran.</div>
+            <div class="wali-name">Bapak Andi Pratama</div>
+            <div class="wali-role">Walisantri</div>
+            <a href="#" class="wali-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="wali-card">
+            <i class="fas fa-quote-left wali-quote-mark"></i>
+            <img src="https://ui-avatars.com/api/?name=Wali+Santri&background=F1F5F9&color=94A3B8&size=100" alt="Avatar" class="wali-avatar" onerror="this.src='https://via.placeholder.com/90'" />
+            <div class="wali-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="wali-text">Perubahan anak kami sangat terasa, lebih disiplin, mandiri dan semakin dekat dengan Al-Qur'an. Terima kasih Hibatullah IIBS.</div>
+            <div class="wali-name">Ibu Nuraeni</div>
+            <div class="wali-role">Walisantri</div>
+            <a href="#" class="wali-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="wali-card">
+            <i class="fas fa-quote-left wali-quote-mark"></i>
+            <img src="https://ui-avatars.com/api/?name=Wali+Santri&background=F1F5F9&color=94A3B8&size=100" alt="Avatar" class="wali-avatar" onerror="this.src='https://via.placeholder.com/90'" />
+            <div class="wali-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="wali-text">Program pendidikan dan pembinaan karakter di sini sangat seimbang. Anak kami tidak hanya pintar, tapi juga beradab.</div>
+            <div class="wali-name">Bapak Muhammad Faisal</div>
+            <div class="wali-role">Walisantri</div>
+            <a href="#" class="wali-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-        <div class="wali-text">Alhamdulillah, kami merasa sangat terbantu dengan pendidikan di Hibatullah IIBS. Tidak hanya akademiknya, tetapi juga pembentukan adab dan karakter anak.</div>
-        <div class="wali-name">Ibu Siti Rahma</div>
-        <div class="wali-role">Walisantri</div>
-        <a href="#" class="wali-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
       </div>
-      <div class="wali-card">
-        <i class="fas fa-quote-left wali-quote-mark"></i>
-        <img src="https://ui-avatars.com/api/?name=Wali+Santri&background=F1F5F9&color=94A3B8&size=100" alt="Avatar" class="wali-avatar" onerror="this.src='https://via.placeholder.com/90'" />
-        <div class="wali-stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <div class="wali-text">Kami bangga anak kami bersekolah di Hibatullah IIBS. Lingkungannya islami, guru dan musyrifnya luar biasa membimbing dengan penuh kesabaran.</div>
-        <div class="wali-name">Bapak Andi Pratama</div>
-        <div class="wali-role">Walisantri</div>
-        <a href="#" class="wali-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="wali-card">
-        <i class="fas fa-quote-left wali-quote-mark"></i>
-        <img src="https://ui-avatars.com/api/?name=Wali+Santri&background=F1F5F9&color=94A3B8&size=100" alt="Avatar" class="wali-avatar" onerror="this.src='https://via.placeholder.com/90'" />
-        <div class="wali-stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <div class="wali-text">Perubahan anak kami sangat terasa, lebih disiplin, mandiri dan semakin dekat dengan Al-Qur'an. Terima kasih Hibatullah IIBS.</div>
-        <div class="wali-name">Ibu Nuraeni</div>
-        <div class="wali-role">Walisantri</div>
-        <a href="#" class="wali-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="wali-card">
-        <i class="fas fa-quote-left wali-quote-mark"></i>
-        <img src="https://ui-avatars.com/api/?name=Wali+Santri&background=F1F5F9&color=94A3B8&size=100" alt="Avatar" class="wali-avatar" onerror="this.src='https://via.placeholder.com/90'" />
-        <div class="wali-stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <div class="wali-text">Program pendidikan dan pembinaan karakter di sini sangat seimbang. Anak kami tidak hanya pintar, tapi juga beradab.</div>
-        <div class="wali-name">Bapak Muhammad Faisal</div>
-        <div class="wali-role">Walisantri</div>
-        <a href="#" class="wali-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-      </div>
+      <button class="slider-arrow-btn next" id="waliNext"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <div class="view-all-btn-wrap">
@@ -163,35 +201,57 @@
     </div>
   </section>
 
-<script src="animations.js?v=1785300047"></script><script src="script.js?v=1781320772246"></script>
+  <script src="animations.js?v=1785300047"></script>
+  <script src="script.js?v=1781320772246"></script>
   <script src="navbar.js?v=20260826"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Walisantri Slider
+      const waliTrack = document.getElementById('waliTrack');
+      const waliPrev = document.getElementById('waliPrev');
+      const waliNext = document.getElementById('waliNext');
+      
+      if (waliTrack && waliPrev && waliNext) {
+        const scrollAmount = 305; // card width 280px + gap 25px
+        
+        waliPrev.addEventListener('click', () => {
+          waliTrack.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+          });
+        });
+        
+        waliNext.addEventListener('click', () => {
+          waliTrack.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+          });
+        });
+      }
+
+      // Tokoh Slider
+      const tokohTrack = document.getElementById('tokohTrack');
+      const tokohPrev = document.getElementById('tokohPrev');
+      const tokohNext = document.getElementById('tokohNext');
+      
+      if (tokohTrack && tokohPrev && tokohNext) {
+        tokohPrev.addEventListener('click', () => {
+          const cardWidth = tokohTrack.offsetWidth;
+          tokohTrack.scrollBy({
+            left: -cardWidth,
+            behavior: 'smooth'
+          });
+        });
+        
+        tokohNext.addEventListener('click', () => {
+          const cardWidth = tokohTrack.offsetWidth;
+          tokohTrack.scrollBy({
+            left: cardWidth,
+            behavior: 'smooth'
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
