@@ -599,10 +599,12 @@ body {
     width: 100% !important;
   }
   .tokoh-video-area {
-    flex: 0 0 200px !important;
+    flex: none !important;
+    width: 100% !important;
+    height: 480px !important; /* Changed from 200px to 480px to show vertical video controls */
     border-right: none !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-    min-height: 200px !important;
+    min-height: auto !important;
   }
   .tokoh-content {
     padding: 30px 20px !important;

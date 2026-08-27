@@ -28,7 +28,7 @@
   </div>
 
   <!-- TESTIMONI CSS -->
-  <link rel="stylesheet" href="testimoni.css?v=20260826n" />
+  <link rel="stylesheet" href="testimoni.css?v=20260826o" />
 
   <header class="testimoni-header">
     <h1>APA KATA <span>MEREKA?</span></h1>
@@ -58,7 +58,7 @@
           <div class="tokoh-slide">
             <div class="tokoh-card">
               <div class="tokoh-video-area" style="padding: 0; overflow: hidden; background: black; display: flex; align-items: center; justify-content: center;">
-                <video 
+                <video id="tokohVideo" 
                   src="assets/video%20testimoni/WhatsApp%20Video%202026-08-24%20at%209.22.47%20AM%20(1).mp4" 
                   controls 
                   style="width: 100%; height: 100%; object-fit: cover; min-height: 320px;">
@@ -126,6 +126,18 @@
             left: scrollAmount,
             behavior: 'smooth'
           });
+        });
+      }
+
+      // Toggle play/pause when clicking the video itself
+      const videoEl = document.getElementById('tokohVideo');
+      if (videoEl) {
+        videoEl.addEventListener('click', () => {
+          if (videoEl.paused) {
+            videoEl.play();
+          } else {
+            videoEl.pause();
+          }
         });
       }
 
