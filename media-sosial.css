@@ -1,0 +1,585 @@
+/* ==========================================================================
+   MEDIA SOSIAL PAGE STYLES (100% MATCH TO DESIGN)
+   ========================================================================== */
+
+/* Page General Settings */
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   HERO SECTION
+   -------------------------------------------------------------------------- */
+.ms-hero {
+  position: relative;
+  background-image: linear-gradient(135deg, rgba(8, 28, 75, 0.92) 0%, rgba(18, 48, 100, 0.88) 100%), url('assets/images/galeri-img_9178.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 100px 0 110px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.ms-hero-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.ms-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  margin-bottom: 24px;
+}
+.ms-breadcrumb a {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.ms-hero-tag {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.ms-hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.ms-hero-title span {
+  color: #ff7b00;
+}
+
+.ms-hero-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 620px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.ms-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ms-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+.ms-pill:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
+}
+.ms-pill i {
+  color: #60a5fa;
+  font-size: 14px;
+}
+
+.ms-hero-decor {
+  position: absolute;
+  right: 24px;
+  bottom: 40px;
+  text-align: right;
+  pointer-events: none;
+}
+.ms-hero-script {
+  font-family: 'Outfit', cursive, sans-serif;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.ms-hero-side-text {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION TEMUKAN HIBATULLAH (PLATFORMS)
+   -------------------------------------------------------------------------- */
+.ms-section {
+  padding: 80px 0;
+}
+
+.ms-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ms-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 50px;
+}
+
+.ms-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #3b82f6;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.ms-section-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+.ms-section-title .highlight-blue {
+  color: #2563eb;
+}
+.ms-section-title .highlight-red {
+  color: #ef4444;
+}
+
+.ms-section-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* Platform Cards Grid */
+.ms-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.ms-card {
+  position: relative;
+  border-radius: 28px;
+  padding: 40px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  color: #ffffff;
+}
+.ms-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Instagram Card Specific */
+.ms-card-ig {
+  background-image: linear-gradient(135deg, rgba(131, 58, 180, 0.85) 0%, rgba(253, 29, 29, 0.8) 50%, rgba(252, 176, 69, 0.85) 100%), url('assets/images/gedung-hibatullah-main.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* TikTok Card Specific */
+.ms-card-tiktok {
+  background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(0, 0, 0, 0.9) 60%, rgba(14, 165, 233, 0.7) 100%), url('assets/images/leadership-santri.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.ms-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ms-card-icon {
+  font-size: 42px;
+  color: #ffffff;
+}
+
+.ms-card-platform {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ms-card-body {
+  margin-bottom: 30px;
+}
+
+.ms-card-text {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 320px;
+}
+
+.ms-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ms-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+.ms-visit-btn:hover {
+  background: #f1f5f9;
+  transform: translateX(4px);
+}
+
+.ms-card-handle {
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.ms-card-tag {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-family: 'Outfit', cursive, sans-serif;
+  font-size: 24px;
+  opacity: 0.75;
+  font-style: italic;
+  text-align: right;
+  max-width: 140px;
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION LATEST ON YOUTUBE (SLIDER / CAROUSEL)
+   -------------------------------------------------------------------------- */
+.ms-yt-section {
+  background: #ffffff;
+  padding: 80px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ms-yt-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.ms-yt-header-left {
+  max-width: 600px;
+}
+
+.ms-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+.ms-view-all:hover {
+  gap: 12px;
+  color: #1d4ed8;
+}
+
+/* Carousel Container */
+.ms-carousel-wrap {
+  position: relative;
+}
+
+.ms-carousel {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 4px 20px;
+  scrollbar-width: none; /* Firefox */
+}
+.ms-carousel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.ms-yt-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+.ms-yt-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1;
+}
+
+.ms-yt-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.ms-yt-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.ms-yt-card:hover .ms-yt-img {
+  transform: scale(1.08);
+}
+
+.ms-yt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  padding-left: 3px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+.ms-yt-card:hover .ms-yt-play {
+  background: #ef4444;
+  border-color: #ef4444;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.ms-yt-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.ms-yt-info {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ms-yt-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ms-yt-meta {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Nav Buttons */
+.ms-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+.ms-nav-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+.ms-nav-prev { left: -22px; }
+.ms-nav-next { right: -22px; }
+
+/* --------------------------------------------------------------------------
+   CTA FOOTER BANNER
+   -------------------------------------------------------------------------- */
+.ms-cta-section {
+  padding: 80px 0;
+}
+
+.ms-cta-card {
+  position: relative;
+  background-image: linear-gradient(135deg, rgba(8, 28, 75, 0.92) 0%, rgba(18, 48, 100, 0.88) 100%), url('assets/images/gedung-hibatullah-main.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 32px;
+  padding: 60px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+}
+
+.ms-cta-content {
+  max-width: 600px;
+}
+
+.ms-cta-tag {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.ms-cta-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.ms-cta-title span {
+  color: #ff7b00;
+}
+
+.ms-cta-subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.ms-cta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ms-cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.ms-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #ff7b00 0%, #ff9500 100%);
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(255, 123, 0, 0.35);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.ms-cta-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 18px 36px rgba(255, 123, 0, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .ms-cards-grid { grid-template-columns: 1fr; }
+  .ms-cta-card { flex-direction: column; align-items: flex-start; gap: 30px; padding: 40px; }
+  .ms-hero-decor { display: none; }
+}
+
+@media (max-width: 768px) {
+  .ms-hero { padding: 60px 0 70px; }
+  .ms-hero-title { font-size: 36px; }
+  .ms-section-title { font-size: 28px; }
+  .ms-card { padding: 30px; }
+  .ms-card-text { font-size: 18px; }
+  .ms-yt-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .ms-nav-btn { display: none; }
+  .ms-cta-title { font-size: 30px; }
+}

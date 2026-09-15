@@ -45,6 +45,7 @@
         '<a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a>' +
         '<a href="galeri.html"><i class="fas fa-images"></i> Galeri</a>' +
         '<a href="berita.html"><i class="fas fa-newspaper"></i> Berita</a>' +
+        '<a href="media-sosial.html"><i class="fas fa-share-nodes"></i> Media Sosial</a>' +
       '</nav>' +
       '<div class="mobile-nav-footer">' +
         '<a href="pendaftaran.html" class="mobile-nav-cta"><i class="fas fa-pen-to-square"></i> Daftar Sekarang</a>' +

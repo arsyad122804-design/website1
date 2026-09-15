@@ -72,6 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
           Berita
         </a>
 
+        <a href="media-sosial.html" class="card-nav-item">
+          Media Sosial
+        </a>
+
         <div class="lang-switcher">
           <button class="lang-trigger" id="langTriggerBtn" aria-haspopup="true" aria-expanded="false" type="button">
             <img src="https://flagcdn.com/w40/id.png" id="currentLangFlag" alt="Bahasa">
