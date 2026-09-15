@@ -1,4 +1,4 @@
-﻿/* ===========================
+/* ===========================
    BREADCRUMB
 =========================== */
 .breadcrumb-bar {
@@ -45,9 +45,14 @@
    PAGE HEADER
 =========================== */
 .page-header {
-  background: #fff;
-  padding: 44px 0 32px;
+  position: relative;
+  background-image: linear-gradient(135deg, rgba(10, 31, 92, 0.88) 0%, rgba(26, 58, 107, 0.82) 45%, rgba(30, 77, 140, 0.88) 100%), url('assets/images/galeri-img_9178.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 60px 0 45px;
   text-align: center;
+  color: #fff;
 }
 
 .page-header-inner {
@@ -63,16 +68,20 @@
   gap: 12px;
   font-size: 13px;
   font-weight: 700;
-  color: #27ae60;
+  color: #7eb8f7;
   letter-spacing: 2px;
   margin-bottom: 10px;
+}
+
+.page-header-title {
+  color: #ffffff;
 }
 
 .label-line {
   display: inline-block;
   width: 32px;
   height: 2px;
-  background: #27ae60;
+  background: #7eb8f7;
   border-radius: 2px;
 }
 

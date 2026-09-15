@@ -17,7 +17,10 @@
 =========================== */
 .sk-hero {
   position: relative;
-  background: linear-gradient(135deg, #0a1f5c 0%, #1a3a6b 45%, #1e4d8c 75%, #2563b0 100%);
+  background-image: linear-gradient(135deg, rgba(10, 31, 92, 0.88) 0%, rgba(26, 58, 107, 0.82) 45%, rgba(30, 77, 140, 0.88) 100%), url('assets/images/galeri-img_9178.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   overflow: hidden; padding: 80px 0 100px;
 }
 .sk-hero-bg { position: absolute; inset: 0; overflow: hidden; }
