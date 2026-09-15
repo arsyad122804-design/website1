@@ -6,8 +6,8 @@
   <title>Galeri - Hibatullah IIBS</title>
   <link rel="stylesheet" href="style.css?v=1786786000" />
   <link rel="stylesheet" href="footer.css?v=2" />
-  <link rel="stylesheet" href="galeri.css?v=1786786000" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="galeri.css?v=1786787000" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="navbar.css?v=1785300048">
   <link rel="icon" href="favicon.png" type="image/png" />
@@ -17,181 +17,258 @@
   <div id="card-nav-root"></div>
 
   <!-- BREADCRUMB -->
-  <div class="galeri-breadcrumb">
-    <div class="galeri-breadcrumb-inner">
-      <i class="fas fa-home"></i>
-      <a href="index.html">Beranda</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>Galeri</span>
-    </div>
-  </div>
+  
 
-  <!-- HERO GALERI -->
-  <section class="galeri-hero">
-    <div class="galeri-hero-bg">
-      <img src="assets/images/003.jpg (1).jpeg" alt="Background Galeri" />
+  <!-- HERO BANNER (DOKUMENTASI KEBAIKAN - GALERI HIBATULLAH) -->
+  <section class="galeri-new-hero">
+    <div class="gnh-bg">
+      <img src="assets/images/gedung-hibatullah-main.jpg" alt="Gedung Hibatullah IIBS" />
+      <div class="gnh-overlay"></div>
     </div>
-    <div class="galeri-hero-content">
-      <div class="galeri-hero-label"><i class="fas fa-camera"></i> Dokumentasi &amp; Aktivitas</div>
-      <h1 class="galeri-hero-title">GALERI <span>HIBATULLAH IIBS</span></h1>
-      <p class="galeri-hero-desc">Kumpulan momen kegiatan, aktivitas santri, area pesantren, dan prestasi</p>
+    <div class="gnh-container">
+      <div class="gnh-left">
+        <span class="gnh-eyebrow">DOKUMENTASI KEBAIKAN</span>
+        <h1 class="gnh-title"><span style="color:#ff7b00;">Galeri</span><br><span style="color:#7eb8f7;">Hibatullah</span></h1>
+        <p class="gnh-subtitle">Setiap Momen, Penuh Makna</p>
+        <p class="gnh-desc">Mengabadikan setiap langkah, cerita, dan momen berharga dalam perjalanan para santri Hibatullah IIBS menuju generasi Muslim yang beradab dan berkarya.</p>
+      </div>
+      <div class="gnh-right">
+        <blockquote class="gnh-quote">
+          "Karena setiap kisah di sini adalah bagian dari pendidikan menuju peradaban."
+        </blockquote>
+      </div>
     </div>
   </section>
 
-  <!-- GALERI MAIN -->
-  <section class="galeri-section">
-    <div class="galeri-inner">
+  <!-- MAIN GALERI CONTAINER -->
+  <section class="galeri-main-section">
+    <div class="galeri-main-container">
 
-      <!-- Filter Tabs -->
-      <div class="galeri-filter">
-        <button class="filter-btn active" data-filter="semua">Semua</button>
-        <button class="filter-btn" data-filter="dokumentasi">Dokumentasi &amp; Aktivitas Kegiatan</button>
-        <button class="filter-btn" data-filter="area">Area Pesantren</button>
-        <button class="filter-btn" data-filter="prestasi">Prestasi Santri</button>
-      </div>
-
-      <!-- Grid -->
-                  <div class="galeri-grid" id="galeriGrid">
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_8800.jpg" alt="Penyerahan Piala Prestasi oleh Pimpinan Pondok KH. Kurniyadi" />
-          <div class="galeri-overlay"></div>
-        </div>
-        
-        
-        
-        
-        
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_8997.jpg" alt="Penyerahan Piala Prestasi Santri Putri oleh Pimpinan Pondok" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_8998.jpg" alt="Penyerahan Trophy Juara Santri Putra oleh KH. Kurniyadi" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9006.jpg" alt="Penyerahan Piala Juara 1 Prestasi Santri Hibatullah" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9037.jpg" alt="Penyerahan Piala Juara Umum Santri Hibatullah IIBS" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9038.jpg" alt="Penyerahan Trophy Kehormatan Santri Putra" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9039.jpg" alt="Upacara Peringatan HUT RI Santri Hibatullah IIBS" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9046.jpg" alt="Pengibaran Bendera Merah-Putih oleh Paskibra Santri Putra" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9100.jpg" alt="Foto Bersama Pimpinan Pondok & Santri Putra Upacara 17 Agustus" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9105.jpg" alt="KH. Kurniyadi Bersama Jajaran Ustadz & Pembina Pesantren" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9178.jpg" alt="Pawai & Defile HUT RI Santri Putra Hibatullah IIBS" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9187.jpg" alt="Santri Putra Membawa Bendera Merah-Putih Saat Pawai" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9193.jpg" alt="Barisan Santri Putra dalam Defile Pawai Kemerdekaan" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9314.jpg" alt="Upacara & Defile Barisan Bendera Santri Putra" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9319.jpg" alt="Barisan Bendera Merah-Putih Santri Putri Peringatan 17 Agustus" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9347.jpg" alt="Kebersamaan Pimpinan Pondok KH. Kurniyadi & Para Ustadz" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9353.jpg" alt="Para Ustadzah & Guru Putri Hibatullah IIBS" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="dokumentasi">
-          <img src="assets/images/galeri-img_9367.jpg" alt="Momen Ceria Santri Putri Memegang Bendera Merah-Putih" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9387.jpg" alt="Penyerahan Sertifikat Lomba Gerak Jalan Santri Putra" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9389.jpg" alt="Penyerahan Sertifikat Lomba Gerak Jalan Santri Putri" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9395.jpg" alt="Penyerahan Hadiah Juara Lomba Kemerdekaan Santri Putra" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9400.jpg" alt="Penyerahan Hadiah Juara Lomba Kemerdekaan Santri Putri" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9401.jpg" alt="Penyerahan Hadiah Juara Santri Putri" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9402.jpg" alt="Penyerahan Hadiah Juara 1 Santri Putra" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9403.jpg" alt="Penyerahan Hadiah Language Stars Santri Putri" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9404.jpg" alt="Penerimaan Hadiah Lomba 17 Agustus" />
-          <div class="galeri-overlay"></div>
-        </div>
-        <div class="galeri-item" data-cat="prestasi">
-          <img src="assets/images/galeri-img_9405.jpg" alt="Momen Penyerahan Hadiah Lomba" />
-          <div class="galeri-overlay"></div>
+      <!-- 1. FILTER PILLS ROW -->
+      <div class="galeri-filter-wrapper">
+        <div class="galeri-filter-bar">
+          <button class="filter-pill active" data-filter="semua">
+            <i class="fas fa-th-large"></i> Semua
+          </button>
+          <button class="filter-pill" data-filter="kegiatan">
+            <i class="fas fa-user-friends"></i> Kegiatan Santri
+          </button>
+          <button class="filter-pill" data-filter="pembelajaran">
+            <i class="fas fa-book-open"></i> Pembelajaran
+          </button>
+          <button class="filter-pill" data-filter="tahfidz">
+            <i class="fas fa-bookmark"></i> Tahfidz
+          </button>
+          <button class="filter-pill" data-filter="olahraga">
+            <i class="fas fa-futbol"></i> Olahraga
+          </button>
+          <button class="filter-pill" data-filter="event">
+            <i class="fas fa-calendar-alt"></i> Event
+          </button>
+          <button class="filter-pill" data-filter="fasilitas">
+            <i class="fas fa-camera"></i> Fasilitas
+          </button>
         </div>
       </div>
 
-      <!-- Load More -->
-      <div class="galeri-loadmore">
-        <button class="btn-loadmore" id="loadMoreBtn">
-          Load More <i class="fas fa-arrow-down"></i>
+      <!-- 2. FEATURED SHOWCASE CARD (MOMEN PILIHAN) -->
+      <div class="galeri-featured-card">
+        <!-- Left Hero Image -->
+        <div class="gfc-hero-img">
+          <img src="assets/images/WhatsApp Image 2026-09-08 at 10.59.58 AM.jpeg" alt="Quranic Fun Camp 2026" />
+        </div>
+
+        <!-- Center Content -->
+        <div class="gfc-content">
+          <span class="gfc-tag">MOMEN PILIHAN</span>
+          <h2 class="gfc-title">Quranic Fun Camp 2026</h2>
+          <p class="gfc-subtitle">Belajar, Berkarya, dan Bertumbuh Bersama Al-Qur'an</p>
+          <p class="gfc-desc">Sebuah perjalanan penuh makna yang menguatkan cinta Al-Qur'an, ukhuwah, dan semangat menjadi pribadi yang lebih baik.</p>
+          <a href="#galeriGrid" class="gfc-btn">Lihat Selengkapnya <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Right Thumbnail Stack & +12 Box -->
+        <div class="gfc-stack">
+          <div class="gfc-thumb">
+            <img src="assets/images/KBM.jpg.jpeg" alt="Preview 1" />
+          </div>
+          <div class="gfc-thumb">
+            <img src="assets/images/dokumentasi-3.jpg" alt="Preview 2" />
+          </div>
+          <div class="gfc-more-box">
+            <span class="gfc-more-num">+12</span>
+            <span class="gfc-more-text">Foto lainnya</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. SECTION HEADER -->
+      <div class="galeri-section-header">
+        <div class="gsh-left">
+          <span class="gsh-eyebrow">DOKUMENTASI KEGIATAN</span>
+          <h2 class="gsh-title">Galeri Kegiatan</h2>
+        </div>
+        <div class="gsh-right">
+          <blockquote class="gsh-quote">
+            "Bukan sekadar foto, tapi cerita tentang proses, perjuangan, dan kebersamaan."
+          </blockquote>
+          <div class="gsh-accent-line"></div>
+        </div>
+      </div>
+
+      <!-- 4. BENTO GRID GALERI -->
+      <div class="galeri-bento-grid" id="galeriGrid">
+
+        <!-- Card 1: Tall Card Col 1 -->
+        <div class="gb-card gb-card-tall" data-cat="olahraga">
+          <img src="assets/images/dokumentasi-3.jpg" alt="Latihan Panahan" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Latihan Panahan</h3>
+            <span class="gb-card-date">10 Agustus 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gb-card" data-cat="kegiatan">
+          <img src="assets/images/galeri-img_9178.jpg" alt="Kegiatan Santri" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Kegiatan Santri</h3>
+            <span class="gb-card-date">08 Agustus 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gb-card" data-cat="tahfidz">
+          <img src="assets/images/WhatsApp Image 2026-09-08 at 10.59.58 AM.jpeg" alt="Tahfidz Al-Qur'an" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Tahfidz Al-Qur'an</h3>
+            <span class="gb-card-date">05 Agustus 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gb-card" data-cat="pembelajaran">
+          <img src="assets/images/KBM.jpg.jpeg" alt="Proses Pembelajaran" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Proses Pembelajaran</h3>
+            <span class="gb-card-date">03 Agustus 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Wide Card Row 2 -->
+        <div class="gb-card gb-card-wide" data-cat="event">
+          <img src="assets/images/dokumentasi-2.jpg" alt="Quranic Fun Camp" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Quranic Fun Camp</h3>
+            <span class="gb-card-date">28 Juli 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="gb-card" data-cat="kegiatan">
+          <img src="assets/images/galeri-img_8800.jpg" alt="Kajian dan Motivasi" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Kajian dan Motivasi</h3>
+            <span class="gb-card-date">25 Juli 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="gb-card" data-cat="olahraga">
+          <img src="assets/images/galeri-img_9187.jpg" alt="Outdoor Activity" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Outdoor Activity</h3>
+            <span class="gb-card-date">22 Juli 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="gb-card" data-cat="kegiatan">
+          <img src="assets/images/galeri-img_9037.jpg" alt="Kegiatan Keagamaan" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Kegiatan Keagamaan</h3>
+            <span class="gb-card-date">20 Juli 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="gb-card" data-cat="kegiatan">
+          <img src="assets/images/galeri-img_9100.jpg" alt="Kebersamaan Santri" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Kebersamaan Santri</h3>
+            <span class="gb-card-date">18 Juli 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="gb-card" data-cat="event">
+          <img src="assets/images/galeri-img_9046.jpg" alt="Upacara Bendera" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Upacara Bendera</h3>
+            <span class="gb-card-date">17 Agustus 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="gb-card" data-cat="fasilitas">
+          <img src="assets/images/ChatGPT Image Sep 8, 2026, 09_55_24 AM (1).png" alt="Fasilitas Sekolah" class="gb-card-img" />
+          <div class="gb-card-overlay"></div>
+          <div class="gb-card-info">
+            <h3 class="gb-card-title">Fasilitas Sekolah</h3>
+            <span class="gb-card-date">15 Juli 2026</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 5. LOAD MORE BUTTON -->
+      <div class="galeri-loadmore-wrap">
+        <button class="galeri-loadmore-btn" id="loadMoreBtn">
+          <i class="fas fa-sync-alt"></i> Muat Lebih Banyak
         </button>
       </div>
 
+      <!-- 6. BOTTOM CTA BANNER -->
+      <div class="galeri-cta-banner">
+        <div class="gcb-left">
+          <h2>Mari Menjadi Bagian<br>dari <span class="highlight">Cerita Hibatullah</span></h2>
+        </div>
+        <div class="gcb-center">
+          <p>Bersama kita wujudkan generasi Muslim yang beradab dan berkarya.</p>
+        </div>
+        <div class="gcb-right">
+          <a href="ppdb.html" class="gcb-btn">Daftar Sekarang <i class="fas fa-arrow-right"></i></a>
+          <a href="ppdb.html" class="gcb-circle-btn" aria-label="Daftar Sekarang"><i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
-    <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
-    <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
-    <div class="lightbox-content">
-      <img src="" alt="" id="lightboxImg" />
-    </div>
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+    <img class="lightbox-content" id="lightboxImg" alt="Foto Galeri" />
+    <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
   </div>
 
   <!-- FOOTER -->
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
-  <script src="galeri.js?v=1786786000"></script>
+
   <script src="animations.js?v=1785300047"></script>
-  <script src="script.js?v=1781320772231"></script>
+  <script src="script.js?v=1781320772244"></script>
   <script src="navbar.js?v=20260826"></script>
+  <script src="galeri.js?v=1786787000"></script>
 </body>
 </html>

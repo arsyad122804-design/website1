@@ -97,7 +97,7 @@
     if (!wrap) return;
 
     var hi = esc(d.hero_highlight || 'SANTRI');
-    var title = 'ASRAMA <span>' + hi + '</span>';
+    var title = '<span style="color:#ff7b00;">ASRAMA</span> <span style="color:#7eb8f7;">' + hi + '</span>';
 
     wrap.innerHTML =
       '<section class="as-hero" style="position:relative;">' +
@@ -131,11 +131,9 @@
             '<h2 class="as-title">Rumah Kedua <span>Para Santri</span></h2>' +
             '<div class="as-line"></div>' +
           '</div>' +
-          '<div class="as-about-grid">' +
             '<div><div class="as-prose" id="asProse"></div>' +
             (d.kutipan ? '<div class="as-quote"><i class="fas fa-quote-left"></i><p>' + esc(d.kutipan) + '</p></div>' : '') +
             '</div>' +
-            '<div class="as-stats" id="asStats"></div>' +
           '</div>' +
         '</div>' +
       '</section>' +
@@ -155,12 +153,19 @@
       '<section class="as-fas as-sec" id="fasilitas">' +
         '<div class="as-inner">' +
           '<div class="as-head">' +
-            '<p class="as-label">FASILITAS</p>' +
+            '<p class="as-label">— FASILITAS —</p>' +
             '<h2 class="as-title">Fasilitas <span>Asrama Santri</span></h2>' +
             '<div class="as-line"></div>' +
           '</div>' +
-          '<p class="as-fas-intro" id="asFasIntro"></p>' +
-          '<div class="as-fas-bento" id="asFasilitas"></div>' +
+          '<div class="as-fas-intro-card">' +
+            '<div class="as-fas-intro-icon"><i class="fas fa-university"></i></div>' +
+            '<div class="as-fas-intro-text">' + esc(d.fasilitas_intro || 'Asrama dilengkapi fasilitas akomodasi lengkap: tempat tidur, lemari, kamar mandi, lobby, dan laundry. Setiap kamar maksimal 8 santri dengan pendampingan musyrif/musyrifah.') + '</div>' +
+          '</div>' +
+          '<div class="as-fas-grid">' +
+            '<div class="as-fas-row as-fas-row-1" id="asFasRow1"></div>' +
+            '<div class="as-fas-row as-fas-row-2" id="asFasRow2"></div>' +
+            '<div class="as-fas-row as-fas-row-3" id="asFasRow3"></div>' +
+          '</div>' +
         '</div>' +
       '</section>';
 
@@ -177,48 +182,71 @@
       })
       .join('');
 
-    document.getElementById('asStats').innerHTML = (d.stats || [])
-      .map(function (s) {
-        return (
-          '<div class="as-stat">' +
-            '<div class="as-stat-icon" style="background:' + esc(s.bg) + ';color:' + esc(s.color) + '">' +
-              '<i class="fas ' + esc(s.icon) + '"></i></div>' +
-            '<div><b>' + esc(s.nilai) + '</b><small>' + esc(s.label) + '</small></div>' +
-          '</div>'
-        );
-      })
-      .join('');
-
     document.getElementById('asGallery').innerHTML = (d.galeri || [])
       .map(function (url) {
         return '<div class="as-gallery-item"><img src="' + esc(url) + '" alt="Asrama" loading="lazy" /></div>';
       })
       .join('');
 
-    document.getElementById('asNilai').innerHTML = (d.nilai || [])
-      .map(function (n) {
-        return (
-          '<div class="as-nilai-card">' +
-            '<div class="icon"><i class="fas ' + esc(n.icon) + '"></i></div>' +
-            '<h4>' + esc(n.judul) + '</h4><p>' + esc(n.deskripsi) + '</p></div>'
-        );
-      })
-      .join('');
+    var nilaiPresets = [
+      { color: '#f59e0b', light: '#fbbf24', dark: '#d97706', shadow: 'rgba(245, 158, 11, 0.45)', bg: '#fffbeb' },
+      { color: '#10b981', light: '#34d399', dark: '#047857', shadow: 'rgba(16, 185, 129, 0.45)', bg: '#ecfdf5' },
+      { color: '#3b82f6', light: '#60a5fa', dark: '#1d4ed8', shadow: 'rgba(59, 130, 246, 0.45)', bg: '#eff6ff' }
+    ];
 
-    document.getElementById('asFasIntro').textContent = d.fasilitas_intro || '';
-    document.getElementById('asFasilitas').innerHTML = (d.fasilitas || [])
-      .map(function (f, i) {
-        var wide = f.wide || i === 0 ? ' as-fas-item--wide' : '';
+    document.getElementById('asNilai').innerHTML = (d.nilai || [])
+      .map(function (n, i) {
+        var p = nilaiPresets[i % nilaiPresets.length];
         return (
-          '<div class="as-fas-item' + wide + '">' +
-            '<span class="as-fas-check"><i class="fas fa-check"></i></span>' +
-            '<div class="as-fas-icon" style="background:' + esc(f.bg) + ';color:' + esc(f.color) + '">' +
-              '<i class="fas ' + esc(f.icon) + '"></i></div>' +
-            '<div><h4>' + esc(f.judul) + '</h4><p>' + esc(f.deskripsi) + '</p></div>' +
+          '<div class="as-nilai-card" style="--n-color:' + p.color + '; --n-light:' + p.light + '; --n-dark:' + p.dark + '; --n-shadow:' + p.shadow + '; --n-bg:' + p.bg + ';">' +
+            '<div class="as-nilai-icon"><i class="fas ' + esc(n.icon) + '"></i></div>' +
+            '<h4>' + esc(n.judul) + '</h4>' +
+            '<p>' + esc(n.deskripsi) + '</p>' +
           '</div>'
         );
       })
       .join('');
+
+    var fasData = [
+      { num: '01', icon: 'fa-bed', judul: 'Asrama yang Nyaman', deskripsi: 'Kamar tidur bersih dengan tempat tidur berkualitas', color: '#2563eb', light: '#60a5fa', dark: '#1d4ed8', shadow: 'rgba(37, 99, 235, 0.4)', bg: '#eff6ff' },
+      { num: '02', icon: 'fa-bath', judul: 'Kamar Mandi Bersih', deskripsi: 'Terawat di setiap lantai', color: '#10b981', light: '#34d399', dark: '#047857', shadow: 'rgba(16, 185, 129, 0.4)', bg: '#ecfdf5' },
+      { num: '03', icon: 'fa-couch', judul: 'Lobby Luas', deskripsi: 'Lobby luas di setiap lantai', color: '#f59e0b', light: '#fbbf24', dark: '#d97706', shadow: 'rgba(245, 158, 11, 0.4)', bg: '#fffbeb' },
+      { num: '04', icon: 'fa-leaf', judul: 'Lingkungan Asri', deskripsi: 'Nyaman, asri, dan hijau', color: '#8b5cf6', light: '#a78bfa', dark: '#6d28d9', shadow: 'rgba(139, 92, 246, 0.4)', bg: '#f5f3ff' },
+      { num: '05', icon: 'fa-book-open', judul: 'Learning Space', deskripsi: 'Ruang belajar & diskusi', color: '#ef4444', light: '#f87171', dark: '#b91c1c', shadow: 'rgba(239, 68, 68, 0.4)', bg: '#fef2f2' },
+      { num: '06', icon: 'fa-utensils', judul: 'Kantin Sehat', deskripsi: 'Menu sehat dan bergizi', color: '#14b8a6', light: '#2dd4bf', dark: '#0f766e', shadow: 'rgba(20, 184, 166, 0.4)', bg: '#f0fdfa' },
+      { num: '07', icon: 'fa-book-reader', judul: 'Pojok Baca', deskripsi: 'Koleksi buku islami', color: '#0284c7', light: '#38bdf8', dark: '#0369a1', shadow: 'rgba(2, 132, 199, 0.4)', bg: '#f0f9ff' },
+      { num: '08', icon: 'fa-shield-alt', judul: 'Keamanan 24 Jam', deskripsi: 'Musyrif/ah berdedikasi', color: '#eab308', light: '#facc15', dark: '#a16207', shadow: 'rgba(234, 179, 8, 0.4)', bg: '#fefce8' }
+    ];
+
+    function createFasCard(f) {
+      return (
+        '<div class="as-fas-card" style="--card-color:' + f.color + '; --card-light:' + f.light + '; --card-dark:' + f.dark + '; --card-shadow:' + f.shadow + '; --card-bg:' + f.bg + ';">' +
+          '<div class="as-fas-card-top">' +
+            '<div class="as-fas-card-icon"><i class="fas ' + f.icon + '"></i></div>' +
+            '<span class="as-fas-card-num">' + f.num + '</span>' +
+          '</div>' +
+          '<div class="as-fas-card-body">' +
+            '<h4>' + esc(f.judul) + '</h4>' +
+            '<p>' + esc(f.deskripsi) + '</p>' +
+          '</div>' +
+          '<div class="as-fas-card-foot">' +
+            '<button class="as-fas-card-btn" aria-label="Detail"><i class="fas fa-arrow-right"></i></button>' +
+          '</div>' +
+          '<div class="as-fas-card-watermark"><i class="fas ' + f.icon + '"></i></div>' +
+        '</div>'
+      );
+    }
+
+    var row1 = fasData.slice(0, 3).map(createFasCard).join('');
+    var row2 = fasData.slice(3, 7).map(createFasCard).join('');
+    var row3 = fasData.slice(7, 8).map(createFasCard).join('');
+
+    var r1El = document.getElementById('asFasRow1');
+    var r2El = document.getElementById('asFasRow2');
+    var r3El = document.getElementById('asFasRow3');
+    if (r1El) r1El.innerHTML = row1;
+    if (r2El) r2El.innerHTML = row2;
+    if (r3El) r3El.innerHTML = row3;
 
     var ctaTitle = d.cta_judul || DEFAULT.cta_judul;
     var hi = d.cta_highlight || 'Asrama Terbaik!';

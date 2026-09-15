@@ -81,17 +81,103 @@
   .sdih-hero-pills{justify-content:center !important}
   .sdih-hero-badge{margin:0 auto 16px !important}
 }
-.sdih-vm-single-card { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-top: 4px solid #3a5bd9; text-align: left; margin-bottom: 48px; }
-.sdih-vm-divider { border: 0; height: 1px; background: #eee; margin: 32px 0; }
-.sdih-visi-header, .sdih-misi-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
-.sdih-visi-icon { width: 48px; height: 48px; border-radius: 12px; background: #3a5bd9; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; }
-.sdih-misi-icon { width: 48px; height: 48px; border-radius: 12px; background: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; }
-.sdih-visi-header h3 { font-size: 22px; font-weight: 800; color: #3a5bd9; margin: 0; }
-.sdih-misi-header h3 { font-size: 22px; font-weight: 800; color: #f59e0b; margin: 0; }
-.sdih-visi-text { font-size: 16px; color: #555; line-height: 1.8; max-width: none; font-weight: 400; margin: 0; }
+.sdih-vm-single-card { 
+  background: #ffffff; 
+  border-radius: 20px; 
+  padding: 44px; 
+  box-shadow: 
+    0 16px 40px rgba(26, 58, 107, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.04); 
+  border: 1px solid rgba(58, 91, 217, 0.12);
+  border-top: 5px solid transparent;
+  border-image: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa) 1;
+  text-align: left; 
+  margin-bottom: 48px; 
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sdih-vm-single-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(26, 58, 107, 0.12);
+}
+.sdih-vm-divider { border: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(58, 91, 217, 0.15), transparent); margin: 36px 0; }
+.sdih-visi-header, .sdih-misi-header { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
+.sdih-visi-icon { 
+  width: 52px; 
+  height: 52px; 
+  border-radius: 50%; 
+  background: radial-gradient(circle at 35% 30%, #60a5fa 0%, #2563eb 60%, #1d4ed8 100%); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 22px; 
+  color: #fff; 
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.7), inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sdih-visi-icon i, .sdih-misi-icon i { filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3)); }
+.sdih-vm-part:hover .sdih-visi-icon { transform: scale(1.12) rotate(-5deg); }
+.sdih-misi-icon { 
+  width: 52px; 
+  height: 52px; 
+  border-radius: 50%; 
+  background: radial-gradient(circle at 35% 30%, #fbbf24 0%, #f59e0b 60%, #d97706 100%); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 22px; 
+  color: #fff; 
+  box-shadow: 0 8px 18px rgba(245, 158, 11, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.7), inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sdih-vm-part:hover .sdih-misi-icon { transform: scale(1.12) rotate(5deg); }
+.sdih-visi-header h3 { font-size: 22px; font-weight: 800; color: #1e40af; margin: 0; }
+.sdih-misi-header h3 { font-size: 22px; font-weight: 800; color: #d97706; margin: 0; }
+.sdih-visi-text { font-size: 16.5px; color: #334155; line-height: 1.8; max-width: none; font-weight: 500; margin: 0; font-style: italic; background: #f8fafc; padding: 20px 24px; border-radius: 12px; border-left: 4px solid #2563eb; }
 .sdih-misi-list { list-style: none; padding: 0; margin: 0; }
-.sdih-misi-list li { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 16px; position: relative; padding-left: 24px; }
-.sdih-misi-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: #f59e0b; border-radius: 50%; }
+.sdih-misi-list li { font-size: 14.5px; color: #334155; line-height: 1.8; margin-bottom: 16px; position: relative; padding-left: 28px; }
+.sdih-misi-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 0px; font-size: 15px; color: #f59e0b; }
+
+/* 3D Nilai-Nilai Cards */
+.sdih-nilai-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 44px; }
+.sdih-nilai-card { 
+  background: rgba(255, 255, 255, 0.08); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  border-top: 3px solid #60a5fa; 
+  border-radius: 20px; 
+  padding: 36px 22px 32px; 
+  text-align: center; 
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); 
+  backdrop-filter: blur(12px); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+.sdih-nilai-card:hover { 
+  background: rgba(255, 255, 255, 0.16); 
+  transform: translateY(-8px) scale(1.03); 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 20px rgba(96, 165, 250, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.sdih-nilai-icon { 
+  width: 68px; 
+  height: 68px; 
+  border-radius: 50%; 
+  background: radial-gradient(circle at 35% 30%, #93c5fd 0%, #3b82f6 60%, #1d4ed8 100%); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 26px; 
+  color: #ffffff; 
+  margin: 0 auto 20px; 
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.8), inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sdih-nilai-icon i { filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3)); }
+.sdih-nilai-card:hover .sdih-nilai-icon { transform: scale(1.15) rotate(6deg); }
+.sdih-nilai-card h4 { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 12px; letter-spacing: 0.5px; }
+.sdih-nilai-card p { font-size: 13px; color: rgba(255, 255, 255, 0.82); line-height: 1.7; margin: 0; }
 
 </style>
   <link rel="stylesheet" href="navbar.css?v=1785300048">
@@ -105,16 +191,7 @@
   
 
   <!-- BREADCRUMB -->
-  <div class="sdih-breadcrumb">
-    <div class="sdih-bc-inner">
-      <i class="fas fa-home"></i>
-      <a href="index.html">Beranda</a>
-      <i class="fas fa-chevron-right"></i>
-      <a href="#">SMP Hibatullah</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>Visi Misi</span>
-    </div>
-  </div>
+  
 
   <!-- HERO -->
   <section class="sdih-hero">
@@ -125,7 +202,7 @@
     </div>
     <div class="sdih-hero-inner">
       <div class="sdih-hero-badge"><i class="fas fa-eye"></i> SMP Hibatullah</div>
-      <h1 class="sdih-hero-title">Visi &amp; Misi<br><span>SMP Hibatullah</span></h1>
+      <h1 class="sdih-hero-title"><span style="color:#ff7b00;">Visi &amp; Misi</span><br><span style="color:#7eb8f7;">SMP Hibatullah</span></h1>
       <p class="sdih-hero-desc">Fondasi pendidikan yang kuat untuk mencetak generasi Qur'ani yang berakhlak mulia, cerdas, dan berwawasan global sejak usia dini.</p>
       <div class="sdih-hero-pills">
         <span><i class="fas fa-check-circle"></i> Qur'ani</span>

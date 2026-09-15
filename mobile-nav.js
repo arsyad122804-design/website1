@@ -22,16 +22,16 @@
           '<button onclick="changeSiteLanguage(\'ar\')" class="mobile-lang-btn ar-btn" type="button"><img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية</button>' +
         '</div>' +
         '<a href="index.html"><i class="fas fa-home"></i> Beranda</a>' +
-        '<p class="mobile-nav-group-title">Hibatullah IIBS</p>' +
-        '<a href="visi-misi-sdih.html"><i class="fas fa-eye"></i> Visi Misi</a>' +
-        '<a href="kurikulum-sdih.html"><i class="fas fa-book"></i> Kurikulum</a>' +
-        '<a href="program-unggulan-sdih.html"><i class="fas fa-star"></i> Program Unggulan</a>' +
-        '<a href="karakter-siswa-sdih.html"><i class="fas fa-heart"></i> Karakter Siswa</a>' +
-        '<a href="standar-kompetensi-lulusan.html"><i class="fas fa-graduation-cap"></i> Standar Kompetensi Lulusan</a>' +
-        '<p class="mobile-nav-group-title">History</p>' +
+        '<a href="visi-misi-sdih.html"><i class="fas fa-eye"></i> Visi &amp; Misi</a>' +
+        '<p class="mobile-nav-group-title">About Us</p>' +
         '<a href="sejarah.html"><i class="fas fa-scroll"></i> Sejarah Sekolah</a>' +
         '<a href="penasehat.html"><i class="fas fa-user-tie"></i> Dewan Penasehat</a>' +
         '<a href="stakeholders.html"><i class="fas fa-circle-nodes"></i> Stakeholders</a>' +
+        '<p class="mobile-nav-group-title">Keunggulan Kami</p>' +
+        '<a href="program-unggulan-sdih.html"><i class="fas fa-star"></i> Program Unggulan</a>' +
+        '<a href="karakter-siswa-sdih.html"><i class="fas fa-heart"></i> Karakter Siswa</a>' +
+        '<a href="standar-kompetensi-lulusan.html"><i class="fas fa-graduation-cap"></i> Standar Kompetensi Lulusan</a>' +
+        '<a href="testimoni.html"><i class="fas fa-comment-dots"></i> Testimoni</a>' +
         '<p class="mobile-nav-group-title">Santri Hebat</p>' +
         '<a href="program.html"><i class="fas fa-list"></i> Program</a>' +
         '<a href="asrama.html"><i class="fas fa-home"></i> Fasilitas Asrama</a>' +

@@ -388,4 +388,18 @@
   .sf-cta-box { flex-direction: column; text-align: center; }
   .sf-cta-btns { justify-content: center; width: 100%; }
   .sf-bottom-inner { flex-direction: column; text-align: center; }
+  .sf-brand-desc {
+    font-size: 13px;
+  }
+  .sf-link {
+    font-size: 13.5px;
+  }
+  .sf-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .sf-social-link {
+    width: 40px;
+    height: 40px;
+  }
 }

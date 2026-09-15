@@ -6,300 +6,704 @@
   <title>Standar Kompetensi Lulusan - Hibatullah IIBS</title>
   <link rel="stylesheet" href="style.css?v=1785300047" />
   <link rel="stylesheet" href="footer.css?v=2" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-.skl-breadcrumb{background:#1a3a6b;padding:10px 0}
-.skl-bc-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,0.7)}
-.skl-bc-inner a{color:rgba(255,255,255,0.85);font-weight:500}
-.skl-bc-inner i.fa-chevron-right{font-size:9px;color:rgba(255,255,255,0.35)}
-.skl-bc-inner span{color:rgba(255,255,255,0.55)}
-.skl-hero{position:relative;background:linear-gradient(135deg,rgba(10,31,92,0.7) 0%,rgba(26,58,107,0.6) 40%,rgba(30,77,140,0.5) 70%,rgba(37,99,176,0.4) 100%);overflow:hidden;min-height:500px}
-.skl-hero-bg{position:absolute;inset:0;overflow:hidden}
-.skl-hero-bg::before{content:'';position:absolute;inset:0;background-image:url('assets/images/hero-slide-new.jpg');background-size:cover;background-position:center top;background-repeat:no-repeat;opacity:0.55;z-index:0}
-.skl-hero-bg .hc{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.08)}
-.skl-hero-bg .hc1{width:500px;height:500px;top:-200px;right:-100px}
-.skl-hero-bg .hc2{width:300px;height:300px;bottom:-100px;left:-80px;background:rgba(255,255,255,0.02)}
-.skl-hero-inner{position:relative;z-index:10;max-width:1100px;margin:0 auto;padding:72px 24px 80px;text-align:center}
-.skl-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:20px;backdrop-filter:blur(4px)}
-.skl-hero-title{font-size:38px;font-weight:900;color:#fff;line-height:1.2;margin-bottom:18px}
-.skl-hero-title span{color:#7eb8f7}
-.skl-hero-desc{font-size:14px;color:rgba(255,255,255,0.78);line-height:1.8;max-width:620px;margin:0 auto 32px}
-.skl-hero-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.skl-hero-pills span{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:12px;font-weight:600;padding:7px 14px;border-radius:20px}
-.skl-hero-pills span i{color:#7eb8f7}
-.skl-sec-inner{max-width:1100px;margin:0 auto;padding:0 24px}
-.skl-sec-label{display:flex;align-items:center;justify-content:center;gap:12px;font-size:12px;font-weight:700;color:#3a5bd9;letter-spacing:2px;margin-bottom:10px}
-.skl-sec-label span{display:inline-block;width:28px;height:2px;background:#3a5bd9;border-radius:2px}
-.skl-sec-label.white{color:rgba(255,255,255,0.7)}
-.skl-sec-label.white span{background:rgba(255,255,255,0.4)}
-.skl-sec-title{font-size:28px;font-weight:800;color:#1a1a2e;text-align:center;margin-bottom:8px;line-height:1.3}
-.skl-sec-title span{color:#3a5bd9}
-.skl-sec-title.white{color:#fff}
-.skl-sec-sub{font-size:14px;color:#666;text-align:center;margin-bottom:44px}
-.skl-dimensi{background:#fff;padding:72px 0 64px}
-.skl-dimensi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
-.skl-dim-card{border-radius:18px;overflow:hidden;border:1px solid #e8eef8;transition:transform .2s,box-shadow .2s}
-.skl-dim-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,58,107,0.12)}
-.skl-dim-header{padding:28px 24px 20px;text-align:center}
-.skl-dim-header.blue{background:linear-gradient(135deg,#1a3a6b,#2563b0)}
-.skl-dim-header.green{background:linear-gradient(135deg,#1a6b3a,#27ae60)}
-.skl-dim-header.orange{background:linear-gradient(135deg,#6b3a1a,#e8a020)}
-.skl-dim-icon{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;margin:0 auto 14px;border:2px solid rgba(255,255,255,0.2)}
-.skl-dim-header h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:6px}
-.skl-dim-header p{font-size:12px;color:rgba(255,255,255,0.7)}
-.skl-dim-body{background:#f8f9fc;padding:24px}
-.skl-dim-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #e8eef8}
-.skl-dim-item:last-child{border-bottom:none}
-.skl-dim-check{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0;margin-top:1px}
-.skl-dim-check.blue{background:#1a3a6b}
-.skl-dim-check.green{background:#27ae60}
-.skl-dim-check.orange{background:#e8a020}
-.skl-dim-item p{font-size:12.5px;color:#444;line-height:1.6}
-.skl-kompetensi{background:linear-gradient(135deg,#0a1f5c 0%,#1a3a6b 50%,#1e4d8c 100%);padding:72px 0 64px;position:relative;overflow:hidden}
-.skl-kompetensi::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(255,255,255,0.06)}
-.skl-komp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px;position:relative;z-index:1}
-.skl-komp-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:24px 22px;backdrop-filter:blur(4px);transition:background .2s,transform .2s}
-.skl-komp-card:hover{background:rgba(255,255,255,0.13);transform:translateY(-4px)}
-.skl-komp-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.1)}
-.skl-komp-icon{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:20px;color:#7eb8f7;flex-shrink:0;border:1px solid rgba(255,255,255,0.15)}
-.skl-komp-header h4{font-size:15px;font-weight:700;color:#fff}
-.skl-komp-header span{font-size:11px;color:rgba(255,255,255,0.5);display:block;margin-top:2px}
-.skl-komp-list{list-style:none;display:flex;flex-direction:column;gap:8px}
-.skl-komp-list li{font-size:12.5px;color:rgba(255,255,255,0.75);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
-.skl-komp-list li i{color:#7eb8f7;font-size:10px;flex-shrink:0;margin-top:4px}
-.skl-target{background:#f8f9fc;padding:72px 0 64px}
-.skl-target-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:44px}
-.skl-target-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.skl-target-card{background:#fff;border-radius:14px;padding:22px 18px;border:1px solid #e8eef8;text-align:center;transition:transform .2s,box-shadow .2s}
-.skl-target-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(26,58,107,0.1)}
-.skl-target-card.highlight{background:linear-gradient(135deg,#1a3a6b,#2563b0);border-color:#1a3a6b}
-.skl-target-card.highlight strong{color:#fff}
-.skl-target-card.highlight span{color:rgba(255,255,255,0.65)}
-.skl-target-card.highlight .skl-tc-icon{background:rgba(255,255,255,0.15);color:#f0c040}
-.skl-tc-icon{width:44px;height:44px;border-radius:12px;background:#e8f0fe;color:#3a5bd9;display:flex;align-items:center;justify-content:center;font-size:18px;margin:0 auto 12px}
-.skl-target-card strong{font-size:22px;font-weight:900;color:#1a1a2e;display:block;line-height:1;margin-bottom:4px}
-.skl-target-card span{font-size:11.5px;color:#888}
-.skl-target-text{background:linear-gradient(135deg,#1a3a6b 0%,#2563b0 100%);border-radius:18px;padding:36px 32px}
-.skl-target-text h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:16px;line-height:1.4}
-.skl-target-text p{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:16px}
-.skl-target-text p:last-child{margin-bottom:0}
-.skl-target-text strong{color:#f0c040}
-.skl-cta{background:linear-gradient(135deg,#1a3a6b 0%,#3a5bd9 100%);padding:72px 0;position:relative;overflow:hidden}
-.skl-cta::before{content:'';position:absolute;top:-200px;right:-100px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(255,255,255,0.08)}
-.skl-cta-inner{max-width:700px;margin:0 auto;padding:0 24px;position:relative;z-index:1;text-align:center}
-.skl-cta-inner h2{font-size:30px;font-weight:800;color:#fff;margin-bottom:16px;line-height:1.3}
-.skl-cta-inner h2 span{color:#f0c040}
-.skl-cta-inner p{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:32px}
-.skl-cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-.skl-cta-btn-primary{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#1a3a6b;font-size:14px;font-weight:700;padding:14px 30px;border-radius:8px;transition:background .2s,transform .15s;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
-.skl-cta-btn-primary:hover{background:#e8f0fe;transform:translateY(-2px)}
-.skl-cta-btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;font-size:14px;font-weight:700;padding:14px 30px;border-radius:8px;transition:background .2s,transform .15s;box-shadow:0 4px 16px rgba(37,211,102,0.3)}
-.skl-cta-btn-wa:hover{background:#1da851;transform:translateY(-2px)}
-@media(max-width:1024px){.skl-dimensi-grid{grid-template-columns:1fr}.skl-komp-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.skl-hero-title{font-size:28px}.skl-target-layout{grid-template-columns:1fr}.skl-target-cards{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.skl-target-cards{grid-template-columns:1fr}}
-  
-@media(max-width:768px){
-  .skl-hero::after{content:'';position:absolute;inset:0;background:rgba(10,25,60,0.55);z-index:1}
-  .skl-hero-bg::before{background-size:cover;background-position:center top}
-  .skl-hero-inner{position:relative;z-index:10;text-align:center !important;padding:60px 20px 60px !important}
-  .skl-hero-title{font-size:26px !important;text-align:center !important}
-  .skl-hero-desc{font-size:13px !important;text-align:center !important}
-  .skl-hero-pills{justify-content:center !important}
-  .skl-hero-badge{margin:0 auto 16px !important}
-}
-
-/* SMPH STANDAR KOMPETENSI SECTION PREMIUM UI/UX */
-.skl-smph-section {
-  padding: 90px 0;
-  background: #f8fafc;
-}
-.smph-komp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
-}
-.smph-komp-item {
-  background: #ffffff;
-  padding: 24px 28px;
-  border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-  border-left: 5px solid #1e40af;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  border-left-width: 5px;
-  position: relative;
-  overflow: hidden;
-}
-.smph-komp-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(30, 64, 175, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-}
-.smph-komp-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-  border-color: rgba(30, 64, 175, 0.25);
-  border-left-color: #f59e0b;
-}
-.smph-komp-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 18px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(30, 64, 175, 0.2);
-  transition: all 0.3s ease;
-}
-.smph-komp-item:hover .smph-komp-icon {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
-  transform: scale(1.05);
-}
-.smph-komp-item p {
-  margin: 0;
-  font-size: 14.5px;
-  color: #1e293b;
-  font-weight: 600;
-  line-height: 1.6;
-}
-</style>
-  <link rel="stylesheet" href="navbar.css?v=1785300048">
+  <link rel="stylesheet" href="navbar.css?v=1785300048" />
   <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ==========================================================
+       PURE CODE-BASED UI/UX - STANDAR KOMPETENSI LULUSAN
+       ========================================================== */
+    body {
+      background: #f8fafc;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    /* HERO BANNER SECTION */
+    .skl-hero-section {
+      position: relative;
+      background: linear-gradient(135deg, #051336 0%, #092058 40%, #113682 75%, #1a4eb0 100%);
+      border-bottom-left-radius: 48px;
+      border-bottom-right-radius: 48px;
+      overflow: hidden;
+      padding: 110px 0 75px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    /* Full Width Background Photo (100% Edge to Edge) - Masjid Hibatullah (DSC_1112.JPG) */
+    .skl-hero-photo-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/images/DSC_1112.JPG');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      z-index: 1;
+      opacity: 0.95;
+    }
+
+    /* Gradient Overlay for High-Contrast Readable Text */
+    .skl-hero-photo-layer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(5, 19, 54, 0.92) 0%, rgba(5, 19, 54, 0.75) 45%, rgba(5, 19, 54, 0.35) 80%, rgba(5, 19, 54, 0.15) 100%);
+    }
+
+    .skl-hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 440px;
+    }
+
+    .skl-hero-content {
+      max-width: 650px;
+    }
+
+    .skl-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #f59e0b;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .skl-badge-tag i {
+      font-size: 12px;
+    }
+
+    .skl-title-heading {
+      font-size: 46px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      margin: 0 0 18px 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.8px;
+    }
+
+    .skl-title-heading .text-blue-glow {
+      color: #60a5fa;
+      font-size: 52px;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .skl-title-desc {
+      font-size: 15.5px;
+      color: #e2e8f0;
+      line-height: 1.75;
+      margin: 0 0 32px 0;
+      font-weight: 400;
+      max-width: 620px;
+    }
+
+    /* Filter Pills */
+    .skl-pills-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .skl-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .skl-pill-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      border-color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .skl-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Shaping Future Leaders */
+    .skl-shaping-foot {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .skl-shaping-script {
+      font-family: 'Dancing Script', 'Caveat', cursive;
+      font-size: 26px;
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .skl-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .skl-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .skl-dots span.active {
+      background: #3b82f6;
+      width: 9px;
+      height: 9px;
+    }
+
+    /* Hero Right Side Overlays */
+    .skl-hero-decor-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 340px;
+    }
+
+    .skl-script-top-decor {
+      font-family: 'Dancing Script', 'Caveat', cursive;
+      font-size: 36px;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+      margin-right: 16px;
+    }
+
+    .skl-glass-widget-box {
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      transition: transform 0.3s ease;
+    }
+
+    .skl-glass-widget-box:hover {
+      transform: translateY(-4px);
+    }
+
+    .skl-glass-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #93c5fd;
+      flex-shrink: 0;
+    }
+
+    .skl-glass-txt {
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .skl-glass-arrow {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-left: 8px;
+    }
+
+    /* MAIN CONTENT SECTION */
+    .skl-content-section {
+      position: relative;
+      background: #f1f6fc;
+      padding: 70px 0 90px;
+      overflow: hidden;
+    }
+
+    /* Background Watermark Quotes */
+    .skl-quote-watermark {
+      position: absolute;
+      font-family: 'Dancing Script', 'Caveat', cursive;
+      color: rgba(148, 163, 184, 0.4);
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+      line-height: 1.3;
+    }
+
+    .skl-q-left {
+      top: 140px;
+      left: 36px;
+      font-size: 32px;
+      max-width: 220px;
+    }
+
+    .skl-q-right-top {
+      top: 120px;
+      right: 36px;
+      font-size: 32px;
+      max-width: 220px;
+      text-align: right;
+    }
+
+    .skl-q-right-bottom {
+      bottom: 70px;
+      right: 36px;
+      font-size: 28px;
+      text-align: right;
+    }
+
+    .skl-content-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .skl-sec-head {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .skl-sec-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .skl-sec-badge::before,
+    .skl-sec-badge::after {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1.5px;
+      background: #2563eb;
+      border-radius: 2px;
+    }
+
+    .skl-sec-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 10px 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .skl-sec-title span {
+      color: #2563eb;
+    }
+
+    .skl-sec-sub {
+      font-size: 13.5px;
+      color: #64748b;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    /* CARDS GRID */
+    .skl-grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    /* CARDS GRID WITH 3D EFFECT */
+    .skl-grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skl-item-card {
+      position: relative;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px 22px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s, border-color 0.35s;
+    }
+
+    .skl-item-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--skl-light, #60a5fa) 0%, var(--skl-color, #2563eb) 100%);
+      border-radius: 20px 0 0 20px;
+    }
+
+    .skl-item-card:hover {
+      transform: translateY(-6px) scale(1.015);
+      border-color: var(--skl-color, #2563eb);
+      box-shadow: 0 16px 38px var(--skl-shadow, rgba(37, 99, 235, 0.25));
+    }
+
+    .skl-item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, var(--skl-light, #60a5fa) 0%, var(--skl-color, #2563eb) 60%, var(--skl-dark, #1d4ed8) 100%);
+      color: #ffffff !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 
+        0 8px 18px var(--skl-shadow, rgba(37, 99, 235, 0.4)),
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 2px 4px rgba(255, 255, 255, 0.7),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
+      position: relative;
+      z-index: 2;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .skl-item-icon i {
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+    }
+
+    .skl-item-card:hover .skl-item-icon {
+      transform: scale(1.15) rotate(-6deg);
+    }
+
+    .skl-item-txt {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.5;
+      flex: 1;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .skl-item-num {
+      font-family: 'Outfit', 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--skl-color, #cbd5e1);
+      opacity: 0.25;
+      flex-shrink: 0;
+      letter-spacing: -1px;
+      position: relative;
+      z-index: 2;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .skl-item-card:hover .skl-item-num {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
+
+    /* Centered Row for Cards 10 and 11 */
+    .skl-grid-row-bottom {
+      grid-column: span 3;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 2px;
+    }
+
+    .skl-grid-row-bottom .skl-item-card {
+      width: calc(33.333% - 12px);
+    }
+
+    /* Bottom Divider Bar */
+    .skl-divider-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 56px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #94a3b8;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .skl-divider-bar span {
+      display: inline-block;
+      width: 50px;
+      height: 1px;
+      background: #cbd5e1;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+      .skl-hero-decor-right {
+        display: none;
+      }
+      .skl-hero-photo-layer {
+        width: 100%;
+        opacity: 0.25;
+      }
+      .skl-hero-content {
+        max-width: 100%;
+      }
+      .skl-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .skl-grid-row-bottom {
+        grid-column: span 2;
+        flex-direction: column;
+      }
+      .skl-grid-row-bottom .skl-item-card {
+        width: 100%;
+      }
+      .skl-quote-watermark {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .skl-hero-section {
+        padding: 90px 0 50px;
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+      }
+      .skl-title-heading {
+        font-size: 28px;
+      }
+      .skl-grid-container {
+        grid-template-columns: 1fr;
+      }
+      .skl-grid-row-bottom {
+        grid-column: span 1;
+      }
+      .skl-sec-title {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- CARD NAV ROOT -->
   <div id="card-nav-root"></div>
 
-  <!-- TOP BAR -->
-  
-
-  <!-- BREADCRUMB -->
-  <div class="skl-breadcrumb">
-    <div class="skl-bc-inner">
-      <i class="fas fa-home"></i>
-      <a href="index.html">Beranda</a>
-      <i class="fas fa-chevron-right"></i>
-      <a href="#">SMP Hibatullah</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>Standar Kompetensi Lulusan</span>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <section class="skl-hero">
-    <div class="skl-hero-bg">
-      <span class="hc hc1"></span>
-      <span class="hc hc2"></span>
-    </div>
+  <!-- HERO SECTION -->
+  <section class="skl-hero-section">
+    <div class="skl-hero-photo-layer"></div>
     <div class="skl-hero-inner">
-      <div class="skl-hero-badge"><i class="fas fa-graduation-cap"></i> Standar Lulusan</div>
-      <h1 class="skl-hero-title">Standar Kompetensi Lulusan<br><span>Hibatullah</span></h1>
-      <p class="skl-hero-desc">Profil lulusan SMP Hibatullah yang komprehensif — mencakup dimensi sikap, pengetahuan, dan keterampilan yang siap menghadapi jenjang pendidikan berikutnya.</p>
-      <div class="skl-hero-pills">
-        <span><i class="fas fa-check-circle"></i> Dimensi Sikap</span>
-        <span><i class="fas fa-check-circle"></i> Dimensi Pengetahuan</span>
-        <span><i class="fas fa-check-circle"></i> Dimensi Keterampilan</span>
+      <div class="skl-hero-content">
+        <div class="skl-badge-tag">
+          <i class="fas fa-sparkles"></i> ISLAMIC EDUCATION FOR A BRIGHTER TOMORROW
+        </div>
+        <h1 class="skl-title-heading">
+          <span style="color:#ff7b00;">Standar Kompetensi Lulusan</span>
+          <span style="color:#7eb8f7;">Hibatullah</span>
+        </h1>
+        <p class="skl-title-desc">
+          Profil lulusan SMP Hibatullah yang komprehensif – mencakup dimensi sikap, pengetahuan, dan keterampilan yang siap menghadapi jenjang pendidikan berikutnya.
+        </p>
+
+        <!-- Category Pills -->
+        <div class="skl-pills-row">
+          <button type="button" class="skl-pill-btn active" onclick="filterSkl('all', this)">
+            <i class="fas fa-user-shield"></i> Dimensi Sikap
+          </button>
+          <button type="button" class="skl-pill-btn" onclick="filterSkl('pengetahuan', this)">
+            <i class="fas fa-book-open"></i> Dimensi Pengetahuan
+          </button>
+          <button type="button" class="skl-pill-btn" onclick="filterSkl('keterampilan', this)">
+            <i class="fas fa-chart-bar"></i> Dimensi Keterampilan
+          </button>
+        </div>
+
+
       </div>
+
+
     </div>
   </section>
 
-  <!-- KOMPETENSI SMPH -->
-  <section class="skl-smph-section">
-    <div class="skl-sec-inner">
-      <div class="skl-sec-label"><span></span> KOMPETENSI <span></span></div>
-      <h2 class="skl-sec-title">Standar Kompetensi Lulusan <span>Hibatullah</span></h2>
-      <p class="skl-sec-sub">Pencapaian kompetensi yang menjadi standar kelulusan santri SMP Hibatullah</p>
-      
-      <div class="smph-komp-grid">
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Beraqidah Lurus.</p>
+  <!-- MAIN CONTENT SECTION -->
+  <section class="skl-content-section">
+    <!-- Watermark Quotes -->
+    <div class="skl-quote-watermark skl-q-left">
+      “ Good<br>Character<br>Brings a<br>Brighter<br>Future ”
+    </div>
+    <div class="skl-quote-watermark skl-q-right-top">
+      “ Knowledge<br>Today,<br>A Better<br>Tomorrow ”
+    </div>
+    <div class="skl-quote-watermark skl-q-right-bottom">
+      Building<br>A Better Generation
+    </div>
+
+    <div class="skl-content-inner">
+      <div class="skl-sec-head">
+        <div class="skl-sec-badge">KOMPETENSI</div>
+        <h2 class="skl-sec-title">Standar Kompetensi Lulusan <span>Hibatullah</span></h2>
+        <p class="skl-sec-sub">Pencapaian kompetensi yang menjadi standar kelulusan santri SMP Hibatullah</p>
+      </div>
+
+      <!-- 11 Cards Grid -->
+      <div class="skl-grid-container" id="sklGrid">
+        <!-- Card 01 -->
+        <div class="skl-item-card" data-cat="sikap" style="--skl-color:#2563eb; --skl-light:#60a5fa; --skl-dark:#1d4ed8; --skl-shadow:rgba(37,99,235,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-user"></i></div>
+          <p class="skl-item-txt">Berakhlaki karimah.</p>
+          <div class="skl-item-num">01</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Beribadah dengan baik dan benar.</p>
+
+        <!-- Card 02 -->
+        <div class="skl-item-card" data-cat="sikap" style="--skl-color:#10b981; --skl-light:#34d399; --skl-dark:#047857; --skl-shadow:rgba(16,185,129,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-mosque"></i></div>
+          <p class="skl-item-txt">Beribadah dengan baik dan benar.</p>
+          <div class="skl-item-num">02</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Memahami dan mengamalkan adab-adab Islami.</p>
+
+        <!-- Card 03 -->
+        <div class="skl-item-card" data-cat="sikap" style="--skl-color:#f59e0b; --skl-light:#fbbf24; --skl-dark:#d97706; --skl-shadow:rgba(245,158,11,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-book-open-reader"></i></div>
+          <p class="skl-item-txt">Memahami dan mengamalkan adab-adab Islami.</p>
+          <div class="skl-item-num">03</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Membaca al-Qur'an dengan baik.</p>
+
+        <!-- Card 04 -->
+        <div class="skl-item-card" data-cat="pengetahuan" style="--skl-color:#8b5cf6; --skl-light:#a78bfa; --skl-dark:#6d28d9; --skl-shadow:rgba(139,92,246,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-book-quran"></i></div>
+          <p class="skl-item-txt">Membaca al-Qur'an dengan baik.</p>
+          <div class="skl-item-num">04</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Memahami Ilmu Agama tingkat dasar dengan baik.</p>
+
+        <!-- Card 05 -->
+        <div class="skl-item-card" data-cat="pengetahuan" style="--skl-color:#ef4444; --skl-light:#f87171; --skl-dark:#b91c1c; --skl-shadow:rgba(239,68,68,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-lightbulb"></i></div>
+          <p class="skl-item-txt">Memahami ilmu agama tingkat dasar dengan baik.</p>
+          <div class="skl-item-num">05</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Lancar berkomunikasi dengan Bahasa Inggris.</p>
+
+        <!-- Card 06 -->
+        <div class="skl-item-card" data-cat="keterampilan" style="--skl-color:#14b8a6; --skl-light:#2dd4bf; --skl-dark:#0f766e; --skl-shadow:rgba(20,184,166,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-comments"></i></div>
+          <p class="skl-item-txt">Lancar berkomunikasi dengan Bahasa Inggris.</p>
+          <div class="skl-item-num">06</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Membaca kitab-kitab bahasa Arab tingkat dasar.</p>
+
+        <!-- Card 07 -->
+        <div class="skl-item-card" data-cat="pengetahuan" style="--skl-color:#0284c7; --skl-light:#38bdf8; --skl-dark:#0369a1; --skl-shadow:rgba(2,132,199,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-book"></i></div>
+          <p class="skl-item-txt">Membaca kitab-kitab bahasa Arab tingkat dasar.</p>
+          <div class="skl-item-num">07</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Memiliki kemampuan bela diri tingkat dasar.</p>
+
+        <!-- Card 08 -->
+        <div class="skl-item-card" data-cat="keterampilan" style="--skl-color:#6366f1; --skl-light:#818cf8; --skl-dark:#4338ca; --skl-shadow:rgba(99,102,241,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-shield-halved"></i></div>
+          <p class="skl-item-txt">Memiliki kemampuan bela diri tingkat dasar.</p>
+          <div class="skl-item-num">08</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Menghapal 6 juz al-Qur'an + surat-surat pilihan (berstandar sanad).</p>
+
+        <!-- Card 09 -->
+        <div class="skl-item-card" data-cat="pengetahuan" style="--skl-color:#06b6d4; --skl-light:#22d3ee; --skl-dark:#0e7490; --skl-shadow:rgba(6,182,212,0.35);">
+          <div class="skl-item-icon"><i class="fas fa-file-lines"></i></div>
+          <p class="skl-item-txt">Menghapal 6 juz al-Qur'an + surat-surat pilihan (berstandar sanad).</p>
+          <div class="skl-item-num">09</div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Menghapal 40 Hadits.</p>
+
+        <!-- Row 4 Centered (Cards 10 & 11) -->
+        <div class="skl-grid-row-bottom">
+          <!-- Card 10 -->
+          <div class="skl-item-card" data-cat="pengetahuan" style="--skl-color:#eab308; --skl-light:#facc15; --skl-dark:#a16207; --skl-shadow:rgba(234,179,8,0.35);">
+            <div class="skl-item-icon"><i class="fas fa-list-check"></i></div>
+            <p class="skl-item-txt">Menghapal 40 Hadits.</p>
+            <div class="skl-item-num">10</div>
+          </div>
+
+          <!-- Card 11 -->
+          <div class="skl-item-card" data-cat="keterampilan" style="--skl-color:#d946ef; --skl-light:#e879f9; --skl-dark:#a21caf; --skl-shadow:rgba(217,70,239,0.35);">
+            <div class="skl-item-icon"><i class="fas fa-users"></i></div>
+            <p class="skl-item-txt">Mampu menyampaikan kultum dan mengajar pelajaran dasar.</p>
+            <div class="skl-item-num">11</div>
+          </div>
         </div>
-        <div class="smph-komp-item">
-          <div class="smph-komp-icon"><i class="fas fa-check-circle"></i></div>
-          <p>Mampu menyampaikan kultum dan mengajar pelajaran dasar.</p>
-        </div>
+      </div>
+
+      <!-- Bottom Line -->
+      <div class="skl-divider-bar">
+        <span></span> HIBATULLAH INTERNATIONAL ISLAMIC BOARDING SCHOOL <span></span>
       </div>
     </div>
   </section>
-
-  
 
   <!-- FOOTER -->
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
-  <script src="animations.js?v=1785300047"></script><script src="script.js?v=1781320772250"></script>
+  <script src="animations.js?v=1785300047"></script>
+  <script src="script.js?v=1781320772250"></script>
   <script src="navbar.js?v=20260826"></script>
+  <script>
+    function filterSkl(category, btn) {
+      const btns = document.querySelectorAll('.skl-pill-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.skl-item-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'flex';
+        } else {
+          const cat = card.getAttribute('data-cat');
+          card.style.display = (cat === category) ? 'flex' : 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

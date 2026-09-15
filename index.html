@@ -6,9 +6,10 @@
   <title>Hibatullah IIBS - International Islamic Boarding School</title>
   <link rel="stylesheet" href="style.css?v=1786785001" />
   <link rel="stylesheet" href="footer.css?v=2" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="navbar.css?v=1785300048">
+  <link rel="stylesheet" href="accordion-gallery.css">
   <link rel="icon" href="favicon.png" type="image/png" />
 
   <!-- SEO & OpenGraph Meta Tags -->
@@ -253,6 +254,7 @@
       .akses-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .akses-card { padding: 16px 12px !important; border-radius: 16px !important; }
       .akses-label { font-size: 12px !important; }
+    }
   </style>
 </head>
 <body>
@@ -351,650 +353,489 @@
   </script>
 
   <!-- CARD NAV ROOT -->
-  <div id="card-nav-root"></div>
+  <div id="card-nav-root" class="home-card-nav-override"></div>
 
-  <!-- TOP BAR -->
-  
+  <!-- THURSINA-STYLE HOME HERO CARD FRAME (100% MATCH) -->
+  <section class="thursina-hero-card">
+    <!-- Transparent Floating Header -->
+    <header class="thursina-header">
+      <div class="thursina-header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="thursina-logo">
+          <img src="Logo only.png" alt="Logo Hibatullah IIBS">
+          <span class="thursina-logo-text">Hibatullah <small>IIBS</small></span>
+        </a>
 
-  <!-- HERO SLIDER -->
-  <section class="hero">
-    <div class="hero-slides">
-      <div class="hero-slide active" id="slide-1">
-        <div class="hero-bg-wrap" style="background-image:url('assets/images/001.jpg.jpeg');background-size:cover;background-position:right center;background-repeat:no-repeat;">
-          <div class="hero-bg-color"></div>
-          <div class="hero-students"></div>
-        </div>
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span>BERADAB &amp; BERKARYA</span>
+        <!-- Center Navigation Menu -->
+        <nav class="thursina-nav">
+          <div class="thursina-nav-item">
+            <a href="index.html" class="thursina-nav-link">Beranda</a>
           </div>
-          <h1 class="hero-title">
-            Penerimaan Santri Baru<br>
-            <span class="hero-highlight">SMP Hibatullah IIBS</span>
-          </h1>
-          <p class="hero-desc">
-            Menyiapkan generasi yang berakhlak mulia, mengamalkan Al-Qur'an dan As-Sunnah serta menghadirkan karya nyata yang bermanfaat bagi diri, keluarga dan agama.
-          </p>
-          <div class="hero-btns">
-            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
+
+          <div class="thursina-nav-item">
+            <a href="visi-misi-sdih.html" class="thursina-nav-link">Visi &amp; Misi</a>
           </div>
+
+          <div class="thursina-nav-item has-dropdown">
+            <a href="javascript:void(0)">About <i class="fas fa-chevron-down nav-arrow"></i></a>
+            <div class="thursina-dropdown">
+              <a href="sejarah.html">Sejarah Sekolah</a>
+              <a href="penasehat.html">Dewan Penasehat</a>
+              <a href="stakeholders.html">Stakeholders</a>
+            </div>
+          </div>
+
+          <div class="thursina-nav-item has-dropdown">
+            <a href="javascript:void(0)">Keunggulan <i class="fas fa-chevron-down nav-arrow"></i></a>
+            <div class="thursina-dropdown">
+              <a href="program-unggulan-sdih.html">Program Unggulan</a>
+              <a href="karakter-siswa-sdih.html">Karakter Siswa</a>
+              <a href="standar-kompetensi-lulusan.html">Standar Kompetensi Lulusan</a>
+              <a href="testimoni.html">Testimoni</a>
+            </div>
+          </div>
+
+          <div class="thursina-nav-item has-dropdown">
+            <a href="javascript:void(0)">Santri Hebat <i class="fas fa-chevron-down nav-arrow"></i></a>
+            <div class="thursina-dropdown">
+              <a href="program.html">Program</a>
+              <a href="asrama.html">Fasilitas Asrama</a>
+              <a href="sekolah.html">Fasilitas Sekolah</a>
+              <a href="regulasi-harian.html">Regulasi Harian</a>
+              <a href="prestasi-santri.html">Prestasi Santri</a>
+              <a href="rapot-santri.html">Rapot Santri</a>
+            </div>
+          </div>
+
+          <div class="thursina-nav-item">
+            <a href="ppdb.html" class="thursina-nav-link">PPDB</a>
+          </div>
+
+          <div class="thursina-nav-item">
+            <a href="galeri.html" class="thursina-nav-link">Galeri</a>
+          </div>
+
+          <div class="thursina-nav-item">
+            <a href="berita.html" class="thursina-nav-link">Berita</a>
+          </div>
+        </nav>
+
+        <!-- Right Utility Actions -->
+        <div class="thursina-header-right">
+          <button class="thursina-search-btn" id="thursinaSearchBtn" title="Cari di website..." type="button">
+            <i class="fas fa-search"></i>
+          </button>
+
+          <div class="thursina-lang-wrapper" id="thursinaLangWrapper">
+            <button class="thursina-lang-btn" id="thursinaLangBtn" type="button">
+              <img src="https://flagcdn.com/w40/id.png" id="thursinaHeaderFlag" alt="Language">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="thursina-lang-dropdown" id="thursinaLangDropdown">
+              <button onclick="changeSiteLanguage('id')" type="button"><img src="https://flagcdn.com/w40/id.png" alt="ID"> Indonesia</button>
+              <button onclick="changeSiteLanguage('en')" type="button"><img src="https://flagcdn.com/w40/gb.png" alt="EN"> English</button>
+              <button onclick="changeSiteLanguage('ar')" type="button"><img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية</button>
+            </div>
+          </div>
+
+          <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="thursina-nav-cta">
+            DAFTAR SEKARANG
+          </a>
+
+          <button class="thursina-mobile-toggle" id="thursinaMobileToggle" type="button" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </div>
+    </header>
 
-      <div class="hero-slide" id="slide-2">
-        <div class="hero-bg-wrap" style="background-image:url('assets/images/3.jpg.jpeg');background-size:cover;background-position:88% center;background-repeat:no-repeat;">
-          <div class="hero-bg-color"></div>
-          <div class="hero-students"></div>
-        </div>
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span>BERADAB &amp; BERKARYA</span>
-          </div>
-          <h1 class="hero-title">
-            Pendidikan Islam<br>
-            Berkualitas <span class="hero-highlight">Internasional</span>
-          </h1>
-          <p class="hero-desc">
-            Program unggulan tahfidz, bilingual, dan pembinaan karakter untuk mencetak generasi muslim yang berdaya saing global. Hibatullah IIBS hadir dengan kurikulum terbaik dan tenaga pendidik profesional.
-          </p>
-          <div class="hero-btns">
-            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide" id="slide-3">
-        <div class="hero-bg-wrap" style="background-image:url('assets/images/002.jpg.jpeg');background-size:cover;background-position:right center;background-repeat:no-repeat;">
-          <div class="hero-bg-color"></div>
-        </div>
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span>BERADAB &amp; BERKARYA</span>
-          </div>
-          <h1 class="hero-title">
-            Membentuk Generasi<br>
-            Qur'ani <span class="hero-highlight">dan Berprestasi</span>
-          </h1>
-          <p class="hero-desc">
-            Hibatullah IIBS berkomitmen membina santri menjadi pribadi berakhlak mulia, cerdas, mandiri dan siap menghadapi tantangan global berlandaskan nilai-nilai Islam.
-          </p>
-          <div class="hero-btns">
-            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="hero-slide" id="slide-4">
-        <div class="hero-bg-wrap" style="background-image:url('assets/images/04.jpg (1).jpeg');background-size:cover;background-position:right center;background-repeat:no-repeat;">
-          <div class="hero-bg-color"></div>
-          <div class="hero-students"></div>
-        </div>
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span>BERADAB &amp; BERKARYA</span>
-          </div>
-          <h1 class="hero-title">
-            Raih Prestasi<br>
-            Terbaik <span class="hero-highlight">Bersama Kami</span>
-          </h1>
-          <p class="hero-desc">
-            Lebih dari 200 prestasi santri di tingkat nasional dan internasional menjadi bukti nyata kualitas pendidikan Hibatullah IIBS yang unggul. Jadikan putra/putri Anda bagian dari generasi terbaik bersama kami.
-          </p>
-          <div class="hero-btns">
-            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="btn-primary">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Slider Controls -->
-    <button class="slider-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-    <button class="slider-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-
-    <!-- Dots -->
-    <div class="slider-dots">
-      <span class="dot-item active" data-slide="0"></span>
-      <span class="dot-item" data-slide="1"></span>
-      <span class="dot-item" data-slide="2"></span>
-      <span class="dot-item" data-slide="3"></span>
-    </div>
-  </section>
-
-
-
-
-  <!-- AKSES CEPAT -->
-  <section class="akses-cepat reveal">
-    <div class="section-inner">
-      <div class="section-title-wrap">
-        <h2 class="section-title">AKSES CEPAT</h2>
-        <div class="title-underline"></div>
-      </div>
-      <div class="akses-grid">
-        <a href="sejarah.html" class="akses-card" style="background-image: url('assets/images/sejarah-poster.jpg?v=1785485287'); background-size: cover; background-position: center top;">
-          <div class="akses-icon-wrap">
-            <i class="fas fa-scroll"></i>
-          </div>
-          <span class="akses-label">SEJARAH</span>
-        </a>
-        <a href="penasehat.html" class="akses-card penasehat-card-special" style="background-image: url('assets/images/penasehat-poster.jpg?v=1785485287'); background-size: cover; background-position: center top;">
-          <div class="akses-icon-wrap">
-            <i class="fas fa-user-graduate"></i>
-          </div>
-          <span class="akses-label">PENASEHAT</span>
-        </a>
-        <a href="entrepreneurship.html" class="akses-card" style="background-image: url('assets/images/entrepreneurship-poster.jpg?v=1785485287'); background-size: cover; background-position: center top;">
-          <div class="akses-icon-wrap">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <span class="akses-label">ENTREPRENEURSHIP</span>
-        </a>
-        <a href="stakeholders.html" class="akses-card" style="background-image: url('assets/images/stakeholders-poster.jpg?v=1785485287'); background-size: cover; background-position: center top;">
-          <div class="akses-icon-wrap">
-            <i class="fas fa-circle-nodes"></i>
-          </div>
-          <span class="akses-label">STAKEHOLDERS</span>
-        </a>
-        <a href="galeri.html" class="akses-card" style="background-image: url('assets/images/gallery-poster.jpg?v=1785485287'); background-size: cover; background-position: center top;">
-          <div class="akses-icon-wrap">
-            <i class="fas fa-images"></i>
-          </div>
-          <span class="akses-label">GALLERY</span>
-        </a>
-        <a href="kurikulum.html" class="akses-card" style="background-image: url('assets/images/kurikulum-poster.jpg?v=1785485287'); background-size: cover; background-position: center top;">
-          <div class="akses-icon-wrap">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <span class="akses-label">KURIKULUM</span>
-        </a>
+    <!-- Hero Content Banner with Background Video -->
+    <div class="thursina-hero-banner">
+      <video class="thursina-hero-video" id="thursinaHeroVideo" autoplay loop muted playsinline preload="auto" poster="assets/images/001.jpg.jpeg">
+        <source src="video buat card bord/for web 2.mp4" type="video/mp4">
+        <source src="assets/for-web-2.mp4" type="video/mp4">
+        <source src="assets/video-hero.mp4" type="video/mp4">
+      </video>
+      <div class="thursina-hero-overlay"></div>
+      <div class="thursina-hero-body">
+        <div class="thursina-welcome-tag notranslate" translate="no">WELCOME TO</div>
+        <h1 class="thursina-main-title notranslate" translate="no">
+          Hibatullah International<br>
+          Islamic Boarding School
+        </h1>
       </div>
     </div>
   </section>
 
-  <!-- HOME VISI MISI -->
+  <!-- SEARCH MODAL OVERLAY -->
+  <div class="thursina-search-modal" id="thursinaSearchModal">
+    <div class="search-modal-backdrop" id="searchModalBackdrop"></div>
+    <div class="search-modal-box">
+      <div class="search-input-wrap">
+        <i class="fas fa-search search-modal-icon"></i>
+        <input type="text" id="thursinaSearchInput" placeholder="Cari program, berita, PPDB, atau fasilitas..." autocomplete="off">
+        <button class="search-modal-close" id="searchModalClose" type="button"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="search-results-list" id="searchResultsList">
+        <div class="search-hint">Ketik kata kunci untuk mencari di website...</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- BERITA TERBARU SECTION (100% UI/UX MATCH TO THURSINA POSTINGAN BERITA) -->
+  <section class="home-berita-section reveal">
+    <div class="home-berita-inner">
+      <div class="home-berita-header-center">
+        <h2 class="home-berita-main-title">Postingan Berita</h2>
+        <p class="home-berita-subtitle">
+          Selalu diperbarui dengan berita dan peristiwa terkini dari Hibatullah IIBS. Bagian Berita Terbaru kami menyajikan pembaruan secara real-time, berita penting, dan laporan mendalam tentang berbagai peristiwa terbaru.
+        </p>
+      </div>
+
+      <div class="home-berita-grid">
+        <!-- Card 1 -->
+        <a href="berita.html" class="home-berita-card">
+          <div class="home-berita-img-wrap">
+            <img src="https://linen-eagle-143399.hostingersite.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-31-at-9.18.12-AM.jpeg" alt="Senam Pagi Bersama" loading="lazy">
+          </div>
+          <div class="home-berita-body">
+            <div class="home-berita-date">
+              <i class="far fa-clock"></i> Sep 08 2026
+            </div>
+            <h3 class="home-berita-title">Senam Pagi Bersama Pererat Ukhuwah dan Tingkatkan Kebugaran Santri....</h3>
+            <p class="home-berita-excerpt">Dalam upaya menjaga kesehatan jasmani sekaligus mempererat ukhuwah Islamiyah, Hibatullah IIBS menyelenggarakan kegiatan senam....</p>
+            <div class="home-berita-cta">
+              Read More <i class="far fa-arrow-alt-circle-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="berita.html" class="home-berita-card">
+          <div class="home-berita-img-wrap">
+            <img src="https://linen-eagle-143399.hostingersite.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-31-at-9.18.09-AM.jpeg" alt="MPLH SMP Islam Hibatullah" loading="lazy">
+          </div>
+          <div class="home-berita-body">
+            <div class="home-berita-date">
+              <i class="far fa-clock"></i> Sep 04 2026
+            </div>
+            <h3 class="home-berita-title">MPLH SMP Islam Hibatullah IIBS Bekali Siswa Baru Karakter Islami....</h3>
+            <p class="home-berita-excerpt">SMP Islam Hibatullah IIBS kembali menyelenggarakan Masa Pengenalan Lingkungan Hibatullah (MPLH) menyambut santri baru....</p>
+            <div class="home-berita-cta">
+              Read More <i class="far fa-arrow-alt-circle-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="berita.html" class="home-berita-card">
+          <div class="home-berita-img-wrap">
+            <img src="https://hibatullah.sch.id/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-11.30.44.jpeg" alt="Al-Kahf Menyapa Hati" loading="lazy">
+          </div>
+          <div class="home-berita-body">
+            <div class="home-berita-date">
+              <i class="far fa-clock"></i> Sep 03 2026
+            </div>
+            <h3 class="home-berita-title">Al-Kahf Menyapa Hati: Tradisi Santri Hibatullah Menyambut Jumat....</h3>
+            <p class="home-berita-excerpt">Setiap hari Jumat, lingkungan Hibatullah IIBS dipenuhi suasana khidmat dan penuh kedamaian saat santri berkumpul membaca Surat....</p>
+            <div class="home-berita-cta">
+              Read More <i class="far fa-arrow-alt-circle-right"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME VISI MISI (100% UI/UX MATCH TO THURSINA VISI MISI) -->
   <section class="home-visi-misi reveal">
-    <div class="hvm-inner">
-      <h2 class="hvm-title">Visi &amp; Misi <span>Hibatullah IIBS</span></h2>
-      
-      <!-- Title Divider with Diamond -->
-      <div class="hvm-title-divider">
-        <span class="divider-line"></span>
-        <span class="divider-diamond"></span>
-        <span class="divider-line"></span>
+    <div class="hvm-container">
+      <div class="hvm-grid">
+        <!-- Left Column: Content -->
+        <div class="hvm-left-content">
+          <!-- Vision -->
+          <div class="hvm-vision-block">
+            <h2 class="hvm-heading"><span class="text-blue">Visi</span> Kami</h2>
+            <div class="hvm-vision-card">
+              <p class="hvm-vision-text">
+                Menjadi lembaga pendidikan unggul dalam menyiapkan generasi beradab dan memiliki kemampuan berkarya.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mission -->
+          <div class="hvm-mission-block">
+            <h2 class="hvm-heading"><span class="text-gold">Misi</span> Kami</h2>
+            <div class="hvm-mission-card">
+              <ol class="hvm-mission-list">
+                <li>Menyelenggarakan sistem pesantren modern berbasis penanaman adab dan akhlak mulia.</li>
+                <li>Mengimplementasikan kultur literasi untuk meningkatkan kemampuan berkarya, berpikir kritis, kreatif, dan inovatif.</li>
+                <li>Melaksanakan pengelolaan pendidikan yang profesional.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="hvm-right-image">
+          <img src="assets/images/class.jpg.jpeg" alt="Santri Hibatullah IIBS Belajar" loading="lazy">
+        </div>
       </div>
 
-      <div class="hvm-cards-wrap">
-        <!-- Card 1: Visi -->
-        <div class="hvm-card">
-          <div class="hvm-card-badge blue-badge">
-            <div class="hvm-badge-inner">
-              <i class="fas fa-bullseye"></i>
-            </div>
-          </div>
-          <div class="hvm-card-body">
-            <h3>Visi</h3>
-            <p class="hvm-visi-text">“ Menjadi lembaga pendidikan unggul dalam menyiapkan generasi yang beradab dan memiliki kemampuan berkarya ”</p>
-          </div>
-        </div>
-
-        <!-- Card 2: Misi -->
-        <div class="hvm-card">
-          <div class="hvm-card-badge gold-badge">
-            <div class="hvm-badge-inner">
-              <i class="fas fa-trophy"></i>
-            </div>
-          </div>
-          <div class="hvm-card-body">
-            <h3>Misi</h3>
-            <ul class="hvm-misi-list">
-              <li><i class="fas fa-check-circle"></i> <span>Menyelenggarakan sistem pesantren modern berbasis pemahaman adab–akhlak mulia.</span></li>
-              <li><i class="fas fa-check-circle"></i> <span>Mengimplementasikan pendidikan yang inovatif guna menggali dan mengembangkan potensi setiap peserta didik.</span></li>
-              <li><i class="fas fa-check-circle"></i> <span>Menciptakan kultur literasi untuk meningkatkan kemampuan bertanya, berpikir kritis, kreatif, dan inovatif.</span></li>
-              <li><i class="fas fa-check-circle"></i> <span>Melaksanakan pembelajaran pendidikan yang profesional.</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Card 3: Motto -->
-        <div class="hvm-card">
-          <div class="hvm-card-badge blue-badge">
-            <div class="hvm-badge-inner">
-              <i class="fas fa-quote-left"></i>
-            </div>
-          </div>
-          <div class="hvm-card-body">
-            <h3>Motto</h3>
-            <ul class="hvm-motto-list">
-              <li><i class="fas fa-chevron-right"></i> <span><strong>IBADAH</strong> - Generasi rabbani yang memahami dan mengamalkan Al Qur'an dan Hadis dalam kehidupan</span></li>
-              <li><i class="fas fa-chevron-right"></i> <span><strong>BERKARYA</strong> - Memiliki kapasitas pribadi yang kreatif dan inovatif sehingga dapat memberi manfaat bagi diri, keluarga, bangsa, dan agama.</span></li>
-            </ul>
-          </div>
+      <!-- Motto Centered Section -->
+      <div class="hvm-motto-block hvm-motto-center">
+        <h2 class="hvm-heading hvm-heading-center"><span class="text-blue">Motto</span> Kami</h2>
+        <div class="hvm-motto-card hvm-motto-card-center">
+          <ul class="hvm-motto-list">
+            <li><strong>BERADAB</strong> : Generasi rabbani yang memahami dan mengamalkan Al Qur'an dan Hadits dalam kehidupan.</li>
+            <li><strong>BERKARYA</strong> : Memiliki kapasitas pribadi yang kreatif dan inovatif sehingga dapat memberikan manfaat bagi diri, keluarga, bangsa, dan agama.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOME PROGRAM UNGGULAN -->
-  <section class="home-program">
-    <!-- Decorative background curves matching mockup -->
-    <svg class="hp-decor-tr" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#1e40af" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path d="M0,0 C40,0 100,60 100,100 L100,0 Z" fill="url(#blue-grad)"></path>
-    </svg>
-    <svg class="hp-decor-bl" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="gold-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.4"/>
-          <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path d="M0,100 C0,60 60,100 100,100 Z" fill="url(#gold-grad)"></path>
-    </svg>
-
-
-
-    <div class="hp-inner">
-      <!-- Badge -->
-      <div class="hp-badge-wrap">
-        <div class="hp-badge"><i class="fas fa-star"></i> PROGRAM UNGGULAN</div>
+  <!-- HOME PROGRAM UNGGULAN (100% MATCH TO BENTO MOCKUP) -->
+  <section class="home-program-bento reveal">
+    <div class="hpb-container">
+      <!-- Section Header -->
+      <div class="hpb-header">
+        <div class="hpb-header-left">
+          <span class="hpb-eyebrow">PROGRAM PESANTREN</span>
+          <h2 class="hpb-main-title">Program Unggulan Kami</h2>
+        </div>
+        <div class="hpb-header-right">
+          <a href="program-unggulan-sdih.html" class="hpb-more-link">
+            Lihat Semua Program <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
 
-      <!-- Title -->
-      <div class="hp-title-container">
-        <h2 class="hp-title">6 Program <span>Unggulan SMP</span></h2>
-      </div>
-      
-      <p class="hp-subtitle">Setiap program dirancang untuk mengembangkan potensi siswa secara holistik dan terintegrasi, berlandaskan nilai-nilai Islam.</p>
-      
-      <div class="hp-grid">
-        <!-- Card 1: Tahsin & Tahfidz -->
-        <div class="hp-card theme-blue">
-          <div class="hp-card-content">
-            <span class="hp-card-num">01</span>
-            <div class="hp-card-icon">
+      <!-- Bento Grid (5 Cards) -->
+      <div class="hpb-grid">
+        <!-- Row 1: Card 1 (Tahsin & Tahfidz Al-Qur'an berstandar sanad) -->
+        <a href="program-unggulan-sdih.html" class="hpb-card hpb-card-wide card-quran">
+          <div class="hpb-card-bg-img" style="background-image: url('assets/images/WhatsApp Image 2026-09-08 at 10.59.58 AM.jpeg');"></div>
+          <div class="hpb-card-overlay"></div>
+          <div class="hpb-card-content">
+            <div class="hpb-card-icon-wrap">
               <i class="fas fa-book-open"></i>
             </div>
-            <h3>Tahsin &amp; Tahfidz</h3>
-            <p>Program tahsin bersanad dan hafalan Al-Qur'an terstruktur sesuai kaidah tajwid.</p>
-            <a href="program-unggulan-sdih.html#tahsin" class="hp-card-link">
-              Selengkapnya <span class="hp-link-arrow"><i class="fas fa-chevron-right"></i></span>
-            </a>
+            <h3 class="hpb-card-title">Tahsin &amp; Tahfidz Al-Qur'an</h3>
+            <p class="hpb-card-desc">
+              Program tahsin dan hafalan Al-Qur'an terstruktur berstandar sanad.
+            </p>
+            <div class="hpb-card-bottom">
+              <div class="hpb-tags">
+                <span class="hpb-tag">TAHSIN</span>
+                <span class="hpb-tag">TAHFIDZ</span>
+                <span class="hpb-tag">SANAD</span>
+              </div>
+              <div class="hpb-arrow-btn orange-btn">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
           </div>
-          <div class="hp-card-image" style="background-image: url('assets/images/program-tahsin.jpg?v=1785548409');"></div>
-          <svg class="hp-card-wave" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,20 C30,10 70,20 100,0 L100,20 Z" fill="currentColor"></path>
-          </svg>
-        </div>
+        </a>
 
-        <!-- Card 2: Arabic & English -->
-        <div class="hp-card theme-green">
-          <div class="hp-card-content">
-            <span class="hp-card-num">02</span>
-            <div class="hp-card-icon">
+        <!-- Row 1: Card 2 (Bahasa Arab & Inggris) -->
+        <a href="program-unggulan-sdih.html" class="hpb-card hpb-card-wide card-language">
+          <div class="hpb-card-bg-img" style="background-image: url('assets/images/ChatGPT Image Sep 8, 2026, 09_55_24 AM (1).png');"></div>
+          <div class="hpb-card-overlay"></div>
+          <div class="hpb-card-content">
+            <div class="hpb-card-icon-wrap icon-gold">
               <i class="fas fa-globe"></i>
             </div>
-            <h3>Arabic &amp; English</h3>
-            <p>Pengembangan bahasa Arab dan Inggris aktif untuk berkomunikasi secara global.</p>
-            <a href="program-unggulan-sdih.html#bahasa" class="hp-card-link">
-              Selengkapnya <span class="hp-link-arrow"><i class="fas fa-chevron-right"></i></span>
-            </a>
-          </div>
-          <div class="hp-card-image" style="background-image: url('assets/images/program-languages.jpg?v=1785548409');"></div>
-          <svg class="hp-card-wave" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,20 C30,10 70,20 100,0 L100,20 Z" fill="currentColor"></path>
-          </svg>
-        </div>
-
-        <!-- Card 3: Leadership -->
-        <div class="hp-card theme-purple">
-          <div class="hp-card-content">
-            <span class="hp-card-num">03</span>
-            <div class="hp-card-icon">
-              <i class="fas fa-crown"></i>
+            <h3 class="hpb-card-title">Bahasa Arab &amp; Inggris</h3>
+            <p class="hpb-card-desc">
+              Pembiasaan bahasa Arab dan Inggris aktif melalui lingkungan yang komunikatif dan berwawasan global.
+            </p>
+            <div class="hpb-card-bottom">
+              <div class="hpb-tags">
+                <span class="hpb-tag">BAHASA ARAB</span>
+                <span class="hpb-tag">ENGLISH</span>
+                <span class="hpb-tag">GLOBAL</span>
+              </div>
+              <div class="hpb-arrow-btn blue-btn">
+                <i class="fas fa-arrow-right"></i>
+              </div>
             </div>
-            <h3>Leadership</h3>
-            <p>Pembentukan karakter kepemimpinan mandiri berlandaskan nilai-nilai Islam.</p>
-            <a href="program-unggulan-sdih.html#leadership" class="hp-card-link">
-              Selengkapnya <span class="hp-link-arrow"><i class="fas fa-chevron-right"></i></span>
-            </a>
           </div>
-          <div class="hp-card-image" style="background-image: url('assets/images/program-leadership.jpg?v=1785548409');"></div>
-          <svg class="hp-card-wave" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,20 C30,10 70,20 100,0 L100,20 Z" fill="currentColor"></path>
-          </svg>
-        </div>
+        </a>
 
-        <!-- Card 4: Public Speaking -->
-        <div class="hp-card theme-red">
-          <div class="hp-card-content">
-            <span class="hp-card-num">04</span>
-            <div class="hp-card-icon">
+        <!-- Row 2: Card 3 (Leadership) -->
+        <a href="program-unggulan-sdih.html" class="hpb-card hpb-card-tall">
+          <div class="hpb-card-bg-img" style="background-image: url('assets/images/leadership-santri.jpg');"></div>
+          <div class="hpb-card-overlay gradient-dark"></div>
+          <div class="hpb-card-content">
+            <div class="hpb-badge-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="hpb-card-title">Leadership</h3>
+            <p class="hpb-card-desc">
+              Pembentukan karakter kepemimpinan mandiri, ukhuwah, dan berintegritas berlandaskan nilai-nilai Islam.
+            </p>
+            <div class="hpb-card-bottom">
+              <div class="hpb-tags">
+                <span class="hpb-tag">LEADERSHIP</span>
+                <span class="hpb-tag">KARAKTER</span>
+                <span class="hpb-tag">INTEGRITAS</span>
+              </div>
+              <div class="hpb-arrow-btn orange-btn">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Row 2: Card 4 (Public Speaking) -->
+        <a href="program-unggulan-sdih.html" class="hpb-card hpb-card-tall">
+          <div class="hpb-card-bg-img" style="background-image: url('assets/images/KBM.jpg.jpeg');"></div>
+          <div class="hpb-card-overlay gradient-dark"></div>
+          <div class="hpb-card-content">
+            <div class="hpb-badge-icon">
               <i class="fas fa-microphone-alt"></i>
             </div>
-            <h3>Public Speaking</h3>
-            <p>Pelatihan percaya diri santri dalam berdakwah dan berpidato di depan umum.</p>
-            <a href="program-unggulan-sdih.html#speaking" class="hp-card-link">
-              Selengkapnya <span class="hp-link-arrow"><i class="fas fa-chevron-right"></i></span>
-            </a>
+            <h3 class="hpb-card-title">Public Speaking</h3>
+            <p class="hpb-card-desc">
+              Pelatihan kepercayaan diri santri dalam berorasi, berdakwah, dan berbicara di depan umum.
+            </p>
+            <div class="hpb-card-bottom">
+              <div class="hpb-tags">
+                <span class="hpb-tag">PUBLIC SPEAKING</span>
+                <span class="hpb-tag">DAKWAH</span>
+                <span class="hpb-tag">ORASI</span>
+              </div>
+              <div class="hpb-arrow-btn orange-btn">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
           </div>
-          <div class="hp-card-image" style="background-image: url('assets/images/program-speaking.jpg?v=1785548409');"></div>
-          <svg class="hp-card-wave" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,20 C30,10 70,20 100,0 L100,20 Z" fill="currentColor"></path>
-          </svg>
-        </div>
+        </a>
 
-        <!-- Card 5: Entrepreneurship -->
-        <div class="hp-card theme-blue">
-          <div class="hp-card-content">
-            <span class="hp-card-num">05</span>
-            <div class="hp-card-icon">
+        <!-- Row 2: Card 5 (Entrepreneurship) -->
+        <a href="program-unggulan-sdih.html" class="hpb-card hpb-card-tall">
+          <div class="hpb-card-bg-img" style="background-image: url('assets/images/entrepreneurship-poster.jpg');"></div>
+          <div class="hpb-card-overlay gradient-dark"></div>
+          <div class="hpb-card-content">
+            <div class="hpb-badge-icon">
               <i class="fas fa-rocket"></i>
             </div>
-            <h3>Entrepreneurship</h3>
-            <p>Membekali mindset dan keterampilan wirausaha dengan etika bisnis Islam.</p>
-            <a href="program-unggulan-sdih.html#entrepreneurship" class="hp-card-link">
-              Selengkapnya <span class="hp-link-arrow"><i class="fas fa-chevron-right"></i></span>
-            </a>
-          </div>
-          <div class="hp-card-image" style="background-image: url('assets/images/program-entrepreneurship.jpg?v=1785548409');"></div>
-          <svg class="hp-card-wave" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,20 C30,10 70,20 100,0 L100,20 Z" fill="currentColor"></path>
-          </svg>
-        </div>
-
-        <!-- Card 6: Life Skill -->
-        <div class="hp-card theme-teal">
-          <div class="hp-card-content">
-            <span class="hp-card-num">06</span>
-            <div class="hp-card-icon">
-              <i class="fas fa-leaf"></i>
+            <h3 class="hpb-card-title">Entrepreneurship</h3>
+            <p class="hpb-card-desc">
+              Membekali mindset dan keterampilan wirausaha santri berbasis etika bisnis Islam.
+            </p>
+            <div class="hpb-card-bottom">
+              <div class="hpb-tags">
+                <span class="hpb-tag">ENTREPRENEURSHIP</span>
+                <span class="hpb-tag">WIRAUSAHA</span>
+              </div>
+              <div class="hpb-arrow-btn orange-btn">
+                <i class="fas fa-arrow-right"></i>
+              </div>
             </div>
-            <h3>Life Skill</h3>
-            <p>Pembekalan keterampilan hidup mandiri menghadapi tantangan nyata.</p>
-            <a href="program-unggulan-sdih.html#lifeskill" class="hp-card-link">
-              Selengkapnya <span class="hp-link-arrow"><i class="fas fa-chevron-right"></i></span>
-            </a>
           </div>
-          <div class="hp-card-image" style="background-image: url('assets/images/program-lifeskill.jpg?v=1785548409');"></div>
-          <svg class="hp-card-wave" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,20 C30,10 70,20 100,0 L100,20 Z" fill="currentColor"></path>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Feature Bar (Mockup Footer area) -->
-      <div class="hp-feature-bar">
-        <div class="hp-feature-item">
-          <div class="hp-feat-icon bg-blue">
-            <i class="fas fa-mosque"></i>
-          </div>
-          <div class="hp-feat-text">
-            <h4>Berlandaskan Al-Qur'an &amp; Sunnah</h4>
-            <p>Setiap program disusun sesuai syariat Islam</p>
-          </div>
-        </div>
-        <div class="hp-feature-item">
-          <div class="hp-feat-icon bg-green">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <div class="hp-feat-text">
-            <h4>Pembinaan Holistik</h4>
-            <p>Mengembangkan akal, hati, fisik, dan sosial</p>
-          </div>
-        </div>
-        <div class="hp-feature-item">
-          <div class="hp-feat-icon bg-yellow">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <div class="hp-feat-text">
-            <h4>Berorientasi Masa Depan</h4>
-            <p>Mempersiapkan generasi unggul dan berdaya saing global</p>
-          </div>
-        </div>
-        <div class="hp-feature-item">
-          <div class="hp-feat-icon bg-purple">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <div class="hp-feat-text">
-            <h4>Lingkungan Islami</h4>
-            <p>Didukung lingkungan pesantren yang kondusif</p>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- PROGRAM PESANTREN -->
-  <section class="prog-section">
-    <div class="prog-inner">
 
-      <div style="text-align: center; margin-bottom: 40px;">
-        <span class="ph-badge"><i class="fas fa-star"></i> PROGRAM KAMI</span>
-        <h2 style="font-size: 32px; font-weight: 800; color: #0b1f5c; margin: 0 0 12px 0;">Program Pesantren <span style="color: #2563eb;">Hibatullah</span></h2>
-        <p style="font-size: 15px; color: #64748b; margin: 0; max-width: 600px; margin: 0 auto; line-height: 1.6;">Membentuk Generasi Qur'ani, Beradab, Berprestasi, dan Mendunia</p>
+
+  <!-- GALERI PESANTREN (ACCORDION GALLERY - REACT BITS) -->
+  <section class="home-gallery-section">
+    <div class="hgs-inner">
+      <div class="hgs-header">
+        <div class="hgs-title-wrap">
+          <h2 class="hgs-title">Galeri <span>Kegiatan Santri</span></h2>
+          <p class="hgs-subtitle">Momen kebersamaan, pembelajaran, dan aktivitas seru di Hibatullah IIBS.</p>
+        </div>
+        <a href="galeri.html" class="hgs-more-btn notranslate" translate="no">More Galeri <i class="fas fa-arrow-right"></i></a>
       </div>
 
-      <!-- FILTER SECTION -->
-      <div class="filter-section" style="padding-top: 0; margin-bottom: 32px;">
-        <button class="filter-btn active" data-filter="all"><i class="fas fa-th-large"></i> Semua Program</button>
-        <button class="filter-btn" data-filter="reguler"><i class="fas fa-book-open"></i> Reguler</button>
-        <button class="filter-btn" data-filter="non-reguler"><i class="fas fa-star"></i> Non Reguler</button>
-      </div>
+      <div class="accordion-gallery" id="accordionGallery" role="list" aria-label="Galeri Foto Santri">
+        <!-- Item 0 -->
+        <a href="galeri.html" class="ag-panel" role="listitem" aria-label="Penyerahan Piala Prestasi">
+          <span class="ag-panel__frame">
+            <span class="ag-panel__media">
+              <img src="assets/images/galeri-img_8800.jpg" alt="Penyerahan Piala Prestasi oleh Pimpinan Pondok" draggable="false" />
+            </span>
+            <span class="ag-panel__overlay" aria-hidden="true"></span>
+          </span>
+          <span class="ag-panel__label" aria-hidden="true">
+            <span class="ag-panel__bar"></span>
+            <span class="ag-panel__text">Penyerahan Piala Prestasi Santri</span>
+          </span>
+        </a>
 
-      <div class="programs-grid">
-        <!-- Card 1: PBM Akademik Kediknasan (Reguler) -->
-        <div class="prog-card" data-category="reguler">
-          <span class="card-badge reguler">REGULER</span>
-          <div class="card-icon blue"><i class="fas fa-graduation-cap"></i></div>
-          <h3>PBM Akademik Kediknasan</h3>
-          <p>Pembinaan akademik terstruktur untuk persiapan sekolah kedinasan.</p>
-          <a href="program-unggulan-sdih.html#kediknasan" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <!-- Item 1 -->
+        <a href="galeri.html" class="ag-panel" role="listitem" aria-label="Upacara Peringatan HUT RI">
+          <span class="ag-panel__frame">
+            <span class="ag-panel__media">
+              <img src="assets/images/galeri-img_9039.jpg" alt="Upacara Peringatan HUT RI Santri" draggable="false" />
+            </span>
+            <span class="ag-panel__overlay" aria-hidden="true"></span>
+          </span>
+          <span class="ag-panel__label" aria-hidden="true">
+            <span class="ag-panel__bar"></span>
+            <span class="ag-panel__text">Upacara Peringatan HUT RI</span>
+          </span>
+        </a>
 
-        <!-- Card 2: PBM Studi Keislaman (Reguler) -->
-        <div class="prog-card" data-category="reguler">
-          <span class="card-badge reguler">REGULER</span>
-          <div class="card-icon orange"><i class="fas fa-book"></i></div>
-          <h3>PBM Studi Keislaman</h3>
-          <p>Pendalaman ilmu keislaman dengan kurikulum komprehensif.</p>
-          <a href="program-unggulan-sdih.html#keislaman" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <!-- Item 2 (Default Active) -->
+        <a href="galeri.html" class="ag-panel ag-panel--active" role="listitem" aria-label="Pengibaran Bendera Merah-Putih">
+          <span class="ag-panel__frame">
+            <span class="ag-panel__media">
+              <img src="assets/images/galeri-img_9046.jpg" alt="Pengibaran Bendera Merah-Putih Paskibra Santri" draggable="false" />
+            </span>
+            <span class="ag-panel__overlay" aria-hidden="true"></span>
+          </span>
+          <span class="ag-panel__label" aria-hidden="true">
+            <span class="ag-panel__bar"></span>
+            <span class="ag-panel__text">Pengibaran Bendera Paskibra Santri</span>
+          </span>
+        </a>
 
-        <!-- Card 3: Tahsin & Tahfiz Bersanad (Reguler) -->
-        <div class="prog-card" data-category="reguler">
-          <span class="card-badge reguler">REGULER</span>
-          <div class="card-icon green"><i class="fas fa-book-open"></i></div>
-          <h3>Tahsin &amp; Tahfiz Bersanad</h3>
-          <p>Program tahsin dan tahfiz Al-Qur'an dengan sanad yang bersambung.</p>
-          <a href="program-unggulan-sdih.html#tahsin" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <!-- Item 3 -->
+        <a href="galeri.html" class="ag-panel" role="listitem" aria-label="Pawai & Defile HUT RI">
+          <span class="ag-panel__frame">
+            <span class="ag-panel__media">
+              <img src="assets/images/galeri-img_9178.jpg" alt="Pawai & Defile HUT RI Santri" draggable="false" />
+            </span>
+            <span class="ag-panel__overlay" aria-hidden="true"></span>
+          </span>
+          <span class="ag-panel__label" aria-hidden="true">
+            <span class="ag-panel__bar"></span>
+            <span class="ag-panel__text">Pawai &amp; Defile HUT RI Santri</span>
+          </span>
+        </a>
 
-        <!-- Card 4: Camp Al-Qur'an (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon teal"><i class="fas fa-book-quran"></i></div>
-          <h3>Camp Al-Qur'an</h3>
-          <p>Kemah Al-Qur'an untuk meningkatkan kedekatan dengan Al-Qur'an.</p>
-          <a href="program-unggulan-sdih.html#camp-quran" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 5: Camp Bahasa Asing (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon purple"><i class="fas fa-globe"></i></div>
-          <h3>Camp Bahasa Asing</h3>
-          <p>Program intensif penguasaan bahasa Arab dan Inggris.</p>
-          <a href="program-unggulan-sdih.html#camp-bahasa" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 6: Pelatihan Kepemimpinan (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon yellow"><i class="fas fa-crown"></i></div>
-          <h3>Pelatihan Kepemimpinan</h3>
-          <p>Membentuk jiwa kepemimpinan yang amanah dan visioner.</p>
-          <a href="program-unggulan-sdih.html#leadership" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 7: Overseas Internasional (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon blue"><i class="fas fa-plane"></i></div>
-          <h3>Overseas Internasional</h3>
-          <p>Program belajar dan pertukaran pelajar ke luar negeri.</p>
-          <a href="program-unggulan-sdih.html#overseas" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 8: Klub Bahasa (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon green"><i class="fas fa-comment-dots"></i></div>
-          <h3>Klub Bahasa</h3>
-          <p>Wadah pengembangan keterampilan bahasa secara aktif dan kreatif.</p>
-          <a href="program-unggulan-sdih.html#language-club" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 9: Bimbingan Lomba (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon orange"><i class="fas fa-trophy"></i></div>
-          <h3>Bimbingan Lomba</h3>
-          <p>Persiapan dan pelatihan untuk berbagai kompetisi.</p>
-          <a href="program-unggulan-sdih.html#competition" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 10: Pembinaan Kewirausahaan (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon blue"><i class="fas fa-briefcase"></i></div>
-          <h3>Pembinaan Kewirausahaan</h3>
-          <p>Membangun jiwa wirausaha dan kemandirian finansial.</p>
-          <a href="program-unggulan-sdih.html#entrepreneurship" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 11: Achievement Motivation Training (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon green"><i class="fas fa-star"></i></div>
-          <h3>Achievement Motivation Training</h3>
-          <p>Pelatihan motivasi untuk meraih prestasi maksimal.</p>
-          <a href="program-unggulan-sdih.html#motivation" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 12: Pembinaan Minat &amp; Bakat (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon pink"><i class="fas fa-music"></i></div>
-          <h3>Pembinaan Minat &amp; Bakat</h3>
-          <p>Mengembangkan potensi dan bakat sesuai minat santri.</p>
-          <a href="program-unggulan-sdih.html#creative" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 13: Tur Edukasi &amp; Kepemimpinan (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon purple"><i class="fas fa-bus"></i></div>
-          <h3>Tur Edukasi &amp; Kepemimpinan</h3>
-          <p>Kunjungan edukatif sekaligus pembentukan karakter.</p>
-          <a href="program-unggulan-sdih.html#education-tour" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <!-- BOTTOM CTA BANNER -->
-      <div class="prog-cta-banner">
-        <div class="cta-left">
-          <div class="cta-badge"><i class="fas fa-award"></i></div>
-          <div class="cta-text">
-            <p>Tertarik dengan Program Kami?</p>
-            <p style="font-weight: 400; opacity: 0.85; font-size: 13px;">Daftarkan diri Anda dan bergabung menjadi bagian dari keluarga besar Hibatullah.</p>
-          </div>
-        </div>
-        <a href="ppdb.html" class="cta-btn">Daftar Sekarang <i class="fas fa-arrow-right"></i></a>
-      </div>
-
-  </section>
-
-  <!-- MEDIA SOSIAL -->
-  <section class="home-social-media">
-    <div class="hsm-inner">
-      <div class="hsm-header">
-        <h2 class="hsm-title">Kunjungi <span>Media Sosial Kami</span></h2>
-        <p class="hsm-subtitle">Ikuti update terbaru dan kegiatan seru melalui video di bawah ini.</p>
-      </div>
-      
-      <div class="hsm-slider-wrapper">
-        <button class="hsm-btn hsm-prev" onclick="document.querySelector('.hsm-slider').scrollBy({left: -350, behavior: 'smooth'})">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        
-        <div class="hsm-slider">
-          <!-- Frame 1 -->
-          <div class="hsm-slide yt-slide">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/NW-A7gjfNo0?autoplay=1&mute=1&loop=1&playlist=NW-A7gjfNo0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:16px;"></iframe>
-          </div>
-          <!-- Frame 2 -->
-          <div class="hsm-slide yt-slide">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/NI_h4JMK0jA?autoplay=1&mute=1&loop=1&playlist=NI_h4JMK0jA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:16px;"></iframe>
-          </div>
-          <!-- Frame 3 -->
-          <div class="hsm-slide yt-slide">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/OBasRmfy5PM?autoplay=1&mute=1&loop=1&playlist=OBasRmfy5PM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:16px;"></iframe>
-          </div>
-          <!-- Frame 4 -->
-          <div class="hsm-slide yt-slide">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_jPZGLtnbFM?autoplay=1&mute=1&loop=1&playlist=_jPZGLtnbFM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:16px;"></iframe>
-          </div>
-          <!-- Frame 5 -->
-          <div class="hsm-slide yt-slide">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lKR__2X10Rw?autoplay=1&mute=1&loop=1&playlist=lKR__2X10Rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:16px;"></iframe>
-          </div>
-          <!-- Frame 6 -->
-          <div class="hsm-slide yt-slide">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7YHfJqJSgKw?autoplay=1&mute=1&loop=1&playlist=7YHfJqJSgKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:16px;"></iframe>
-          </div>
-          <!-- Frame 7 -->
-          <div class="hsm-slide yt-slide">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/RlkEkWVTJ7k?autoplay=1&mute=1&loop=1&playlist=RlkEkWVTJ7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:16px;"></iframe>
-          </div>
-        </div>
-
-        <button class="hsm-btn hsm-next" onclick="document.querySelector('.hsm-slider').scrollBy({left: 350, behavior: 'smooth'})">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+        <!-- Item 4 -->
+        <a href="galeri.html" class="ag-panel" role="listitem" aria-label="Barisan Bendera Santri Putri">
+          <span class="ag-panel__frame">
+            <span class="ag-panel__media">
+              <img src="assets/images/galeri-img_9319.jpg" alt="Barisan Bendera Santri Putri" draggable="false" />
+            </span>
+            <span class="ag-panel__overlay" aria-hidden="true"></span>
+          </span>
+          <span class="ag-panel__label" aria-hidden="true">
+            <span class="ag-panel__bar"></span>
+            <span class="ag-panel__text">Barisan Bendera Santri Putri</span>
+          </span>
       </div>
     </div>
   </section>
 
-  <!-- BERITA PESANTREN -->
-  <section class="kegiatan-section kegiatan-section--home">
-    <div class="kegiatan-inner">
-      <!-- Header -->
-      <div class="kegiatan-header">
-        <div class="kegiatan-title-wrap">
-          <div class="kegiatan-icon-top"><i class="fas fa-newspaper"></i></div>
-          <h2 class="kegiatan-title">BERITA</h2>
-          <div class="kegiatan-underline"></div>
-          <p class="kegiatan-desc">Kabar terbaru seputar kegiatan, prestasi, dan aktivitas<br>di Hibatullah IIBS.</p>
-        </div>
-        <a href="berita.html" class="kegiatan-more-top">More <i class="fas fa-arrow-right"></i></a>
-      </div>
-
-      <!-- Cards Berita -->
-      <div class="kegiatan-grid" id="beritaGridHome"></div>
-    </div>
-  </section>
 
   <!-- Promo Modal -->
   <div id="promoModal" class="promo-modal">
     <div class="promo-modal-content">
       <span class="promo-close" id="promoClose">&times;</span>
       <!-- Gambar poster PMB -->
-      <img src="assets/images/promo-spmb.jpg?v=1787543259" alt="Promo SPMB" class="promo-img" id="promoImg" />
+      <img src="assets/images/SPMB Gelombang 1-2.jpeg?v=20260909" alt="Promo SPMB" class="promo-img" id="promoImg" />
       <div class="promo-buttons">
         <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" rel="noopener" class="promo-btn promo-primary"><i class="fas fa-sparkles"></i> Daftar Sekarang <i class="fas fa-arrow-right"></i></a>
         <button class="promo-btn promo-secondary" id="promoLaterBtn">Lihat Nanti</button>
@@ -1092,11 +933,11 @@
       });
     });
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="accordion-gallery.js"></script>
 </body>
 </html>
-
-
-
 
 
 

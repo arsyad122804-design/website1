@@ -18,26 +18,30 @@ document.addEventListener('DOMContentLoaded', () => {
           Beranda
         </a>
 
+        <a href="visi-misi-sdih.html" class="card-nav-item">
+          Visi &amp; Misi
+        </a>
+
         <div class="card-nav-item-wrapper">
           <div class="card-nav-item">
-            Hibatullah IIBS <i class="fas fa-chevron-down"></i>
+            About <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="card-nav-dropdown">
+            <a href="sejarah.html" class="dropdown-link">Sejarah Sekolah</a>
+            <a href="penasehat.html" class="dropdown-link">Dewan Penasehat</a>
+            <a href="stakeholders.html" class="dropdown-link">Stakeholders</a>
+          </div>
+        </div>
+
+        <div class="card-nav-item-wrapper">
+          <div class="card-nav-item">
+            Keunggulan <i class="fas fa-chevron-down"></i>
           </div>
           <div class="card-nav-dropdown">
             <a href="program-unggulan-sdih.html" class="dropdown-link">Program Unggulan</a>
             <a href="karakter-siswa-sdih.html" class="dropdown-link">Karakter Siswa</a>
             <a href="standar-kompetensi-lulusan.html" class="dropdown-link">Standar Kompetensi Lulusan</a>
             <a href="testimoni.html" class="dropdown-link">Testimoni</a>
-          </div>
-        </div>
-
-        <div class="card-nav-item-wrapper">
-          <div class="card-nav-item">
-            History <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="card-nav-dropdown">
-            <a href="sejarah.html" class="dropdown-link">Sejarah Sekolah</a>
-            <a href="penasehat.html" class="dropdown-link">Dewan Penasehat</a>
-            <a href="stakeholders.html" class="dropdown-link">Stakeholders</a>
           </div>
         </div>
 
@@ -62,6 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <a href="galeri.html" class="card-nav-item">
           Galeri
+        </a>
+
+        <a href="berita.html" class="card-nav-item">
+          Berita
         </a>
 
         <div class="lang-switcher">
@@ -260,32 +268,75 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(s);
   }
 
+  // Hero Banner & Key Elements Multi-Language Dictionary
+  const heroTranslations = {
+    id: {
+      tag: 'SELAMAT DATANG DI',
+      title: 'Sekolah Asrama Islam<br>Internasional Hibatullah',
+      more: 'More Galeri <i class="fas fa-arrow-right"></i>'
+    },
+    en: {
+      tag: 'WELCOME TO',
+      title: 'Hibatullah International<br>Islamic Boarding School',
+      more: 'More Galleries <i class="fas fa-arrow-right"></i>'
+    },
+    ar: {
+      tag: 'أهلاً وسهلاً بكم في',
+      title: 'هبة الله الدولية مدرسة<br>الإسلامية الداخلية',
+      more: 'المزيد من المعرض <i class="fas fa-arrow-left"></i>'
+    }
+  };
+
+  function updateHeroText(langCode) {
+    const welcomeTag = document.querySelector('.thursina-welcome-tag');
+    const mainTitle = document.querySelector('.thursina-main-title');
+    const moreBtn = document.querySelector('.hgs-more-btn');
+    const t = heroTranslations[langCode] || heroTranslations['id'];
+    if (welcomeTag) welcomeTag.innerHTML = t.tag;
+    if (mainTitle) mainTitle.innerHTML = t.title;
+    if (moreBtn) moreBtn.innerHTML = t.more;
+  }
+
   // Define translation function globally
   window.changeSiteLanguage = function(langCode) {
-    // Set cookie for page-to-page translation continuity
-    const cookieVal = langCode === 'id' ? '' : `/id/${langCode}`;
-    document.cookie = `googtrans=${cookieVal}; path=/;`;
-    document.cookie = `googtrans=${cookieVal}; path=/; domain=${window.location.hostname};`;
+    // Save to localStorage for persistence
+    localStorage.setItem('site_lang', langCode);
+
+    // Update hero banner text immediately & reliably
+    updateHeroText(langCode);
+
+    // Update trigger UI and active class
+    updateFlagUI(langCode);
+
+    // Set cookie for Google Translate
+    if (langCode === 'id') {
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname + ';';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + window.location.hostname + ';';
+    } else {
+      const cookieVal = `/id/${langCode}`;
+      document.cookie = `googtrans=${cookieVal}; path=/;`;
+      document.cookie = `googtrans=${cookieVal}; path=/; domain=${window.location.hostname};`;
+      document.cookie = `googtrans=${cookieVal}; path=/; domain=.${window.location.hostname};`;
+    }
     
     // Trigger Google Translate dropdown change
     const select = document.querySelector('.goog-te-combo');
     if (select) {
-      select.value = langCode;
+      select.value = langCode === 'id' ? '' : langCode;
       select.dispatchEvent(new Event('change'));
     }
-    
-    // Update trigger UI and active class
-    updateFlagUI(langCode);
   };
 
   function updateFlagUI(langCode) {
     const flagImg = document.getElementById('currentLangFlag');
-    if (flagImg) {
-      let src = 'https://flagcdn.com/w40/id.png';
-      if (langCode === 'en') src = 'https://flagcdn.com/w40/gb.png';
-      if (langCode === 'ar') src = 'https://flagcdn.com/w40/sa.png';
-      flagImg.src = src;
-    }
+    const headerFlag = document.getElementById('thursinaHeaderFlag');
+    let src = 'https://flagcdn.com/w40/id.png';
+    if (langCode === 'en') src = 'https://flagcdn.com/w40/gb.png';
+    if (langCode === 'ar') src = 'https://flagcdn.com/w40/sa.png';
+
+    if (flagImg) flagImg.src = src;
+    if (headerFlag) headerFlag.src = src;
     
     // Update mobile button active class
     const mobileBtns = document.querySelectorAll('.mobile-lang-btn');
@@ -299,10 +350,145 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function initActiveFlags() {
-    // Read lang code from cookies
+    // Read lang code from localStorage or cookies
+    const savedLang = localStorage.getItem('site_lang');
     const match = document.cookie.match(/googtrans=\/id\/([a-z]{2})/);
-    const activeLang = match ? match[1] : 'id';
+    const activeLang = savedLang || (match ? match[1] : 'id');
     updateFlagUI(activeLang);
+    updateHeroText(activeLang);
+  }
+
+  // Ensure hero text is synced as soon as DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initActiveFlags);
+  } else {
+    initActiveFlags();
+  }
+
+  // ----------------------------------------
+  // Thursina Header Interaction Handlers
+  // ----------------------------------------
+  const thursinaLangWrapper = document.getElementById('thursinaLangWrapper');
+  const thursinaLangBtn = document.getElementById('thursinaLangBtn');
+
+  if (thursinaLangBtn && thursinaLangWrapper) {
+    thursinaLangBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      thursinaLangWrapper.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!thursinaLangWrapper.contains(e.target)) {
+        thursinaLangWrapper.classList.remove('active');
+      }
+    });
+  }
+
+  // Contact Link Scroll
+  const contactLink = document.getElementById('thursinaContactLink');
+  if (contactLink) {
+    contactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const footer = document.querySelector('.site-footer') || document.querySelector('.footer-new') || document.querySelector('footer');
+      if (footer) {
+        footer.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+
+
+
+  // Thursina Mobile Toggle
+  const thursinaMobileToggle = document.getElementById('thursinaMobileToggle');
+  if (thursinaMobileToggle) {
+    thursinaMobileToggle.addEventListener('click', () => {
+      const drawer = document.getElementById('mobileDrawer');
+      const overlay = document.getElementById('mobileOverlay');
+      if (drawer && overlay) {
+        drawer.classList.toggle('open');
+        overlay.classList.toggle('open');
+        document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+      }
+    });
+  }
+
+  // Thursina Search Modal Logic
+  const searchBtn = document.getElementById('thursinaSearchBtn');
+  const searchModal = document.getElementById('thursinaSearchModal');
+  const searchClose = document.getElementById('searchModalClose');
+  const searchBackdrop = document.getElementById('searchModalBackdrop');
+  const searchInput = document.getElementById('thursinaSearchInput');
+  const searchResults = document.getElementById('searchResultsList');
+
+  const siteSearchIndex = [
+    { title: 'Penerimaan Santri Baru (PPDB)', category: 'Pendaftaran', url: 'ppdb.html' },
+    { title: 'Program Unggulan', category: 'Pendidikan', url: 'program-unggulan-sdih.html' },
+    { title: 'Sejarah Sekolah', category: 'About', url: 'sejarah.html' },
+    { title: 'Dewan Penasehat', category: 'About', url: 'penasehat.html' },
+    { title: 'Stakeholders & Mitra', category: 'About', url: 'stakeholders.html' },
+    { title: 'Kurikulum & Sistem Pembelajaran', category: 'Education', url: 'kurikulum.html' },
+    { title: 'Karakter Siswa & Tazkiyah', category: 'Education', url: 'karakter-siswa-sdih.html' },
+    { title: 'Standar Kompetensi Lulusan (SKL)', category: 'Education', url: 'standar-kompetensi-lulusan.html' },
+    { title: 'Testimoni Santri & Alumni', category: 'Alumni', url: 'testimoni.html' },
+    { title: 'Fasilitas Asrama Santri', category: 'Fasilitas', url: 'asrama.html' },
+    { title: 'Fasilitas Sekolah Modern', category: 'Fasilitas', url: 'sekolah.html' },
+    { title: 'Regulasi Harian Santri', category: 'Kehidupan Santri', url: 'regulasi-harian.html' },
+    { title: 'Prestasi Santri Hibatullah', category: 'Prestasi', url: 'prestasi-santri.html' },
+    { title: 'Galeri Foto & Kebersamaan', category: 'Media', url: 'galeri.html' },
+    { title: 'Berita & Artikel Pesantren', category: 'News', url: 'berita.html' }
+  ];
+
+  function openSearchModal() {
+    if (!searchModal) return;
+    searchModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (searchInput) {
+      setTimeout(() => searchInput.focus(), 150);
+    }
+  }
+
+  function closeSearchModal() {
+    if (!searchModal) return;
+    searchModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (searchBtn) searchBtn.addEventListener('click', openSearchModal);
+  if (searchClose) searchClose.addEventListener('click', closeSearchModal);
+  if (searchBackdrop) searchBackdrop.addEventListener('click', closeSearchModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchModal && searchModal.classList.contains('active')) {
+      closeSearchModal();
+    }
+  });
+
+  if (searchInput && searchResults) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      if (!query) {
+        searchResults.innerHTML = '<div class="search-hint">Ketik kata kunci untuk mencari di website...</div>';
+        return;
+      }
+
+      const matches = siteSearchIndex.filter(item => 
+        item.title.toLowerCase().includes(query) || 
+        item.category.toLowerCase().includes(query)
+      );
+
+      if (matches.length === 0) {
+        searchResults.innerHTML = '<div class="search-hint">Tidak ada hasil ditemukan untuk "' + query + '"</div>';
+        return;
+      }
+
+      searchResults.innerHTML = matches.map(item => `
+        <a href="${item.url}" class="search-result-item">
+          <span class="search-result-title">${item.title}</span>
+          <span class="search-result-category">${item.category}</span>
+        </a>
+      `).join('');
+    });
   }
 
   loadGoogleTranslate();

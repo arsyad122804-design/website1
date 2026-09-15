@@ -12,7 +12,7 @@
   <link rel="icon" href="favicon.png" type="image/png" />
   <style>
     body {
-      background: #f8fafc;
+      background: #f4f7fb;
       color: #334155;
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -25,7 +25,7 @@
       padding: 12px 0;
     }
     .prog-bc {
-      max-width: 1200px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -50,356 +50,272 @@
       color: #64748b;
     }
 
-    /* HERO SECTION */
-    .program-hero-section {
-      padding: 60px 0;
-      background: #ffffff;
-      border-bottom: 1px solid #f1f5f9;
-      position: relative;
-    }
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-    @media (max-width: 991px) {
-      .hero-container {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-    }
-    
-    .ph-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #eff6ff;
-      color: #2563eb;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 99px;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
-    .hero-content h1 {
-      font-size: 40px;
-      font-weight: 800;
-      color: #0b1f5c;
-      margin: 0 0 12px 0;
-      line-height: 1.2;
-    }
-    .hero-content h1 .highlight {
-      color: #2563eb;
-    }
-    .ph-desc {
-      font-size: 16px;
-      color: #64748b;
-      margin: 0 0 32px 0;
-      line-height: 1.6;
-    }
-
-    /* STATS GRID */
-    .ph-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 480px) {
-      .ph-stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    .stat-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 16px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-      transition: transform 0.3s ease;
-    }
-    .stat-card:hover {
-      transform: translateY(-4px);
-    }
-    .stat-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .stat-icon.blue {
-      background: #eff6ff;
-      color: #2563eb;
-    }
-    .stat-icon.orange {
-      background: #fff7ed;
-      color: #ea580c;
-    }
-    .stat-number {
-      font-size: 20px;
-      font-weight: 800;
-      color: #0f172a;
-      display: block;
-      margin-bottom: 2px;
-    }
-    .stat-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: #64748b;
-    }
-
-    /* HERO IMAGE */
-    .hero-image-wrap {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-      aspect-ratio: 4 / 3.4;
-    }
-    .hero-image-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* FILTER TABS */
-    .filter-section {
-      padding: 48px 0 24px 0;
+    /* FILTER SECTION */
+    .program-filter-wrapper {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-left: 24px;
-      padding-right: 24px;
+      padding: 36px 24px 20px 24px;
     }
-    @media (max-width: 576px) {
-      .filter-section {
-        flex-wrap: wrap;
-      }
-    }
-    .filter-btn {
+
+    .program-filter-bar {
       background: #ffffff;
-      border: 1px solid #cbd5e1;
-      color: #475569;
+      padding: 5px 6px;
+      border-radius: 99px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+      border: 1px solid #e2e8f0;
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .filter-pill {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #334155;
+      font-family: 'Poppins', sans-serif;
       font-size: 13.5px;
-      font-weight: 700;
-      padding: 10px 24px;
+      font-weight: 600;
+      padding: 9px 22px;
       border-radius: 99px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
     }
-    .filter-btn i {
-      font-size: 14px;
+
+    .filter-pill i {
+      font-size: 13px;
     }
-    .filter-btn:hover {
-      border-color: #2563eb;
-      color: #2563eb;
+
+    .filter-pill:hover {
+      color: #0b2545;
+      background: #f8fafc;
     }
-    .filter-btn.active {
-      background: #2563eb;
-      border-color: #2563eb;
+
+    .filter-pill.active {
+      background: #0b2545;
       color: #ffffff;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      border-color: #0b2545;
+      box-shadow: 0 4px 14px rgba(11, 37, 69, 0.25);
     }
 
     /* PROGRAM GRID & CARDS */
-    .programs-section {
-      padding: 24px 0 80px 0;
-    }
-    .programs-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
+    .programs-new-section {
+      padding: 12px 24px 80px 24px;
     }
 
-    .programs-grid {
+    .programs-new-container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .programs-new-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 24px;
-      transition: all 0.4s ease;
+      gap: 22px;
+      align-items: stretch;
     }
+
     @media (max-width: 991px) {
-      .programs-grid {
+      .programs-new-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    @media (max-width: 768px) {
-      .programs-grid {
+
+    @media (max-width: 640px) {
+      .programs-new-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .prog-card {
+    .prog-new-card {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
       border-radius: 20px;
-      padding: 32px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03);
+      border: 1px solid #e5eef7;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-      position: relative;
+      justify-content: space-between;
+      min-height: 205px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .prog-card.hidden {
-      display: none;
-      opacity: 0;
+
+    .prog-new-card.hidden {
+      display: none !important;
     }
-    .prog-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+
+    .prog-new-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.07);
       border-color: #cbd5e1;
     }
 
-    .card-badge {
-      display: inline-block;
-      font-size: 9.5px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 99px;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
-    .card-badge.reguler {
-      background: #eff6ff;
-      color: #2563eb;
-    }
-    .card-badge.non-reguler {
-      background: #f5f3ff;
-      color: #7c3aed;
+    .prog-card-top-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 145px;
+      height: 72px;
+      object-fit: cover;
+      border-top-right-radius: 20px;
+      pointer-events: none;
+      mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+      opacity: 0.95;
     }
 
-    .card-icon {
-      width: 56px;
-      height: 56px;
+    .prog-card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .prog-icon-circle {
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 17px;
       color: #ffffff;
-      margin-bottom: 20px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
     }
-    .card-icon.blue { background: #2563eb; }
-    .card-icon.orange { background: #ea580c; }
-    .card-icon.green { background: #16a34a; }
-    .card-icon.teal { background: #0d9488; }
-    .card-icon.purple { background: #7c3aed; }
-    .card-icon.yellow { background: #ca8a04; }
-    .card-icon.pink { background: #db2777; }
 
-    .prog-card h3 {
-      font-size: 19px;
-      font-weight: 800;
-      color: #0b1f5c;
-      margin: 0 0 12px 0;
-      line-height: 1.3;
+    .prog-icon-circle.blue { background: #2563eb; }
+    .prog-icon-circle.orange { background: #f97316; }
+    .prog-icon-circle.green { background: #16a34a; }
+    .prog-icon-circle.teal { background: #0d9488; }
+    .prog-icon-circle.purple { background: #8b5cf6; }
+    .prog-icon-circle.gold { background: #ca8a04; }
+    .prog-icon-circle.sky { background: #0284c7; }
+    .prog-icon-circle.pink { background: #ec4899; }
+
+    .prog-num-watermark {
+      font-size: 26px;
+      font-weight: 300;
+      color: #cbd5e1;
+      margin-left: 14px;
+      letter-spacing: -0.5px;
+      user-select: none;
     }
-    .prog-card p {
-      font-size: 13.5px;
-      color: #64748b;
-      line-height: 1.6;
-      margin: 0 0 24px 0;
-      flex-grow: 1;
-    }
-    .prog-card-link {
-      font-size: 13px;
+
+    .prog-card-title {
+      font-size: 16px;
       font-weight: 700;
-      color: #2563eb;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.2s ease;
-    }
-    .prog-card-link:hover {
-      gap: 9px;
+      color: #0b1f5c;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+      z-index: 2;
+      position: relative;
     }
 
-    /* BOTTOM CTA BANNER */
-    .prog-cta-banner {
-      background: #2563eb;
-      border-radius: 20px;
-      padding: 32px 48px;
+    .prog-card-desc {
+      font-size: 12.5px;
+      color: #64748b;
+      line-height: 1.55;
+      margin: 0 0 18px 0;
+      flex-grow: 1;
+      z-index: 2;
+      position: relative;
+    }
+
+    .prog-card-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 32px;
-      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.2);
-      margin-top: 24px;
+      z-index: 2;
+      position: relative;
+      padding-top: 4px;
     }
-    @media (max-width: 768px) {
-      .prog-cta-banner {
-        flex-direction: column;
-        padding: 32px 24px;
-        text-align: center;
-        gap: 20px;
-      }
-    }
-    .cta-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    @media (max-width: 768px) {
-      .cta-left {
-        flex-direction: column;
-        gap: 16px;
-      }
-    }
-    .cta-badge {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: #ffffff;
-      flex-shrink: 0;
-    }
-    .cta-text p {
-      font-size: 14px;
+
+    .prog-link-text {
+      font-size: 12.5px;
       font-weight: 600;
-      color: #ffffff;
-      margin: 0;
-      line-height: 1.6;
-    }
-    .cta-btn {
-      background: #fff7ed;
-      color: #ea580c;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 12px 28px;
-      border-radius: 99px;
+      color: #2563eb;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15);
-      transition: all 0.3s ease;
-      flex-shrink: 0;
+      gap: 5px;
+      transition: color 0.2s;
     }
-    .cta-btn:hover {
-      background: #ffedd5;
-      transform: translateY(-2px);
+
+    .prog-link-text:hover {
+      color: #1d4ed8;
+    }
+
+    .prog-circle-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .prog-circle-btn:hover {
+      background: #2563eb;
+      color: #ffffff;
+      transform: translateX(2px);
+    }
+
+    /* CARD 14 QUOTE BANNER */
+    .prog-quote-card {
+      grid-column: span 2;
+      background: #092340 url('assets/images/program/banner-card-14.png') no-repeat right center;
+      background-size: cover;
+      border-radius: 20px;
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(11, 37, 69, 0.15);
+      min-height: 205px;
+    }
+
+    @media (max-width: 991px) {
+      .prog-quote-card {
+        grid-column: span 1;
+      }
+    }
+
+    .quote-orange-line {
+      width: 28px;
+      height: 4px;
+      background: #f97316;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .quote-text {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-style: normal;
+      color: #ffffff;
+      line-height: 1.5;
+      margin: 0 0 16px 0;
+      max-width: 380px;
+    }
+
+    .quote-author {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
     }
   </style>
 </head>
@@ -407,195 +323,283 @@
   <!-- CARD NAV ROOT -->
   <div id="card-nav-root"></div>
 
-  <!-- BREADCRUMB -->
+  <!-- BREADCRUMB BAR -->
   <div class="prog-breadcrumb">
     <div class="prog-bc">
       <i class="fas fa-home"></i>
       <a href="index.html">Beranda</a>
       <i class="fas fa-chevron-right"></i>
-      <a href="#">Santri Hebat</a>
-      <i class="fas fa-chevron-right"></i>
       <span>Program Pesantren</span>
     </div>
   </div>
 
-  <!-- HERO SECTION -->
-  <section class="program-hero-section">
-    <div class="hero-container">
-      <div class="hero-content">
-        <span class="ph-badge"><i class="fas fa-star"></i> PROGRAM KAMI</span>
-        <h1>Program Pesantren<br><span class="highlight">Hibatullah</span></h1>
-        <p class="ph-desc">Membentuk Generasi Qur'ani, Beradab, Berprestasi, dan Mendunia</p>
-        
-        <div class="ph-stats-grid">
-          <div class="stat-card">
-            <div class="stat-icon blue"><i class="fas fa-graduation-cap"></i></div>
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Program Unggulan</span>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon orange"><i class="fas fa-users"></i></div>
-            <span class="stat-number">500+</span>
-            <span class="stat-label">Santri Aktif</span>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon blue"><i class="fas fa-trophy"></i></div>
-            <span class="stat-number">50+</span>
-            <span class="stat-label">Prestasi Diraih</span>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon orange"><i class="fas fa-globe"></i></div>
-            <span class="stat-number">10+</span>
-            <span class="stat-label">Negara Mitra</span>
-          </div>
-        </div>
+  <!-- HERO BANNER SECTION -->
+  <section style="position:relative; background:linear-gradient(135deg,#0a1f5c 0%,#1a3a6b 45%,#2563b0 100%); overflow:hidden; padding:72px 0 88px; text-align:center;">
+    <div style="position:absolute;inset:0;z-index:0;">
+      <img src="assets/images/WhatsApp Image 2026-03-16 at 08.56.26.jpeg" alt="Hero Background" style="width:100%;height:100%;object-fit:cover;opacity:0.2;" />
+    </div>
+    <div style="position:relative;z-index:1;max-width:750px;margin:0 auto;padding:0 24px;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:12px;font-weight:600;padding:6px 18px;border-radius:20px;margin-bottom:18px;backdrop-filter:blur(4px);">
+        <i class="fas fa-layer-group"></i> Program Pesantren
       </div>
-
-      <div class="hero-image-wrap">
-        <img src="assets/images/program-hero-students.jpg" alt="Santri Hibatullah">
-      </div>
+      <p style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:3px;margin-bottom:8px;text-transform:uppercase;">PROGRAM</p>
+      <h1 style="font-size:42px;font-weight:900;margin-bottom:16px;line-height:1.2;"><span style="color:#ff7b00;">PROGRAM</span> <span style="color:#7eb8f7;">PESANTREN HIBATULLAH</span></h1>
+      <p style="font-size:14.5px;color:rgba(255,255,255,0.82);line-height:1.8;margin-bottom:28px;text-align:center;">Rangkaian program kurikulum reguler dan non-reguler yang dirancang komprehensif untuk melahirkan generasi santri unggul.</p>
+      
+      <!-- Hero Pills Removed as requested -->
     </div>
   </section>
 
   <!-- FILTER SECTION -->
-  <div class="filter-section">
-    <button class="filter-btn active" data-filter="all"><i class="fas fa-th-large"></i> Semua Program</button>
-    <button class="filter-btn" data-filter="reguler"><i class="fas fa-book-open"></i> Reguler</button>
-    <button class="filter-btn" data-filter="non-reguler"><i class="fas fa-star"></i> Non Reguler</button>
+  <div class="program-filter-wrapper">
+    <div class="program-filter-bar">
+      <button class="filter-pill active" data-filter="all">
+        <i class="fas fa-th-large"></i> Semua Program
+      </button>
+      <button class="filter-pill" data-filter="reguler">
+        <i class="fas fa-book-bookmark"></i> Reguler
+      </button>
+      <button class="filter-pill" data-filter="non-reguler">
+        <i class="fas fa-star"></i> Non-Reguler
+      </button>
+    </div>
   </div>
 
   <!-- PROGRAMS SECTION -->
-  <section class="programs-section">
-    <div class="programs-container">
-      <div class="programs-grid">
-        <!-- Card 1: PBM Akademik Kediknasan (Reguler) -->
-        <div class="prog-card" data-category="reguler">
-          <span class="card-badge reguler">REGULER</span>
-          <div class="card-icon blue"><i class="fas fa-graduation-cap"></i></div>
-          <h3>PBM Akademik Kediknasan</h3>
-          <p>Pembinaan akademik terstruktur untuk persiapan sekolah kedinasan.</p>
-          <a href="program-unggulan-sdih.html#kediknasan" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
+  <section class="programs-new-section">
+    <div class="programs-new-container">
+      <div class="programs-new-grid">
 
-        <!-- Card 2: PBM Studi Keislaman (Reguler) -->
-        <div class="prog-card" data-category="reguler">
-          <span class="card-badge reguler">REGULER</span>
-          <div class="card-icon orange"><i class="fas fa-book"></i></div>
-          <h3>PBM Studi Keislaman</h3>
-          <p>Pendalaman ilmu keislaman dengan kurikulum komprehensif.</p>
-          <a href="program-unggulan-sdih.html#keislaman" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 3: Tahsin & Tahfiz Bersanad (Reguler) -->
-        <div class="prog-card" data-category="reguler">
-          <span class="card-badge reguler">REGULER</span>
-          <div class="card-icon green"><i class="fas fa-book-open"></i></div>
-          <h3>Tahsin &amp; Tahfiz Bersanad</h3>
-          <p>Program tahsin dan tahfiz Al-Qur'an dengan sanad yang bersambung.</p>
-          <a href="program-unggulan-sdih.html#tahsin" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 4: Camp Al-Qur'an (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon teal"><i class="fas fa-book-quran"></i></div>
-          <h3>Camp Al-Qur'an</h3>
-          <p>Kemah Al-Qur'an untuk meningkatkan kedekatan dengan Al-Qur'an.</p>
-          <a href="program-unggulan-sdih.html#camp-quran" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 5: Camp Bahasa Asing (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon purple"><i class="fas fa-globe"></i></div>
-          <h3>Camp Bahasa Asing</h3>
-          <p>Program intensif penguasaan bahasa Arab dan Inggris.</p>
-          <a href="program-unggulan-sdih.html#camp-bahasa" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 6: Pelatihan Kepemimpinan (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon yellow"><i class="fas fa-crown"></i></div>
-          <h3>Pelatihan Kepemimpinan</h3>
-          <p>Membentuk jiwa kepemimpinan yang amanah dan visioner.</p>
-          <a href="program-unggulan-sdih.html#leadership" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 7: Overseas Internasional (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon blue"><i class="fas fa-plane"></i></div>
-          <h3>Overseas Internasional</h3>
-          <p>Program belajar dan pertukaran pelajar ke luar negeri.</p>
-          <a href="program-unggulan-sdih.html#overseas" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 8: Klub Bahasa (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon green"><i class="fas fa-comment-dots"></i></div>
-          <h3>Klub Bahasa</h3>
-          <p>Wadah pengembangan keterampilan bahasa secara aktif dan kreatif.</p>
-          <a href="program-unggulan-sdih.html#language-club" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 9: Bimbingan Lomba (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon orange"><i class="fas fa-trophy"></i></div>
-          <h3>Bimbingan Lomba</h3>
-          <p>Persiapan dan pelatihan untuk berbagai kompetisi.</p>
-          <a href="program-unggulan-sdih.html#competition" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 10: Pembinaan Kewirausahaan (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon blue"><i class="fas fa-briefcase"></i></div>
-          <h3>Pembinaan Kewirausahaan</h3>
-          <p>Membangun jiwa wirausaha dan kemandirian finansial.</p>
-          <a href="program-unggulan-sdih.html#entrepreneurship" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 11: Achievement Motivation Training (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon green"><i class="fas fa-star"></i></div>
-          <h3>Achievement Motivation Training</h3>
-          <p>Pelatihan motivasi untuk meraih prestasi maksimal.</p>
-          <a href="program-unggulan-sdih.html#motivation" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 12: Pembinaan Minat &amp; Bakat (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon pink"><i class="fas fa-music"></i></div>
-          <h3>Pembinaan Minat &amp; Bakat</h3>
-          <p>Mengembangkan potensi dan bakat sesuai minat santri.</p>
-          <a href="program-unggulan-sdih.html#creative" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Card 13: Tur Edukasi &amp; Kepemimpinan (Non Reguler) -->
-        <div class="prog-card" data-category="non-reguler">
-          <span class="card-badge non-reguler">NON REGULER</span>
-          <div class="card-icon purple"><i class="fas fa-bus"></i></div>
-          <h3>Tur Edukasi &amp; Kepemimpinan</h3>
-          <p>Kunjungan edukatif sekaligus pembentukan karakter.</p>
-          <a href="program-unggulan-sdih.html#education-tour" class="prog-card-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <!-- BOTTOM CTA BANNER -->
-      <div class="prog-cta-banner">
-        <div class="cta-left">
-          <div class="cta-badge"><i class="fas fa-award"></i></div>
-          <div class="cta-text">
-            <p>Tertarik dengan Program Kami?</p>
-            <p style="font-weight: 400; opacity: 0.85; font-size: 13px;">Daftarkan diri Anda dan bergabung menjadi bagian dari keluarga besar Hibatullah.</p>
+        <!-- Card 01: PBM Akademik Kedinasaan -->
+        <div class="prog-new-card" data-category="reguler">
+          <img src="assets/images/program/card-img-1.png" alt="PBM Akademik Kedinasaan" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle blue">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span class="prog-num-watermark">01</span>
+          </div>
+          <h3 class="prog-card-title">PBM Akademik Kedinasaan</h3>
+          <p class="prog-card-desc">Pembinaan akademik menyeluruh untuk pencapaian akhlak keislaman.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#kedinasaan" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#kedinasaan" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <a href="ppdb.html" class="cta-btn">Daftar Sekarang <i class="fas fa-arrow-right"></i></a>
+
+        <!-- Card 02: PBM Studi Keislaman -->
+        <div class="prog-new-card" data-category="reguler">
+          <img src="assets/images/program/card-img-2.png" alt="PBM Studi Keislaman" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle orange">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <span class="prog-num-watermark">02</span>
+          </div>
+          <h3 class="prog-card-title">PBM Studi Keislaman</h3>
+          <p class="prog-card-desc">Pendalaman ilmu keislaman dengan kurikulum terstruktur.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#keislaman" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#keislaman" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 03: Tahsin & Tahfiz Berstandar -->
+        <div class="prog-new-card" data-category="reguler">
+          <img src="assets/images/program/card-img-3.png" alt="Tahsin & Tahfiz Berstandar" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle green">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <span class="prog-num-watermark">03</span>
+          </div>
+          <h3 class="prog-card-title">Tahsin &amp; Tahfiz Berstand</h3>
+          <p class="prog-card-desc">Program tahsin dan tahfiz Al-Qur'an dengan standar yang terukur.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#tahsin" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#tahsin" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 04: Camp Al-Qur'an -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-4.png" alt="Camp Al-Qur'an" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle teal">
+              <i class="fas fa-book-quran"></i>
+            </div>
+            <span class="prog-num-watermark">04</span>
+          </div>
+          <h3 class="prog-card-title">Camp Al-Qur'an</h3>
+          <p class="prog-card-desc">Kegiatan Al-Qur'an intensif untuk meningkatkan kualitas bacaan dan hafalan.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#camp-quran" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#camp-quran" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 05: Camp Bahasa Asing -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-5.png" alt="Camp Bahasa Asing" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle purple">
+              <i class="fas fa-globe"></i>
+            </div>
+            <span class="prog-num-watermark">05</span>
+          </div>
+          <h3 class="prog-card-title">Camp Bahasa Asing</h3>
+          <p class="prog-card-desc">Program intensif penguasaan bahasa Arab dan Inggris.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#camp-bahasa" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#camp-bahasa" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 06: Pelatihan Kepemimpinan -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-6.png" alt="Pelatihan Kepemimpinan" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle gold">
+              <i class="fas fa-crown"></i>
+            </div>
+            <span class="prog-num-watermark">06</span>
+          </div>
+          <h3 class="prog-card-title">Pelatihan Kepemimpinan</h3>
+          <p class="prog-card-desc">Membentuk jiwa kepemimpinan yang amanah dan visioner.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#leadership" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#leadership" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 07: Overseas Internasional -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-7.png" alt="Overseas Internasional" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle sky">
+              <i class="fas fa-plane"></i>
+            </div>
+            <span class="prog-num-watermark">07</span>
+          </div>
+          <h3 class="prog-card-title">Overseas Internasional</h3>
+          <p class="prog-card-desc">Program belajar dan pertukaran pelajar ke luar negeri.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#overseas" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#overseas" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 08: Klub Bahasa -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-8.png" alt="Klub Bahasa" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle green">
+              <i class="fas fa-comment-dots"></i>
+            </div>
+            <span class="prog-num-watermark">08</span>
+          </div>
+          <h3 class="prog-card-title">Klub Bahasa</h3>
+          <p class="prog-card-desc">Wadah pengembangan keterampilan bahasa secara aktif dan kreatif.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#language-club" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#language-club" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 09: Bimbingan Lomba -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-9.png" alt="Bimbingan Lomba" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle orange">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <span class="prog-num-watermark">09</span>
+          </div>
+          <h3 class="prog-card-title">Bimbingan Lomba</h3>
+          <p class="prog-card-desc">Persiapan dan pembinaan untuk berbagai kompetisi.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#competition" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#competition" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 10: Pembinaan Kewirausahaan -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-10.png" alt="Pembinaan Kewirausahaan" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle blue">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <span class="prog-num-watermark">10</span>
+          </div>
+          <h3 class="prog-card-title">Pembinaan Kewirausahaan</h3>
+          <p class="prog-card-desc">Membekali jiwa wirausaha dan kemandirian finansial.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#entrepreneurship" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#entrepreneurship" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 11: Achievement Motivation Training -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-11.png" alt="Achievement Motivation Training" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle green">
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="prog-num-watermark">11</span>
+          </div>
+          <h3 class="prog-card-title">Achievement Motivation Training</h3>
+          <p class="prog-card-desc">Pelatihan motivasi untuk meraih prestasi maksimal.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#motivation" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#motivation" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 12: Pembinaan Minat & Bakat -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-12.png" alt="Pembinaan Minat & Bakat" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle pink">
+              <i class="fas fa-music"></i>
+            </div>
+            <span class="prog-num-watermark">12</span>
+          </div>
+          <h3 class="prog-card-title">Pembinaan Minat &amp; Bakat</h3>
+          <p class="prog-card-desc">Mengembangkan potensi dan bakat sesuai minat santri.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#creative" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#creative" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 13: Tur Edukasi & Kepemimpinan -->
+        <div class="prog-new-card" data-category="non-reguler">
+          <img src="assets/images/program/card-img-13.png" alt="Tur Edukasi & Kepemimpinan" class="prog-card-top-img" />
+          <div class="prog-card-header">
+            <div class="prog-icon-circle purple">
+              <i class="fas fa-bus"></i>
+            </div>
+            <span class="prog-num-watermark">13</span>
+          </div>
+          <h3 class="prog-card-title">Tur Edukasi &amp; Kepemimpinan</h3>
+          <p class="prog-card-desc">Kegiatan edukatif sekaligus pembentukan karakter.</p>
+          <div class="prog-card-footer">
+            <a href="program-unggulan-sdih.html#education-tour" class="prog-link-text">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            <a href="program-unggulan-sdih.html#education-tour" class="prog-circle-btn" aria-label="Lihat Detail"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 14 Banner (Spans 2 columns) -->
+        <div class="prog-quote-card">
+          <div class="quote-content">
+            <div class="quote-orange-line"></div>
+            <p class="quote-text">Setiap program adalah<br>langkah menuju generasi unggul<br>yang memberi manfaat untuk umat.</p>
+            <span class="quote-author">— Hibatullah IIBS</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -606,18 +610,16 @@
   <script src="animations.js?v=1785300047"></script>
   <script src="script.js?v=1781320772244"></script>
   <script src="navbar.js?v=20260826"></script>
-  
+
   <script>
     // Filtering Logic for Program Cards
     document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('.prog-card');
+      const buttons = document.querySelectorAll('.filter-pill');
+      const cards = document.querySelectorAll('.prog-new-card');
 
       buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-          // Remove active class from all buttons
           buttons.forEach(b => b.classList.remove('active'));
-          // Add active class to clicked button
           btn.classList.add('active');
 
           const filterValue = btn.getAttribute('data-filter');
@@ -626,18 +628,10 @@
             const category = card.getAttribute('data-category');
             if (filterValue === 'all' || category === filterValue) {
               card.classList.remove('hidden');
-              // Trigger a reflow to restart animation/opacity
-              void card.offsetWidth;
               card.style.opacity = '1';
               card.style.transform = 'translateY(0)';
             } else {
-              card.style.opacity = '0';
-              card.style.transform = 'translateY(10px)';
-              setTimeout(() => {
-                if (btn.classList.contains('active') && btn.getAttribute('data-filter') === filterValue) {
-                  card.classList.add('hidden');
-                }
-              }, 200);
+              card.classList.add('hidden');
             }
           });
         });
