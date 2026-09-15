@@ -7,9 +7,10 @@ const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
 files.forEach(file => {
   const filePath = path.join(dir, file);
   let content = fs.readFileSync(filePath, 'utf8');
-  // replace navbar.js?v=... with navbar.js?v=20260826
-  content = content.replace(/navbar\.js\?v=\d+/g, 'navbar.js?v=20260826');
+  content = content.replace(/navbar\.js(\?v=[^"'\s>]*)?/g, 'navbar.js?v=20260915_v3');
+  content = content.replace(/style\.css(\?v=[^"'\s>]*)?/g, 'style.css?v=20260915_v3');
+  content = content.replace(/navbar\.css(\?v=[^"'\s>]*)?/g, 'navbar.css?v=20260915_v3');
   fs.writeFileSync(filePath, content, 'utf8');
 });
 
-console.log('Updated navbar.js cache busters in HTML files.');
+console.log('Updated cache busters in all HTML files.');
