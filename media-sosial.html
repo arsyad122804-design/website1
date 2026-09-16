@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=20260915_v9" />
+  <link rel="stylesheet" href="style.css?v=20260915_v10" />
   <link rel="stylesheet" href="footer.css?v=2" />
-  <link rel="stylesheet" href="navbar.css?v=20260915_v9" />
-  <link rel="stylesheet" href="media-sosial.css?v=20260915_v9" />
+  <link rel="stylesheet" href="navbar.css?v=20260915_v10" />
+  <link rel="stylesheet" href="media-sosial.css?v=20260915_v10" />
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
@@ -131,7 +131,7 @@
 
         <div class="ms-carousel" id="ytCarousel">
           <!-- Card 1 -->
-          <a href="https://youtube.com/shorts/BonveWmt35M" target="_blank" rel="noopener" class="ms-yt-card">
+          <a href="javascript:void(0)" data-video-id="BonveWmt35M" class="ms-yt-card js-yt-modal-trigger">
             <div class="ms-yt-thumb">
               <img src="assets/images/yt-short-1.jpg" alt="Kegiatan Santri Hibatullah" class="ms-yt-img" />
               <div class="ms-yt-play"><i class="fas fa-play"></i></div>
@@ -144,7 +144,7 @@
           </a>
 
           <!-- Card 2 -->
-          <a href="https://youtube.com/shorts/-99L1wOVHNg" target="_blank" rel="noopener" class="ms-yt-card">
+          <a href="javascript:void(0)" data-video-id="-99L1wOVHNg" class="ms-yt-card js-yt-modal-trigger">
             <div class="ms-yt-thumb">
               <img src="assets/images/yt-short-2.jpg" alt="Suasana Belajar Santri" class="ms-yt-img" />
               <div class="ms-yt-play"><i class="fas fa-play"></i></div>
@@ -157,7 +157,7 @@
           </a>
 
           <!-- Card 3 -->
-          <a href="https://youtube.com/shorts/84yTTyJf4Ac" target="_blank" rel="noopener" class="ms-yt-card">
+          <a href="javascript:void(0)" data-video-id="84yTTyJf4Ac" class="ms-yt-card js-yt-modal-trigger">
             <div class="ms-yt-thumb">
               <img src="assets/images/yt-short-3.jpg" alt="Program Unggulan Hibatullah" class="ms-yt-img" />
               <div class="ms-yt-play"><i class="fas fa-play"></i></div>
@@ -170,7 +170,7 @@
           </a>
 
           <!-- Card 4 -->
-          <a href="https://youtube.com/shorts/PYgWoevw9jY" target="_blank" rel="noopener" class="ms-yt-card">
+          <a href="javascript:void(0)" data-video-id="PYgWoevw9jY" class="ms-yt-card js-yt-modal-trigger">
             <div class="ms-yt-thumb">
               <img src="assets/images/yt-short-4.jpg" alt="Aktivitas Harian Santri" class="ms-yt-img" />
               <div class="ms-yt-play"><i class="fas fa-play"></i></div>
@@ -183,7 +183,7 @@
           </a>
 
           <!-- Card 5 -->
-          <a href="https://youtube.com/shorts/1YjxzfG3S98" target="_blank" rel="noopener" class="ms-yt-card">
+          <a href="javascript:void(0)" data-video-id="1YjxzfG3S98" class="ms-yt-card js-yt-modal-trigger">
             <div class="ms-yt-thumb">
               <img src="assets/images/yt-short-5.jpg" alt="Pembinaan Karakter Santri" class="ms-yt-img" />
               <div class="ms-yt-play"><i class="fas fa-play"></i></div>
@@ -196,7 +196,7 @@
           </a>
 
           <!-- Card 6 -->
-          <a href="https://youtube.com/shorts/tXzYA0pvFW0" target="_blank" rel="noopener" class="ms-yt-card">
+          <a href="javascript:void(0)" data-video-id="tXzYA0pvFW0" class="ms-yt-card js-yt-modal-trigger">
             <div class="ms-yt-thumb">
               <img src="assets/images/yt-short-6.jpg" alt="Keseruan Santri Hibatullah" class="ms-yt-img" />
               <div class="ms-yt-play"><i class="fas fa-play"></i></div>
@@ -209,7 +209,7 @@
           </a>
 
           <!-- Card 7 -->
-          <a href="https://youtube.com/shorts/N18dCNf2zOs" target="_blank" rel="noopener" class="ms-yt-card">
+          <a href="javascript:void(0)" data-video-id="N18dCNf2zOs" class="ms-yt-card js-yt-modal-trigger">
             <div class="ms-yt-thumb">
               <img src="assets/images/yt-short-7.jpg" alt="Dokumentasi Santri IIBS" class="ms-yt-img" />
               <div class="ms-yt-play"><i class="fas fa-play"></i></div>
@@ -248,17 +248,28 @@
     </div>
   </section>
 
+  <!-- YOUTUBE VIDEO MODAL OVERLAY (AUTOPLAY IN-PAGE) -->
+  <div id="ytVideoModal" class="yt-video-modal" aria-hidden="true">
+    <div class="yt-modal-backdrop" id="ytModalBackdrop"></div>
+    <div class="yt-modal-content">
+      <button type="button" class="yt-modal-close" id="ytModalClose" aria-label="Tutup"><i class="fas fa-times"></i></button>
+      <div class="yt-modal-iframe-wrap">
+        <iframe id="ytModalIframe" src="" title="YouTube Shorts Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER SITUS -->
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
   <!-- Scripts -->
   <script src="script.js?v=20260915_v7"></script>
-  <script src="navbar.js?v=20260915_v9"></script>
+  <script src="navbar.js?v=20260915_v10"></script>
   <script src="mobile-nav.js?v=20260915_v8"></script>
 
   <script>
-    // Carousel Scroll Navigation
     document.addEventListener('DOMContentLoaded', () => {
+      // Carousel Scroll Navigation
       const carousel = document.getElementById('ytCarousel');
       const prevBtn = document.getElementById('ytPrevBtn');
       const nextBtn = document.getElementById('ytNextBtn');
@@ -271,6 +282,46 @@
           carousel.scrollBy({ left: 300, behavior: 'smooth' });
         });
       }
+
+      // YouTube Shorts Autoplay Video Modal
+      const modal = document.getElementById('ytVideoModal');
+      const iframe = document.getElementById('ytModalIframe');
+      const backdrop = document.getElementById('ytModalBackdrop');
+      const closeBtn = document.getElementById('ytModalClose');
+      const triggers = document.querySelectorAll('.js-yt-modal-trigger');
+
+      function openModal(videoId) {
+        if (!modal || !iframe || !videoId) return;
+        iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1';
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        if (!modal || !iframe) return;
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        iframe.src = '';
+        document.body.style.overflow = '';
+      }
+
+      triggers.forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.preventDefault();
+          const videoId = card.getAttribute('data-video-id');
+          openModal(videoId);
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (backdrop) backdrop.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
+          closeModal();
+        }
+      });
     });
   </script>
 </body>
