@@ -256,6 +256,12 @@
       <div class="yt-modal-iframe-wrap">
         <iframe id="ytModalIframe" src="" title="YouTube Shorts Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
+      <div class="yt-modal-bottom">
+        <span style="font-size: 12px; color: rgba(255, 255, 255, 0.7); font-weight: 600;"><i class="fab fa-youtube" style="color: #ef4444; margin-right: 4px;"></i> YouTube Shorts</span>
+        <a id="ytDirectLink" href="#" target="_blank" rel="noopener" class="yt-direct-link">
+          Buka di YouTube <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -288,11 +294,15 @@
       const iframe = document.getElementById('ytModalIframe');
       const backdrop = document.getElementById('ytModalBackdrop');
       const closeBtn = document.getElementById('ytModalClose');
+      const directLink = document.getElementById('ytDirectLink');
       const triggers = document.querySelectorAll('.js-yt-modal-trigger');
 
       function openModal(videoId) {
         if (!modal || !iframe || !videoId) return;
-        iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1';
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&playsinline=1&rel=0&modestbranding=1';
+        if (directLink) {
+          directLink.href = 'https://youtube.com/shorts/' + videoId;
+        }
         modal.classList.add('show');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
