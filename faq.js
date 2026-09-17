@@ -21,46 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {
           q: 'Apakah ada tes seleksi? Apa saja yang diuji?',
           a: 'Ya, tes seleksi terdiri dari 3 bagian: Tes Potensi Akademik (Matematika, Bahasa Indonesia, IPA), Tes Pemetaan Al-Qur\'an (Tajwid & Hafalan), serta Wawancara Psikologi & Komitmen Orang Tua.'
-        },
-        {
-          q: 'Apakah menerima pendaftaran inden?',
-          a: 'Ya, kami membuka pendaftaran inden bagi calon santri yang ingin mengamankan kuota untuk 1-2 tahun ajaran mendatang.'
-        },
-        {
-          q: 'Apakah ada program beasiswa?',
-          a: 'Tersedia beasiswa Prestasi Akademik, Beasiswa Hafiz Al-Qur\'an (minimal 3 Juz), dan Beasiswa Yatim/Dhuafa berprestasi.'
-        },
-        {
-          q: 'Kapan pengumuman hasil seleksi?',
-          a: 'Hasil seleksi diumumkan maksimal 7 hari kerja setelah pelaksanaan tes melalui portal PPDB online dan pesan WhatsApp resmi.'
-        },
-        {
-          q: 'Apakah bisa daftar ulang dengan pembayaran bertahap?',
-          a: 'Ya, biaya daftar ulang dapat diangsur dalam 2-3 tahapan sesuai skema pembagian pembayaran yang disepakati saat wawancara.'
-        },
-        {
-          q: 'Apakah kuota setiap tahun terbatas?',
-          a: 'Ya, demi menjaga kualitas pengasuhan dan pembelajaran, kuota santri baru dibatasi maksimal 120 santri per angkatan.'
-        },
-        {
-          q: 'Dari daerah mana saja pendaftar berasal?',
-          a: 'Santri Hibatullah IIBS berasal dari berbagai provinsi di Indonesia (Jawa, Sumatera, Kalimantan, Sulawesi) hingga manca negara.'
-        },
-        {
-          q: 'Apakah ada jalur khusus untuk santri tahfidz?',
-          a: 'Ada, calon santri dengan hafalan minimal 3 Juz mendapatkan bebas tes Al-Qur\'an dan prioritas penerimaan.'
-        },
-        {
-          q: 'Bagaimana jika saya mengalami kendala saat pendaftaran?',
-          a: 'Anda dapat langsung menghubungi Layanan Customer Service PPDB via WhatsApp di nomor hotline resmi 0812-3456-7890.'
-        },
-        {
-          q: 'Apakah orang tua perlu hadir saat tes seleksi?',
-          a: 'Ya, orang tua/wali santri wajib hadir mendampingi untuk mengikuti sesi wawancara dan penyelarasan visi pendidikan.'
-        },
-        {
-          q: 'Di mana saya bisa mendapatkan informasi terbaru?',
-          a: 'Informasi terbaru dapat diakses melalui website resmi, Instagram @hibatullah.iibs, TikTok, atau grup informasi calon orang tua.'
         }
       ]
     },
