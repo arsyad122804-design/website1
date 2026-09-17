@@ -289,7 +289,7 @@
         });
       }
 
-      // YouTube Shorts Autoplay Video Modal
+      // YouTube Shorts Autoplay Video Modal & Hover Previews
       const modal = document.getElementById('ytVideoModal');
       const iframe = document.getElementById('ytModalIframe');
       const backdrop = document.getElementById('ytModalBackdrop');
@@ -297,9 +297,57 @@
       const directLink = document.getElementById('ytDirectLink');
       const triggers = document.querySelectorAll('.js-yt-modal-trigger');
 
+      // Function to start hover autoplay preview inside card
+      function startCardPreview(card) {
+        const thumb = card.querySelector('.ms-yt-thumb');
+        const videoId = card.getAttribute('data-video-id');
+        if (!thumb || !videoId || thumb.querySelector('.ms-yt-preview-iframe')) return;
+
+        const previewIframe = document.createElement('iframe');
+        previewIframe.className = 'ms-yt-preview-iframe';
+        previewIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1`;
+        previewIframe.setAttribute('allow', 'autoplay; encrypted-media');
+        previewIframe.setAttribute('title', 'YouTube Short Preview');
+
+        thumb.appendChild(previewIframe);
+        setTimeout(() => {
+          thumb.classList.add('has-preview');
+        }, 50);
+      }
+
+      function stopCardPreview(card) {
+        const thumb = card.querySelector('.ms-yt-thumb');
+        if (!thumb) return;
+        thumb.classList.remove('has-preview');
+        const previewIframe = thumb.querySelector('.ms-yt-preview-iframe');
+        if (previewIframe) {
+          setTimeout(() => previewIframe.remove(), 300);
+        }
+      }
+
+      // Add Hover & Touch Event Listeners for Autoplay
+      triggers.forEach((card, index) => {
+        // Hover autoplay
+        card.addEventListener('mouseenter', () => startCardPreview(card));
+        card.addEventListener('mouseleave', () => stopCardPreview(card));
+
+        // Click to open full modal
+        card.addEventListener('click', (e) => {
+          e.preventDefault();
+          const videoId = card.getAttribute('data-video-id');
+          openModal(videoId);
+        });
+
+        // Auto-play the first video preview on page load for immediate visual impact
+        if (index === 0) {
+          setTimeout(() => startCardPreview(card), 600);
+        }
+      });
+
       function openModal(videoId) {
         if (!modal || !iframe || !videoId) return;
-        iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&playsinline=1&rel=0&modestbranding=1';
+        // mute=1 ensures browsers never block autoplay when opened
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&mute=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1';
         if (directLink) {
           directLink.href = 'https://youtube.com/shorts/' + videoId;
         }
@@ -315,14 +363,6 @@
         iframe.src = '';
         document.body.style.overflow = '';
       }
-
-      triggers.forEach(card => {
-        card.addEventListener('click', (e) => {
-          e.preventDefault();
-          const videoId = card.getAttribute('data-video-id');
-          openModal(videoId);
-        });
-      });
 
       if (closeBtn) closeBtn.addEventListener('click', closeModal);
       if (backdrop) backdrop.addEventListener('click', closeModal);

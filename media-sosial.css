@@ -372,6 +372,29 @@ body {
   overflow: hidden;
 }
 
+.ms-yt-preview-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+  z-index: 2;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ms-yt-thumb.has-preview .ms-yt-preview-iframe {
+  opacity: 1;
+}
+
+.ms-yt-thumb.has-preview .ms-yt-play,
+.ms-yt-thumb.has-preview .ms-yt-img {
+  opacity: 0;
+}
+
 .ms-yt-img {
   width: 100%;
   height: 100%;
