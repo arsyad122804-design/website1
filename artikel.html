@@ -252,13 +252,13 @@ body{background:#f0f4fb}
       var idx2 = (articleIdx !== undefined) ? articleIdx : idx;
       if (idx2 < 0 || idx2 >= items.length) idx2 = 0;
       var item = items[idx2];
-      var img = item.thumbnail || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80';
+      var img = item.thumbnail || 'assets/images/masjid.jpg.jpeg';
       var cat = item.categories && item.categories[0] ? item.categories[0] : 'Blog';
 
       document.title = item.title + ' - Hibatullah IIBS';
       document.getElementById('artBcTitle').textContent = item.title.length > 50 ? item.title.substring(0,50)+'...' : item.title;
       document.getElementById('artImg').src = img;
-      document.getElementById('artImg').onerror = function(){ this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80'; };
+      document.getElementById('artImg').onerror = function(){ this.src='assets/images/masjid.jpg.jpeg'; };
       document.getElementById('artCat').textContent = cat.toUpperCase();
       document.getElementById('artCat2').textContent = cat;
       document.getElementById('artTitle').textContent = item.title;
