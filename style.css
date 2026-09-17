@@ -1439,7 +1439,7 @@ img {
 
 /* Halaman Berita Pesantren */
 .berita-hero {
-  background: linear-gradient(135deg, #0d2244 0%, #1a3a6b 50%, #2563b0 100%);
+  background: linear-gradient(135deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 50%, rgba(16, 75, 160, 0.88) 100%);
   padding: 56px 24px 52px;
   text-align: center;
 }
@@ -1897,7 +1897,7 @@ html, body { overflow-x: hidden !important; }
     top: auto !important;
     bottom: auto !important;
     transform: none !important;
-    background: linear-gradient(135deg, #0a1f5c, #1a3a6b) !important;
+    background: linear-gradient(135deg, rgba(24, 102, 205, 0.96), rgba(16, 75, 160, 0.88)) !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;

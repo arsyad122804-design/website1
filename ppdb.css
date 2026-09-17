@@ -3,7 +3,7 @@
 =========================== */
 .ppdb-hero {
   position: relative;
-  background: linear-gradient(135deg, #061129 0%, #0d2149 50%, #1a3a6b 100%);
+  background: linear-gradient(135deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 50%, rgba(16, 75, 160, 0.88) 100%);
   overflow: hidden;
 }
 

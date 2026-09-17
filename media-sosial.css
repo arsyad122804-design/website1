@@ -15,7 +15,7 @@ body {
    -------------------------------------------------------------------------- */
 .ms-hero {
   position: relative;
-  background-image: linear-gradient(135deg, rgba(8, 28, 75, 0.92) 0%, rgba(18, 48, 100, 0.88) 100%), url('assets/images/galeri-img_9178.jpg');
+  background-image: linear-gradient(90deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 42%, rgba(16, 75, 160, 0.68) 72%, rgba(10, 45, 110, 0.25) 100%), url('assets/images/galeri-img_9178.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -539,7 +539,7 @@ body {
 
 .ms-cta-card {
   position: relative;
-  background-image: linear-gradient(135deg, rgba(8, 28, 75, 0.92) 0%, rgba(18, 48, 100, 0.88) 100%), url('assets/images/gedung-hibatullah-main.jpg');
+  background-image: linear-gradient(135deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 50%, rgba(16, 75, 160, 0.88) 100%), url('assets/images/gedung-hibatullah-main.jpg');
   background-size: cover;
   background-position: center;
   border-radius: 32px;

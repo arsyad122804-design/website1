@@ -2,7 +2,7 @@
    BREADCRUMB
 =========================== */
 .breadcrumb-bar {
-  background: #1a3a6b;
+  background: #145fc8;
   padding: 10px 0;
 }
 
@@ -46,7 +46,7 @@
 =========================== */
 .page-header {
   position: relative;
-  background-image: linear-gradient(135deg, rgba(10, 31, 92, 0.88) 0%, rgba(26, 58, 107, 0.82) 45%, rgba(30, 77, 140, 0.88) 100%), url('assets/images/galeri-img_9178.jpg');
+  background-image: linear-gradient(135deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 50%, rgba(16, 75, 160, 0.88) 100%), url('assets/images/galeri-img_9178.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

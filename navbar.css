@@ -38,12 +38,15 @@
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--pill-nav-border);
-  padding: 8px;
+  padding: 6px 10px;
   border-radius: 999px;
   box-shadow: var(--pill-nav-shadow);
   position: relative;
   pointer-events: auto;
-  gap: 8px;
+  gap: 4px;
+  max-width: calc(100vw - 32px);
+  flex-wrap: nowrap;
+  box-sizing: border-box;
   
   /* Initial Load */
   animation: pillExpand 0.6s var(--ease-spring) backwards;
@@ -52,24 +55,36 @@
 .card-nav-logo {
   display: flex;
   align-items: center;
-  padding: 0 16px 0 8px;
+  padding: 0 14px 0 6px;
   text-decoration: none;
   font-weight: 800;
   color: #fff;
   gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap !important;
   animation: itemFadeIn 0.5s var(--ease-spring) backwards;
   animation-delay: 0.1s;
+}
+
+.card-nav-logo span {
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  font-size: 14px;
 }
 
 .card-nav-logo img {
   width: 28px;
   height: 28px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .card-nav-items {
   display: flex;
+  align-items: center;
   position: relative;
+  flex-shrink: 0;
+  gap: 2px;
 }
 
 .card-nav-indicator {
@@ -88,22 +103,34 @@
 .card-nav-item {
   position: relative;
   z-index: 1;
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: 0 14px;
+  height: 36px;
+  font-size: 13.5px;
   font-weight: 600;
   color: var(--pill-nav-text);
   text-decoration: none;
   border-radius: 999px;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 5px;
+  line-height: 1;
+  box-sizing: border-box;
   transition: color 0.3s ease;
   white-space: nowrap !important;
   flex-shrink: 0;
+  word-break: keep-all;
   
   /* Initial Load Animation */
   animation: itemFadeIn 0.5s var(--ease-spring) backwards;
+}
+
+.card-nav-item-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
 }
 
 .card-nav-item-wrapper:nth-child(2) .card-nav-item { animation-delay: 0.15s; }
@@ -163,18 +190,6 @@
   background: transparent;
 }
 
-.card-nav-item-wrapper {
-  position: relative;
-}
-
-.card-nav-item-wrapper:hover .card-nav-dropdown,
-.card-nav-item-wrapper.open .card-nav-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0) scale(1);
-  pointer-events: auto;
-}
-
 .dropdown-link {
   padding: 10px 16px;
   color: var(--pill-nav-text);
@@ -183,6 +198,7 @@
   font-weight: 500;
   border-radius: 10px;
   transition: all 0.2s ease;
+  white-space: nowrap !important;
 }
 
 .dropdown-link:hover {
@@ -195,12 +211,14 @@
 .card-nav-cta {
   background: #3b82f6;
   color: #fff;
-  padding: 10px 28px;
+  padding: 9px 24px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
   text-decoration: none;
-  margin-left: 12px;
+  margin-left: 6px;
+  white-space: nowrap !important;
+  flex-shrink: 0;
   transition: all 0.3s ease;
   animation: itemFadeIn 0.5s var(--ease-spring) backwards;
   animation-delay: 0.45s;
@@ -225,30 +243,58 @@
   animation-delay: 0.5s;
 }
 
-@media (max-width: 992px) {
-  .card-nav-items,
-  .card-nav-cta {
-    display: none;
+/* Intermediate screens - Responsive Scaling for Tablet & Laptop Resolution */
+@media (max-width: 1440px) {
+  .card-nav {
+    gap: 3px;
+    padding: 5px 8px;
   }
-  .card-nav-mobile-btn {
-    display: block;
+  .card-nav-logo {
+    padding: 0 10px 0 6px;
+    gap: 6px;
+  }
+  .card-nav-logo span {
+    font-size: 13.5px;
+  }
+  .card-nav-item {
+    padding: 0 11px;
+    font-size: 13px;
+    height: 34px;
+  }
+  .card-nav-cta {
+    padding: 8px 18px;
+    font-size: 13px;
+    margin-left: 6px;
   }
 }
 
-/* Intermediate screens - Tablet Landscape / Nest Hub Max width transition */
-@media (max-width: 1240px) and (min-width: 993px) {
-  .card-nav {
-    gap: 4px;
-    padding: 6px;
+@media (max-width: 1280px) {
+  .card-nav-logo span {
+    display: none;
+  }
+  .card-nav-logo {
+    padding: 0 8px 0 4px;
   }
   .card-nav-item {
-    padding: 8px 16px;
-    font-size: 13px;
+    padding: 0 9px;
+    font-size: 12.5px;
+    height: 32px;
   }
   .card-nav-cta {
-    padding: 8px 20px;
-    font-size: 13px;
-    margin-left: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .card-nav-items,
+  .card-nav-cta,
+  .lang-switcher {
+    display: none !important;
+  }
+  .card-nav-mobile-btn {
+    display: block !important;
   }
 }
 

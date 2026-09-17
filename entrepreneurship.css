@@ -2,7 +2,7 @@
    BREADCRUMB
 =========================== */
 .ep-breadcrumb {
-  background: #1a3a6b;
+  background: #145fc8;
   padding: 10px 0;
 }
 .ep-breadcrumb-inner {
@@ -25,7 +25,7 @@
 =========================== */
 .ep-hero {
   position: relative;
-  background: linear-gradient(rgba(10, 31, 92, 0.85), rgba(26, 58, 107, 0.85)), url("assets/images/DSC_1060.JPG") center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 50%, rgba(16, 75, 160, 0.88) 100%), url("assets/images/DSC_1060.JPG") center/cover no-repeat;
   overflow: hidden;
   min-height: 520px;
 }

@@ -16,7 +16,7 @@
 .reg-shell-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #0a1628 0%, #1a3a6b 40%, #1e4d8c 70%, #0c1a33 100%);
+  background: linear-gradient(160deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 40%, rgba(16, 75, 160, 0.88) 70%, rgba(10, 45, 110, 0.85) 100%);
   z-index: 0;
 }
 

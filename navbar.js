@@ -76,6 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
           Media Sosial
         </a>
 
+        <a href="faq.html" class="card-nav-item">
+          FAQ
+        </a>
+
         <div class="lang-switcher">
           <button class="lang-trigger" id="langTriggerBtn" aria-haspopup="true" aria-expanded="false" type="button">
             <img src="https://flagcdn.com/w40/id.png" id="currentLangFlag" alt="Bahasa">
@@ -272,6 +276,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(s);
   }
 
+  // Helper to completely clear Google Translate cookies
+  function clearGoogTransCookies() {
+    const expires = 'Thu, 01 Jan 1970 00:00:00 UTC';
+    const path = '/';
+    const host = window.location.hostname;
+    document.cookie = `googtrans=; expires=${expires}; path=${path};`;
+    document.cookie = `googtrans=; expires=${expires}; path=${path}; domain=${host};`;
+    document.cookie = `googtrans=; expires=${expires}; path=${path}; domain=.${host};`;
+    const hostParts = host.split('.');
+    if (hostParts.length > 1) {
+      const mainDomain = hostParts.slice(-2).join('.');
+      document.cookie = `googtrans=; expires=${expires}; path=${path}; domain=.${mainDomain};`;
+    }
+  }
+
   // Hero Banner & Key Elements Multi-Language Dictionary
   const heroTranslations = {
     id: {
@@ -303,33 +322,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Define translation function globally
   window.changeSiteLanguage = function(langCode) {
-    // Save to localStorage for persistence
+    const previousLang = localStorage.getItem('site_lang') || 'id';
     localStorage.setItem('site_lang', langCode);
 
-    // Update hero banner text immediately & reliably
-    updateHeroText(langCode);
-
-    // Update trigger UI and active class
-    updateFlagUI(langCode);
-
-    // Set cookie for Google Translate
     if (langCode === 'id') {
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname + ';';
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + window.location.hostname + ';';
+      clearGoogTransCookies();
+      document.documentElement.dir = 'ltr';
+      document.documentElement.removeAttribute('dir');
+      document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
+      if (document.body) {
+        document.body.classList.remove('translated-rtl', 'translated-ltr');
+      }
+      
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = '';
+        select.dispatchEvent(new Event('change'));
+      }
+
+      // If returning to Indonesian from another language, reload page to guarantee 100% clean DOM
+      if (previousLang !== 'id' || document.cookie.includes('googtrans')) {
+        window.location.reload();
+        return;
+      }
     } else {
       const cookieVal = `/id/${langCode}`;
+      const host = window.location.hostname;
       document.cookie = `googtrans=${cookieVal}; path=/;`;
-      document.cookie = `googtrans=${cookieVal}; path=/; domain=${window.location.hostname};`;
-      document.cookie = `googtrans=${cookieVal}; path=/; domain=.${window.location.hostname};`;
+      document.cookie = `googtrans=${cookieVal}; path=/; domain=${host};`;
+      document.cookie = `googtrans=${cookieVal}; path=/; domain=.${host};`;
+
+      if (langCode === 'ar') {
+        document.documentElement.dir = 'rtl';
+      } else {
+        document.documentElement.dir = 'ltr';
+        document.documentElement.removeAttribute('dir');
+      }
+
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      }
+
+      // Reload if switching from/to Arabic or if select element not present
+      if (previousLang !== langCode && (previousLang === 'ar' || langCode === 'ar' || !select)) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 150);
+        return;
+      }
     }
-    
-    // Trigger Google Translate dropdown change
-    const select = document.querySelector('.goog-te-combo');
-    if (select) {
-      select.value = langCode === 'id' ? '' : langCode;
-      select.dispatchEvent(new Event('change'));
-    }
+
+    updateHeroText(langCode);
+    updateFlagUI(langCode);
   };
 
   function updateFlagUI(langCode) {
@@ -354,10 +400,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function initActiveFlags() {
-    // Read lang code from localStorage or cookies
     const savedLang = localStorage.getItem('site_lang');
     const match = document.cookie.match(/googtrans=\/id\/([a-z]{2})/);
     const activeLang = savedLang || (match ? match[1] : 'id');
+
+    if (activeLang === 'id') {
+      clearGoogTransCookies();
+      document.documentElement.dir = 'ltr';
+      document.documentElement.removeAttribute('dir');
+      document.documentElement.classList.remove('translated-rtl', 'translated-ltr');
+      if (document.body) {
+        document.body.classList.remove('translated-rtl', 'translated-ltr');
+      }
+    } else if (activeLang === 'ar') {
+      document.documentElement.dir = 'rtl';
+    } else {
+      document.documentElement.dir = 'ltr';
+      document.documentElement.removeAttribute('dir');
+    }
+
     updateFlagUI(activeLang);
     updateHeroText(activeLang);
   }

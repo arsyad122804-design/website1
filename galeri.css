@@ -10,7 +10,7 @@ body {
 
 /* BREADCRUMB */
 .galeri-breadcrumb {
-  background: #1e293b;
+  background: #145fc8;
   padding: 12px 0;
 }
 .galeri-breadcrumb-inner {
@@ -61,7 +61,7 @@ body {
 .gnh-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(11, 31, 92, 0.95) 0%, rgba(11, 31, 92, 0.78) 45%, rgba(11, 31, 92, 0.3) 80%, rgba(11, 31, 92, 0.1) 100%);
+  background: linear-gradient(90deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 42%, rgba(16, 75, 160, 0.68) 72%, rgba(10, 45, 110, 0.25) 100%);
 }
 
 .gnh-container {
@@ -645,7 +645,7 @@ body {
 
 /* 6. BOTTOM CTA BANNER */
 .galeri-cta-banner {
-  background: #092340 url('assets/images/banner-card-14.png') no-repeat right center;
+  background: linear-gradient(135deg, rgba(20, 90, 185, 0.96) 0%, rgba(14, 65, 140, 0.96) 100%);
   background-size: cover;
   border-radius: 24px;
   padding: 36px 44px;

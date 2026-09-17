@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - Hibatullah IIBS</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=20260915_v10" />
+  <link rel="stylesheet" href="footer.css?v=2" />
+  <link rel="stylesheet" href="navbar.css?v=20260915_v10" />
+  <link rel="stylesheet" href="faq.css?v=20260915_v10" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+</head>
+<body>
+  <!-- CARD NAV ROOT (NAVBAR DESKTOP) -->
+  <div id="card-nav-root"></div>
+
+  <!-- HERO SECTION -->
+  <section class="faq-hero">
+    <div class="faq-hero-container">
+      <div class="faq-breadcrumb">
+        <a href="index.html"><i class="fas fa-home"></i></a>
+        <i class="fas fa-chevron-right" style="font-size: 10px; opacity: 0.6;"></i>
+        <span>FAQ</span>
+      </div>
+
+      <div class="faq-hero-tag">PERTANYAAN UMUM</div>
+      <h1 class="faq-hero-title">F.A.<span class="faq-q-orange">Q</span> Hibatullah IIBS</h1>
+      <p class="faq-hero-desc">
+        Temukan jawaban atas pertanyaan yang paling sering ditanyakan oleh calon santri dan orang tua mengenai Hibatullah IIBS.
+      </p>
+
+      <div class="faq-hero-pills">
+        <span class="faq-pill"><i class="fas fa-check-circle"></i> Qur'ani</span>
+        <span class="faq-pill"><i class="fas fa-check-circle"></i> Berakhlak Mulia</span>
+        <span class="faq-pill"><i class="fas fa-check-circle"></i> Cerdas</span>
+        <span class="faq-pill"><i class="fas fa-check-circle"></i> Berwawasan Global</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN FAQ SECTION (2 COLUMNS) -->
+  <section class="faq-section">
+    <div class="faq-layout-container">
+      
+      <!-- LEFT SIDEBAR: CATEGORIES & HELPDESK -->
+      <aside class="faq-sidebar">
+        <div class="faq-category-nav">
+          
+          <!-- Category 1: Pendaftaran -->
+          <button type="button" class="faq-cat-btn active" data-category="pendaftaran">
+            <div class="faq-cat-btn-left">
+              <div class="faq-cat-icon"><i class="fas fa-user-graduate"></i></div>
+              <div class="faq-cat-text">
+                <span class="faq-cat-title">Pendaftaran</span>
+                <span class="faq-cat-sub">Pertanyaan seputar SPMB</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right faq-cat-arrow"></i>
+          </button>
+
+          <!-- Category 2: Akademik -->
+          <button type="button" class="faq-cat-btn" data-category="akademik">
+            <div class="faq-cat-btn-left">
+              <div class="faq-cat-icon"><i class="fas fa-book-open"></i></div>
+              <div class="faq-cat-text">
+                <span class="faq-cat-title">Akademik</span>
+                <span class="faq-cat-sub">Kurikulum dan pembelajaran</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right faq-cat-arrow"></i>
+          </button>
+
+          <!-- Category 3: Tahfidz -->
+          <button type="button" class="faq-cat-btn" data-category="tahfidz">
+            <div class="faq-cat-btn-left">
+              <div class="faq-cat-icon"><i class="fas fa-quran"></i></div>
+              <div class="faq-cat-text">
+                <span class="faq-cat-title">Tahfidz Al-Qur'an</span>
+                <span class="faq-cat-sub">Program dan target hafalan</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right faq-cat-arrow"></i>
+          </button>
+
+          <!-- Category 4: Asrama -->
+          <button type="button" class="faq-cat-btn" data-category="asrama">
+            <div class="faq-cat-btn-left">
+              <div class="faq-cat-icon"><i class="fas fa-hotel"></i></div>
+              <div class="faq-cat-text">
+                <span class="faq-cat-title">Asrama</span>
+                <span class="faq-cat-sub">Kehidupan santri di asrama</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right faq-cat-arrow"></i>
+          </button>
+
+          <!-- Category 5: Biaya -->
+          <button type="button" class="faq-cat-btn" data-category="biaya">
+            <div class="faq-cat-btn-left">
+              <div class="faq-cat-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+              <div class="faq-cat-text">
+                <span class="faq-cat-title">Biaya</span>
+                <span class="faq-cat-sub">Informasi biaya pendidikan</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right faq-cat-arrow"></i>
+          </button>
+
+          <!-- Category 6: Fasilitas -->
+          <button type="button" class="faq-cat-btn" data-category="fasilitas">
+            <div class="faq-cat-btn-left">
+              <div class="faq-cat-icon"><i class="fas fa-building"></i></div>
+              <div class="faq-cat-text">
+                <span class="faq-cat-title">Fasilitas</span>
+                <span class="faq-cat-sub">Sarana dan prasarana</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right faq-cat-arrow"></i>
+          </button>
+
+          <!-- Category 7: Kegiatan -->
+          <button type="button" class="faq-cat-btn" data-category="kegiatan">
+            <div class="faq-cat-btn-left">
+              <div class="faq-cat-icon"><i class="fas fa-running"></i></div>
+              <div class="faq-cat-text">
+                <span class="faq-cat-title">Kegiatan &amp; Ekstrakurikuler</span>
+                <span class="faq-cat-sub">Program pengembangan diri</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right faq-cat-arrow"></i>
+          </button>
+
+          <!-- Category 8: Lainnya -->
+          <button type="button" class="faq-cat-btn" data-category="lainnya">
+            <div class="faq-cat-btn-left">
+              <div class="faq-cat-icon"><i class="fas fa-comment-dots"></i></div>
+              <div class="faq-cat-text">
+                <span class="faq-cat-title">Lainnya</span>
+                <span class="faq-cat-sub">Pertanyaan umum lainnya</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right faq-cat-arrow"></i>
+          </button>
+
+        </div>
+
+        <!-- Help & Support Box -->
+        <div class="faq-help-box">
+          <div class="faq-help-icon-wrap">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 class="faq-help-title">Masih ada pertanyaan?</h3>
+          <p class="faq-help-sub">Tim kami siap membantu Anda.</p>
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="faq-help-btn">
+            Hubungi Kami <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </aside>
+
+      <!-- RIGHT MAIN CONTENT AREA -->
+      <main class="faq-main-content">
+        <div class="faq-main-header">
+          <div class="faq-header-info">
+            <div class="faq-eyebrow">— F.A.Q</div>
+            <h2 class="faq-content-title" id="faqCategoryTitle">
+              Pertanyaan Seputar <span class="highlight-blue">Pendaftaran</span>
+            </h2>
+            <p class="faq-content-subtitle" id="faqCategorySubtitle">
+              Temukan informasi lengkap mengenai proses pendaftaran, jadwal, dan persyaratan masuk Hibatullah IIBS.
+            </p>
+          </div>
+
+          <!-- Search Filter Bar -->
+          <div class="faq-search-wrap">
+            <i class="fas fa-search faq-search-icon"></i>
+            <input type="text" id="faqSearchInput" class="faq-search-input" placeholder="Cari pertanyaan..." autocomplete="off" />
+          </div>
+        </div>
+
+        <!-- Accordion Items Container -->
+        <div class="faq-accordion-list" id="faqAccordionContainer">
+          <!-- Dynamically populated by faq.js -->
+        </div>
+      </main>
+
+    </div>
+  </section>
+
+  <!-- FOOTER SITUS -->
+  <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
+
+  <!-- Scripts -->
+  <script src="script.js?v=20260915_v7"></script>
+  <script src="navbar.js?v=20260915_v10"></script>
+  <script src="mobile-nav.js?v=20260915_v8"></script>
+  <script src="site-footer.js?v=20260915_v2"></script>
+  <script src="faq.js?v=20260915_v10"></script>
+</body>
+</html>
