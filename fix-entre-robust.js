@@ -18,7 +18,7 @@ const endIndex = html.indexOf(endTag);
 if (startIndex !== -1 && endIndex !== -1) {
   const newVisual = `      <div class="ep-hero-visual">
         <div class="ep-hero-img-wrap" style="border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(26,58,107,0.2);">
-          <img src="assets/images/3.jpg.jpeg" alt="Kewirausahaan" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3;" />
+          <img src="assets/images/3.jpg" alt="Kewirausahaan" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3;" />
         </div>
       </div>
     </div>
