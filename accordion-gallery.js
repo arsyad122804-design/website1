@@ -28,6 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
       : false;
 
   function applyLayout(animate = true) {
+    if (window.innerWidth <= 768) {
+      if (activeTl) activeTl.kill();
+      panels.forEach(panel => {
+        if (!panel) return;
+        panel.style.transform = '';
+        panel.style.flexGrow = '';
+        const media = panel.querySelector('.ag-panel__media');
+        if (media) media.style.transform = '';
+      });
+      return;
+    }
     const isVertical = window.innerWidth <= 520;
     const r = Math.min(Math.max(expandRatio, 0.2), 0.9);
     const grow = count > 1 ? (r * (count - 1)) / (1 - r) : 1;
