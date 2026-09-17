@@ -335,11 +335,11 @@ body {
 }
 
 .ms-carousel {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 20px !important;
+  overflow-x: auto !important;
+  scroll-behavior: auto;
   padding: 10px 4px 20px;
   scrollbar-width: none; /* Firefox */
 }
@@ -354,7 +354,10 @@ body {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   border: 1px solid #e2e8f0;
   transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-  min-width: 230px;
+  width: 240px !important;
+  min-width: 240px !important;
+  max-width: 240px !important;
+  flex-shrink: 0 !important;
   display: flex;
   flex-direction: column;
 }

@@ -286,15 +286,8 @@
       const closeBtn = document.getElementById('ytModalClose');
       const directLink = document.getElementById('ytDirectLink');
 
-      // 1. Clone cards for 100% seamless infinite loop
+      // Smooth Continuous Auto-Scroll Loop on 1 Single Horizontal Row
       if (carousel) {
-        const originalCards = Array.from(carousel.children);
-        originalCards.forEach(card => {
-          const clone = card.cloneNode(true);
-          carousel.appendChild(clone);
-        });
-
-        // Continuous smooth infinite auto-scroll loop
         let isCarouselPaused = false;
         carousel.addEventListener('mouseenter', () => isCarouselPaused = true);
         carousel.addEventListener('mouseleave', () => isCarouselPaused = false);
@@ -303,10 +296,10 @@
 
         function autoScrollLoop() {
           if (!isCarouselPaused) {
-            carousel.scrollLeft += 1.1;
-            const halfWidth = carousel.scrollWidth / 2;
-            if (carousel.scrollLeft >= halfWidth) {
-              carousel.scrollLeft -= halfWidth; // Flawless seamless reset without any jump!
+            carousel.scrollLeft += 1.0;
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth - 4;
+            if (carousel.scrollLeft >= maxScroll) {
+              carousel.scrollLeft = 0;
             }
           }
           requestAnimationFrame(autoScrollLoop);
