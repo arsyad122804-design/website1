@@ -5015,6 +5015,41 @@ html, body { overflow-x: hidden !important; }
   border-left: 4px solid #2563eb;
 }
 
+.hvm-motto-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.hvm-motto-row {
+  display: grid;
+  grid-template-columns: 105px 16px 1fr;
+  align-items: baseline;
+  line-height: 1.7;
+}
+
+.hvm-motto-label {
+  font-weight: 700;
+  color: #1e3a8a;
+  letter-spacing: 0.5px;
+}
+
+.hvm-motto-colon {
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.hvm-motto-desc {
+  color: #334155;
+}
+
+@media (max-width: 600px) {
+  .hvm-motto-row {
+    grid-template-columns: 90px 14px 1fr;
+  }
+}
+
 @media (max-width: 1024px) {
   .hvm-grid {
     grid-template-columns: 1fr;
