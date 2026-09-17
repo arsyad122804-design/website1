@@ -97,7 +97,7 @@
     if (!wrap) return;
 
     var hi = esc(d.hero_highlight || 'SANTRI');
-    var title = '<span style="color:#ff7b00;">ASRAMA</span> <span style="color:#7eb8f7;">' + hi + '</span>';
+    var title = '<span style="color:#ffffff;">ASRAMA ' + hi + '</span>';
 
     wrap.innerHTML =
       '<section class="as-hero" style="position:relative;">' +
