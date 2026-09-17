@@ -262,22 +262,43 @@ body {
   transform: scale(1.05);
 }
 
-@media (max-width: 640px) {
-  .galeri-filter-bar {
+@media (max-width: 768px) {
+  .galeri-filter-wrapper {
+    justify-content: flex-start;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    white-space: nowrap;
-    justify-content: flex-start;
-    padding: 6px 12px;
+    padding: 6px 0 12px 0;
+    margin-bottom: 24px;
+    margin-left: -8px;
+    margin-right: -8px;
   }
-  .galeri-filter-bar::-webkit-scrollbar {
+
+  .galeri-filter-wrapper::-webkit-scrollbar {
     display: none;
   }
-  .galeri-filter-btn {
+
+  .galeri-filter-bar {
+    display: flex;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start;
+    width: max-content;
+    max-width: none;
+    border-radius: 99px;
+    padding: 6px 8px;
+    gap: 8px;
+  }
+
+  .filter-pill {
+    white-space: nowrap;
     flex-shrink: 0;
-    font-size: 12px;
-    padding: 8px 14px;
+    padding: 8px 18px;
+    font-size: 13px;
+    transform: none !important;
+  }
+
+  .filter-pill.active {
+    transform: none !important;
   }
 }
 
