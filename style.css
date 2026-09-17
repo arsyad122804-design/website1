@@ -3984,6 +3984,8 @@ html, body { overflow-x: hidden !important; }
   gap: 12px;
   text-decoration: none;
   color: #ffffff;
+  flex-shrink: 0;
+  margin-right: 8px;
 }
 
 .thursina-logo img {
@@ -4002,6 +4004,8 @@ html, body { overflow-x: hidden !important; }
   color: #ffffff;
   text-shadow: 0 2px 6px rgba(0,0,0,0.6);
   line-height: 1.1;
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .thursina-logo-text small {
@@ -4019,10 +4023,12 @@ html, body { overflow-x: hidden !important; }
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-wrap: nowrap !important;
 }
 
 .thursina-nav-item {
   position: relative;
+  flex-shrink: 0;
 }
 
 .thursina-nav-item > a {
@@ -4038,6 +4044,7 @@ html, body { overflow-x: hidden !important; }
   align-items: center;
   gap: 6px;
   text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+  white-space: nowrap !important;
 }
 
 .thursina-nav-item > a:hover,
@@ -4120,6 +4127,7 @@ html, body { overflow-x: hidden !important; }
   display: flex;
   align-items: center;
   gap: 22px;
+  flex-shrink: 0;
 }
 
 .thursina-search-btn {
@@ -4458,13 +4466,68 @@ html, body { overflow-x: hidden !important; }
   border-radius: 6px;
 }
 
-/* RESPONSIVE MEDIA QUERIES FOR THURSINA HERO */
-@media (max-width: 1180px) {
+/* RESPONSIVE MEDIA QUERIES FOR THURSINA HERO & NAVBAR */
+@media (max-width: 1440px) and (min-width: 1025px) {
+  .thursina-header {
+    padding: 0 20px;
+  }
+  .thursina-header-inner {
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .thursina-logo {
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+  .thursina-logo img {
+    height: 35px;
+  }
+  .thursina-logo-text {
+    font-size: 16px;
+  }
   .thursina-nav {
-    gap: 16px;
+    gap: 12px;
+    flex-wrap: nowrap !important;
+  }
+  .thursina-nav-item {
+    flex-shrink: 0;
   }
   .thursina-nav-item > a {
     font-size: 12.5px;
+    gap: 4px;
+    white-space: nowrap !important;
+  }
+  .thursina-header-right {
+    flex-shrink: 0;
+    gap: 14px;
+  }
+  .thursina-nav-cta {
+    font-size: 12.5px;
+    padding: 9px 20px;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .thursina-header {
+    padding: 0 14px;
+  }
+  .thursina-logo-text small {
+    display: none;
+  }
+  .thursina-nav {
+    gap: 8px;
+  }
+  .thursina-nav-item > a {
+    font-size: 11.5px;
+    gap: 3px;
+  }
+  .thursina-header-right {
+    gap: 10px;
+  }
+  .thursina-nav-cta {
+    font-size: 11.5px;
+    padding: 8px 14px;
   }
 }
 

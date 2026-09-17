@@ -99,6 +99,8 @@
   align-items: center;
   gap: 6px;
   transition: color 0.3s ease;
+  white-space: nowrap !important;
+  flex-shrink: 0;
   
   /* Initial Load Animation */
   animation: itemFadeIn 0.5s var(--ease-spring) backwards;
