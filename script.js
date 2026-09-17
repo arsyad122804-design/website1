@@ -270,16 +270,24 @@
 // SCROLL REVEAL ANIMATION
 document.addEventListener("DOMContentLoaded", function() {
   const reveals = document.querySelectorAll(".reveal");
-  if(reveals.length === 0) return;
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-  reveals.forEach(reveal => observer.observe(reveal));
+  if(reveals.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    reveals.forEach(reveal => observer.observe(reveal));
+  }
+
+  // Remove any floating audio/music button & background music
+  const audioBtn = document.getElementById('globalAudioPlayerToggle') || document.querySelector('.floating-audio-btn');
+  if (audioBtn) audioBtn.remove();
+  const bgMusic = document.getElementById('globalBgMusic');
+  if (bgMusic) bgMusic.remove();
+  localStorage.removeItem('isMusicPlaying');
 });
 
 
