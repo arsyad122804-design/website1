@@ -25,9 +25,10 @@ body {
 }
 
 .ms-hero-container {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 24px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 50px;
   position: relative;
   z-index: 10;
 }
