@@ -1,3 +1,25 @@
+// Immediately destroy audio player elements
+(function removeAudioElementsNow() {
+  function purgeAudio() {
+    const selectors = ['#globalAudioPlayerToggle', '.floating-audio-btn', '#globalBgMusic', 'audio[src*="bg-music"]'];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => el.remove());
+    });
+    localStorage.removeItem('isMusicPlaying');
+  }
+  purgeAudio();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', purgeAudio);
+  }
+  window.addEventListener('load', purgeAudio);
+  let attempts = 0;
+  const interval = setInterval(() => {
+    purgeAudio();
+    attempts++;
+    if (attempts > 20) clearInterval(interval);
+  }, 200);
+})();
+
 // ===========================
 // DROPDOWN CLICK TOGGLE
 // ===========================

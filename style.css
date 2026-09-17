@@ -7,6 +7,20 @@
   padding: 0;
 }
 
+/* Force hide audio player / floating music button */
+#globalAudioPlayerToggle,
+.floating-audio-btn,
+#globalBgMusic,
+[id*="AudioPlayer"],
+[class*="audio-btn"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
