@@ -7,7 +7,7 @@ const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
 files.forEach(file => {
   const filePath = path.join(dir, file);
   let content = fs.readFileSync(filePath, 'utf8');
-  const vStr = 'v=20260918_v100';
+  const vStr = 'v=20260918_v101';
   content = content.replace(/navbar\.js(\?v=[^"'\s>]*)?/g, `navbar.js?${vStr}`);
   content = content.replace(/script\.js(\?v=[^"'\s>]*)?/g, `script.js?${vStr}`);
   content = content.replace(/animations\.js(\?v=[^"'\s>]*)?/g, `animations.js?${vStr}`);
@@ -17,4 +17,4 @@ files.forEach(file => {
   fs.writeFileSync(filePath, content, 'utf8');
 });
 
-console.log('Updated cache busters v20260918_v100 in all HTML files.');
+console.log('Updated cache busters v20260918_v101 in all HTML files.');

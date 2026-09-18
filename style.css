@@ -4558,39 +4558,20 @@ html, body { overflow-x: hidden !important; }
     display: block !important;
   }
   .thursina-main-title {
-    font-size: 40px;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
     margin-top: 0;
   }
   .thursina-welcome-tag {
     font-size: 18px;
     letter-spacing: 2.5px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     line-height: 1;
   }
   .thursina-hero-banner {
     height: 65vh;
     min-height: 480px;
-  }
-}
-
-@media (max-width: 480px) {
-  .thursina-main-title {
-    font-size: 24px;
-    line-height: 1.25;
-    margin-top: 0;
-  }
-  .thursina-welcome-tag {
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    margin-bottom: 6px;
-    line-height: 1;
-  }
-  .thursina-hero-banner {
-    height: 50vh;
-    min-height: 320px;
-  }
-  .thursina-hero-body {
-    padding: 0 20px;
   }
 }
 
@@ -4630,8 +4611,28 @@ html, body { overflow-x: hidden !important; }
     font-size: 16px;
   }
   .thursina-main-title {
-    font-size: 28px;
-    line-height: 1.22;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-top: 0;
+  }
+  .thursina-welcome-tag {
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .thursina-hero-banner {
+    height: 55vh;
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thursina-main-title {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.15;
     margin-top: 0;
   }
   .thursina-welcome-tag {
@@ -4641,8 +4642,11 @@ html, body { overflow-x: hidden !important; }
     line-height: 1;
   }
   .thursina-hero-banner {
-    height: 55vh;
-    min-height: 380px;
+    height: 52vh;
+    min-height: 340px;
+  }
+  .thursina-hero-body {
+    padding: 0 16px;
   }
 }
 
