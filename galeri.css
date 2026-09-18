@@ -264,7 +264,7 @@ body {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .galeri-filter-wrapper {
     width: 100% !important;
     max-width: 100% !important;
