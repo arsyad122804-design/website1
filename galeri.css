@@ -211,12 +211,13 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
+  max-width: 100%;
 }
 
 .galeri-filter-bar {
   background: #ffffff;
   padding: 8px 10px;
-  border-radius: 99px;
+  border-radius: 24px;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.8);
   border: 1px solid #cbd5e1;
   display: inline-flex;
@@ -224,6 +225,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
 }
 
 .filter-pill {
@@ -234,7 +236,7 @@ body {
   font-size: 13.5px;
   font-weight: 600;
   padding: 9px 22px;
-  border-radius: 99px;
+  border-radius: 20px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -264,37 +266,44 @@ body {
 
 @media (max-width: 768px) {
   .galeri-filter-wrapper {
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding: 6px 0 12px 0;
-    margin-bottom: 24px;
-    margin-left: -8px;
-    margin-right: -8px;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 8px 4px 14px 4px !important;
+    margin-bottom: 24px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .galeri-filter-wrapper::-webkit-scrollbar {
-    display: none;
+    display: none !important;
   }
 
   .galeri-filter-bar {
-    display: flex;
+    display: flex !important;
     flex-wrap: nowrap !important;
-    justify-content: flex-start;
-    width: max-content;
-    max-width: none;
-    border-radius: 99px;
-    padding: 6px 8px;
-    gap: 8px;
+    justify-content: flex-start !important;
+    width: max-content !important;
+    max-width: none !important;
+    border-radius: 30px !important;
+    padding: 6px 10px !important;
+    gap: 8px !important;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
   }
 
   .filter-pill {
-    white-space: nowrap;
-    flex-shrink: 0;
-    padding: 8px 18px;
-    font-size: 13px;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
     transform: none !important;
+    border-radius: 20px !important;
   }
 
   .filter-pill.active {
