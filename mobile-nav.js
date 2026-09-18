@@ -28,6 +28,8 @@
         '<a href="penasehat.html"><i class="fas fa-user-tie"></i> Dewan Penasehat</a>' +
         '<a href="stakeholders.html"><i class="fas fa-circle-nodes"></i> Stakeholders</a>' +
         '<p class="mobile-nav-group-title">Keunggulan Kami</p>' +
+        '<a href="jenjang-smp.html"><i class="fas fa-school"></i> Jenjang SMP</a>' +
+        '<a href="kurikulum-sdih.html"><i class="fas fa-book-open"></i> Kurikulum SMP</a>' +
         '<a href="program-unggulan-sdih.html"><i class="fas fa-star"></i> Program Unggulan</a>' +
         '<a href="karakter-siswa-sdih.html"><i class="fas fa-heart"></i> Karakter Siswa</a>' +
         '<a href="standar-kompetensi-lulusan.html"><i class="fas fa-graduation-cap"></i> Standar Kompetensi Lulusan</a>' +
@@ -36,7 +38,7 @@
         '<a href="program.html"><i class="fas fa-list"></i> Program</a>' +
         '<a href="asrama.html"><i class="fas fa-home"></i> Fasilitas Asrama</a>' +
         '<a href="sekolah.html"><i class="fas fa-school"></i> Fasilitas Sekolah</a>' +
-        '<a href="kurikulum.html"><i class="fas fa-book-open"></i> Kurikulum</a>' +
+        '<a href="kurikulum.html"><i class="fas fa-book-open"></i> Kurikulum Integratif</a>' +
         '<a href="regulasi-harian.html"><i class="fas fa-clock"></i> Regulasi Harian</a>' +
         '<a href="rapot-santri.html"><i class="fas fa-file-invoice"></i> Rapot Santri</a>' +
         '<a href="prestasi-santri.html"><i class="fas fa-trophy"></i> Data Prestasi</a>' +
@@ -46,6 +48,7 @@
         '<a href="galeri.html"><i class="fas fa-images"></i> Galeri</a>' +
         '<a href="berita.html"><i class="fas fa-newspaper"></i> Berita</a>' +
         '<a href="media-sosial.html"><i class="fas fa-share-nodes"></i> Media Sosial</a>' +
+        '<a href="faq.html"><i class="fas fa-circle-question"></i> FAQ</a>' +
       '</nav>' +
       '<div class="mobile-nav-footer">' +
         '<a href="pendaftaran.html" class="mobile-nav-cta"><i class="fas fa-pen-to-square"></i> Daftar Sekarang</a>' +

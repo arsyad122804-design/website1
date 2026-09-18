@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
             Keunggulan <i class="fas fa-chevron-down"></i>
           </div>
           <div class="card-nav-dropdown">
+            <a href="jenjang-smp.html" class="dropdown-link">Jenjang SMP</a>
+            <a href="kurikulum-sdih.html" class="dropdown-link">Kurikulum SMP</a>
             <a href="program-unggulan-sdih.html" class="dropdown-link">Program Unggulan</a>
             <a href="karakter-siswa-sdih.html" class="dropdown-link">Karakter Siswa</a>
             <a href="standar-kompetensi-lulusan.html" class="dropdown-link">Standar Kompetensi Lulusan</a>
