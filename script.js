@@ -20,6 +20,22 @@
   }, 200);
 })();
 
+// Force fix hero title to Pondok Islamic Hibatullah Internasional
+(function fixHeroTitleNow() {
+  function fixTitle() {
+    const mainTitle = document.querySelector('.thursina-main-title');
+    if (mainTitle && mainTitle.innerHTML.includes('Pondok Hibatullah') && !mainTitle.innerHTML.includes('Islamic')) {
+      mainTitle.innerHTML = 'Pondok Islamic Hibatullah<br>Internasional';
+    }
+  }
+  fixTitle();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixTitle);
+  }
+  window.addEventListener('load', fixTitle);
+  setInterval(fixTitle, 300);
+})();
+
 // ===========================
 // DROPDOWN CLICK TOGGLE
 // ===========================

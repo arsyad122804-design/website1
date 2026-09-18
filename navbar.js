@@ -556,5 +556,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const currentSavedLang = localStorage.getItem('site_lang') || 'id';
+  updateHeroText(currentSavedLang);
+  updateFlagUI(currentSavedLang);
   loadGoogleTranslate();
 });
