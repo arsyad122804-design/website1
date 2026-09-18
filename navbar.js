@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroTranslations = {
     id: {
       tag: 'SELAMAT DATANG DI',
-      title: 'Pondok<br>Islamic Hibatullah<br>Internasional',
+      title: 'Pondok Islamic<br>Hibatullah<br>Internasional',
       more: 'Lihat Galeri <i class="fas fa-arrow-right"></i>'
     },
     en: {
