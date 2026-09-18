@@ -25,7 +25,7 @@
   function fixTitle() {
     const mainTitle = document.querySelector('.thursina-main-title');
     if (mainTitle && mainTitle.innerHTML.includes('Pondok Hibatullah') && !mainTitle.innerHTML.includes('Islamic')) {
-      mainTitle.innerHTML = 'Pondok Islamic Hibatullah<br>Internasional';
+      mainTitle.innerHTML = 'Pondok<br>Islamic Hibatullah<br>Internasional';
     }
   }
   fixTitle();
