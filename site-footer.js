@@ -71,9 +71,6 @@
       '<div class="sf-bottom">' +
         '<div class="sf-bottom-inner">' +
           '<span>© 2025 Hibatullah IIBS. All Rights Reserved.</span>' +
-          '<div class="sf-bottom-links">' +
-            '<span>Designed with <i class="fas fa-heart"></i> for Islamic Education</span>' +
-          '</div>' +
         '</div>' +
       '</div>'
     );
