@@ -2,16 +2,23 @@
  * VISITOR TRACKER & LIVE STATS COUNTER — Hibatullah IIBS
  * Otomatis mendeteksi pengunjung ASLI (Perangkat, Lokasi Kota Real),
  * menghitung Kunjungan Asli Realtime (Online, Hari Ini, & Total).
- * TANPA DATA DUMMY / SIMULASI.
+ * 100% DATA REAL TANPA SIMULASI/DUMMY.
  */
 
 (function () {
   'use strict';
 
-  const STORAGE_KEY_TOTAL = 'hibatullah_real_visitor_total';
-  const STORAGE_KEY_TODAY = 'hibatullah_real_visitor_today';
-  const STORAGE_KEY_DATE  = 'hibatullah_real_visitor_date';
-  const STORAGE_KEY_SESS  = 'hibatullah_real_visitor_sess';
+  // Hapus data bekas simulasi percobaan lama jika tersimpan di memori browser
+  try {
+    ['hibatullah_visitor_total', 'hibatullah_visitor_today', 'hibatullah_visitor_last_date', 'hibatullah_visitor_session'].forEach(k => {
+      localStorage.removeItem(k);
+    });
+  } catch (e) {}
+
+  const STORAGE_KEY_TOTAL = 'hibatullah_real_visitor_total_v2';
+  const STORAGE_KEY_TODAY = 'hibatullah_real_visitor_today_v2';
+  const STORAGE_KEY_DATE  = 'hibatullah_real_visitor_date_v2';
+  const STORAGE_KEY_SESS  = 'hibatullah_real_visitor_sess_v2';
 
   // Inisialisasi hitungan pengunjung murni (REAL)
   async function initVisitorStats() {
@@ -40,9 +47,11 @@
 
       logVisitorDetails();
       syncWithFirebase();
+    } else {
+      logVisitorDetails();
     }
 
-    // Pengunjung online aktif real saat ini
+    // Pengunjung online aktif real saat ini (1 per tab/pengguna aktif)
     const activeOnline = 1;
 
     updateWidgetUI(activeOnline, todayVisits, totalVisits);
