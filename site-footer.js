@@ -67,29 +67,51 @@
             '<li><span class="sf-contact-icon"><i class="fas fa-globe"></i></span><a href="https://hibatullah.sch.id" target="_blank" rel="noopener" data-sf-email>' + esc(k.email) + '</a></li>' +
           '</ul>' +
         '</div>' +
+
+        '<div class="sf-col sf-vstat-col">' +
+          '<h4 class="sf-heading">STATISTIK PENGUNJUNG</h4>' +
+          '<div class="sf-vstat-card">' +
+            '<div class="sf-vstat-row live">' +
+              '<div class="sf-vstat-icon green">' +
+                '<span class="sf-vstat-pulse"></span>' +
+                '<i class="fas fa-signal"></i>' +
+              '</div>' +
+              '<div class="sf-vstat-info">' +
+                '<strong class="sf-vstat-num" id="vstatOnline">...</strong>' +
+                '<span class="sf-vstat-label">Online Saat Ini</span>' +
+              '</div>' +
+            '</div>' +
+
+            '<div class="sf-vstat-row">' +
+              '<div class="sf-vstat-icon blue">' +
+                '<i class="fas fa-chart-line"></i>' +
+              '</div>' +
+              '<div class="sf-vstat-info">' +
+                '<strong class="sf-vstat-num" id="vstatToday">...</strong>' +
+                '<span class="sf-vstat-label">Pengunjung Hari Ini</span>' +
+              '</div>' +
+            '</div>' +
+
+            '<div class="sf-vstat-row">' +
+              '<div class="sf-vstat-icon purple">' +
+                '<i class="fas fa-users"></i>' +
+              '</div>' +
+              '<div class="sf-vstat-info">' +
+                '<strong class="sf-vstat-num" id="vstatTotal">...</strong>' +
+                '<span class="sf-vstat-label">Total Kunjungan</span>' +
+              '</div>' +
+            '</div>' +
+
+            '<div class="sf-vstat-meta" id="vstatCityText">' +
+              '<i class="fas fa-location-dot"></i> <span>Mendeteksi Lokasi...</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
       '</div>' +
       '<div class="sf-bottom">' +
         '<div class="sf-bottom-inner">' +
           '<span>© 2025 Hibatullah IIBS. All Rights Reserved.</span>' +
-          '<div class="vstat-box" id="visitorStatsWidget">' +
-            '<div class="vstat-item live">' +
-              '<span class="vstat-dot"></span>' +
-              '<span class="vstat-val" id="vstatOnline">...</span>' +
-              '<span class="vstat-lbl">Online</span>' +
-            '</div>' +
-            '<span class="vstat-sep">•</span>' +
-            '<div class="vstat-item">' +
-              '<i class="fas fa-calendar-day"></i>' +
-              '<span class="vstat-val" id="vstatToday">...</span>' +
-              '<span class="vstat-lbl">Hari Ini</span>' +
-            '</div>' +
-            '<span class="vstat-sep">•</span>' +
-            '<div class="vstat-item">' +
-              '<i class="fas fa-users"></i>' +
-              '<span class="vstat-val" id="vstatTotal">...</span>' +
-              '<span class="vstat-lbl">Total</span>' +
-            '</div>' +
-          '</div>' +
         '</div>' +
       '</div>'
     );

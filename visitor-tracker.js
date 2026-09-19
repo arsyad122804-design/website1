@@ -99,9 +99,14 @@
       visitorMeta.city = 'Indonesia';
     }
 
-    console.log('📊 Visitor Tracked:', visitorMeta);
+    // Update lokasi kota di UI Widget
+    const elMeta = document.getElementById('vstatCityText');
+    if (elMeta) {
+      const locStr = visitorMeta.city && visitorMeta.city !== 'Detecting...' ? visitorMeta.city : 'Indonesia';
+      elMeta.innerHTML = `<i class="fas fa-location-dot"></i> Terdeteksi: <strong>${locStr}</strong> (${device})`;
+    }
 
-    // Simpan data log kunjungan di sessionStorage untuk sesi aktif
+    console.log('📊 Visitor Tracked:', visitorMeta);
     sessionStorage.setItem('hibatullah_visitor_meta', JSON.stringify(visitorMeta));
   }
 
