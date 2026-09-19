@@ -55,6 +55,28 @@
     const activeOnline = 1;
 
     updateWidgetUI(activeOnline, todayVisits, totalVisits);
+
+    // Sinkronkan secara real-time dengan Server PHP Hostinger agar terhubung antar semua HP/Komputer
+    syncWithServerCounter();
+  }
+
+  // Sinkronisasi data real ke server Hostinger (visitor-counter.php)
+  async function syncWithServerCounter() {
+    try {
+      const res = await fetch('visitor-counter.php?t=' + Date.now());
+      if (res.ok) {
+        const json = await res.json();
+        if (json && typeof json.total === 'number') {
+          updateWidgetUI(json.online || 1, json.today || 1, json.total || 1);
+          localStorage.setItem(STORAGE_KEY_TOTAL, (json.total || 1).toString());
+          localStorage.setItem(STORAGE_KEY_TODAY, (json.today || 1).toString());
+          return true;
+        }
+      }
+    } catch (e) {
+      // Fallback jika tidak dalam environment PHP server
+    }
+    return false;
   }
 
   // Sinkronisasi data real dengan Firestore jika Firebase aktif
