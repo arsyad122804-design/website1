@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   root.innerHTML = navHTML;
 
-  // Inject search modal if missing on subpage
+  // Inject Search Modal if missing on subpage
   if (!document.getElementById('thursinaSearchModal')) {
     const modalHTML = `
       <div class="thursina-search-modal" id="thursinaSearchModal">
@@ -137,19 +137,106 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
   }
 
-  // Thursina Mobile Toggle
+  // Inject Mobile Navigation Drawer if missing on subpage
+  if (!document.getElementById('mobileDrawer')) {
+    const mobileDrawerHTML = `
+      <div class="mobile-nav-overlay" id="mobileOverlay" aria-hidden="true"></div>
+      <div class="mobile-nav-drawer" id="mobileDrawer" role="dialog" aria-label="Menu navigasi">
+        <div class="mobile-nav-header">
+          <img src="Logo only.png" alt="Hibatullah IIBS" width="44" height="44" />
+          <div class="mobile-nav-brand">
+            <strong>HIBATULLAH IIBS</strong>
+            <span>International Islamic Boarding School</span>
+          </div>
+          <button type="button" class="mobile-nav-close" id="mobileClose" aria-label="Tutup menu"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="mobile-nav-links">
+          <div class="mobile-lang-switcher-wrap">
+            <button onclick="changeSiteLanguage('id')" class="mobile-lang-btn id-btn active" type="button"><img src="https://flagcdn.com/w40/id.png" alt="ID"> Indo</button>
+            <button onclick="changeSiteLanguage('en')" class="mobile-lang-btn en-btn" type="button"><img src="https://flagcdn.com/w40/gb.png" alt="EN"> English</button>
+            <button onclick="changeSiteLanguage('ar')" class="mobile-lang-btn ar-btn" type="button"><img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية</button>
+          </div>
+          <a href="index.html" class="${currentPath === 'index.html' ? 'active' : ''}"><i class="fas fa-home"></i> Beranda</a>
+          <a href="visi-misi-sdih.html" class="${currentPath === 'visi-misi-sdih.html' ? 'active' : ''}"><i class="fas fa-eye"></i> Visi &amp; Misi</a>
+          
+          <p class="mobile-nav-group-title">About Us</p>
+          <a href="sejarah.html" class="${currentPath === 'sejarah.html' ? 'active' : ''}"><i class="fas fa-scroll"></i> Sejarah Sekolah</a>
+          <a href="penasehat.html" class="${currentPath === 'penasehat.html' ? 'active' : ''}"><i class="fas fa-user-tie"></i> Dewan Penasehat</a>
+          <a href="stakeholders.html" class="${currentPath === 'stakeholders.html' ? 'active' : ''}"><i class="fas fa-circle-nodes"></i> Stakeholders</a>
+          
+          <p class="mobile-nav-group-title">Keunggulan Kami</p>
+          <a href="jenjang-smp.html" class="${currentPath === 'jenjang-smp.html' ? 'active' : ''}"><i class="fas fa-school"></i> Jenjang SMP</a>
+          <a href="kurikulum-sdih.html" class="${currentPath === 'kurikulum-sdih.html' ? 'active' : ''}"><i class="fas fa-book-open"></i> Kurikulum SMP</a>
+          <a href="program-unggulan-sdih.html" class="${currentPath === 'program-unggulan-sdih.html' ? 'active' : ''}"><i class="fas fa-star"></i> Program Unggulan</a>
+          <a href="karakter-siswa-sdih.html" class="${currentPath === 'karakter-siswa-sdih.html' ? 'active' : ''}"><i class="fas fa-heart"></i> Karakter Siswa</a>
+          <a href="standar-kompetensi-lulusan.html" class="${currentPath === 'standar-kompetensi-lulusan.html' ? 'active' : ''}"><i class="fas fa-graduation-cap"></i> Standar Kompetensi Lulusan</a>
+          <a href="testimoni.html" class="${currentPath === 'testimoni.html' ? 'active' : ''}"><i class="fas fa-comment-dots"></i> Testimoni</a>
+          
+          <p class="mobile-nav-group-title">Santri Hebat</p>
+          <a href="program.html" class="${currentPath === 'program.html' ? 'active' : ''}"><i class="fas fa-list"></i> Program</a>
+          <a href="asrama.html" class="${currentPath === 'asrama.html' ? 'active' : ''}"><i class="fas fa-home"></i> Fasilitas Asrama</a>
+          <a href="sekolah.html" class="${currentPath === 'sekolah.html' ? 'active' : ''}"><i class="fas fa-school"></i> Fasilitas Sekolah</a>
+          <a href="regulasi-harian.html" class="${currentPath === 'regulasi-harian.html' ? 'active' : ''}"><i class="fas fa-clock"></i> Regulasi Harian</a>
+          <a href="rapot-santri.html" class="${currentPath === 'rapot-santri.html' ? 'active' : ''}"><i class="fas fa-file-invoice"></i> Rapot Santri</a>
+          <a href="prestasi-santri.html" class="${currentPath === 'prestasi-santri.html' ? 'active' : ''}"><i class="fas fa-trophy"></i> Data Prestasi</a>
+          
+          <p class="mobile-nav-group-title">Lainnya</p>
+          <a href="ppdb.html" class="${currentPath === 'ppdb.html' ? 'active' : ''}"><i class="fas fa-file-alt"></i> PPDB</a>
+          <a href="galeri.html" class="${currentPath === 'galeri.html' ? 'active' : ''}"><i class="fas fa-images"></i> Galeri</a>
+          <a href="berita.html" class="${currentPath === 'berita.html' ? 'active' : ''}"><i class="fas fa-newspaper"></i> Berita</a>
+          <a href="media-sosial.html" class="${currentPath === 'media-sosial.html' ? 'active' : ''}"><i class="fas fa-share-nodes"></i> Media Sosial</a>
+          <a href="faq.html" class="${currentPath === 'faq.html' ? 'active' : ''}"><i class="fas fa-circle-question"></i> FAQ</a>
+        </nav>
+        <div class="mobile-nav-footer">
+          <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="mobile-nav-cta"><i class="fas fa-pen-to-square"></i> Pendaftaran</a>
+          <a href="https://wa.me/6282262263434" class="mobile-nav-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Konsultasi WhatsApp</a>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', mobileDrawerHTML);
+  }
+
+  // Mobile Drawer Toggle Event Handlers
+  const drawer = document.getElementById('mobileDrawer');
+  const overlay = document.getElementById('mobileOverlay');
+  const closeBtn = document.getElementById('mobileClose');
+
+  function openMobileMenu() {
+    if (drawer && overlay) {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeMobileMenu() {
+    if (drawer && overlay) {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
   const thursinaMobileToggle = document.getElementById('thursinaMobileToggle');
   if (thursinaMobileToggle) {
     thursinaMobileToggle.addEventListener('click', () => {
-      const drawer = document.getElementById('mobileDrawer');
-      const overlay = document.getElementById('mobileOverlay');
-      if (drawer && overlay) {
-        drawer.classList.toggle('open');
-        overlay.classList.toggle('open');
-        document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+      if (drawer && drawer.classList.contains('open')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
       }
     });
   }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+  if (overlay) overlay.addEventListener('click', closeMobileMenu);
+
+  const drawerLinks = document.querySelectorAll('.mobile-nav-links a');
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
 
   // ----------------------------------------
   // Language Switcher Logic (Google Translate)
@@ -197,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hostParts = host.split('.');
     if (hostParts.length > 1) {
       const mainDomain = hostParts.slice(-2).join('.');
-      document.cookie = `googtrans=; expires=${expires}; path=${path}; domain=.${mainDomain};`;
+      document.cookie = `googtrans=${cookieVal=undefined}; expires=${expires}; path=${path}; domain=.${mainDomain};`;
     }
   }
 

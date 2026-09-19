@@ -26,6 +26,12 @@ body.has-subpage-header {
   padding-top: 84px;
 }
 
+@media (max-width: 640px) {
+  body.has-subpage-header {
+    padding-top: 60px;
+  }
+}
+
 /* Initial Load Animation Keyframes */
 @keyframes pillExpand {
   0% { transform: scale(0.9) translateY(-20px); opacity: 0; }
