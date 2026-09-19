@@ -123,15 +123,27 @@
     }
   }
 
-  // Update nilai angka di UI Widget
+  // Update nilai angka di UI Widget dengan animasi pergerakan realtime
   function updateWidgetUI(online, today, total) {
     const elOnline = document.getElementById('vstatOnline');
     const elToday  = document.getElementById('vstatToday');
     const elTotal  = document.getElementById('vstatTotal');
 
-    if (elOnline) elOnline.textContent = online.toLocaleString('id-ID');
-    if (elToday)  elToday.textContent  = today.toLocaleString('id-ID');
-    if (elTotal)  elTotal.textContent  = total.toLocaleString('id-ID');
+    function animateVal(el, newVal) {
+      if (!el || typeof newVal !== 'number') return;
+      const formatted = newVal.toLocaleString('id-ID');
+      if (el.textContent !== formatted) {
+        el.textContent = formatted;
+        el.classList.remove('vstat-updated');
+        void el.offsetWidth; // trigger reflow
+        el.classList.add('vstat-updated');
+        setTimeout(() => el.classList.remove('vstat-updated'), 700);
+      }
+    }
+
+    animateVal(elOnline, online);
+    animateVal(elToday, today);
+    animateVal(elTotal, total);
   }
 
   window.HibatullahVisitorStatsInit = initVisitorStats;
@@ -220,10 +232,16 @@
     initGoogleAnalytics();
   }
 
+  // Polling awal saat baru dimuat
   let checkAttempts = 0;
   const pollInterval = setInterval(() => {
     initVisitorStats();
     checkAttempts++;
-    if (checkAttempts > 15) clearInterval(pollInterval);
+    if (checkAttempts > 10) clearInterval(pollInterval);
   }, 300);
+
+  // Heartbeat Realtime Berkelanjutan: Update angka statistik setiap 8 detik secara otomatis tanpa reload!
+  setInterval(() => {
+    syncWithServerCounter();
+  }, 8000);
 })();
