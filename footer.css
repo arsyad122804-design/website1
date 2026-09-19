@@ -401,3 +401,60 @@
     height: 40px;
   }
 }
+
+/* Visitor Statistics Counter Widget */
+.vstat-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 6px 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.vstat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.vstat-item i {
+  font-size: 11px;
+  color: #3b82f6;
+}
+
+.vstat-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #22c55e;
+  animation: vstatPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes vstatPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #22c55e; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.vstat-val {
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+}
+
+.vstat-lbl {
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+.vstat-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 10px;
+}

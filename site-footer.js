@@ -71,6 +71,25 @@
       '<div class="sf-bottom">' +
         '<div class="sf-bottom-inner">' +
           '<span>© 2025 Hibatullah IIBS. All Rights Reserved.</span>' +
+          '<div class="vstat-box" id="visitorStatsWidget">' +
+            '<div class="vstat-item live">' +
+              '<span class="vstat-dot"></span>' +
+              '<span class="vstat-val" id="vstatOnline">...</span>' +
+              '<span class="vstat-lbl">Online</span>' +
+            '</div>' +
+            '<span class="vstat-sep">•</span>' +
+            '<div class="vstat-item">' +
+              '<i class="fas fa-calendar-day"></i>' +
+              '<span class="vstat-val" id="vstatToday">...</span>' +
+              '<span class="vstat-lbl">Hari Ini</span>' +
+            '</div>' +
+            '<span class="vstat-sep">•</span>' +
+            '<div class="vstat-item">' +
+              '<i class="fas fa-users"></i>' +
+              '<span class="vstat-val" id="vstatTotal">...</span>' +
+              '<span class="vstat-lbl">Total</span>' +
+            '</div>' +
+          '</div>' +
         '</div>' +
       '</div>'
     );
