@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Regulasi Harian - Hibatullah IIBS</title>
-  <link rel="stylesheet" href="style.css?v=20260919_v154" />
-  <link rel="stylesheet" href="footer.css?v=20260919_v154" />
+  <link rel="stylesheet" href="style.css?v=20260919_v155" />
+  <link rel="stylesheet" href="footer.css?v=20260919_v155" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -342,16 +342,48 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
   .rh-stat-div{width:60px;height:1px}
   .ppdb-footer-inner{grid-template-columns:1fr 1fr;gap:28px}
 }
-@media(max-width:480px){
-  .rh-timeline::before{display:none}
-  .rh-item{flex-direction:column;gap:6px}
-  .rh-time-col{width:100%;text-align:left;padding:0}
-  .rh-dot{display:none}
-  .rh-card{margin-left:0}
-  .ppdb-footer-inner{grid-template-columns:1fr}
+/* DAY MODE SWITCHER */
+.rh-day-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.rh-day-btn {
+  padding: 12px 26px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  border: 1.5px solid #cbd5e1;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  color: #334155;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rh-day-btn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+}
+
+.rh-day-btn.active {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
+  transform: translateY(-2px);
 }
   </style>
-  <link rel="stylesheet" href="navbar.css?v=20260919_v154">
+  <link rel="stylesheet" href="navbar.css?v=20260919_v155">
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
@@ -417,6 +449,16 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
         </div>
       </div>
 
+      <!-- DAY MODE SWITCHER -->
+      <div class="rh-day-switcher">
+        <button id="btnDayBiasa" class="rh-day-btn active" onclick="setDayMode('biasa')">
+          <i class="fas fa-calendar-week"></i> Senin - Sabtu (Hari Biasa)
+        </button>
+        <button id="btnDayAhad" class="rh-day-btn" onclick="setDayMode('ahad')">
+          <i class="fas fa-sun"></i> Hari Ahad (Jadwal Khusus)
+        </button>
+      </div>
+
       <!-- 3D Filter Tabs -->
       <div class="rh-tabs">
         <button class="rh-tab active" data-filter="all">Semua</button>
@@ -436,8 +478,8 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
         <div class="rh-legend-item"><div class="rh-legend-dot" style="background:#8e44ad"></div> Tidur</div>
       </div>
 
-      <!-- Timeline -->
-      <div class="rh-timeline">
+      <!-- Timeline Senin - Sabtu -->
+      <div id="timelineBiasa" class="rh-timeline">
 
         <div class="rh-item cat-istirahat" data-start="03:00">
           <div class="rh-time-col"><div class="rh-time">03:00</div><div class="rh-dur">30 menit</div></div>
@@ -700,20 +742,248 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
         </div>
 
       </div>
+
+      <!-- Timeline Hari Ahad (Minggu) -->
+      <div id="timelineAhad" class="rh-timeline" style="display:none;">
+
+        <div class="rh-item cat-istirahat" data-start="03:00">
+          <div class="rh-time-col"><div class="rh-time">03:00</div><div class="rh-dur">30 menit</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-sun"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Bangun Tidur</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Asrama</div>
+            </div>
+            <span class="rh-card-badge">Persiapan</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-ibadah" data-start="03:30">
+          <div class="rh-time-col"><div class="rh-time">03:30</div><div class="rh-dur">30 menit</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-moon"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Qiyamullail (Tahajjud)</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Asrama / Masjid</div>
+            </div>
+            <span class="rh-card-badge">Ibadah</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-ibadah" data-start="04:00">
+          <div class="rh-time-col"><div class="rh-time">04:00</div><div class="rh-dur">30 menit</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-mosque"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Shalat Subuh</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Masjid</div>
+            </div>
+            <span class="rh-card-badge">Ibadah</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-ibadah" data-start="04:30">
+          <div class="rh-time-col"><div class="rh-time">04:30</div><div class="rh-dur">15 menit</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-hands"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Dzikir Pagi</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Masjid</div>
+            </div>
+            <span class="rh-card-badge">Ibadah</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-belajar" data-start="04:45">
+          <div class="rh-time-col"><div class="rh-time">04:45</div><div class="rh-dur">1 j 15 m</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-quran"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Tahfizh Pagi</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Masjid</div>
+            </div>
+            <span class="rh-card-badge">Tahfizh</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-makan" data-start="06:00">
+          <div class="rh-time-col"><div class="rh-time">06:00</div><div class="rh-dur">1 j 30 m</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-utensils"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Sarapan dan Persiapan</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Resto & Asrama</div>
+            </div>
+            <span class="rh-card-badge">Makan</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-mandiri" data-start="07:30">
+          <div class="rh-time-col"><div class="rh-time">07:30</div><div class="rh-dur">4 j 30 m</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-running"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Keluar Asrama & Olahraga Pagi</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Area Pesantren / Lapangan</div>
+            </div>
+            <span class="rh-card-badge">Olahraga</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-ibadah" data-start="12:00">
+          <div class="rh-time-col"><div class="rh-time">12:00</div><div class="rh-dur">1 jam</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-mosque"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Shalat Dzuhur dan Makan Siang</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Masjid & Resto</div>
+            </div>
+            <span class="rh-card-badge">Ibadah & Makan</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-istirahat" data-start="13:00">
+          <div class="rh-time-col"><div class="rh-time">13:00</div><div class="rh-dur">2 jam</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-bed"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Istirahat Siang</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Asrama</div>
+            </div>
+            <span class="rh-card-badge">Istirahat</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-ibadah" data-start="15:00">
+          <div class="rh-time-col"><div class="rh-time">15:00</div><div class="rh-dur">30 menit</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-mosque"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Shalat Asar dan Dzikir Petang</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Masjid</div>
+            </div>
+            <span class="rh-card-badge">Ibadah</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-mandiri" data-start="15:30">
+          <div class="rh-time-col"><div class="rh-time">15:30</div><div class="rh-dur">1 j 30 m</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-running"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Olahraga Sore</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Area Pesantren / Lapangan</div>
+            </div>
+            <span class="rh-card-badge">Olahraga</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-makan" data-start="17:00">
+          <div class="rh-time-col"><div class="rh-time">17:00</div><div class="rh-dur">1 jam</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-shower"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Persiapan Shalat Maghrib & Makan Malam</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Asrama & Resto</div>
+            </div>
+            <span class="rh-card-badge">Persiapan & Makan</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-ibadah" data-start="18:00">
+          <div class="rh-time-col"><div class="rh-time">18:00</div><div class="rh-dur">15 menit</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-mosque"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Shalat Maghrib</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Masjid</div>
+            </div>
+            <span class="rh-card-badge">Ibadah</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-belajar" data-start="18:15">
+          <div class="rh-time-col"><div class="rh-time">18:15</div><div class="rh-dur">45 menit</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-quran"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Tahfizh Sesi Malam</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Masjid</div>
+            </div>
+            <span class="rh-card-badge">Tahfizh</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-ibadah" data-start="19:00">
+          <div class="rh-time-col"><div class="rh-time">19:00</div><div class="rh-dur">1 jam</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-mosque"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Shalat Isya</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Masjid</div>
+            </div>
+            <span class="rh-card-badge">Ibadah</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-mandiri" data-start="20:00">
+          <div class="rh-time-col"><div class="rh-time">20:00</div><div class="rh-dur">1 j 30 m</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-bath"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Persiapan Istirahat</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Asrama</div>
+            </div>
+            <span class="rh-card-badge">Persiapan</span>
+          </div>
+        </div>
+
+        <div class="rh-item cat-istirahat" data-start="21:30">
+          <div class="rh-time-col"><div class="rh-time">21:30</div><div class="rh-dur">5 j 30 m</div></div>
+          <div class="rh-dot"></div>
+          <div class="rh-card">
+            <div class="rh-card-icon"><i class="fas fa-bed"></i></div>
+            <div class="rh-card-body">
+              <div class="rh-card-title">Tidur Malam</div>
+              <div class="rh-card-loc"><i class="fas fa-map-marker-alt"></i> Asrama</div>
+            </div>
+            <span class="rh-card-badge">Istirahat</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
-  <script src="animations.js?v=20260919_v154"></script>
-  <script src="script.js?v=20260919_v154"></script>
-  <script src="navbar.js?v=20260919_v154"></script>
+  <script src="animations.js?v=20260919_v155"></script>
+  <script src="script.js?v=20260919_v155"></script>
+  <script src="navbar.js?v=20260919_v155"></script>
   <script>
     (function() {
       var activeSim = 'real';
+      var activeDayMode = (new Date().getDay() === 0) ? 'ahad' : 'biasa';
       
-      var slots = [
+      var slotsBiasa = [
         { time: '03:00', title: 'Bangun Tidur' },
         { time: '03:30', title: 'Qiyamullail (Tahajjud)' },
         { time: '04:00', title: 'Shalat Subuh' },
@@ -736,10 +1006,51 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
         { time: '21:30', title: 'Tidur Malam' }
       ];
 
+      var slotsAhad = [
+        { time: '03:00', title: 'Bangun Tidur' },
+        { time: '03:30', title: 'Qiyamullail (Tahajjud)' },
+        { time: '04:00', title: 'Shalat Subuh' },
+        { time: '04:30', title: 'Dzikir Pagi' },
+        { time: '04:45', title: 'Tahfizh Pagi' },
+        { time: '06:00', title: 'Sarapan dan Persiapan' },
+        { time: '07:30', title: 'Keluar Asrama & Olahraga Pagi' },
+        { time: '12:00', title: 'Shalat Dzuhur dan Makan Siang' },
+        { time: '13:00', title: 'Istirahat Siang' },
+        { time: '15:00', title: 'Shalat Asar dan Dzikir Petang' },
+        { time: '15:30', title: 'Olahraga Sore' },
+        { time: '17:00', title: 'Persiapan Shalat Maghrib & Makan Malam' },
+        { time: '18:00', title: 'Shalat Maghrib' },
+        { time: '18:15', title: 'Tahfizh Sesi Malam' },
+        { time: '19:00', title: 'Shalat Isya' },
+        { time: '20:00', title: 'Persiapan Istirahat' },
+        { time: '21:30', title: 'Tidur Malam' }
+      ];
+
       function timeToMin(tStr) {
         var parts = tStr.split(':');
         return parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
       }
+
+      window.setDayMode = function(mode) {
+        activeDayMode = mode;
+        var btnBiasa = document.getElementById('btnDayBiasa');
+        var btnAhad  = document.getElementById('btnDayAhad');
+        var tlBiasa  = document.getElementById('timelineBiasa');
+        var tlAhad   = document.getElementById('timelineAhad');
+
+        if (mode === 'ahad') {
+          if (btnBiasa) btnBiasa.classList.remove('active');
+          if (btnAhad)  btnAhad.classList.add('active');
+          if (tlBiasa)  tlBiasa.style.display = 'none';
+          if (tlAhad)   tlAhad.style.display = 'block';
+        } else {
+          if (btnAhad)  btnAhad.classList.remove('active');
+          if (btnBiasa) btnBiasa.classList.add('active');
+          if (tlAhad)   tlAhad.style.display = 'none';
+          if (tlBiasa)  tlBiasa.style.display = 'block';
+        }
+        updateClockAndSchedule(true);
+      };
 
       window.setSimTime = function(mode) {
         activeSim = mode;
@@ -771,6 +1082,7 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
         if (clockEl) clockEl.textContent = clockStr;
 
         var currentMin = h * 60 + m;
+        var slots = (activeDayMode === 'ahad') ? slotsAhad : slotsBiasa;
         var activeIndex = 0;
 
         for (var i = 0; i < slots.length; i++) {
@@ -785,7 +1097,8 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
           activeIndex = slots.length - 1; // Tidur Malam
         }
 
-        var items = document.querySelectorAll('.rh-item');
+        var activeTimeline = (activeDayMode === 'ahad') ? document.getElementById('timelineAhad') : document.getElementById('timelineBiasa');
+        var items = activeTimeline ? activeTimeline.querySelectorAll('.rh-item') : [];
         items.forEach(function(item, idx) {
           if (idx === activeIndex) {
             if (!item.classList.contains('active-now')) {
@@ -802,7 +1115,7 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
         });
 
         var actEl = document.getElementById('rhLiveActivity');
-        if (actEl) actEl.textContent = slots[activeIndex].title;
+        if (actEl && slots[activeIndex]) actEl.textContent = slots[activeIndex].title;
       }
 
       // Filter Tabs
@@ -812,7 +1125,8 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
           tabs.forEach(function(t) { t.classList.remove('active'); });
           tab.classList.add('active');
           var filter = tab.getAttribute('data-filter');
-          var items = document.querySelectorAll('.rh-item');
+          var activeTl = (activeDayMode === 'ahad') ? document.getElementById('timelineAhad') : document.getElementById('timelineBiasa');
+          var items = activeTl ? activeTl.querySelectorAll('.rh-item') : [];
           items.forEach(function(item) {
             if (filter === 'all' || item.classList.contains(filter)) {
               item.style.display = 'flex';
@@ -824,6 +1138,7 @@ body{background:#f0f4fb; font-family: 'Poppins', sans-serif;}
       });
 
       document.addEventListener('DOMContentLoaded', function() {
+        setDayMode(activeDayMode);
         updateClockAndSchedule(true);
         setInterval(function() {
           updateClockAndSchedule(false);
