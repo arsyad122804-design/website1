@@ -1,123 +1,123 @@
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('card-nav-root');
-  if (!root || root.classList.contains('home-card-nav-override')) return;
-
-  document.body.classList.add('has-subpage-header');
-
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-  const navHTML = `
-    <header class="thursina-header thursina-subpage-header">
-      <div class="thursina-header-inner">
-        <a href="index.html" class="thursina-logo">
-          <img src="Logo only.png" alt="Hibatullah IIBS">
-          <div class="thursina-logo-text">
-            <strong>HIBATULLAH IIBS</strong>
-            <small>International Islamic Boarding School</small>
-          </div>
-        </a>
+  if (root && !root.classList.contains('home-card-nav-override')) {
+    document.body.classList.add('has-subpage-header');
 
-        <nav class="thursina-nav">
-          <div class="thursina-nav-item">
-            <a href="index.html" class="thursina-nav-link ${currentPath === 'index.html' ? 'active' : ''}">Beranda</a>
-          </div>
-
-          <div class="thursina-nav-item">
-            <a href="visi-misi-sdih.html" class="thursina-nav-link ${currentPath === 'visi-misi-sdih.html' ? 'active' : ''}">Visi &amp; Misi</a>
-          </div>
-
-          <div class="thursina-nav-item has-dropdown">
-            <a href="javascript:void(0)" class="thursina-nav-link ${['sejarah.html','penasehat.html','stakeholders.html'].includes(currentPath) ? 'active' : ''}">About <i class="fas fa-chevron-down nav-arrow"></i></a>
-            <div class="thursina-dropdown">
-              <a href="sejarah.html">Sejarah Sekolah</a>
-              <a href="penasehat.html">Dewan Penasehat</a>
-              <a href="stakeholders.html">Stakeholders</a>
+    const navHTML = `
+      <header class="thursina-header thursina-subpage-header">
+        <div class="thursina-header-inner">
+          <a href="index.html" class="thursina-logo">
+            <img src="Logo only.png" alt="Hibatullah IIBS">
+            <div class="thursina-logo-text">
+              <strong>HIBATULLAH IIBS</strong>
+              <small>International Islamic Boarding School</small>
             </div>
-          </div>
-
-          <div class="thursina-nav-item has-dropdown">
-            <a href="javascript:void(0)" class="thursina-nav-link ${['jenjang-smp.html','kurikulum-sdih.html','program-unggulan-sdih.html','karakter-siswa-sdih.html','standar-kompetensi-lulusan.html','testimoni.html'].includes(currentPath) ? 'active' : ''}">Keunggulan <i class="fas fa-chevron-down nav-arrow"></i></a>
-            <div class="thursina-dropdown">
-              <a href="jenjang-smp.html">Jenjang SMP</a>
-              <a href="kurikulum-sdih.html">Kurikulum SMP</a>
-              <a href="program-unggulan-sdih.html">Program Unggulan</a>
-              <a href="karakter-siswa-sdih.html">Karakter Siswa</a>
-              <a href="standar-kompetensi-lulusan.html">Standar Kompetensi Lulusan</a>
-              <a href="testimoni.html">Testimoni</a>
-            </div>
-          </div>
-
-          <div class="thursina-nav-item has-dropdown">
-            <a href="javascript:void(0)" class="thursina-nav-link ${['program.html','asrama.html','sekolah.html','regulasi-harian.html','prestasi-santri.html','rapot-santri.html'].includes(currentPath) ? 'active' : ''}">Santri Hebat <i class="fas fa-chevron-down nav-arrow"></i></a>
-            <div class="thursina-dropdown">
-              <a href="program.html">Program</a>
-              <a href="asrama.html">Fasilitas Asrama</a>
-              <a href="sekolah.html">Fasilitas Sekolah</a>
-              <a href="regulasi-harian.html">Regulasi Harian</a>
-              <a href="prestasi-santri.html">Prestasi Santri</a>
-              <a href="rapot-santri.html">Rapot Santri</a>
-            </div>
-          </div>
-
-          <div class="thursina-nav-item">
-            <a href="ppdb.html" class="thursina-nav-link ${currentPath === 'ppdb.html' ? 'active' : ''}">PPDB</a>
-          </div>
-
-          <div class="thursina-nav-item">
-            <a href="galeri.html" class="thursina-nav-link ${currentPath === 'galeri.html' ? 'active' : ''}">Galeri</a>
-          </div>
-
-          <div class="thursina-nav-item">
-            <a href="berita.html" class="thursina-nav-link ${currentPath === 'berita.html' ? 'active' : ''}">Berita</a>
-          </div>
-
-          <div class="thursina-nav-item">
-            <a href="media-sosial.html" class="thursina-nav-link ${currentPath === 'media-sosial.html' ? 'active' : ''}">Media Sosial</a>
-          </div>
-
-          <div class="thursina-nav-item">
-            <a href="faq.html" class="thursina-nav-link ${currentPath === 'faq.html' ? 'active' : ''}">FAQ</a>
-          </div>
-        </nav>
-
-        <div class="thursina-header-right">
-          <button class="thursina-search-btn" id="thursinaSearchBtn" title="Cari di website..." type="button">
-            <i class="fas fa-search"></i>
-          </button>
-
-          <div class="thursina-lang-wrapper" id="thursinaLangWrapper">
-            <button class="thursina-lang-btn" id="thursinaLangBtn" type="button">
-              <img src="https://flagcdn.com/w40/id.png" id="thursinaHeaderFlag" alt="Language">
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="thursina-lang-dropdown" id="thursinaLangDropdown">
-              <button onclick="changeSiteLanguage('id')" class="thursina-lang-option" type="button">
-                <img src="https://flagcdn.com/w40/id.png" alt="ID"> Indonesia
-              </button>
-              <button onclick="changeSiteLanguage('en')" class="thursina-lang-option" type="button">
-                <img src="https://flagcdn.com/w40/gb.png" alt="EN"> English
-              </button>
-              <button onclick="changeSiteLanguage('ar')" class="thursina-lang-option" type="button">
-                <img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية
-              </button>
-            </div>
-          </div>
-
-          <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="thursina-nav-cta">
-            Pendaftaran
           </a>
 
-          <button class="thursina-mobile-toggle" id="thursinaMobileToggle" aria-label="Menu Mobile" type="button">
-            <i class="fas fa-bars"></i>
-          </button>
+          <nav class="thursina-nav">
+            <div class="thursina-nav-item">
+              <a href="index.html" class="thursina-nav-link ${currentPath === 'index.html' ? 'active' : ''}">Beranda</a>
+            </div>
+
+            <div class="thursina-nav-item">
+              <a href="visi-misi-sdih.html" class="thursina-nav-link ${currentPath === 'visi-misi-sdih.html' ? 'active' : ''}">Visi &amp; Misi</a>
+            </div>
+
+            <div class="thursina-nav-item has-dropdown">
+              <a href="javascript:void(0)" class="thursina-nav-link ${['sejarah.html','penasehat.html','stakeholders.html'].includes(currentPath) ? 'active' : ''}">About <i class="fas fa-chevron-down nav-arrow"></i></a>
+              <div class="thursina-dropdown">
+                <a href="sejarah.html">Sejarah Sekolah</a>
+                <a href="penasehat.html">Dewan Penasehat</a>
+                <a href="stakeholders.html">Stakeholders</a>
+              </div>
+            </div>
+
+            <div class="thursina-nav-item has-dropdown">
+              <a href="javascript:void(0)" class="thursina-nav-link ${['jenjang-smp.html','kurikulum-sdih.html','program-unggulan-sdih.html','karakter-siswa-sdih.html','standar-kompetensi-lulusan.html','testimoni.html'].includes(currentPath) ? 'active' : ''}">Keunggulan <i class="fas fa-chevron-down nav-arrow"></i></a>
+              <div class="thursina-dropdown">
+                <a href="jenjang-smp.html">Jenjang SMP</a>
+                <a href="kurikulum-sdih.html">Kurikulum SMP</a>
+                <a href="program-unggulan-sdih.html">Program Unggulan</a>
+                <a href="karakter-siswa-sdih.html">Karakter Siswa</a>
+                <a href="standar-kompetensi-lulusan.html">Standar Kompetensi Lulusan</a>
+                <a href="testimoni.html">Testimoni</a>
+              </div>
+            </div>
+
+            <div class="thursina-nav-item has-dropdown">
+              <a href="javascript:void(0)" class="thursina-nav-link ${['program.html','asrama.html','sekolah.html','regulasi-harian.html','prestasi-santri.html','rapot-santri.html'].includes(currentPath) ? 'active' : ''}">Santri Hebat <i class="fas fa-chevron-down nav-arrow"></i></a>
+              <div class="thursina-dropdown">
+                <a href="program.html">Program</a>
+                <a href="asrama.html">Fasilitas Asrama</a>
+                <a href="sekolah.html">Fasilitas Sekolah</a>
+                <a href="regulasi-harian.html">Regulasi Harian</a>
+                <a href="prestasi-santri.html">Prestasi Santri</a>
+                <a href="rapot-santri.html">Rapot Santri</a>
+              </div>
+            </div>
+
+            <div class="thursina-nav-item">
+              <a href="ppdb.html" class="thursina-nav-link ${currentPath === 'ppdb.html' ? 'active' : ''}">PPDB</a>
+            </div>
+
+            <div class="thursina-nav-item">
+              <a href="galeri.html" class="thursina-nav-link ${currentPath === 'galeri.html' ? 'active' : ''}">Galeri</a>
+            </div>
+
+            <div class="thursina-nav-item">
+              <a href="berita.html" class="thursina-nav-link ${currentPath === 'berita.html' ? 'active' : ''}">Berita</a>
+            </div>
+
+            <div class="thursina-nav-item">
+              <a href="media-sosial.html" class="thursina-nav-link ${currentPath === 'media-sosial.html' ? 'active' : ''}">Media Sosial</a>
+            </div>
+
+            <div class="thursina-nav-item">
+              <a href="faq.html" class="thursina-nav-link ${currentPath === 'faq.html' ? 'active' : ''}">FAQ</a>
+            </div>
+          </nav>
+
+          <div class="thursina-header-right">
+            <button class="thursina-search-btn" id="thursinaSearchBtn" title="Cari di website..." type="button">
+              <i class="fas fa-search"></i>
+            </button>
+
+            <div class="thursina-lang-wrapper" id="thursinaLangWrapper">
+              <button class="thursina-lang-btn" id="thursinaLangBtn" type="button">
+                <img src="https://flagcdn.com/w40/id.png" id="thursinaHeaderFlag" alt="Language">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="thursina-lang-dropdown" id="thursinaLangDropdown">
+                <button onclick="changeSiteLanguage('id')" class="thursina-lang-option" type="button">
+                  <img src="https://flagcdn.com/w40/id.png" alt="ID"> Indonesia
+                </button>
+                <button onclick="changeSiteLanguage('en')" class="thursina-lang-option" type="button">
+                  <img src="https://flagcdn.com/w40/gb.png" alt="EN"> English
+                </button>
+                <button onclick="changeSiteLanguage('ar')" class="thursina-lang-option" type="button">
+                  <img src="https://flagcdn.com/w40/sa.png" alt="AR"> العربية
+                </button>
+              </div>
+            </div>
+
+            <a href="https://ppdb.hibatullah.sch.id/formulir" target="_blank" class="thursina-nav-cta">
+              Pendaftaran
+            </a>
+
+            <button class="thursina-mobile-toggle" id="thursinaMobileToggle" aria-label="Menu Mobile" type="button">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
-  `;
+      </header>
+    `;
 
-  root.innerHTML = navHTML;
+    root.innerHTML = navHTML;
+  }
 
-  // Inject Search Modal if missing on subpage
+  // Inject Search Modal if missing
   if (!document.getElementById('thursinaSearchModal')) {
     const modalHTML = `
       <div class="thursina-search-modal" id="thursinaSearchModal">
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
   }
 
-  // Inject Mobile Navigation Drawer if missing on subpage
+  // Inject Mobile Navigation Drawer if missing
   if (!document.getElementById('mobileDrawer')) {
     const mobileDrawerHTML = `
       <div class="mobile-nav-overlay" id="mobileOverlay" aria-hidden="true"></div>
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ----------------------------------------
-  // Language Switcher Logic (Google Translate)
+  // Language Switcher & Hero Title Logic
   // ----------------------------------------
   function loadGoogleTranslate() {
     if (document.getElementById('google_translate_script')) {
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hostParts = host.split('.');
     if (hostParts.length > 1) {
       const mainDomain = hostParts.slice(-2).join('.');
-      document.cookie = `googtrans=${cookieVal=undefined}; expires=${expires}; path=${path}; domain=.${mainDomain};`;
+      document.cookie = `googtrans=; expires=${expires}; path=${path}; domain=.${mainDomain};`;
     }
   }
 
