@@ -4068,10 +4068,27 @@ html, body { overflow-x: hidden !important; }
   word-break: keep-all;
 }
 
+.thursina-subpage-header {
+  position: relative !important;
+  height: 84px !important;
+  background: rgba(8, 15, 25, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
 .thursina-nav-item > a:hover,
-.thursina-nav-item > a:active {
+.thursina-nav-item > a:active,
+.thursina-nav-item > a.active {
   color: #ffffff;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.95);
+}
+
+.thursina-nav-item > a.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 6px 14px !important;
 }
 
 .thursina-nav-item > a .nav-arrow {

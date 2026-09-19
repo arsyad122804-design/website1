@@ -11,13 +11,19 @@
 
 #card-nav-root {
   position: fixed;
-  top: calc(24px + env(safe-area-inset-top));
+  top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
   z-index: 9999;
-  pointer-events: none;
+  pointer-events: auto;
+}
+
+#card-nav-root.home-card-nav-override {
+  display: none !important;
+}
+
+body.has-subpage-header {
+  padding-top: 84px;
 }
 
 /* Initial Load Animation Keyframes */

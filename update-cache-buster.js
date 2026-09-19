@@ -7,7 +7,7 @@ const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
 files.forEach(file => {
   const filePath = path.join(dir, file);
   let content = fs.readFileSync(filePath, 'utf8');
-  const vStr = 'v=20260918_v300';
+  const vStr = 'v=20260919_v10';
   content = content.replace(/navbar\.js(\?v=[^"'\s>]*)?/g, `navbar.js?${vStr}`);
   content = content.replace(/script\.js(\?v=[^"'\s>]*)?/g, `script.js?${vStr}`);
   content = content.replace(/mobile-nav\.js(\?v=[^"'\s>]*)?/g, `mobile-nav.js?${vStr}`);
