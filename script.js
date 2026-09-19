@@ -20,12 +20,12 @@
   }, 200);
 })();
 
-// Force fix hero title to Pondok Islamic Hibatullah Internasional
+// Force fix hero title to Hibatullah International Islamic Boarding School
 (function fixHeroTitleNow() {
   function fixTitle() {
     const mainTitle = document.querySelector('.thursina-main-title');
-    if (mainTitle && mainTitle.innerHTML.includes('Pondok Hibatullah') && !mainTitle.innerHTML.includes('Islamic')) {
-      mainTitle.innerHTML = 'Pondok Islamic<br>Hibatullah<br>Internasional';
+    if (mainTitle && !mainTitle.innerHTML.includes('Boarding School')) {
+      mainTitle.innerHTML = 'Hibatullah<br>International<br>Islamic Boarding School';
     }
   }
   fixTitle();
@@ -33,7 +33,6 @@
     document.addEventListener('DOMContentLoaded', fixTitle);
   }
   window.addEventListener('load', fixTitle);
-  setInterval(fixTitle, 300);
 })();
 
 // ===========================
