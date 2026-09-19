@@ -155,13 +155,42 @@
     return mount;
   }
 
-  async function init() {
+  function updateKontakDOM(k) {
+    if (!k) return;
+    var waLink = 'https://wa.me/' + String(k.wa || DEFAULT.wa).replace(/\D/g, '');
+    var mapsUrl = k.maps_url || DEFAULT.maps_url;
+    var alamatHtml = mapsUrl
+      ? '<a href="' + esc(mapsUrl) + '" target="_blank" rel="noopener">' + esc(k.alamat) + '</a>'
+      : esc(k.alamat);
+
+    var elAlamat = document.querySelector('[data-sf-alamat]');
+    var elTelp = document.querySelector('[data-sf-telp]');
+    var elWa = document.querySelector('[data-sf-wa]');
+    var elEmail = document.querySelector('[data-sf-email]');
+
+    if (elAlamat) elAlamat.innerHTML = alamatHtml;
+    if (elTelp) elTelp.textContent = esc(k.telepon || DEFAULT.telepon);
+    if (elWa) {
+      elWa.href = waLink;
+      elWa.textContent = esc(k.wa_tampil);
+    }
+    if (elEmail) elEmail.textContent = esc(k.email);
+  }
+
+  function init() {
     var mount = findMount() || insertFooter();
-    var kontak = await loadKontak();
     mount.className = 'site-footer';
-    mount.innerHTML = footerHTML(kontak);
-    requestAnimationFrame(function () {
-      mount.classList.add('sf-ready');
+    mount.innerHTML = footerHTML(DEFAULT);
+    mount.classList.add('sf-ready');
+
+    if (window.HibatullahVisitorStatsInit) {
+      window.HibatullahVisitorStatsInit();
+    }
+
+    loadKontak().then(function (kontak) {
+      if (kontak && kontak !== DEFAULT) {
+        updateKontakDOM(kontak);
+      }
     });
   }
 

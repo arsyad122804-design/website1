@@ -22,7 +22,7 @@
 
     // Reset hitungan hari jika berganti tanggal
     if (lastDate !== todayStr) {
-      todayVisits = Math.floor(Math.random() * 25) + 35; // nilai awal hari baru
+      todayVisits = Math.floor(Math.random() * 25) + 35;
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
     }
 
@@ -34,7 +34,6 @@
       localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
       localStorage.setItem(STORAGE_KEY_TODAY, todayVisits.toString());
 
-      // Deteksi metadata pengunjung baru secara independen
       logVisitorDetails();
     }
 
@@ -50,10 +49,13 @@
     const elToday  = document.getElementById('vstatToday');
     const elTotal  = document.getElementById('vstatTotal');
 
-    if (elOnline) elOnline.textContent = online.toLocaleString('id-ID');
-    if (elToday)  elToday.textContent  = today.toLocaleString('id-ID');
-    if (elTotal)  elTotal.textContent  = total.toLocaleString('id-ID');
+    if (elOnline && elOnline.textContent === '...') elOnline.textContent = online.toLocaleString('id-ID');
+    if (elToday && elToday.textContent === '...')  elToday.textContent  = today.toLocaleString('id-ID');
+    if (elTotal && elTotal.textContent === '...')  elTotal.textContent  = total.toLocaleString('id-ID');
   }
+
+  // Expose globally
+  window.HibatullahVisitorStatsInit = initVisitorStats;
 
   // Pendeteksi Metadata Pengunjung (Perangkat, OS, Browser, Kota)
   async function logVisitorDetails() {
@@ -112,7 +114,7 @@
 
   // Google Analytics 4 Auto-loader (Jika Measurement ID diisi)
   function initGoogleAnalytics() {
-    const gaId = window.GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'; // Ganti dengan ID GA4 Anda jika ada
+    const gaId = window.GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
     if (!gaId || gaId === 'G-XXXXXXXXXX') return;
 
     if (document.getElementById('ga_gtag_script')) return;
@@ -140,4 +142,12 @@
     initVisitorStats();
     initGoogleAnalytics();
   }
+
+  // Interval check to guarantee numbers load as soon as footer DOM element arrives
+  let checkAttempts = 0;
+  const pollInterval = setInterval(() => {
+    initVisitorStats();
+    checkAttempts++;
+    if (checkAttempts > 20) clearInterval(pollInterval);
+  }, 300);
 })();
