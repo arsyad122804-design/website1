@@ -365,9 +365,7 @@
 }
 
 .sf-bottom-links {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: none !important;
 }
 
 .sf-bottom-links a {

@@ -129,5 +129,15 @@
   } else {
     init();
   }
+
+  function purgeLegacyFooterLinks() {
+    document.querySelectorAll('.sf-bottom-links').forEach(el => el.remove());
+  }
+  purgeLegacyFooterLinks();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', purgeLegacyFooterLinks);
+  }
+  window.addEventListener('load', purgeLegacyFooterLinks);
+  setInterval(purgeLegacyFooterLinks, 200);
 })();
 
