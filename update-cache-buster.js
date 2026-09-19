@@ -3,11 +3,11 @@ const path = require('path');
 
 const dir = __dirname;
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
+const vStr = 'v=20260919_v100';
 
 files.forEach(file => {
   const filePath = path.join(dir, file);
   let content = fs.readFileSync(filePath, 'utf8');
-  const vStr = 'v=20260919_v90';
   content = content.replace(/navbar\.js(\?v=[^"'\s>]*)?/g, `navbar.js?${vStr}`);
   content = content.replace(/script\.js(\?v=[^"'\s>]*)?/g, `script.js?${vStr}`);
   content = content.replace(/mobile-nav\.js(\?v=[^"'\s>]*)?/g, `mobile-nav.js?${vStr}`);
@@ -29,4 +29,14 @@ files.forEach(file => {
   fs.writeFileSync(filePath, content, 'utf8');
 });
 
-console.log('Updated cache busters v20260918_v200 for ALL CSS & JS files in all HTML files.');
+// Update script.js dynamic loader queries
+const scriptJsPath = path.join(dir, 'script.js');
+if (fs.existsSync(scriptJsPath)) {
+  let sContent = fs.readFileSync(scriptJsPath, 'utf8');
+  sContent = sContent.replace(/mobile-nav\.js(\?v=[^"'\s>]*)?/g, `mobile-nav.js?${vStr}`);
+  sContent = sContent.replace(/site-footer\.js(\?v=[^"'\s>]*)?/g, `site-footer.js?${vStr}`);
+  sContent = sContent.replace(/visitor-tracker\.js(\?v=[^"'\s>]*)?/g, `visitor-tracker.js?${vStr}`);
+  fs.writeFileSync(scriptJsPath, sContent, 'utf8');
+}
+
+console.log(`Updated cache busters to ${vStr} for ALL CSS, JS, and script.js dynamic loaders.`);
