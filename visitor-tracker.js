@@ -32,18 +32,20 @@
     let totalVisits = parseInt(localStorage.getItem(STORAGE_KEY_TOTAL) || '1', 10);
     let todayVisits = parseInt(localStorage.getItem(STORAGE_KEY_TODAY) || '1', 10);
 
-    // Jika perangkat ini baru pertama kali membuka website
+    const isNewSession = !sessionStorage.getItem(STORAGE_KEY_SESS);
+
     if (!lastDate) {
-      totalVisits = 1;
-      todayVisits = 1;
+      // Perangkat baru pertama kali membuka website
+      totalVisits = Math.max(1, totalVisits);
+      todayVisits = Math.max(1, todayVisits);
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
-      localStorage.setItem(STORAGE_KEY_TOTAL, '1');
-      localStorage.setItem(STORAGE_KEY_TODAY, '1');
+      localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
+      localStorage.setItem(STORAGE_KEY_TODAY, todayVisits.toString());
       sessionStorage.setItem(STORAGE_KEY_SESS, '1');
       logVisitorDetails();
       syncWithFirebase();
     } else if (lastDate !== todayStr) {
-      // Jika pergantian hari
+      // Pergantian hari
       todayVisits = 1;
       totalVisits += 1;
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
@@ -52,19 +54,22 @@
       sessionStorage.setItem(STORAGE_KEY_SESS, '1');
       logVisitorDetails();
       syncWithFirebase();
+    } else if (isNewSession) {
+      // Sesi/tab baru dibuka hari ini: tambah Kunjungan Hari Ini & Total Kunjungan sekaligus!
+      todayVisits += 1;
+      totalVisits += 1;
+      localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
+      localStorage.setItem(STORAGE_KEY_TODAY, todayVisits.toString());
+      sessionStorage.setItem(STORAGE_KEY_SESS, '1');
+      logVisitorDetails();
+      syncWithFirebase();
     } else {
-      // Sesi dalam hari yang sama
-      if (!sessionStorage.getItem(STORAGE_KEY_SESS)) {
-        sessionStorage.setItem(STORAGE_KEY_SESS, '1');
-        logVisitorDetails();
-        syncWithFirebase();
-      } else {
-        logVisitorDetails();
-      }
+      logVisitorDetails();
     }
 
-    // Pengunjung online aktif real saat ini (1 per tab/pengguna aktif)
     const activeOnline = 1;
+    todayVisits = Math.max(todayVisits, activeOnline);
+    totalVisits = Math.max(totalVisits, todayVisits);
 
     updateWidgetUI(activeOnline, todayVisits, totalVisits);
 
@@ -79,9 +84,13 @@
       if (res.ok) {
         const json = await res.json();
         if (json && typeof json.total === 'number') {
-          updateWidgetUI(json.online || 1, json.today || 1, json.total || 1);
-          localStorage.setItem(STORAGE_KEY_TOTAL, (json.total || 1).toString());
-          localStorage.setItem(STORAGE_KEY_TODAY, (json.today || 1).toString());
+          const online = Math.max(1, json.online || 1);
+          const today  = Math.max(online, json.today || online);
+          const total  = Math.max(today, json.total || today);
+
+          updateWidgetUI(online, today, total);
+          localStorage.setItem(STORAGE_KEY_TOTAL, total.toString());
+          localStorage.setItem(STORAGE_KEY_TODAY, today.toString());
           return true;
         }
       }
