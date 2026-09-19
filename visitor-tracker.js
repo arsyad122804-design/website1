@@ -8,17 +8,21 @@
 (function () {
   'use strict';
 
-  // Hapus data bekas simulasi percobaan lama jika tersimpan di memori browser
+  // Hapus data bekas simulasi / percobaan lama dari memori browser
   try {
-    ['hibatullah_visitor_total', 'hibatullah_visitor_today', 'hibatullah_visitor_last_date', 'hibatullah_visitor_session'].forEach(k => {
+    [
+      'hibatullah_visitor_total', 'hibatullah_visitor_today', 'hibatullah_visitor_last_date', 'hibatullah_visitor_session',
+      'hibatullah_real_visitor_total', 'hibatullah_real_visitor_today', 'hibatullah_real_visitor_date', 'hibatullah_real_visitor_sess',
+      'hibatullah_real_visitor_total_v2', 'hibatullah_real_visitor_today_v2', 'hibatullah_real_visitor_date_v2', 'hibatullah_real_visitor_sess_v2'
+    ].forEach(k => {
       localStorage.removeItem(k);
     });
   } catch (e) {}
 
-  const STORAGE_KEY_TOTAL = 'hibatullah_real_visitor_total_v2';
-  const STORAGE_KEY_TODAY = 'hibatullah_real_visitor_today_v2';
-  const STORAGE_KEY_DATE  = 'hibatullah_real_visitor_date_v2';
-  const STORAGE_KEY_SESS  = 'hibatullah_real_visitor_sess_v2';
+  const STORAGE_KEY_TOTAL = 'hibatullah_real_visitor_total_v3';
+  const STORAGE_KEY_TODAY = 'hibatullah_real_visitor_today_v3';
+  const STORAGE_KEY_DATE  = 'hibatullah_real_visitor_date_v3';
+  const STORAGE_KEY_SESS  = 'hibatullah_real_visitor_sess_v3';
 
   // Inisialisasi hitungan pengunjung murni (REAL)
   async function initVisitorStats() {
@@ -28,27 +32,35 @@
     let totalVisits = parseInt(localStorage.getItem(STORAGE_KEY_TOTAL) || '1', 10);
     let todayVisits = parseInt(localStorage.getItem(STORAGE_KEY_TODAY) || '1', 10);
 
-    // Jika pergantian hari, reset hitungan hari ini ke 1
-    if (lastDate !== todayStr) {
+    // Jika perangkat ini baru pertama kali membuka website
+    if (!lastDate) {
+      totalVisits = 1;
       todayVisits = 1;
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
+      localStorage.setItem(STORAGE_KEY_TOTAL, '1');
       localStorage.setItem(STORAGE_KEY_TODAY, '1');
-    }
-
-    // Catat sesi kunjungan baru jika belum ada di sesi browser saat ini
-    if (!sessionStorage.getItem(STORAGE_KEY_SESS)) {
       sessionStorage.setItem(STORAGE_KEY_SESS, '1');
-      if (lastDate === todayStr) {
-        todayVisits += 1;
-        totalVisits += 1;
-      }
+      logVisitorDetails();
+      syncWithFirebase();
+    } else if (lastDate !== todayStr) {
+      // Jika pergantian hari
+      todayVisits = 1;
+      totalVisits += 1;
+      localStorage.setItem(STORAGE_KEY_DATE, todayStr);
       localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
-      localStorage.setItem(STORAGE_KEY_TODAY, todayVisits.toString());
-
+      localStorage.setItem(STORAGE_KEY_TODAY, '1');
+      sessionStorage.setItem(STORAGE_KEY_SESS, '1');
       logVisitorDetails();
       syncWithFirebase();
     } else {
-      logVisitorDetails();
+      // Sesi dalam hari yang sama
+      if (!sessionStorage.getItem(STORAGE_KEY_SESS)) {
+        sessionStorage.setItem(STORAGE_KEY_SESS, '1');
+        logVisitorDetails();
+        syncWithFirebase();
+      } else {
+        logVisitorDetails();
+      }
     }
 
     // Pengunjung online aktif real saat ini (1 per tab/pengguna aktif)
