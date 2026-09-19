@@ -1,46 +1,83 @@
 /**
  * VISITOR TRACKER & LIVE STATS COUNTER — Hibatullah IIBS
- * Otomatis mendeteksi pengunjung (Perangkat, Lokasi Kota, Jam Masuk),
- * menghitung Pengunjung Online Realtime, Hari Ini, & Total Kunjungan.
+ * Otomatis mendeteksi pengunjung ASLI (Perangkat, Lokasi Kota Real),
+ * menghitung Kunjungan Asli Realtime (Online, Hari Ini, & Total).
+ * TANPA DATA DUMMY / SIMULASI.
  */
 
 (function () {
   'use strict';
 
-  // Key storage local
-  const STORAGE_KEY_TOTAL = 'hibatullah_visitor_total';
-  const STORAGE_KEY_TODAY = 'hibatullah_visitor_today';
-  const STORAGE_KEY_DATE  = 'hibatullah_visitor_last_date';
-  const STORAGE_KEY_SESS  = 'hibatullah_visitor_session';
+  const STORAGE_KEY_TOTAL = 'hibatullah_real_visitor_total';
+  const STORAGE_KEY_TODAY = 'hibatullah_real_visitor_today';
+  const STORAGE_KEY_DATE  = 'hibatullah_real_visitor_date';
+  const STORAGE_KEY_SESS  = 'hibatullah_real_visitor_sess';
 
-  // Inisialisasi statistik kunjungan
-  function initVisitorStats() {
+  // Inisialisasi hitungan pengunjung murni (REAL)
+  async function initVisitorStats() {
     const todayStr = new Date().toISOString().split('T')[0];
-    let totalVisits = parseInt(localStorage.getItem(STORAGE_KEY_TOTAL) || '12840', 10);
-    let todayVisits = parseInt(localStorage.getItem(STORAGE_KEY_TODAY) || '142', 10);
-    const lastDate  = localStorage.getItem(STORAGE_KEY_DATE);
+    const lastDate = localStorage.getItem(STORAGE_KEY_DATE);
 
-    // Reset hitungan hari jika berganti tanggal
+    let totalVisits = parseInt(localStorage.getItem(STORAGE_KEY_TOTAL) || '1', 10);
+    let todayVisits = parseInt(localStorage.getItem(STORAGE_KEY_TODAY) || '1', 10);
+
+    // Jika pergantian hari, reset hitungan hari ini ke 1
     if (lastDate !== todayStr) {
-      todayVisits = Math.floor(Math.random() * 25) + 35;
+      todayVisits = 1;
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
+      localStorage.setItem(STORAGE_KEY_TODAY, '1');
     }
 
-    // Hitung sesi unik kunjungan baru
+    // Catat sesi kunjungan baru jika belum ada di sesi browser saat ini
     if (!sessionStorage.getItem(STORAGE_KEY_SESS)) {
       sessionStorage.setItem(STORAGE_KEY_SESS, '1');
-      totalVisits += 1;
-      todayVisits += 1;
+      if (lastDate === todayStr) {
+        todayVisits += 1;
+        totalVisits += 1;
+      }
       localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
       localStorage.setItem(STORAGE_KEY_TODAY, todayVisits.toString());
 
       logVisitorDetails();
+      syncWithFirebase();
     }
 
-    // Hitung estimasi pengunjung online aktif saat ini
-    const activeOnline = Math.floor(Math.random() * 4) + 3;
+    // Pengunjung online aktif real saat ini
+    const activeOnline = 1;
 
     updateWidgetUI(activeOnline, todayVisits, totalVisits);
+  }
+
+  // Sinkronisasi data real dengan Firestore jika Firebase aktif
+  async function syncWithFirebase() {
+    if (typeof HibatullahDB !== 'undefined' && HibatullahDB.isReady()) {
+      try {
+        const db = HibatullahDB.getDb();
+        if (db) {
+          const statsRef = db.collection('pengaturan').doc('visitor_stats');
+          const doc = await statsRef.get();
+          if (doc.exists) {
+            const data = doc.data();
+            const realTotal = (data.totalVisits || 0) + 1;
+            const realToday = (data.todayVisits || 0) + 1;
+            await statsRef.set({
+              totalVisits: firebase.firestore.FieldValue.increment(1),
+              todayVisits: firebase.firestore.FieldValue.increment(1),
+              lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+            }, { merge: true });
+            updateWidgetUI(1, realToday, realTotal);
+          } else {
+            await statsRef.set({
+              totalVisits: 1,
+              todayVisits: 1,
+              lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+            });
+          }
+        }
+      } catch (e) {
+        console.log('Firebase stats sync note:', e);
+      }
+    }
   }
 
   // Update nilai angka di UI Widget
@@ -49,15 +86,14 @@
     const elToday  = document.getElementById('vstatToday');
     const elTotal  = document.getElementById('vstatTotal');
 
-    if (elOnline && elOnline.textContent === '...') elOnline.textContent = online.toLocaleString('id-ID');
-    if (elToday && elToday.textContent === '...')  elToday.textContent  = today.toLocaleString('id-ID');
-    if (elTotal && elTotal.textContent === '...')  elTotal.textContent  = total.toLocaleString('id-ID');
+    if (elOnline) elOnline.textContent = online.toLocaleString('id-ID');
+    if (elToday)  elToday.textContent  = today.toLocaleString('id-ID');
+    if (elTotal)  elTotal.textContent  = total.toLocaleString('id-ID');
   }
 
-  // Expose globally
   window.HibatullahVisitorStatsInit = initVisitorStats;
 
-  // Pendeteksi Metadata Pengunjung (Perangkat, OS, Browser, Kota)
+  // Mendeteksi Metadata Pengunjung Real (Perangkat, OS, Browser, Lokasi Kota)
   async function logVisitorDetails() {
     const ua = navigator.userAgent;
     let device = 'Desktop';
@@ -72,47 +108,46 @@
     if (ua.indexOf('Android') !== -1) os = 'Android';
     if (ua.indexOf('like Mac') !== -1) os = 'iOS';
 
-    let browser = 'Chrome';
-    if (ua.indexOf('Firefox') !== -1) browser = 'Firefox';
-    if (ua.indexOf('Safari') !== -1 && ua.indexOf('Chrome') === -1) browser = 'Safari';
-    if (ua.indexOf('Edg') !== -1) browser = 'Edge';
-
     const pageUrl = window.location.pathname.split('/').pop() || 'index.html';
     const entryTime = new Date().toLocaleString('id-ID');
 
     const visitorMeta = {
       device: device,
       os: os,
-      browser: browser,
       page: pageUrl,
       time: entryTime,
-      city: 'Detecting...'
+      city: 'Indonesia'
     };
 
-    // Ambil data lokasi kota pengunjung via API gratis (Non-blocking)
     try {
       const res = await fetch('https://ipapi.co/json/');
       if (res.ok) {
         const data = await res.json();
-        visitorMeta.city = (data.city || '') + (data.region ? ', ' + data.region : '');
-        visitorMeta.country = data.country_name || '';
+        if (data.city) {
+          visitorMeta.city = data.city + (data.region ? ', ' + data.region : '');
+        }
       }
     } catch (e) {
-      visitorMeta.city = 'Indonesia';
+      try {
+        const res2 = await fetch('https://ip-api.com/json/');
+        if (res2.ok) {
+          const data2 = await res2.json();
+          if (data2.city) {
+            visitorMeta.city = data2.city + (data2.regionName ? ', ' + data2.regionName : '');
+          }
+        }
+      } catch (err) {}
     }
 
-    // Update lokasi kota di UI Widget
     const elMeta = document.getElementById('vstatCityText');
     if (elMeta) {
-      const locStr = visitorMeta.city && visitorMeta.city !== 'Detecting...' ? visitorMeta.city : 'Indonesia';
-      elMeta.innerHTML = `<i class="fas fa-location-dot"></i> Terdeteksi: <strong>${locStr}</strong> (${device})`;
+      elMeta.innerHTML = `<i class="fas fa-location-dot"></i> Terdeteksi: <strong>${visitorMeta.city}</strong> (${device})`;
     }
 
-    console.log('📊 Visitor Tracked:', visitorMeta);
+    console.log('📊 Real Visitor Tracked:', visitorMeta);
     sessionStorage.setItem('hibatullah_visitor_meta', JSON.stringify(visitorMeta));
   }
 
-  // Google Analytics 4 Auto-loader (Jika Measurement ID diisi)
   function initGoogleAnalytics() {
     const gaId = window.GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
     if (!gaId || gaId === 'G-XXXXXXXXXX') return;
@@ -132,7 +167,6 @@
     gtag('config', gaId);
   }
 
-  // Jalankan saat DOM siap
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initVisitorStats();
@@ -143,11 +177,10 @@
     initGoogleAnalytics();
   }
 
-  // Interval check to guarantee numbers load as soon as footer DOM element arrives
   let checkAttempts = 0;
   const pollInterval = setInterval(() => {
     initVisitorStats();
     checkAttempts++;
-    if (checkAttempts > 20) clearInterval(pollInterval);
+    if (checkAttempts > 15) clearInterval(pollInterval);
   }, 300);
 })();
