@@ -13,8 +13,8 @@ $todayDate = date('Y-m-d');
 // Data default awal
 $data = [
     'date' => $todayDate,
-    'today' => 1,
-    'total' => 1,
+    'today' => 35,
+    'total' => 185,
     'sessions' => []
 ];
 
@@ -31,7 +31,7 @@ if (file_exists($file)) {
 // Reset hitungan hari ini jika tanggal berganti
 if (($data['date'] ?? '') !== $todayDate) {
     $data['date'] = $todayDate;
-    $data['today'] = 0;
+    $data['today'] = 35;
 }
 
 // Identifikasi unik pengunjung dari IP & User Agent
@@ -51,8 +51,8 @@ if (isset($data['sessions']) && is_array($data['sessions'])) {
 
 // Jika pengunjung ini baru dalam 3 menit terakhir, tambah counter global
 if (!isset($activeSessions[$visitorKey])) {
-    $data['today'] = (int)($data['today'] ?? 0) + 1;
-    $data['total'] = (int)($data['total'] ?? 0) + 1;
+    $data['today'] = (int)($data['today'] ?? 35) + 1;
+    $data['total'] = (int)($data['total'] ?? 185) + 1;
 }
 
 // Update timestamp terakhir pengunjung ini
@@ -66,6 +66,6 @@ $data['sessions'] = $activeSessions;
 echo json_encode([
     'success' => true,
     'online' => max(1, count($activeSessions)),
-    'today' => max(1, (int)$data['today']),
-    'total' => max(1, (int)$data['total'])
+    'today' => max(35, (int)$data['today']),
+    'total' => max(185, (int)$data['total'])
 ]);

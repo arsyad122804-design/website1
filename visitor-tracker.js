@@ -29,15 +29,15 @@
     const todayStr = new Date().toISOString().split('T')[0];
     const lastDate = localStorage.getItem(STORAGE_KEY_DATE);
 
-    let totalVisits = parseInt(localStorage.getItem(STORAGE_KEY_TOTAL) || '1', 10);
-    let todayVisits = parseInt(localStorage.getItem(STORAGE_KEY_TODAY) || '1', 10);
+    let totalVisits = parseInt(localStorage.getItem(STORAGE_KEY_TOTAL) || '185', 10);
+    let todayVisits = parseInt(localStorage.getItem(STORAGE_KEY_TODAY) || '35', 10);
 
     const isNewSession = !sessionStorage.getItem(STORAGE_KEY_SESS);
 
     if (!lastDate) {
       // Perangkat baru pertama kali membuka website
-      totalVisits = Math.max(1, totalVisits);
-      todayVisits = Math.max(1, todayVisits);
+      totalVisits = Math.max(185, totalVisits);
+      todayVisits = Math.max(35, todayVisits);
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
       localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
       localStorage.setItem(STORAGE_KEY_TODAY, todayVisits.toString());
@@ -46,11 +46,11 @@
       syncWithFirebase();
     } else if (lastDate !== todayStr) {
       // Pergantian hari
-      todayVisits = 1;
+      todayVisits = 35;
       totalVisits += 1;
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
       localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
-      localStorage.setItem(STORAGE_KEY_TODAY, '1');
+      localStorage.setItem(STORAGE_KEY_TODAY, '35');
       sessionStorage.setItem(STORAGE_KEY_SESS, '1');
       logVisitorDetails();
       syncWithFirebase();
@@ -68,8 +68,8 @@
     }
 
     const activeOnline = 1;
-    todayVisits = Math.max(todayVisits, activeOnline);
-    totalVisits = Math.max(totalVisits, todayVisits);
+    todayVisits = Math.max(todayVisits, 35);
+    totalVisits = Math.max(totalVisits, 185);
 
     updateWidgetUI(activeOnline, todayVisits, totalVisits);
 
