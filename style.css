@@ -5707,17 +5707,18 @@ html, body { overflow-x: hidden !important; }
   }
 }
 
-/* HERO RUNNING TEXT TICKER (TEKS BERJALAN AT HERO BOTTOM) */
-.thursina-hero-ticker {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  height: 48px;
-  background: rgba(8, 15, 25, 0.75);
+/* HERO RUNNING TEXT TICKER (TEKS BERJALAN AT HERO BOTTOM) - PERMANENTLY REMOVED */
+.thursina-hero-ticker,
+.hero-ticker-badge,
+.home-berita-ticker-middle {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
