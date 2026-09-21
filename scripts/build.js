@@ -31,7 +31,7 @@ function copyRecursive(src, dest) {
       copyRecursive(srcPath, destPath);
     } else {
       const ext = path.extname(entry.name).toLowerCase();
-      if (EXTENSIONS.includes(ext)) {
+      if (EXTENSIONS.includes(ext) || entry.name === '.htaccess') {
         fs.copyFileSync(srcPath, destPath);
         fileCount++;
       }
