@@ -1,5 +1,6 @@
 node_modules/
 firebase-config.js
 dist/
-galeri/
+/galeri/
 *.HEIC
+
