@@ -5615,131 +5615,45 @@ html, body { overflow-x: hidden !important; }
   }
 }
 
-/* POSTINGAN BERITA HEADER FLEX & MIDDLE RUNNING TEXT TICKER (TEKS GERAK) */
-.home-berita-header-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 36px;
-  position: relative;
-}
-
-.home-berita-header-text {
-  flex: 1 1 360px;
-  max-width: 420px;
+/* POSTINGAN BERITA HEADER CENTERED & BOTTOM MORE NEWS BUTTON (100% MATCH TO REFERENCE IMAGE) */
+.home-berita-header-center {
+  text-align: center !important;
+  max-width: 760px;
+  margin: 0 auto 36px;
 }
 
 .home-berita-main-title {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
   color: #1e3a8a;
-  margin-bottom: 8px;
-  line-height: 1.25;
+  margin-bottom: 12px;
+  text-align: center !important;
 }
 
 .home-berita-subtitle {
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: #64748b;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* RUNNING TEXT TICKER (TEKS GERAK) IN MIDDLE CIRCLED AREA ABOVE CARD 2 */
-.home-berita-ticker-middle {
-  flex: 1 1 380px;
-  max-width: 480px;
-  background: linear-gradient(135deg, rgba(239, 246, 255, 0.98), rgba(219, 234, 254, 0.9));
-  border: 1.5px solid rgba(37, 99, 235, 0.22);
-  border-radius: 50px;
-  padding: 6px 16px 6px 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1);
-  overflow: hidden;
-  height: 46px;
-  backdrop-filter: blur(8px);
+  line-height: 1.65;
+  text-align: center !important;
   margin: 0 auto;
 }
 
-.berita-middle-ticker-badge {
-  flex-shrink: 0;
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-  padding: 5px 12px;
-  border-radius: 30px;
+.home-berita-more-center {
+  text-align: center !important;
+  margin-top: 36px;
   display: flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.35);
-}
-
-.berita-middle-ticker-badge .ticker-badge-dot {
-  width: 7px;
-  height: 7px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  animation: pulseDot 1.5s infinite ease-in-out;
-}
-
-.berita-middle-ticker-track-wrap {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.berita-middle-ticker-track {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  animation: tickerLoop 24s linear infinite;
-  will-change: transform;
-}
-
-.berita-middle-ticker-track:hover {
-  animation-play-state: paused;
-}
-
-.berita-middle-ticker-track span {
-  font-size: 13px;
-  color: #1e3a8a;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  padding: 0 10px;
-}
-
-.berita-middle-ticker-track span strong {
-  color: #1d4ed8;
-  font-weight: 700;
-}
-
-.berita-middle-ticker-track .ticker-sep {
-  color: #ef4444;
-  font-weight: 800;
-  padding: 0 6px;
-}
-
-.home-berita-more-wrap {
-  flex-shrink: 0;
-  margin-left: auto;
+  justify-content: center;
 }
 
 .home-berita-more-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
   color: #ffffff !important;
   font-size: 14px;
   font-weight: 700;
-  padding: 12px 26px;
+  padding: 12px 28px;
   border-radius: 50px;
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -5748,7 +5662,7 @@ html, body { overflow-x: hidden !important; }
 
 .home-berita-more-btn:hover {
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
   color: #ffffff !important;
 }
