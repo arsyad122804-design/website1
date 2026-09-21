@@ -8,11 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="stylesheet" href="style.css?v=20260921_v168" />
-  <link rel="stylesheet" href="footer.css?v=20260921_v168" />
+  <link rel="stylesheet" href="style.css?v=20260921_v169" />
+  <link rel="stylesheet" href="footer.css?v=20260921_v169" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="navbar.css?v=20260921_v168">
+  <link rel="stylesheet" href="navbar.css?v=20260921_v169">
   <link rel="stylesheet" href="accordion-gallery.css">
   <link rel="icon" href="favicon.png" type="image/png" />
 
@@ -306,7 +306,7 @@
         logoWrap.style.transform = 'scale(0.94)';
         if (ring) ring.style.strokeDashoffset = '810.2';
  
-        const duration = 2000; // 2 seconds
+        const duration = 300; // Fast 0.3s splash screen for high Speed Index performance
         const startTime = Date.now();
         
         const interval = setInterval(() => {
@@ -324,7 +324,6 @@
             // Fully unblurred and slightly scaled up
             logoWrap.style.filter = 'blur(0px)';
             logoWrap.style.transform = 'scale(1.02)';
-            logoWrap.classList.add('pulse'); // start heartbeat animation
             
             setTimeout(() => {
               preloader.classList.add('fade-out');
@@ -335,8 +334,8 @@
               
               setTimeout(() => {
                 preloader.remove();
-              }, 800);
-            }, 600);
+              }, 200);
+            }, 80);
           } else {
             bar.style.width = progress.toFixed(1) + '%';
             percentText.textContent = Math.floor(progress) + '%';
@@ -609,7 +608,7 @@
       }
     </style>
     <div class="thursina-hero-banner">
-      <video class="thursina-hero-video" id="thursinaHeroVideo" src="assets/for-web-2.mp4" autoplay loop muted playsinline preload="auto"></video>
+      <video class="thursina-hero-video" id="thursinaHeroVideo" src="assets/for-web-2.mp4" autoplay loop muted playsinline preload="none"></video>
       <script>
         (function() {
           function initHeroVideo() {
@@ -1078,9 +1077,9 @@
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
   <script src="berita.js?v=20260915_v3"></script>
-  <script src="animations.js?v=20260921_v168"></script>
-  <script src="script.js?v=20260921_v168"></script>
-  <script src="navbar.js?v=20260921_v168"></script>
+  <script src="animations.js?v=20260921_v169"></script>
+  <script src="script.js?v=20260921_v169"></script>
+  <script src="navbar.js?v=20260921_v169"></script>
   
 
   <script>
