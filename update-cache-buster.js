@@ -3,7 +3,7 @@ const path = require('path');
 
 const dir = __dirname;
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
-const vStr = 'v=20260921_v173';
+const vStr = 'v=20260921_v174';
 
 files.forEach(file => {
   const filePath = path.join(dir, file);
@@ -26,6 +26,8 @@ files.forEach(file => {
   content = content.replace(/entrepreneurship\.css(\?v=[^"'\s>]*)?/g, `entrepreneurship.css?${vStr}`);
   content = content.replace(/penasehat\.css(\?v=[^"'\s>]*)?/g, `penasehat.css?${vStr}`);
   content = content.replace(/virtual-tour\.css(\?v=[^"'\s>]*)?/g, `virtual-tour.css?${vStr}`);
+  content = content.replace(/accordion-gallery\.css(\?v=[^"'\s>]*)?/g, `accordion-gallery.css?${vStr}`);
+  content = content.replace(/accordion-gallery\.js(\?v=[^"'\s>]*)?/g, `accordion-gallery.js?${vStr}`);
   fs.writeFileSync(filePath, content, 'utf8');
 });
 

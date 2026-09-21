@@ -211,7 +211,7 @@
   .accordion-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 12px;
     height: auto !important;
     min-height: 0 !important;
     perspective: none;
@@ -221,17 +221,23 @@
   .ag-panel {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
     height: auto !important;
-    min-height: 170px;
+    min-height: 130px;
     border-radius: 18px;
     padding: 0;
     overflow: hidden;
     flex: none !important;
     transform: none !important;
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     background: #f8fafc;
+    border: 1px solid #e2e8f0;
+  }
+
+  .ag-panel.ag-panel--active {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9;
   }
 
   .ag-panel:active {
@@ -266,25 +272,36 @@
     display: block !important;
   }
 
+  .ag-panel__overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(15, 23, 42, 0.75) 100%) !important;
+    pointer-events: none;
+  }
+
   .ag-panel__label {
     display: flex !important;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 12px 14px;
-    background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.82) 100%);
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 10px;
     color: #ffffff;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     z-index: 3;
     pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .ag-panel__bar {
     display: inline-block !important;
-    width: 4px;
-    height: 16px;
+    width: 3px;
+    height: 12px;
     background: #3b82f6;
     border-radius: 2px;
     opacity: 1 !important;
@@ -295,8 +312,9 @@
     display: block !important;
     opacity: 1 !important;
     color: #ffffff !important;
-    font-size: 13px !important;
+    font-size: 11.5px !important;
     font-weight: 600 !important;
+    line-height: 1.2;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -305,14 +323,15 @@
 
 @media (max-width: 520px) {
   .accordion-gallery {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 10px;
   }
 
   .ag-panel {
+    aspect-ratio: 4 / 3;
+  }
+  .ag-panel.ag-panel--active {
+    grid-column: span 2;
     aspect-ratio: 16 / 9;
-    height: auto !important;
-    min-height: 200px;
   }
 }
 
