@@ -213,6 +213,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
     height: auto !important;
+    min-height: 0 !important;
     perspective: none;
     overflow: visible;
   }
@@ -220,15 +221,17 @@
   .ag-panel {
     position: relative;
     width: 100%;
-    height: 190px;
-    min-height: 190px;
-    border-radius: 16px;
+    aspect-ratio: 16 / 10;
+    height: auto !important;
+    min-height: 170px;
+    border-radius: 18px;
     padding: 0;
     overflow: hidden;
     flex: none !important;
     transform: none !important;
     box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #f8fafc;
   }
 
   .ag-panel:active {
@@ -236,41 +239,80 @@
   }
 
   .ag-panel__frame {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 18px;
     overflow: hidden;
   }
 
   .accordion-gallery .ag-panel__media,
   .ag-panel__media {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
     transform: none !important;
     width: 100% !important;
     height: 100% !important;
   }
 
   .ag-panel__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  .ag-panel__label {
+    display: flex !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 14px;
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.82) 100%);
+    color: #ffffff;
+    align-items: center;
+    gap: 8px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .ag-panel__bar {
+    display: inline-block !important;
+    width: 4px;
+    height: 16px;
+    background: #3b82f6;
+    border-radius: 2px;
+    opacity: 1 !important;
+    flex-shrink: 0;
+  }
+
+  .ag-panel__text {
+    display: block !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 @media (max-width: 520px) {
   .accordion-gallery {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
   .ag-panel {
-    height: 220px;
-    min-height: 220px;
+    aspect-ratio: 16 / 9;
+    height: auto !important;
+    min-height: 200px;
   }
 }
 

@@ -35,7 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
         panel.style.transform = '';
         panel.style.flexGrow = '';
         const media = panel.querySelector('.ag-panel__media');
-        if (media) media.style.transform = '';
+        if (media) {
+          media.style.transform = '';
+          media.style.top = '';
+          media.style.left = '';
+          media.style.width = '';
+          media.style.height = '';
+        }
       });
       return;
     }
