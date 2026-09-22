@@ -14,10 +14,24 @@ body {
    -------------------------------------------------------------------------- */
 .faq-hero {
   position: relative;
-  background: linear-gradient(135deg, #0b1f5c 0%, #145fc8 55%, #1d4ed8 100%);
-  padding: 70px 0 80px;
+  background-color: #0b1f5c;
+  background-image: 
+    linear-gradient(90deg, 
+      rgba(11, 31, 92, 0.94) 0%, 
+      rgba(11, 31, 92, 0.82) 35%, 
+      rgba(11, 31, 92, 0.22) 62%, 
+      transparent 85%
+    ),
+    url('assets/images/faq-hero-student.jpg');
+  background-position: 68% 5%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 85px 0 95px;
   color: #ffffff;
   overflow: hidden;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
 }
 
 .faq-hero::before {
@@ -29,7 +43,7 @@ body {
   height: 100%;
   background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
   background-size: 24px 24px;
-  opacity: 0.6;
+  opacity: 0.35;
   pointer-events: none;
   z-index: 1;
 }
@@ -43,56 +57,31 @@ body {
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: flex-start;
 }
 
 .faq-hero-left {
-  flex: 1.1;
+  flex: 1;
   max-width: 620px;
-}
-
-.faq-hero-right {
-  flex: 0.9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.faq-hero-photo-wrap {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(11, 31, 92, 0.38), 0 0 0 3px rgba(255, 255, 255, 0.25);
-  background: #ffffff;
-  max-width: 420px;
-  width: 100%;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.faq-hero-photo-wrap:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 50px rgba(11, 31, 92, 0.48), 0 0 0 3px rgba(255, 255, 255, 0.35);
-}
-
-.faq-hero-student-img {
-  width: 100%;
-  height: auto;
-  max-height: 320px;
-  object-fit: cover;
-  object-position: center 15%;
-  display: block;
 }
 
 @media (max-width: 991px) {
   .faq-hero {
-    padding: 60px 0 70px;
+    background-image: 
+      linear-gradient(180deg, 
+        rgba(11, 31, 92, 0.94) 0%, 
+        rgba(11, 31, 92, 0.85) 60%, 
+        rgba(11, 31, 92, 0.7) 100%
+      ),
+      url('assets/images/faq-hero-student.jpg');
+    background-position: center top;
+    padding: 70px 0 70px;
+    min-height: auto;
   }
   .faq-hero-container {
     flex-direction: column;
     padding: 0 24px;
-    gap: 32px;
+    text-align: center;
   }
   .faq-hero-left {
     max-width: 100%;
@@ -104,12 +93,6 @@ body {
   }
   .faq-hero-pills {
     justify-content: center;
-  }
-  .faq-hero-right {
-    width: 100%;
-  }
-  .faq-hero-photo-wrap {
-    max-width: 100%;
   }
 }
 
