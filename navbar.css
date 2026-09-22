@@ -23,12 +23,12 @@
 }
 
 body.has-subpage-header {
-  padding-top: 84px;
+  padding-top: 0 !important;
 }
 
 @media (max-width: 640px) {
   body.has-subpage-header {
-    padding-top: 60px;
+    padding-top: 0 !important;
   }
 }
 
