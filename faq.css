@@ -63,8 +63,8 @@ body.has-subpage-header {
 .faq-hero-container {
   width: 100%;
   max-width: 100%;
-  margin: 0 auto;
-  padding: 0 28px;
+  margin: 0;
+  padding: 0 12px;
   position: relative;
   z-index: 10;
   display: flex;
