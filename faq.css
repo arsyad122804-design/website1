@@ -36,19 +36,20 @@ body.has-subpage-header {
   background-color: #0b1f5c;
   background-image: 
     linear-gradient(90deg, 
-      rgba(11, 31, 92, 0.94) 0%, 
-      rgba(11, 31, 92, 0.82) 35%, 
-      rgba(11, 31, 92, 0.22) 62%, 
-      transparent 85%
+      rgba(11, 31, 92, 0.95) 0%, 
+      rgba(11, 31, 92, 0.85) 35%, 
+      rgba(11, 31, 92, 0.3) 60%, 
+      rgba(11, 31, 92, 0.05) 78%, 
+      transparent 90%
     ),
     url('assets/images/faq-hero-student.jpg');
-  background-position: 68% 5%;
-  background-size: cover;
+  background-position: 82% 0%;
+  background-size: auto 105%;
   background-repeat: no-repeat;
   padding: 125px 0 95px;
   color: #ffffff;
   overflow: hidden;
-  min-height: 500px;
+  min-height: 480px;
   display: flex;
   align-items: center;
 }
