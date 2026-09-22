@@ -14,9 +14,9 @@ body {
    -------------------------------------------------------------------------- */
 .faq-hero {
   position: relative;
-  background-image: linear-gradient(90deg, rgba(24, 102, 205, 0.96) 0%, rgba(20, 90, 185, 0.92) 42%, rgba(16, 75, 160, 0.68) 72%, rgba(10, 45, 110, 0.25) 100%), url('assets/images/galeri-img_9178.jpg');
+  background-image: linear-gradient(90deg, rgba(11, 31, 92, 0.92) 0%, rgba(11, 31, 92, 0.75) 38%, rgba(11, 31, 92, 0.25) 65%, rgba(0, 0, 0, 0) 100%), url('assets/images/faq-hero-student.jpg');
   background-size: cover;
-  background-position: right center;
+  background-position: center right;
   background-repeat: no-repeat;
   padding: 110px 0 120px;
   color: #ffffff;
@@ -47,6 +47,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  .faq-hero {
+    background-image: linear-gradient(180deg, rgba(11, 31, 92, 0.88) 0%, rgba(11, 31, 92, 0.65) 60%, rgba(0, 0, 0, 0.25) 100%), url('assets/images/faq-hero-student.jpg');
+    background-position: center top;
+    padding: 80px 0 90px;
+  }
   .faq-hero-container {
     padding: 0 20px;
   }
@@ -89,7 +94,7 @@ body {
   margin-bottom: 20px;
 }
 .faq-hero-title .faq-q-orange {
-  color: #ffffff;
+  color: #f97316;
 }
 
 .faq-hero-desc {
