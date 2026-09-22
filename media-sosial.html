@@ -123,24 +123,6 @@
       </div>
     </div>
   </section>
-
-  <!-- YOUTUBE VIDEO MODAL OVERLAY (AUTOPLAY IN-PAGE) -->
-  <div id="ytVideoModal" class="yt-video-modal" aria-hidden="true">
-    <div class="yt-modal-backdrop" id="ytModalBackdrop"></div>
-    <div class="yt-modal-content">
-      <button type="button" class="yt-modal-close" id="ytModalClose" aria-label="Tutup"><i class="fas fa-times"></i></button>
-      <div class="yt-modal-iframe-wrap">
-        <iframe id="ytModalIframe" src="" title="YouTube Shorts Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div class="yt-modal-bottom">
-        <span style="font-size: 12px; color: rgba(255, 255, 255, 0.7); font-weight: 600;"><i class="fab fa-youtube" style="color: #ef4444; margin-right: 4px;"></i> YouTube Shorts</span>
-        <a id="ytDirectLink" href="#" target="_blank" rel="noopener" class="yt-direct-link">
-          Buka di YouTube <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <!-- FOOTER SITUS -->
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
@@ -148,76 +130,5 @@
   <script src="script.js?v=20260921_v174"></script>
   <script src="navbar.js?v=20260921_v174"></script>
   <script src="mobile-nav.js?v=20260921_v174"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const carousel = document.getElementById('ytCarousel');
-      const modal = document.getElementById('ytVideoModal');
-      const iframe = document.getElementById('ytModalIframe');
-      const backdrop = document.getElementById('ytModalBackdrop');
-      const closeBtn = document.getElementById('ytModalClose');
-      const directLink = document.getElementById('ytDirectLink');
-
-      // Smooth Continuous Auto-Scroll Loop on 1 Single Horizontal Row
-      if (carousel) {
-        let isCarouselPaused = false;
-        carousel.addEventListener('mouseenter', () => isCarouselPaused = true);
-        carousel.addEventListener('mouseleave', () => isCarouselPaused = false);
-        carousel.addEventListener('touchstart', () => isCarouselPaused = true);
-        carousel.addEventListener('touchend', () => isCarouselPaused = false);
-
-        function autoScrollLoop() {
-          if (!isCarouselPaused) {
-            carousel.scrollLeft += 1.0;
-            const maxScroll = carousel.scrollWidth - carousel.clientWidth - 4;
-            if (carousel.scrollLeft >= maxScroll) {
-              carousel.scrollLeft = 0;
-            }
-          }
-          requestAnimationFrame(autoScrollLoop);
-        }
-        requestAnimationFrame(autoScrollLoop);
-      }
-
-      // 2. Attach modal triggers & YouTube Shorts playback to all cards (including clones)
-      const allTriggers = document.querySelectorAll('.js-yt-modal-trigger');
-
-      function openModal(videoId) {
-        if (!modal || !iframe || !videoId) return;
-        iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&mute=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1';
-        if (directLink) {
-          directLink.href = 'https://youtube.com/shorts/' + videoId;
-        }
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        if (!modal || !iframe) return;
-        modal.classList.remove('show');
-        modal.setAttribute('aria-hidden', 'true');
-        iframe.src = '';
-        document.body.style.overflow = '';
-      }
-
-      allTriggers.forEach(card => {
-        card.addEventListener('click', (e) => {
-          e.preventDefault();
-          const videoId = card.getAttribute('data-video-id');
-          openModal(videoId);
-        });
-      });
-
-      if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (backdrop) backdrop.addEventListener('click', closeModal);
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
-          closeModal();
-        }
-      });
-    });
-  </script>
 </body>
 </html>
