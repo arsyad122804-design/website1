@@ -192,9 +192,9 @@
     s.async = false;
     document.body.appendChild(s);
   }
-  load('mobile-nav.js?v=20260922_v180');
-  load('site-footer.js?v=20260922_v180');
-  load('visitor-tracker.js?v=20260922_v180');
+  load('mobile-nav.js?v=20260922_v181');
+  load('site-footer.js?v=20260922_v181');
+  load('visitor-tracker.js?v=20260922_v181');
 })();
 // ===========================
 // SEARCH MODAL FUNCTIONALITY
