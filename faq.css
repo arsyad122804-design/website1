@@ -23,7 +23,7 @@ body.has-subpage-header {
   left: 0 !important;
   width: 100% !important;
   height: 90px !important;
-  background: linear-gradient(180deg, rgba(8, 15, 25, 0.78) 0%, rgba(8, 15, 25, 0.3) 70%, rgba(8, 15, 25, 0) 100%) !important;
+  background: transparent !important;
   border-bottom: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
