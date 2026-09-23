@@ -42,13 +42,13 @@ body.has-subpage-header {
       transparent 82%
     ),
     url('assets/images/faq-hero-student.jpg');
-  background-position: 72% 0%;
+  background-position: 72% -45px;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 125px 0 95px;
+  padding: 95px 0 80px;
   color: #ffffff;
   overflow: hidden;
-  min-height: 480px;
+  min-height: 440px;
   display: flex;
   align-items: center;
 }
