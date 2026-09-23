@@ -291,17 +291,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroTranslations = {
     id: {
       tag: 'SELAMAT DATANG DI',
-      title: 'Hibatullah<br>International<br>Islamic Boarding School',
+      title: 'Hibatullah International<br>Islamic Boarding School',
       more: 'Lihat Galeri <i class="fas fa-arrow-right"></i>'
     },
     en: {
       tag: 'WELCOME TO',
-      title: 'Hibatullah<br>International<br>Islamic Boarding School',
+      title: 'Hibatullah International<br>Islamic Boarding School',
       more: 'More Galleries <i class="fas fa-arrow-right"></i>'
     },
     ar: {
       tag: 'أهلاً وسهلاً بكم في',
-      title: 'Hibatullah<br>International<br>Islamic Boarding School',
+      title: 'Hibatullah International<br>Islamic Boarding School',
       more: 'المزيد من المعرض <i class="fas fa-arrow-left"></i>'
     }
   };

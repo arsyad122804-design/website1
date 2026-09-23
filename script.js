@@ -25,7 +25,7 @@
   function fixTitle() {
     const mainTitle = document.querySelector('.thursina-main-title');
     if (mainTitle && !mainTitle.innerHTML.includes('Boarding School')) {
-      mainTitle.innerHTML = 'Hibatullah<br>International<br>Islamic Boarding School';
+      mainTitle.innerHTML = 'Hibatullah International<br>Islamic Boarding School';
     }
   }
   fixTitle();
@@ -192,9 +192,9 @@
     s.async = false;
     document.body.appendChild(s);
   }
-  load('mobile-nav.js?v=20260923_v202');
-  load('site-footer.js?v=20260923_v202');
-  load('visitor-tracker.js?v=20260923_v202');
+  load('mobile-nav.js?v=20260923_v203');
+  load('site-footer.js?v=20260923_v203');
+  load('visitor-tracker.js?v=20260923_v203');
 })();
 // ===========================
 // SEARCH MODAL FUNCTIONALITY
