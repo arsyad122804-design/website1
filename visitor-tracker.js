@@ -2,60 +2,61 @@
  * VISITOR TRACKER & LIVE STATS COUNTER — Hibatullah IIBS
  * Otomatis mendeteksi pengunjung ASLI (Perangkat, Lokasi Kota Real),
  * menghitung Kunjungan Asli Realtime (Online, Hari Ini, & Total).
- * 100% DATA REAL TANPA SIMULASI/DUMMY.
+ * 100% DATA REAL MURNI TANPA BASELINE / DUMMY.
  */
 
 (function () {
   'use strict';
 
-  // Hapus data bekas simulasi / percobaan lama dari memori browser
+  // Hapus data bekas baseline / percobaan lama dari memori browser
   try {
     [
       'hibatullah_visitor_total', 'hibatullah_visitor_today', 'hibatullah_visitor_last_date', 'hibatullah_visitor_session',
       'hibatullah_real_visitor_total', 'hibatullah_real_visitor_today', 'hibatullah_real_visitor_date', 'hibatullah_real_visitor_sess',
-      'hibatullah_real_visitor_total_v2', 'hibatullah_real_visitor_today_v2', 'hibatullah_real_visitor_date_v2', 'hibatullah_real_visitor_sess_v2'
+      'hibatullah_real_visitor_total_v2', 'hibatullah_real_visitor_today_v2', 'hibatullah_real_visitor_date_v2', 'hibatullah_real_visitor_sess_v2',
+      'hibatullah_real_visitor_total_v3', 'hibatullah_real_visitor_today_v3', 'hibatullah_real_visitor_date_v3', 'hibatullah_real_visitor_sess_v3'
     ].forEach(k => {
       localStorage.removeItem(k);
     });
   } catch (e) {}
 
-  const STORAGE_KEY_TOTAL = 'hibatullah_real_visitor_total_v3';
-  const STORAGE_KEY_TODAY = 'hibatullah_real_visitor_today_v3';
-  const STORAGE_KEY_DATE  = 'hibatullah_real_visitor_date_v3';
-  const STORAGE_KEY_SESS  = 'hibatullah_real_visitor_sess_v3';
+  const STORAGE_KEY_TOTAL = 'hibatullah_real_visitor_total_v4';
+  const STORAGE_KEY_TODAY = 'hibatullah_real_visitor_today_v4';
+  const STORAGE_KEY_DATE  = 'hibatullah_real_visitor_date_v4';
+  const STORAGE_KEY_SESS  = 'hibatullah_real_visitor_sess_v4';
 
   // Inisialisasi hitungan pengunjung murni (REAL)
   async function initVisitorStats() {
     const todayStr = new Date().toISOString().split('T')[0];
     const lastDate = localStorage.getItem(STORAGE_KEY_DATE);
 
-    let totalVisits = parseInt(localStorage.getItem(STORAGE_KEY_TOTAL) || '185', 10);
-    let todayVisits = parseInt(localStorage.getItem(STORAGE_KEY_TODAY) || '35', 10);
+    let totalVisits = parseInt(localStorage.getItem(STORAGE_KEY_TOTAL) || '1', 10);
+    let todayVisits = parseInt(localStorage.getItem(STORAGE_KEY_TODAY) || '1', 10);
 
     const isNewSession = !sessionStorage.getItem(STORAGE_KEY_SESS);
 
     if (!lastDate) {
-      // Perangkat baru pertama kali membuka website
-      totalVisits = Math.max(185, totalVisits);
-      todayVisits = Math.max(35, todayVisits);
+      // Kunjungan pertama di browser ini
+      totalVisits = 1;
+      todayVisits = 1;
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
-      localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
-      localStorage.setItem(STORAGE_KEY_TODAY, todayVisits.toString());
+      localStorage.setItem(STORAGE_KEY_TOTAL, '1');
+      localStorage.setItem(STORAGE_KEY_TODAY, '1');
       sessionStorage.setItem(STORAGE_KEY_SESS, '1');
       logVisitorDetails();
       syncWithFirebase();
     } else if (lastDate !== todayStr) {
-      // Pergantian hari
-      todayVisits = 35;
+      // Pergantian hari baru
+      todayVisits = 1;
       totalVisits += 1;
       localStorage.setItem(STORAGE_KEY_DATE, todayStr);
       localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
-      localStorage.setItem(STORAGE_KEY_TODAY, '35');
+      localStorage.setItem(STORAGE_KEY_TODAY, '1');
       sessionStorage.setItem(STORAGE_KEY_SESS, '1');
       logVisitorDetails();
       syncWithFirebase();
     } else if (isNewSession) {
-      // Sesi/tab baru dibuka hari ini: tambah Kunjungan Hari Ini & Total Kunjungan sekaligus!
+      // Sesi / tab baru dibuka hari ini
       todayVisits += 1;
       totalVisits += 1;
       localStorage.setItem(STORAGE_KEY_TOTAL, totalVisits.toString());
@@ -68,12 +69,9 @@
     }
 
     const activeOnline = 1;
-    todayVisits = Math.max(todayVisits, 35);
-    totalVisits = Math.max(totalVisits, 185);
-
     updateWidgetUI(activeOnline, todayVisits, totalVisits);
 
-    // Sinkronkan secara real-time dengan Server PHP Hostinger agar terhubung antar semua HP/Komputer
+    // Sinkronkan secara real-time dengan Server Hostinger agar terhubung antar semua HP/Komputer
     syncWithServerCounter();
   }
 
@@ -85,7 +83,7 @@
         const json = await res.json();
         if (json && typeof json.total === 'number') {
           const online = Math.max(1, json.online || 1);
-          const today  = Math.max(online, json.today || online);
+          const today  = Math.max(1, json.today || 1);
           const total  = Math.max(today, json.total || today);
 
           updateWidgetUI(online, today, total);
@@ -208,7 +206,6 @@
       elMeta.innerHTML = `<i class="fas fa-location-dot"></i> Terdeteksi: <strong>${visitorMeta.city}</strong> (${device})`;
     }
 
-    console.log('📊 Real Visitor Tracked:', visitorMeta);
     sessionStorage.setItem('hibatullah_visitor_meta', JSON.stringify(visitorMeta));
   }
 
@@ -249,7 +246,7 @@
     if (checkAttempts > 10) clearInterval(pollInterval);
   }, 300);
 
-  // Heartbeat Realtime Berkelanjutan: Update angka statistik setiap 8 detik secara otomatis tanpa reload!
+  // Heartbeat Realtime Berkelanjutan: Update angka statistik setiap 8 detik secara otomatis tanpa reload
   setInterval(() => {
     syncWithServerCounter();
   }, 8000);

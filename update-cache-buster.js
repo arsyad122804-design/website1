@@ -3,7 +3,7 @@ const path = require('path');
 
 const dir = __dirname;
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
-const vStr = 'v=20260926_v215';
+const vStr = 'v=20260926_v216';
 
 files.forEach(file => {
   const filePath = path.join(dir, file);
