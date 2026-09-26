@@ -4063,7 +4063,7 @@ html, body { overflow-x: hidden !important; }
   border: 2.5px solid #000000 !important;
   border-radius: 999px;
   padding: 6px 18px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+  box-shadow: none !important;
 }
 
 .thursina-nav-item {
