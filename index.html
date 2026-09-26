@@ -8,12 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="stylesheet" href="style.css?v=20260926_v207" />
-  <link rel="stylesheet" href="footer.css?v=20260926_v207" />
+  <link rel="stylesheet" href="style.css?v=20260926_v208" />
+  <link rel="stylesheet" href="footer.css?v=20260926_v208" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="navbar.css?v=20260926_v207">
-  <link rel="stylesheet" href="accordion-gallery.css?v=20260926_v207">
+  <link rel="stylesheet" href="navbar.css?v=20260926_v208">
+  <link rel="stylesheet" href="accordion-gallery.css?v=20260926_v208">
   <link rel="icon" href="favicon.png" type="image/png" />
 
   <!-- SEO & OpenGraph Meta Tags -->
@@ -605,30 +605,51 @@
       }
     </style>
     <div class="thursina-hero-banner">
-      <video class="thursina-hero-video" id="thursinaHeroVideo" src="assets/0922.mp4" autoplay loop muted playsinline preload="auto"></video>
+      <video class="thursina-hero-video" id="thursinaHeroVideo" autoplay loop muted playsinline webkit-playsinline disablepictureinpicture preload="auto">
+        <source src="assets/0922.mp4" type="video/mp4">
+      </video>
       <script>
         (function() {
-          function initHeroVideo() {
+          function startAutoplay() {
             const v = document.getElementById('thursinaHeroVideo');
-            if (v) {
-              v.muted = true;
-              v.defaultMuted = true;
-              v.playsInline = true;
-              const playPromise = v.play();
-              if (playPromise !== undefined) {
-                playPromise.catch(function() {
-                  console.log('Autoplay blocked, retrying on interaction');
-                  document.addEventListener('click', function() { v.play(); }, { once: true });
-                  document.addEventListener('touchstart', function() { v.play(); }, { once: true });
+            if (!v) return;
+            v.muted = true;
+            v.defaultMuted = true;
+            v.setAttribute('muted', '');
+            v.setAttribute('playsinline', '');
+            v.setAttribute('webkit-playsinline', '');
+            
+            function tryPlay() {
+              const p = v.play();
+              if (p !== undefined) {
+                p.catch(function(err) {
+                  console.log('Autoplay deferred pending interaction:', err);
                 });
               }
             }
+            
+            tryPlay();
+            
+            const events = ['click', 'touchstart', 'touchend', 'scroll', 'pointerdown', 'keydown'];
+            events.forEach(function(evt) {
+              window.addEventListener(evt, function() {
+                if (v.paused) tryPlay();
+              }, { passive: true, once: true });
+            });
+            
+            document.addEventListener('visibilitychange', function() {
+              if (!document.hidden && v.paused) {
+                tryPlay();
+              }
+            });
           }
+
           if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initHeroVideo);
+            document.addEventListener('DOMContentLoaded', startAutoplay);
           } else {
-            initHeroVideo();
+            startAutoplay();
           }
+          window.addEventListener('load', startAutoplay);
         })();
       </script>
       <div class="thursina-hero-overlay" style="position: absolute; inset: 0; z-index: 2; pointer-events: none;"></div>
@@ -1039,9 +1060,9 @@
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
   <script src="berita.js?v=20260915_v3"></script>
-  <script src="animations.js?v=20260926_v207"></script>
-  <script src="script.js?v=20260926_v207"></script>
-  <script src="navbar.js?v=20260926_v207"></script>
+  <script src="animations.js?v=20260926_v208"></script>
+  <script src="script.js?v=20260926_v208"></script>
+  <script src="navbar.js?v=20260926_v208"></script>
   
 
   <script>
@@ -1129,7 +1150,7 @@
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="accordion-gallery.js?v=20260926_v207"></script>
+  <script src="accordion-gallery.js?v=20260926_v208"></script>
 </body>
 </html>
 
