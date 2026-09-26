@@ -4050,13 +4050,20 @@ html, body { overflow-x: hidden !important; }
      1px  1px 0 #000000;
 }
 
-/* CENTER NAVIGATION LINKS */
+/* CENTER NAVIGATION LINKS (CAPSULE WITH BOLD BLACK BORDER) */
 .thursina-nav {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: nowrap !important;
   flex-shrink: 0;
+  background: rgba(8, 15, 25, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2.5px solid #000000 !important;
+  border-radius: 999px;
+  padding: 6px 18px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
 }
 
 .thursina-nav-item {
@@ -4070,20 +4077,15 @@ html, body { overflow-x: hidden !important; }
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.2px;
-  padding: 6px 4px;
+  padding: 6px 8px;
   transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
   gap: 5px;
   line-height: 1;
-  text-shadow: 
-    -1px -1px 0 #000000,
-     1px -1px 0 #000000,
-    -1px  1px 0 #000000,
-     1px  1px 0 #000000,
-     0 2px 6px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   white-space: nowrap !important;
   flex-shrink: 0;
   word-break: keep-all;
@@ -4104,30 +4106,24 @@ html, body { overflow-x: hidden !important; }
 }
 
 .thursina-nav-item > a:hover,
-.thursina-nav-item > a:active,
-.thursina-nav-item > a.active {
+.thursina-nav-item > a:active {
   color: #ffffff;
-  text-shadow: 
-    -1px -1px 0 #000000,
-     1px -1px 0 #000000,
-    -1px  1px 0 #000000,
-     1px  1px 0 #000000,
-     0 2px 8px rgba(0, 0, 0, 0.95);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
 }
 
 .thursina-nav-item > a.active {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1.5px solid rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.22);
+  border: 1.5px solid #000000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
   border-radius: 20px;
   padding: 6px 14px !important;
+  color: #ffffff;
 }
 
 .thursina-nav-item > a .nav-arrow {
   font-size: 10px;
-  opacity: 0.9;
+  opacity: 0.85;
   transition: transform 0.25s ease;
-  filter: drop-shadow(0 1px 2px #000);
 }
 
 .thursina-nav-item.has-dropdown:hover > a .nav-arrow {
