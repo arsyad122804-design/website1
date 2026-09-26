@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PPDB - Hibatullah IIBS</title>
-  <link rel="stylesheet" href="style.css?v=20260924_v205" />
-  <link rel="stylesheet" href="footer.css?v=20260924_v205" />
-  <link rel="stylesheet" href="ppdb.css?v=20260924_v205" />
+  <link rel="stylesheet" href="style.css?v=20260926_v206" />
+  <link rel="stylesheet" href="footer.css?v=20260926_v206" />
+  <link rel="stylesheet" href="ppdb.css?v=20260926_v206" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="navbar.css?v=20260924_v205">
+  <link rel="stylesheet" href="navbar.css?v=20260926_v206">
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
@@ -296,24 +296,97 @@
   
 
   <!-- LOKASI -->
-  <section class="ppdb-lokasi">
-    <div class="lokasi-map-bg">
-      <iframe src="https://maps.google.com/maps?q=-7.1340806,111.6243778&z=17&hl=id&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta Lokasi Hibatullah IIBS"></iframe>
-      <div class="lokasi-overlay"></div>
-    </div>
-    <div class="ppdb-sec-inner">
+  <section class="ppdb-lokasi" id="lokasi">
+    <div class="ppdb-sec-inner lokasi-container-grid">
+      <!-- Info Card Panel -->
       <div class="lokasi-glass-panel">
-        <div class="ppdb-sec-label" style="justify-content: flex-start; margin-bottom: 12px;"><span></span>LOKASI KAMI<span></span></div>
-        <h2 class="ppdb-sec-title" style="text-align: left; margin-bottom: 32px;">Lokasi <span style="color:#ff7b00;">Hibatullah IIBS</span></h2>
-        
-        <div class="lokasi-info-wrap">
-          <div class="lokasi-info-item"><div class="lii-icon"><i class="fas fa-map-marker-alt"></i></div><div><strong>Alamat Lengkap</strong><p>Jl. Wonosari, Ds. Sambeng, Kec. Kasiman,<br>Kab. Bojonegoro, Jawa Timur</p></div></div>
-          <div class="lokasi-info-item"><div class="lii-icon"><i class="fas fa-crosshairs"></i></div><div><strong>Koordinat</strong><p>7°08'02.69"S 111°37'27.76"E</p></div></div>
-          <div class="lokasi-info-item"><div class="lii-icon"><i class="fas fa-phone"></i></div><div><strong>Hubungi Kami</strong><p><a href="https://wa.me/6282262263434">0822 6226 3434</a></p></div></div>
+        <div>
+          <div class="lokasi-badge-tag">
+            <span class="lokasi-badge-dot"></span>
+            <span>LOKASI &amp; AKSES KAMPUS</span>
+          </div>
+          <h2 class="lokasi-main-heading">Lokasi Strategis <br><span>Hibatullah IIBS</span></h2>
+          <p class="lokasi-subtext">Terletak di kawasan yang asri, sejuk, dan sangat kondusif untuk mendukung fokus belajar serta menghafal Al-Qur'an para santri.</p>
           
-          <div class="lokasi-btns">
-            <a href="https://www.google.com/maps?q=-7.1340806,111.6243778" target="_blank" rel="noopener" class="lokasi-btn-maps"><i class="fas fa-map-marker-alt"></i> Buka di Google Maps</a>
-            <a href="https://wa.me/6282262263434" class="lokasi-btn-wa"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a>
+          <div class="lokasi-info-wrap">
+            <!-- Alamat -->
+            <div class="lokasi-info-item">
+              <div class="lii-icon lii-icon-orange">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <div class="lii-content">
+                <strong>Alamat Lengkap Kampus</strong>
+                <p id="alamatText">Jl. Wonosari, Ds. Sambeng, Kec. Kasiman, Kab. Bojonegoro, Jawa Timur 62163</p>
+                <button type="button" class="lokasi-copy-btn" onclick="copyLokasiText('alamatText', this)" title="Salin Alamat">
+                  <i class="far fa-copy"></i> <span>Salin Alamat</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Koordinat -->
+            <div class="lokasi-info-item">
+              <div class="lii-icon lii-icon-blue">
+                <i class="fas fa-compass"></i>
+              </div>
+              <div class="lii-content">
+                <strong>Titik Koordinat GPS</strong>
+                <p id="koordinatText">-7.1340806, 111.6243778 (7°08'02.7"S 111°37'27.8"E)</p>
+                <button type="button" class="lokasi-copy-btn" onclick="copyLokasiText('koordinatText', this)" title="Salin Titik GPS">
+                  <i class="far fa-copy"></i> <span>Salin Titik GPS</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Kontak & Kunjungan -->
+            <div class="lokasi-info-item">
+              <div class="lii-icon lii-icon-green">
+                <i class="fas fa-headset"></i>
+              </div>
+              <div class="lii-content">
+                <strong>Layanan Informasi &amp; Kunjungan</strong>
+                <p><a href="https://wa.me/6282262263434" target="_blank" rel="noopener">+62 822-6226-3434</a> <span class="lokasi-status-pill"><i class="fas fa-check-circle"></i> Buka Setiap Hari</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="lokasi-btns">
+          <a href="https://www.google.com/maps?q=-7.1340806,111.6243778" target="_blank" rel="noopener" class="lokasi-btn-maps">
+            <i class="fas fa-directions"></i> <span>Buka Navigasi Google Maps</span>
+          </a>
+          <a href="https://wa.me/6282262263434?text=Assalamu%27alaikum%2C%20saya%20ingin%20jadwalkan%20kunjungan%20ke%20kampus%20Hibatullah%20IIBS" target="_blank" rel="noopener" class="lokasi-btn-wa">
+            <i class="fab fa-whatsapp"></i> <span>Jadwalkan Kunjungan Kampus</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Interactive Map Frame -->
+      <div class="lokasi-map-card">
+        <div class="lokasi-map-header">
+          <div class="lokasi-map-pin-badge">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hibatullah International Islamic Boarding School</span>
+          </div>
+          <a href="https://www.google.com/maps?q=-7.1340806,111.6243778" target="_blank" rel="noopener" class="lokasi-map-direct-link" title="Buka di tab baru">
+            Perbesar Peta <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+        <div class="lokasi-map-frame-wrap">
+          <iframe src="https://maps.google.com/maps?q=-7.1340806,111.6243778&z=17&hl=id&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta Lokasi Hibatullah IIBS"></iframe>
+        </div>
+        <div class="lokasi-map-footer-features">
+          <div class="map-feature-item">
+            <i class="fas fa-parking"></i>
+            <span>Area Parkir Luas &amp; Aman</span>
+          </div>
+          <div class="map-feature-item">
+            <i class="fas fa-bus"></i>
+            <span>Akses Bus &amp; Mobil Pribadi</span>
+          </div>
+          <div class="map-feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Security 24 Jam</span>
           </div>
         </div>
       </div>
@@ -324,8 +397,8 @@
   <footer id="site-footer" class="site-footer" aria-label="Footer situs"></footer>
 
   <script src="ppdb.js"></script>
-  <script src="animations.js?v=20260924_v205"></script>
-  <script src="script.js?v=20260924_v205"></script>
+  <script src="animations.js?v=20260926_v206"></script>
+  <script src="script.js?v=20260926_v206"></script>
   <script>
     var modal = document.getElementById('videoModal');
     var frame = document.getElementById('videoModalFrame');
@@ -351,8 +424,39 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeVideoModal();
     });
+
+    function copyLokasiText(elementId, btn) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const text = el.innerText || el.textContent;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(showCopied).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = text;
+        temp.style.position = 'fixed';
+        temp.style.opacity = '0';
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+        showCopied();
+      }
+      function showCopied() {
+        const originalHTML = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = '<i class="fas fa-check"></i> <span>Tersalin!</span>';
+        setTimeout(function() {
+          btn.classList.remove('copied');
+          btn.innerHTML = originalHTML;
+        }, 2000);
+      }
+    }
   </script>
-  <script src="navbar.js?v=20260924_v205"></script>
+  <script src="navbar.js?v=20260926_v206"></script>
 </body>
 </html>
 
